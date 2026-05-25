@@ -1,0 +1,88 @@
+@import url('https://fonts.bunny.net/css?family=cormorant-garamond:300,400,400i,500,500i,600,600i,700,700i&display=swap');
+@import url('https://fonts.bunny.net/css?family=jost:300,400,500,600&display=swap');
+@import 'tailwindcss';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@theme {
+    --color-cream: #FAF6F2;
+    --color-blush: #E8B4B8;
+    --color-rose: #C2757F;
+    --color-deep-rose: #8B3D4A;
+    --color-gold: #C4956A;
+    --color-charcoal: #2A1F1F;
+    --color-muted: #7A6565;
+
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Jost', ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: var(--color-cream);
+        color: var(--color-charcoal);
+        -webkit-font-smoothing: antialiased;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@layer utilities {
+    .animate-fade-up {
+        opacity: 0;
+        animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .animate-fade-in {
+        opacity: 0;
+        animation: fadeIn 0.8s ease forwards;
+    }
+
+    .animate-scale-in {
+        opacity: 0;
+        animation: scaleIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .font-display {
+        font-family: var(--font-display);
+    }
+
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    .delay-400 { animation-delay: 0.4s; }
+    .delay-500 { animation-delay: 0.5s; }
+    .delay-600 { animation-delay: 0.6s; }
+    .delay-700 { animation-delay: 0.7s; }
+    .delay-900 { animation-delay: 0.9s; }
+}
