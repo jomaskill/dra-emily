@@ -3,18 +3,60 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
         @php
-            $wa = 'https://wa.me/' . config('clinic.whatsapp');
-            $waConsulta = $wa . '?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Emily.';
+            $wa          = 'https://wa.me/' . config('clinic.whatsapp');
+            $waConsulta  = $wa . '?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Emily.';
             $waTransformar = $wa . '?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20como%20me%20transformar%20assim.';
-            $cro = config('clinic.cro');
-            $instagram = config('clinic.instagram');
+            $cro         = config('clinic.cro');
+            $instagram   = config('clinic.instagram');
             $instagramUrl = 'https://www.instagram.com/' . $instagram . '/';
+            $domain      = config('clinic.domain');
+            $siteUrl     = 'https://' . $domain;
+            $phone       = '+55' . config('clinic.whatsapp');
         @endphp
-        <title>Dra. Emily Beatriz — Sinta-se bem cada vez que se olhar no espelho</title>
-        <meta name="description" content="Dra. Emily Beatriz ajuda você a descobrir a sua versão mais confiante em Belo Horizonte, MG. Transformações naturais que respeitam quem você é.">
+
+        {{-- ── Primary SEO ───────────────────────────────────────── --}}
+        <title>Dra. Emily Beatriz | Harmonização Facial, Botox e Preenchimento em BH</title>
+        <meta name="description" content="Especialista em harmonização facial, botox e preenchimento labial em Belo Horizonte, MG. Resultados naturais e personalizados com a Dra. Emily Beatriz. Agende pelo WhatsApp!">
+        <meta name="keywords" content="harmonização facial BH, botox BH, botox Belo Horizonte, preenchimento labial, preenchimento facial, bioestimulador de colágeno, microagulhamento BH, fios de PDO, bichectomia, estética facial, harmonização facial Belo Horizonte, preenchedor BH, botox pampulha, como ficar bonita, harmonização orofacial">
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+        <meta name="author" content="Dra. Emily Beatriz">
+        <meta name="geo.region" content="BR-MG">
+        <meta name="geo.placename" content="Belo Horizonte">
+        <link rel="canonical" href="{{ $siteUrl }}/">
+
+        {{-- ── Open Graph ─────────────────────────────────────────── --}}
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ $siteUrl }}/">
+        <meta property="og:title" content="Dra. Emily Beatriz | Harmonização Facial, Botox e Preenchimento em BH">
+        <meta property="og:description" content="Especialista em harmonização facial, botox e preenchimento labial em Belo Horizonte, MG. Resultados naturais que revelam a melhor versão de você.">
+        <meta property="og:image" content="{{ $siteUrl }}/foto-emily.jpg">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:image:alt" content="Dra. Emily Beatriz — Especialista em Harmonização Facial em Belo Horizonte">
+        <meta property="og:locale" content="pt_BR">
+        <meta property="og:site_name" content="Dra. Emily Beatriz — Harmonização Facial">
+
+        {{-- ── Twitter / X Card ───────────────────────────────────── --}}
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Dra. Emily Beatriz | Harmonização Facial em BH">
+        <meta name="twitter:description" content="Botox, preenchimento labial e harmonização facial em Belo Horizonte. Resultados naturais e personalizados.">
+        <meta name="twitter:image" content="{{ $siteUrl }}/foto-emily.jpg">
+
+        {{-- ── Favicon ─────────────────────────────────────────────── --}}
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml">
         <link rel="icon" href="/favicon.ico" sizes="any">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+        {{-- ── Preconnect (font CDN) ───────────────────────────────── --}}
+        <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+
+        {{-- ── Assets ──────────────────────────────────────────────── --}}
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        {{-- ── Schema.org JSON-LD ─────────────────────────────────── --}}
+        @include('partials.schema')
     </head>
     <body class="font-sans bg-cream text-charcoal antialiased overflow-x-hidden">
 
@@ -34,6 +76,7 @@
                     <a href="#sobre" class="text-xs font-medium tracking-[0.2em] uppercase text-muted hover:text-rose transition-colors duration-200">Nossa História</a>
                     <a href="#procedimentos" class="text-xs font-medium tracking-[0.2em] uppercase text-muted hover:text-rose transition-colors duration-200">Transformações</a>
                     <a href="#antes-depois" class="text-xs font-medium tracking-[0.2em] uppercase text-muted hover:text-rose transition-colors duration-200">Resultados</a>
+                    <a href="#faq" class="text-xs font-medium tracking-[0.2em] uppercase text-muted hover:text-rose transition-colors duration-200">FAQ</a>
                     <a href="#contato" class="text-xs font-medium tracking-[0.2em] uppercase text-muted hover:text-rose transition-colors duration-200">Contato</a>
                 </div>
 
@@ -67,7 +110,7 @@
                     {{-- Text content --}}
                     <div class="relative z-10">
                         <p class="animate-fade-up delay-100 text-xs tracking-[0.25em] uppercase text-rose font-medium mb-6">
-                            Belo Horizonte, MG&nbsp;&nbsp;·&nbsp;&nbsp;Transformação com cuidado
+                            Santa Rosa, Pampulha&nbsp;&nbsp;·&nbsp;&nbsp;Belo Horizonte, MG
                         </p>
 
                         <h1 class="animate-fade-up delay-200 font-display text-6xl lg:text-7xl xl:text-[5.5rem] italic leading-[1.04] text-charcoal mb-8">
@@ -125,8 +168,8 @@
 
                             {{-- Photo --}}
                             <div class="relative w-72 sm:w-80 lg:w-96 xl:w-[420px] aspect-[3/4] rounded-3xl overflow-hidden bg-gradient-to-br from-blush/40 to-rose/10 shadow-2xl shadow-rose/10">
-                                <img src="/foto-emily.jpg"
-                                     alt="Dra. Emily Beatriz — Especialista em Harmonização Facial em Belo Horizonte"
+                                <img src="{{ asset('foto-emily.jpg') }}"
+                                     alt="Dra. Emily Beatriz — Especialista em Harmonização Facial, Botox e Preenchimento em Belo Horizonte MG"
                                      class="w-full h-full object-cover object-top">
                             </div>
 
@@ -160,8 +203,8 @@
                         <div class="relative order-2 lg:order-1">
                             <div class="absolute inset-0 -translate-x-4 translate-y-4 rounded-3xl bg-blush/20 pointer-events-none"></div>
                             <div class="relative w-full aspect-[4/5] rounded-3xl overflow-hidden bg-gradient-to-br from-blush/30 to-rose/5 shadow-xl shadow-rose/5">
-                                <img src="/foto-emily-2.jpg"
-                                     alt="Dra. Emily Beatriz"
+                                <img src="{{ asset('foto-emily-2.jpg') }}"
+                                     alt="Dra. Emily Beatriz — Harmonização Facial e Estética em Belo Horizonte"
                                      class="w-full h-full object-cover object-top">
                             </div>
                         </div>
@@ -214,9 +257,10 @@
                             ['Pele que Brilha', 'Uma pele mais firme, mais luminosa, mais jovem — não porque mudou, mas porque floresceu. O brilho que vem de dentro para fora.', '03'],
                             ['Contorno Elegante', 'Um rosto mais afinado e definido. Uma transformação pequena com impacto enorme na sua autoestima e na forma como o mundo te vê.', '04'],
                             ['Firmeza Natural', 'A sensação de levantar o rosto sem que ninguém saiba o segredo. Sustentação e juventude de forma absolutamente discreta.', '05'],
-                            ['Você, Reinventada', 'Uma análise completa do seu rosto, dos seus desejos e da sua essência. Uma transformação construída só para você — do jeito que só você merece.', '06'],
+                            ['Renovação Profunda', 'A sua pele como ela quer ser: luminosa, uniforme e cheia de vida. Uma experiência que você sente de sessão em sessão.', '06'],
+                            ['Você, Reinventada', 'Uma análise completa do seu rosto, dos seus desejos e da sua essência. Uma transformação construída só para você — do jeito que só você merece.', '07'],
                         ] as [$name, $desc, $num])
-                            <div class="group relative bg-white border border-blush/30 rounded-2xl p-8 hover:border-rose/30 hover:shadow-xl hover:shadow-rose/5 transition-all duration-500 hover:-translate-y-1.5 cursor-default">
+                            <div class="group relative bg-white border border-blush/30 rounded-2xl p-8 hover:border-rose/30 hover:shadow-xl hover:shadow-rose/5 transition-all duration-500 hover:-translate-y-1.5 cursor-default last:lg:col-start-2">
                                 <span class="absolute top-5 right-6 font-display text-7xl italic text-blush/30 leading-none select-none group-hover:text-rose/15 transition-colors duration-500">
                                     {{ $num }}
                                 </span>
@@ -254,58 +298,73 @@
                         </p>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        @foreach ([
-                            ['O olhar que encanta', '1'],
-                            ['Lábios que contam histórias', '2'],
-                            ['A confiança que você merecia', '3'],
-                        ] as [$procedure, $n])
-                            <div class="group relative rounded-2xl overflow-hidden border border-white/5 hover:border-gold/25 transition-all duration-500 hover:-translate-y-1.5">
-                                {{-- Before / After split --}}
-                                <div class="flex h-80 lg:h-[26rem]">
-                                    {{-- Before --}}
-                                    <div class="relative w-1/2 overflow-hidden bg-[#3A2A2A]">
-                                        <img src="/antes-{{ $n }}.jpg"
-                                             alt="Antes — {{ $procedure }}"
-                                             class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700">
-                                        <div class="absolute top-3 left-3 text-white text-[10px] font-medium tracking-[0.2em] uppercase bg-charcoal/70 backdrop-blur-sm px-2.5 py-1 rounded-full">
-                                            Antes
-                                        </div>
-                                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
 
-                                    {{-- Gold divider --}}
-                                    <div class="relative z-10 flex flex-col items-center justify-center" style="width: 2px; flex-shrink: 0;">
-                                        <div class="w-full flex-1 bg-gold/40"></div>
-                                        <div class="w-7 h-7 rounded-full bg-gold flex items-center justify-center shadow-lg flex-shrink-0 my-1">
-                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 12h8M12 8v8"/>
-                                            </svg>
-                                        </div>
-                                        <div class="w-full flex-1 bg-gold/40"></div>
-                                    </div>
-
-                                    {{-- After --}}
-                                    <div class="relative w-1/2 overflow-hidden bg-[#2A1820]">
-                                        <img src="/depois-{{ $n }}.jpg"
-                                             alt="Depois — {{ $procedure }}"
-                                             class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700">
-                                        <div class="absolute top-3 right-3 text-white text-[10px] font-medium tracking-[0.2em] uppercase bg-rose/75 backdrop-blur-sm px-2.5 py-1 rounded-full">
-                                            Depois
-                                        </div>
+                        {{-- Card 1: split antes / depois --}}
+                        <div class="group relative rounded-2xl overflow-hidden border border-white/5 hover:border-gold/25 transition-all duration-500 hover:-translate-y-1.5">
+                            <div class="flex h-80 lg:h-[26rem]">
+                                {{-- Before --}}
+                                <div class="relative w-1/2 overflow-hidden bg-[#3A2A2A]">
+                                    <img src="{{ asset('antes-1.jpg') }}"
+                                         alt="Antes botox Belo Horizonte — Dra. Emily Beatriz"
+                                         class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700">
+                                    <div class="absolute top-3 left-3 text-white text-[10px] font-medium tracking-[0.2em] uppercase bg-charcoal/70 backdrop-blur-sm px-2.5 py-1 rounded-full">
+                                        Antes
                                     </div>
                                 </div>
 
-                                {{-- Caption --}}
-                                <div class="bg-charcoal border-t border-white/5 p-5 flex items-center justify-between">
-                                    <p class="font-display text-xl italic text-cream">{{ $procedure }}</p>
-                                    <a href="{{ $waTransformar }}"
-                                       target="_blank" rel="noopener noreferrer"
-                                       class="text-xs text-rose hover:text-blush transition-colors font-medium tracking-wide">
-                                        Quero isso →
-                                    </a>
+                                {{-- Gold divider --}}
+                                <div class="relative z-10 flex flex-col items-center justify-center" style="width: 2px; flex-shrink: 0;">
+                                    <div class="w-full flex-1 bg-gold/40"></div>
+                                    <div class="w-7 h-7 rounded-full bg-gold flex items-center justify-center shadow-lg flex-shrink-0 my-1">
+                                        <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 12h8M12 8v8"/>
+                                        </svg>
+                                    </div>
+                                    <div class="w-full flex-1 bg-gold/40"></div>
+                                </div>
+
+                                {{-- After --}}
+                                <div class="relative w-1/2 overflow-hidden bg-[#2A1820]">
+                                    <img src="{{ asset('depois-1.jpg') }}"
+                                         alt="Depois botox BH — resultado natural Dra. Emily Beatriz"
+                                         class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700">
+                                    <div class="absolute top-3 right-3 text-white text-[10px] font-medium tracking-[0.2em] uppercase bg-rose/75 backdrop-blur-sm px-2.5 py-1 rounded-full">
+                                        Depois
+                                    </div>
                                 </div>
                             </div>
-                        @endforeach
+                            <div class="bg-charcoal border-t border-white/5 p-5 flex items-center justify-between">
+                                <p class="font-display text-xl italic text-cream">O olhar que encanta</p>
+                                <a href="{{ $waTransformar }}" target="_blank" rel="noopener noreferrer"
+                                   class="text-xs text-rose hover:text-blush transition-colors font-medium tracking-wide">
+                                    Quero isso →
+                                </a>
+                            </div>
+                        </div>
+
+                        {{-- Card 2: combined antes-e-depois image --}}
+                        <div class="group relative rounded-2xl overflow-hidden border border-white/5 hover:border-gold/25 transition-all duration-500 hover:-translate-y-1.5">
+                            <div class="relative h-80 lg:h-[26rem] overflow-hidden bg-[#2A1820]">
+                                <img src="{{ asset('antes-e-depois.jpg') }}"
+                                     alt="Antes e depois harmonização facial Belo Horizonte — Dra. Emily Beatriz"
+                                     class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                                <div class="absolute top-3 left-3 text-white text-[10px] font-medium tracking-[0.2em] uppercase bg-charcoal/70 backdrop-blur-sm px-2.5 py-1 rounded-full">
+                                    Antes
+                                </div>
+                                <div class="absolute top-3 right-3 text-white text-[10px] font-medium tracking-[0.2em] uppercase bg-rose/75 backdrop-blur-sm px-2.5 py-1 rounded-full">
+                                    Depois
+                                </div>
+                            </div>
+                            <div class="bg-charcoal border-t border-white/5 p-5 flex items-center justify-between">
+                                <p class="font-display text-xl italic text-cream">A confiança que você merecia</p>
+                                <a href="{{ $waTransformar }}" target="_blank" rel="noopener noreferrer"
+                                   class="text-xs text-rose hover:text-blush transition-colors font-medium tracking-wide">
+                                    Quero isso →
+                                </a>
+                            </div>
+                        </div>
+
                     </div>
 
                     <p class="text-center text-muted text-xs mt-10 tracking-wide leading-relaxed">
@@ -367,6 +426,77 @@
             </section>
 
             {{-- ======================================================
+                 FAQ
+            ====================================================== --}}
+            <section id="faq" class="py-28 lg:py-36 bg-cream relative overflow-hidden">
+                <div class="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-blush/10 translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
+
+                <div class="max-w-3xl mx-auto px-6 lg:px-8 relative z-10">
+                    <div class="text-center mb-14">
+                        <p class="text-xs tracking-[0.25em] uppercase text-rose font-medium mb-4">Tudo o que você quer saber</p>
+                        <h2 class="font-display text-5xl lg:text-6xl italic text-charcoal leading-tight">
+                            Perguntas frequentes
+                        </h2>
+                        <div class="w-12 h-px bg-gold mx-auto mt-6"></div>
+                    </div>
+
+                    <div class="space-y-3">
+                        @foreach ([
+                            [
+                                'O que é harmonização facial e o que pode ser feito?',
+                                'Harmonização facial é um conjunto de procedimentos estéticos minimamente invasivos — como botox, preenchimento labial, bioestimuladores de colágeno, fios de PDO e microagulhamento — que equilibram as proporções do rosto e valorizam a beleza natural de cada pessoa. Em Belo Horizonte, a Dra. Emily Beatriz realiza todos esses tratamentos de forma personalizada e com resultados naturais.',
+                            ],
+                            [
+                                'Botox dói? O resultado fica artificial?',
+                                'O botox é aplicado com agulhas ultrafinas e causa desconforto mínimo. Os resultados surgem em 7 a 15 dias e, quando feito por uma profissional experiente como a Dra. Emily, o aspecto é completamente natural — ninguém percebe que você fez, só notam que você está mais bonita e descansada.',
+                            ],
+                            [
+                                'Quanto tempo dura o preenchimento labial?',
+                                'O preenchimento labial com ácido hialurônico dura em média de 6 a 18 meses, dependendo do seu organismo e do volume aplicado. É um dos procedimentos mais procurados em BH por quem deseja lábios mais definidos e volumosos de forma natural e segura.',
+                            ],
+                            [
+                                'O que é bioestimulador de colágeno? Vale a pena?',
+                                'O bioestimulador de colágeno é uma injeção que estimula o seu próprio organismo a produzir colágeno, melhorando a firmeza, a textura e a luminosidade da pele ao longo do tempo. Os resultados são progressivos e naturais — e sim, valem muito a pena para quem quer rejuvenescer sem aparência artificial.',
+                            ],
+                            [
+                                'Para que serve o microagulhamento?',
+                                'O microagulhamento é uma técnica que cria micropunturas controladas na pele para estimular a renovação celular. Ele melhora manchas, poros dilatados, textura irregular, linhas finas e sinais de envelhecimento. O protocolo habitual é de 3 a 6 sessões, espaçadas em torno de 30 dias.',
+                            ],
+                            [
+                                'O que são fios de PDO? É lifting sem cirurgia?',
+                                'Sim! Os fios de PDO são fios bioabsorvíveis inseridos sob a pele para promover sustentação e estímulo de colágeno — funcionando como um lifting sem bisturi. O resultado melhora progressivamente ao longo das semanas e é completamente natural.',
+                            ],
+                            [
+                                'Posso combinar vários procedimentos na mesma consulta?',
+                                'Na maioria dos casos, sim. A Dra. Emily faz uma avaliação completa do seu rosto antes de qualquer procedimento e pode montar um protocolo personalizado combinando diferentes tratamentos para alcançar o melhor resultado possível de forma segura.',
+                            ],
+                            [
+                                'Como agendar uma consulta em Belo Horizonte?',
+                                'É simples: basta clicar no botão de WhatsApp em qualquer lugar do site. Nossa equipe responde rapidamente e agenda o seu horário. A primeira consulta é uma conversa — sem compromisso — para entender o que você deseja e o que podemos fazer por você.',
+                            ],
+                        ] as [$question, $answer])
+                            <details class="group bg-white border border-blush/30 rounded-2xl overflow-hidden hover:border-rose/30 transition-colors duration-300">
+                                <summary class="flex items-center justify-between gap-4 px-7 py-5 cursor-pointer list-none select-none">
+                                    <span class="font-display text-xl italic text-charcoal leading-snug group-open:text-rose transition-colors duration-300">
+                                        {{ $question }}
+                                    </span>
+                                    <span class="shrink-0 w-7 h-7 rounded-full border border-blush/50 flex items-center justify-center text-rose group-open:bg-rose group-open:border-rose group-open:text-white transition-all duration-300">
+                                        <svg class="w-3.5 h-3.5 transition-transform duration-300 group-open:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                                        </svg>
+                                    </span>
+                                </summary>
+                                <div class="px-7 pb-6 pt-1">
+                                    <div class="w-full h-px bg-blush/30 mb-4"></div>
+                                    <p class="text-muted leading-relaxed text-[0.96rem]">{{ $answer }}</p>
+                                </div>
+                            </details>
+                        @endforeach
+                    </div>
+                </div>
+            </section>
+
+            {{-- ======================================================
                  FINAL CTA
             ====================================================== --}}
             <section class="py-28 lg:py-40 bg-deep-rose relative overflow-hidden">
@@ -408,7 +538,7 @@
                             Dra. Emily Beatriz
                         </a>
                         <p class="text-muted text-sm leading-relaxed max-w-xs">
-                            Ajudando mulheres a se apaixonarem pelo próprio reflexo em Belo Horizonte, MG.
+                            Ajudando mulheres a se apaixonarem pelo próprio reflexo em Santa Rosa, Pampulha — Belo Horizonte, MG.
                         </p>
                     </div>
 
@@ -419,6 +549,7 @@
                             <li><a href="#sobre" class="text-muted text-sm hover:text-cream transition-colors">Nossa História</a></li>
                             <li><a href="#procedimentos" class="text-muted text-sm hover:text-cream transition-colors">Transformações</a></li>
                             <li><a href="#antes-depois" class="text-muted text-sm hover:text-cream transition-colors">Resultados</a></li>
+                            <li><a href="#faq" class="text-muted text-sm hover:text-cream transition-colors">Perguntas Frequentes</a></li>
                             <li><a href="#contato" class="text-muted text-sm hover:text-cream transition-colors">Contato</a></li>
                         </ul>
                     </div>
@@ -439,15 +570,21 @@
                                 <svg class="w-4 h-4 shrink-0 text-rose" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                                 </svg>
-                                @{{ $instagram }}
+                                {{ "@$instagram" }}
                             </a>
-                            <p class="flex items-start gap-3 text-muted text-sm">
+                            <address class="not-italic flex items-start gap-3 text-muted text-sm">
                                 <svg class="w-4 h-4 shrink-0 text-rose mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                                 </svg>
-                                Belo Horizonte, MG
-                            </p>
+                                <span>
+                                    @if(config('clinic.address_street'))
+                                        {{ config('clinic.address_street') }}<br>
+                                        @if(config('clinic.address_neighborhood')) {{ config('clinic.address_neighborhood') }}, @endif
+                                    @endif
+                                    {{ config('clinic.city') }}, {{ config('clinic.state') }}
+                                </span>
+                            </address>
                         </div>
                     </div>
                 </div>

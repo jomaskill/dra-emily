@@ -12,16 +12,16 @@ return [
 
     'state' => env('CLINIC_STATE', 'MG'),
 
-    'address_street' => env('CLINIC_ADDRESS_STREET', ''),
+    'address_street' => env('CLINIC_ADDRESS_STREET', 'R. Conselheiro Galvão, 64'),
 
-    'address_neighborhood' => env('CLINIC_ADDRESS_NEIGHBORHOOD', ''),
+    'address_neighborhood' => env('CLINIC_ADDRESS_NEIGHBORHOOD', 'Santa Rosa'),
 
-    'address_zip' => env('CLINIC_ADDRESS_ZIP', ''),
+    'address_zip' => env('CLINIC_ADDRESS_ZIP', '31255-750'),
 
-    'latitude' => env('CLINIC_LATITUDE', '-19.9167'),
+    'latitude' => env('CLINIC_LATITUDE', '-19.8897'),
 
-    'longitude' => env('CLINIC_LONGITUDE', '-43.9345'),
+    'longitude' => env('CLINIC_LONGITUDE', '-43.9612'),
 
-    'domain' => env('CLINIC_DOMAIN', 'draemilybeatriz.com.br'),
+    'domain' => env('CLINIC_DOMAIN', 'dra-emily-beatriz.com.br'),
 
 ];
