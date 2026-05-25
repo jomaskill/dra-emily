@@ -168,7 +168,7 @@
 
                             {{-- Photo --}}
                             <div class="relative w-72 sm:w-80 lg:w-96 xl:w-[420px] aspect-[3/4] rounded-3xl overflow-hidden bg-gradient-to-br from-blush/40 to-rose/10 shadow-2xl shadow-rose/10">
-                                <img src="{{ asset('foto-emily.jpg') }}"
+                                <img src="{{ asset('foto-emily.JPG') }}"
                                      alt="Dra. Emily Beatriz — Especialista em Harmonização Facial, Botox e Preenchimento em Belo Horizonte MG"
                                      class="w-full h-full object-cover object-top">
                             </div>
@@ -203,7 +203,7 @@
                         <div class="relative order-2 lg:order-1">
                             <div class="absolute inset-0 -translate-x-4 translate-y-4 rounded-3xl bg-blush/20 pointer-events-none"></div>
                             <div class="relative w-full aspect-[4/5] rounded-3xl overflow-hidden bg-gradient-to-br from-blush/30 to-rose/5 shadow-xl shadow-rose/5">
-                                <img src="{{ asset('foto-emily-2.jpg') }}"
+                                <img src="{{ asset('foto-emily-2.JPG') }}"
                                      alt="Dra. Emily Beatriz — Harmonização Facial e Estética em Belo Horizonte"
                                      class="w-full h-full object-cover object-top">
                             </div>
