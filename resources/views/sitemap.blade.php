@@ -23,4 +23,12 @@
             <image:title>Dra. Emily Beatriz — Harmonização facial e preenchimento labial em BH</image:title>
         </image:image>
     </url>
+@foreach (config('procedures') as $slug => $proc)
+    <url>
+        <loc>https://{{ config('clinic.domain') }}/procedimentos/{{ $slug }}</loc>
+        <lastmod>{{ now()->toDateString() }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+@endforeach
 </urlset>
