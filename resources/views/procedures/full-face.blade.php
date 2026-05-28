@@ -31,7 +31,7 @@
             <div class="absolute -right-24 -top-24 w-[32rem] h-[32rem] rounded-full bg-rose/20 blur-3xl pointer-events-none"></div>
             <div class="absolute left-0 bottom-0 w-80 h-80 rounded-full bg-gold/10 blur-3xl pointer-events-none"></div>
 
-            <div class="max-w-5xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
                 <nav aria-label="Breadcrumb" class="animate-fade-up flex items-center gap-2 text-xs text-cream/50 mb-8">
                     <a href="/" class="hover:text-rose transition-colors">Início</a>
                     <span class="text-cream/30">/</span>
@@ -40,6 +40,8 @@
                     <span class="text-cream">{{ $procedure['name'] }}</span>
                 </nav>
 
+                <div class="grid lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-14 items-center mt-6">
+                    <div>
                 <div class="animate-fade-up delay-100 flex items-center gap-3 mb-7">
                     <span class="text-[0.65rem] tracking-[0.22em] uppercase text-charcoal font-semibold bg-gold px-3 py-1 rounded-full">
                         Tratamento Exclusivo
@@ -60,6 +62,18 @@
                     </svg>
                     Agendar avaliação Full Face
                 </a>
+                    </div>
+
+                    {{-- Hero visual --}}
+                    <div class="animate-scale-in delay-300 relative">
+                        <div class="absolute -top-4 -left-4 w-full h-full rounded-3xl border border-white/15 pointer-events-none hidden lg:block"></div>
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-black/30 aspect-[4/5]">
+                            <img src="{{ asset('procedures/full-face.jpg') }}"
+                                 alt="Full Face em Belo Horizonte — Harmonização Facial Completa com a Dra. Emily Beatriz"
+                                 class="w-full h-full object-cover" loading="lazy" width="1000" height="1250">
+                        </div>
+                    </div>
+                </div>
 
                 {{-- Facts strip --}}
                 <div class="animate-fade-up delay-600 grid grid-cols-2 md:grid-cols-4 gap-px mt-16 bg-white/10 border border-white/10 rounded-2xl overflow-hidden">

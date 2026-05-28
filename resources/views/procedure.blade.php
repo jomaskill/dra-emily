@@ -29,7 +29,7 @@
             <div class="absolute inset-0 pointer-events-none opacity-[0.015]"
                  style="background-image: repeating-linear-gradient(0deg, #2A1F1F 0px, transparent 1px, transparent 80px), repeating-linear-gradient(90deg, #2A1F1F 0px, transparent 1px, transparent 80px);"></div>
 
-            <div class="max-w-4xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
                 {{-- Breadcrumb --}}
                 <nav aria-label="Breadcrumb" class="animate-fade-up flex items-center gap-2 text-xs text-muted mb-8">
                     <a href="/" class="hover:text-rose transition-colors">Início</a>
@@ -39,6 +39,8 @@
                     <span class="text-charcoal">{{ $procedure['name'] }}</span>
                 </nav>
 
+                <div class="grid lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-14 items-center mt-6">
+                    <div>
                 <p class="animate-fade-up delay-100 text-xs tracking-[0.25em] uppercase text-rose font-medium mb-5">
                     {{ $procedure['eyebrow'] }}&nbsp;&nbsp;·&nbsp;&nbsp;Belo Horizonte, MG
                 </p>
@@ -56,6 +58,18 @@
                         </svg>
                         Agendar avaliação
                     </a>
+                </div>
+                    </div>
+
+                    {{-- Hero visual --}}
+                    <div class="animate-scale-in delay-300 relative">
+                        <div class="absolute -top-4 -left-4 w-full h-full rounded-3xl border border-blush/50 pointer-events-none hidden lg:block"></div>
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-rose/10 aspect-[4/5]">
+                            <img src="{{ asset('procedures/'.$slug.'.jpg') }}"
+                                 alt="{{ $procedure['name'] }} em Belo Horizonte — Dra. Emily Beatriz"
+                                 class="w-full h-full object-cover" loading="lazy" width="1000" height="1250">
+                        </div>
+                    </div>
                 </div>
 
                 {{-- Facts strip --}}
