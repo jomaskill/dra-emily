@@ -15,12 +15,12 @@
             <image:title>Resultado botox Belo Horizonte — Dra. Emily Beatriz</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://{{ config('clinic.domain') }}/depois-2.jpg</image:loc>
-            <image:title>Resultado preenchimento labial BH — Dra. Emily Beatriz</image:title>
+            <image:loc>https://{{ config('clinic.domain') }}/antes-e-depois.jpg</image:loc>
+            <image:title>Antes e depois harmonização facial Belo Horizonte — Dra. Emily Beatriz</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://{{ config('clinic.domain') }}/depois-3.jpg</image:loc>
-            <image:title>Resultado harmonização facial Belo Horizonte — Dra. Emily Beatriz</image:title>
+            <image:loc>https://{{ config('clinic.domain') }}/foto-emily-2.jpg</image:loc>
+            <image:title>Dra. Emily Beatriz — Harmonização facial e preenchimento labial em BH</image:title>
         </image:image>
     </url>
 </urlset>

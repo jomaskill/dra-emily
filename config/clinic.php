@@ -24,4 +24,10 @@ return [
 
     'domain' => env('CLINIC_DOMAIN', 'dra-emily-beatriz.com.br'),
 
+    'google_site_verification' => env('GOOGLE_SITE_VERIFICATION', ''),
+
+    'google_business_url' => env('GOOGLE_BUSINESS_URL', 'https://maps.app.goo.gl/q4FE8CcJ1L3J9Bc77'),
+
+    'ga4_id' => env('GOOGLE_ANALYTICS_ID', 'G-FHD94M3R1T'),
+
 ];

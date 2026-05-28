@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-FHD94M3R1T"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-FHD94M3R1T');
+        </script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,6 +24,11 @@
             $siteUrl     = 'https://' . $domain;
             $phone       = '+55' . config('clinic.whatsapp');
         @endphp
+
+        {{-- ── Google Search Console verification ──────────────────── --}}
+        @if (config('clinic.google_site_verification'))
+            <meta name="google-site-verification" content="{{ config('clinic.google_site_verification') }}">
+        @endif
 
         {{-- ── Primary SEO ───────────────────────────────────────── --}}
         <title>Dra. Emily Beatriz | Harmonização Facial, Botox e Preenchimento em BH</title>
@@ -31,7 +45,7 @@
         <meta property="og:url" content="{{ $siteUrl }}/">
         <meta property="og:title" content="Dra. Emily Beatriz | Harmonização Facial, Botox e Preenchimento em BH">
         <meta property="og:description" content="Especialista em harmonização facial, botox e preenchimento labial em Belo Horizonte, MG. Resultados naturais que revelam a melhor versão de você.">
-        <meta property="og:image" content="{{ $siteUrl }}/foto-emily.jpg">
+        <meta property="og:image" content="{{ $siteUrl }}/og-image.jpg">
         <meta property="og:image:width" content="1200">
         <meta property="og:image:height" content="630">
         <meta property="og:image:alt" content="Dra. Emily Beatriz — Especialista em Harmonização Facial em Belo Horizonte">
@@ -42,7 +56,7 @@
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="Dra. Emily Beatriz | Harmonização Facial em BH">
         <meta name="twitter:description" content="Botox, preenchimento labial e harmonização facial em Belo Horizonte. Resultados naturais e personalizados.">
-        <meta name="twitter:image" content="{{ $siteUrl }}/foto-emily.jpg">
+        <meta name="twitter:image" content="{{ $siteUrl }}/og-image.jpg">
 
         {{-- ── Favicon ─────────────────────────────────────────────── --}}
         <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -168,7 +182,7 @@
 
                             {{-- Photo --}}
                             <div class="relative w-72 sm:w-80 lg:w-96 xl:w-[420px] aspect-[3/4] rounded-3xl overflow-hidden bg-gradient-to-br from-blush/40 to-rose/10 shadow-2xl shadow-rose/10">
-                                <img src="{{ asset('foto-emily.JPG') }}"
+                                <img src="{{ asset('foto-emily.jpg') }}"
                                      alt="Dra. Emily Beatriz — Especialista em Harmonização Facial, Botox e Preenchimento em Belo Horizonte MG"
                                      class="w-full h-full object-cover object-top">
                             </div>
@@ -203,7 +217,7 @@
                         <div class="relative order-2 lg:order-1">
                             <div class="absolute inset-0 -translate-x-4 translate-y-4 rounded-3xl bg-blush/20 pointer-events-none"></div>
                             <div class="relative w-full aspect-[4/5] rounded-3xl overflow-hidden bg-gradient-to-br from-blush/30 to-rose/5 shadow-xl shadow-rose/5">
-                                <img src="{{ asset('foto-emily-2.JPG') }}"
+                                <img src="{{ asset('foto-emily-2.jpg') }}"
                                      alt="Dra. Emily Beatriz — Harmonização Facial e Estética em Belo Horizonte"
                                      class="w-full h-full object-cover object-top">
                             </div>
@@ -386,21 +400,34 @@
                             Palavras de quem se olhou<br>no espelho e se apaixonou
                         </h2>
                         <div class="w-12 h-px bg-gold mx-auto mt-6"></div>
+
+                        <div class="flex items-center justify-center gap-2.5 mt-6">
+                            <div class="flex gap-0.5" aria-hidden="true">
+                                @for ($i = 0; $i < 5; $i++)
+                                    <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                @endfor
+                            </div>
+                            <span class="text-sm text-charcoal font-medium">5,0</span>
+                            <span class="text-muted text-sm">·</span>
+                            <span class="text-muted text-sm tracking-wide">7 avaliações no Google</span>
+                        </div>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
                         @foreach ([
                             [
-                                'A Dra. Emily transformou a minha autoestima. O resultado ficou absolutamente natural e eu me reconheço no espelho — só que melhor.',
-                                'Ana C.', 'Belo Horizonte, MG',
+                                'Fui e sou paciente dela. Excelente profissional, trabalha muito bem. A gente sente quando alguém ama o que faz, e a Dra. Emily é essa pessoa. Fiz bioestimulador de colágeno, preenchimento labial e outros procedimentos com botox! Meu rosto ficou mais harmônico e minha pele melhorou uns 90%. Enfim, amei os resultados.',
+                                'Carine Andrade', 'Avaliação no Google',
                             ],
                             [
-                                'Profissional incrível, atenciosa e muito competente. Fiz preenchimento labial e o resultado superou todas as minhas expectativas.',
-                                'Juliana R.', 'Contagem, MG',
+                                'Sem palavras para o resultado! Fiz botox e preenchimento labial e fiquei simplesmente apaixonada. Atendimento impecável, muito cuidado em cada detalhe, super profissional e me deixou segura o tempo todo. O resultado ficou natural, elegante e valorizou muito minha autoestima. Indico de olhos fechados, uma profissional maravilhosa!',
+                                'Dabila Araújo', 'Avaliação no Google',
                             ],
                             [
-                                'Tive medo de parecer artificial, mas a Dra. Emily me explicou tudo com paciência e o resultado foi perfeito. Recomendo de olhos fechados!',
-                                'Mariana S.', 'Belo Horizonte, MG',
+                                'Profissional impecável, com cuidado no pré e no pós-procedimento. Estou muito satisfeita com o meu resultado.',
+                                'Viviane Fernandes', 'Avaliação no Google',
                             ],
                         ] as [$quote, $name, $city])
                             <div class="relative bg-cream border border-blush/40 rounded-2xl p-8 hover:border-rose/30 hover:shadow-lg hover:shadow-rose/5 transition-all duration-300">

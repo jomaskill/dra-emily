@@ -35,9 +35,11 @@
     ],
     "sameAs": [
       "{{ $instagramUrl }}",
-      "https://wa.me/{{ config('clinic.whatsapp') }}"
+      "https://wa.me/{{ config('clinic.whatsapp') }}"@if (config('clinic.google_business_url')),
+      "{{ config('clinic.google_business_url') }}"@endif
+
     ],
-    "hasMap": "https://maps.google.com/?q=R.+Conselheiro+Galv%C3%A3o%2C+64+Santa+Rosa+Belo+Horizonte+MG",
+    "hasMap": "{{ config('clinic.google_business_url') ?: 'https://maps.google.com/?q=R.+Conselheiro+Galv%C3%A3o%2C+64+Santa+Rosa+Belo+Horizonte+MG' }}",
     "openingHoursSpecification": [
       {
         "@@type": "OpeningHoursSpecification",
@@ -67,7 +69,35 @@
       "name": "Emily Beatriz",
       "jobTitle": "Cirurgiã-Dentista — Especialista em Harmonização Orofacial",
       "identifier": "CRO {{ $cro }}"
-    }
+    },
+    "aggregateRating": {
+      "@@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "7",
+      "reviewCount": "7"
+    },
+    "review": [
+      {
+        "@@type": "Review",
+        "author": { "@@type": "Person", "name": "Carol Araújo" },
+        "reviewRating": { "@@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Fui e sou paciente dela. Excelente profissional, trabalha muito bem. A gente sente quando alguém ama o que faz, e a Dra. Emily é essa pessoa. Fiz bioestimulador de colágeno, preenchimento labial e outros procedimentos com botox! Meu rosto ficou mais harmônico e minha pele melhorou uns 90%. Enfim, amei os resultados."
+      },
+      {
+        "@@type": "Review",
+        "author": { "@@type": "Person", "name": "Dabila Araújo" },
+        "reviewRating": { "@@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Sem palavras para o resultado! Fiz botox e preenchimento labial e fiquei simplesmente apaixonada. Atendimento impecável, muito cuidado em cada detalhe, super profissional e me deixou segura o tempo todo. O resultado ficou natural, elegante e valorizou muito minha autoestima. Indico de olhos fechados, uma profissional maravilhosa!"
+      },
+      {
+        "@@type": "Review",
+        "author": { "@@type": "Person", "name": "Viviane Fernandes" },
+        "reviewRating": { "@@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Profissional impecável, com cuidado no pré e no pós-procedimento. Estou muito satisfeita com o meu resultado."
+      }
+    ]
   },
   {
     "@@context": "https://schema.org",
