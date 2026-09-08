@@ -103,6 +103,7 @@
                                        height="2100"
                                        loading="eager"
                                        fetchpriority="high"
+                                       sizes="(min-width: 1280px) 420px, (min-width: 1024px) 384px, (min-width: 640px) 320px, 288px"
                                        class="w-full h-full object-cover object-top" />
                         </div>
 
@@ -137,6 +138,7 @@
                         <div class="absolute inset-0 -translate-x-4 translate-y-4 rounded-3xl bg-blush/20 pointer-events-none"></div>
                         <div class="relative w-full aspect-[4/5] rounded-3xl overflow-hidden bg-gradient-to-br from-blush/30 to-rose/5 shadow-xl shadow-rose/5">
                             <x-picture src="foto-emily-2.jpg"
+                                       sizes="(min-width: 1024px) 480px, 100vw"
                                        alt="Dra. Emily Beatriz — Harmonização Facial e Estética em Belo Horizonte"
                                        width="1400"
                                        height="2100"
@@ -288,6 +290,7 @@
                             {{-- Before --}}
                             <div class="relative w-1/2 overflow-hidden bg-[#3A2A2A]">
                                 <x-picture src="antes-1.jpg"
+                                           sizes="(min-width: 768px) 336px, 50vw"
                                            alt="Antes botox Belo Horizonte — Dra. Emily Beatriz"
                                            width="1200"
                                            height="1600"
@@ -312,6 +315,7 @@
                             {{-- After --}}
                             <div class="relative w-1/2 overflow-hidden bg-[#2A1820]">
                                 <x-picture src="depois-1.jpg"
+                                           sizes="(min-width: 768px) 336px, 50vw"
                                            alt="Depois botox BH — resultado natural Dra. Emily Beatriz"
                                            width="1200"
                                            height="1600"
@@ -335,6 +339,7 @@
                     <div class="group relative rounded-2xl overflow-hidden border border-white/5 hover:border-gold/25 transition-all duration-500 hover:-translate-y-1.5">
                         <div class="relative h-80 lg:h-[26rem] overflow-hidden bg-[#2A1820]">
                             <x-picture src="antes-e-depois.jpg"
+                                       sizes="(min-width: 768px) 672px, 100vw"
                                        alt="Antes e depois harmonização facial Belo Horizonte — Dra. Emily Beatriz"
                                        width="1200"
                                        height="1200"

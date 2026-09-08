@@ -80,6 +80,7 @@
                         <div class="absolute -top-4 -left-4 w-full h-full rounded-3xl border border-blush/50 pointer-events-none hidden lg:block"></div>
                         <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-rose/10 aspect-[4/5]">
                             <x-picture :src="'procedures/'.$slug.'.jpg'"
+                                       sizes="(min-width: 1024px) 520px, 100vw"
                                        alt="{{ $procedure['name'] }} em Belo Horizonte — Dra. Emily Beatriz"
                                        width="1000"
                                        height="1250"
