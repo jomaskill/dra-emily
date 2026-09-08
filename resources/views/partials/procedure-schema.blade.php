@@ -1,21 +1,35 @@
+@php
+    // howPerformed descreve como o procedimento é realizado. O texto de abertura
+    // sozinho não cobria as etapas, que já existem em config/procedures.php.
+    $howPerformed = collect($procedure['steps'] ?? [])
+        ->map(fn (array $step): string => $step['title'].': '.$step['desc'])
+        ->prepend($procedure['hero_lead'])
+        ->implode(' ');
+
+    $physician = [
+        '@type' => 'Physician',
+        '@id' => $siteUrl.'/#emily',
+        'name' => 'Dra. Emily Beatriz',
+        'jobTitle' => 'Cirurgiã-Dentista — Especialista em Harmonização Orofacial',
+        'identifier' => 'CRO '.$cro,
+        'url' => $siteUrl.'/',
+        'areaServed' => config('clinic.city').', '.config('clinic.state'),
+    ];
+
+    $json = static fn ($value): string => json_encode($value, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+@endphp
 <script type="application/ld+json">
 [
   {
     "@@context": "https://schema.org",
     "@@type": "MedicalProcedure",
-    "name": {!! json_encode($procedure['name'].' — Belo Horizonte', JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!},
-    "description": {!! json_encode($procedure['meta_description'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!},
+    "@@id": "{{ $canonical }}#procedure",
+    "name": {!! $json($procedure['name'].' — '.config('clinic.city')) !!},
+    "description": {!! $json($procedure['meta_description']) !!},
     "url": "{{ $canonical }}",
     "bodyLocation": "Face",
-    "howPerformed": {!! json_encode($procedure['hero_lead'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!},
-    "performer": {
-      "@@type": "Physician",
-      "name": "Dra. Emily Beatriz",
-      "jobTitle": "Cirurgiã-Dentista — Especialista em Harmonização Orofacial",
-      "identifier": "CRO {{ $cro }}",
-      "url": "{{ $siteUrl }}/",
-      "areaServed": "Belo Horizonte, MG"
-    }
+    "howPerformed": {!! $json($howPerformed) !!},
+    "performer": {!! $json($physician) !!}
   },
   {
     "@@context": "https://schema.org",
@@ -23,21 +37,40 @@
     "itemListElement": [
       { "@@type": "ListItem", "position": 1, "name": "Início", "item": "{{ $siteUrl }}/" },
       { "@@type": "ListItem", "position": 2, "name": "Procedimentos", "item": "{{ $siteUrl }}/#procedimentos" },
-      { "@@type": "ListItem", "position": 3, "name": {!! json_encode($procedure['name'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!}, "item": "{{ $canonical }}" }
+      { "@@type": "ListItem", "position": 3, "name": {!! $json($procedure['name']) !!}, "item": "{{ $canonical }}" }
     ]
   },
   {
     "@@context": "https://schema.org",
     "@@type": "FAQPage",
+    "@@id": "{{ $canonical }}#faq",
+    "inLanguage": "pt-BR",
     "mainEntity": [
       @foreach ($procedure['faq'] as $item)
       {
         "@@type": "Question",
-        "name": {!! json_encode($item['q'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!},
-        "acceptedAnswer": { "@@type": "Answer", "text": {!! json_encode($item['a'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!} }
+        "name": {!! $json($item['q']) !!},
+        "acceptedAnswer": { "@@type": "Answer", "text": {!! $json($item['a']) !!} }
       }@if (! $loop->last),@endif
       @endforeach
     ]
+  },
+  {
+    "@@context": "https://schema.org",
+    "@@type": "MedicalWebPage",
+    "@@id": "{{ $canonical }}#webpage",
+    "url": "{{ $canonical }}",
+    "name": {!! $json($procedure['title']) !!},
+    "inLanguage": "pt-BR",
+    "about": { "@@id": "{{ $siteUrl }}/#clinic" },
+    "mainEntity": { "@@id": "{{ $canonical }}#procedure" },
+    "publisher": { "@@id": "{{ $siteUrl }}/#clinic" }@if (! empty($procedure['updated'])),
+    "lastReviewed": "{{ $procedure['updated'] }}",
+    "reviewedBy": {!! $json($physician) !!}@endif,
+    "speakable": {
+      "@@type": "SpeakableSpecification",
+      "cssSelector": ["#o-que-e", "#faq"]
+    }
   }
 ]
 </script>
