@@ -130,6 +130,8 @@
     "about": { "@@id": "{{ $siteUrl }}/#clinic" },
     "primaryImageOfPage": { "@@type": "ImageObject", "url": "{{ $siteUrl }}/foto-emily.jpg" },
     "inLanguage": "pt-BR",
+    "lastReviewed": "{{ config('clinic.content_updated') }}",
+    "reviewedBy": { "@@id": "{{ $siteUrl }}/#emily" },
     "speakable": {
       "@@type": "SpeakableSpecification",
       "cssSelector": ["#faq", "#sobre"]

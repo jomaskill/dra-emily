@@ -24,12 +24,27 @@
 |   benefits          => [['title' => ..., 'desc' => ...], ...]
 |   steps             => [['title' => ..., 'desc' => ...], ...] como funciona
 |   faq               => [['q' => ..., 'a' => ...], ...]
+|   comparison        => tabela comparativa opcional:
+|                        ['title' => ..., 'intro' => ..., 'columns' => [a, b],
+|                         'rows' => [['label' => ..., 'a' => ..., 'b' => ...], ...]]
 |
 */
 
 return [
 
     'botox' => [
+        'comparison' => [
+            'title' => 'Botox ou preenchimento: qual é a diferença?',
+            'intro' => 'São tratamentos diferentes e complementares. O botox relaxa a musculatura que causa as rugas de expressão; o preenchimento devolve volume e contorno. Muitas pacientes fazem os dois.',
+            'columns' => ['Botox', 'Preenchimento com ácido hialurônico'],
+            'rows' => [
+                ['label' => 'Como age', 'a' => 'Relaxa temporariamente os músculos responsáveis pelas rugas de expressão.', 'b' => 'Adiciona volume e contorno, sem agir na musculatura.'],
+                ['label' => 'Indicado para', 'a' => 'Linhas da testa, glabela e ao redor dos olhos.', 'b' => 'Lábios, contorno e regiões que perderam volume.'],
+                ['label' => 'Resultado aparece', 'a' => '3 a 15 dias', 'b' => 'Imediato'],
+                ['label' => 'Duração média', 'a' => '4 a 6 meses', 'b' => '6 a 18 meses'],
+                ['label' => 'Tempo de sessão', 'a' => '~30 minutos', 'b' => '~40 minutos'],
+            ],
+        ],
         'num' => '01',
         'updated' => '2026-09-08',
         'name' => 'Botox',
@@ -150,6 +165,17 @@ return [
     ],
 
     'full-face' => [
+        'comparison' => [
+            'title' => 'Full Face ou harmonização facial: qual é a diferença?',
+            'intro' => 'Full Face é uma forma de harmonização facial, não um tratamento à parte. A diferença está na amplitude: a harmonização pode tratar uma região específica, enquanto o Full Face planeja o rosto inteiro de uma só vez.',
+            'columns' => ['Full Face', 'Harmonização facial'],
+            'rows' => [
+                ['label' => 'Abrangência', 'a' => 'Rosto completo: terços superior, médio e inferior avaliados juntos.', 'b' => 'Pode tratar apenas as regiões que a paciente deseja ajustar.'],
+                ['label' => 'Planejamento', 'a' => 'Mapeamento facial completo antes de qualquer aplicação.', 'b' => 'Avaliação focada no objetivo trazido pela paciente.'],
+                ['label' => 'Técnicas', 'a' => 'Protocolo combinado, executado em etapas.', 'b' => 'Uma ou mais técnicas, conforme o caso.'],
+                ['label' => 'Resultado', 'a' => 'Global: o conjunto do rosto ganha equilíbrio.', 'b' => 'Progressivo e direcionado à região tratada.'],
+            ],
+        ],
         'num' => '04',
         'updated' => '2026-09-08',
         'featured' => true,
