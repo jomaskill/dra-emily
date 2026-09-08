@@ -15,7 +15,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-14">
             {{-- Brand --}}
             <div>
-                <a href="{{ $navBase ?: '#' }}" class="font-display text-3xl italic text-cream block mb-4">
+                <a href="{{ $navBase ?: '/' }}" class="font-display text-3xl italic text-cream block mb-4">
                     Dra. Emily Beatriz
                 </a>
                 <p class="text-muted text-sm leading-relaxed max-w-xs">

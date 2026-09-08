@@ -12,7 +12,7 @@
 
 <x-site-layout
     title="Dra. Emily Beatriz | Harmonização Facial, Botox e Preenchimento em BH"
-    description="Especialista em harmonização facial, botox e preenchimento labial em Belo Horizonte, MG. Resultados naturais e personalizados com a Dra. Emily Beatriz. Agende pelo WhatsApp!"
+    description="Harmonização facial, botox e preenchimento labial em Belo Horizonte com a Dra. Emily Beatriz. Resultados naturais e personalizados. Agende pelo WhatsApp!"
     canonical="{{ $siteUrl }}/"
     og-title="Dra. Emily Beatriz | Harmonização Facial, Botox e Preenchimento em BH"
     og-description="Especialista em harmonização facial, botox e preenchimento labial em Belo Horizonte, MG. Resultados naturais que revelam a melhor versão de você."
