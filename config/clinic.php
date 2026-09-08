@@ -34,4 +34,12 @@ return [
 
     'ga4_id' => env('GOOGLE_ANALYTICS_ID', 'G-FHD94M3R1T'),
 
+    // Anos de experiência. Usado no selo da home e no texto da seção "Quem é a
+    // Dra. Emily", para que os dois não divirjam.
+    'years_experience' => env('CLINIC_YEARS_EXPERIENCE', 5),
+
+    // Aviso exibido nas páginas de procedimento e na home. Conteúdo de saúde
+    // precisa deixar claro que o resultado varia e que a avaliação é individual.
+    'medical_disclaimer' => 'As informações desta página são de caráter informativo e não substituem uma consulta. Os resultados variam de acordo com as características de cada paciente, e todo tratamento é definido em avaliação individual com a Dra. Emily Beatriz.',
+
 ];
