@@ -8,6 +8,11 @@
     $waProc      = $wa . '?text=' . $waText;
     $includes    = collect(config('procedures'))->only($procedure['includes'] ?? []);
     $others      = collect(config('procedures'))->except(array_merge([$slug], $procedure['includes'] ?? []));
+
+    // Share card por procedimento (1200x630) em public/procedures/{slug}-og.jpg.
+    // Sem arquivo, o layout cai na imagem genérica.
+    $ogCard      = 'procedures/' . $slug . '-og.jpg';
+    $ogImage     = is_file(public_path($ogCard)) ? $siteUrl . '/' . $ogCard : null;
 @endphp
 
 <x-site-layout
@@ -15,6 +20,7 @@
     :description="$procedure['meta_description']"
     :canonical="$canonical"
     og-type="article"
+    :og-image="$ogImage"
     :nav-base="'/'">
 
     <x-slot:schema>

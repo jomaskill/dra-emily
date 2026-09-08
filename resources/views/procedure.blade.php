@@ -7,6 +7,11 @@
     $waText      = rawurlencode('Olá! Gostaria de saber mais sobre ' . $procedure['name'] . ' com a Dra. Emily.');
     $waProc      = $wa . '?text=' . $waText;
     $others      = collect(config('procedures'))->except($slug);
+
+    // Share card por procedimento (1200x630) em public/procedures/{slug}-og.jpg.
+    // Sem arquivo, o layout cai na imagem genérica.
+    $ogCard      = 'procedures/' . $slug . '-og.jpg';
+    $ogImage     = is_file(public_path($ogCard)) ? $siteUrl . '/' . $ogCard : null;
 @endphp
 
 <x-site-layout
@@ -14,6 +19,7 @@
     :description="$procedure['meta_description']"
     :canonical="$canonical"
     og-type="article"
+    :og-image="$ogImage"
     :nav-base="'/'">
 
     <x-slot:schema>
