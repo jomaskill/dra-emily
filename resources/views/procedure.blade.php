@@ -6,7 +6,15 @@
     $wa          = 'https://wa.me/' . config('clinic.whatsapp');
     $waText      = rawurlencode('Olá! Gostaria de saber mais sobre ' . $procedure['name'] . ' com a Dra. Emily.');
     $waProc      = $wa . '?text=' . $waText;
-    $others      = collect(config('procedures'))->except($slug);
+    // Cada página aponta para os 4 procedimentos seguintes na ordem do config,
+    // com volta ao início. Assim todos recebem o mesmo número de links internos,
+    // em vez de cada página listar todos os irmãos.
+    $catalogue   = collect(config('procedures'));
+    $position    = $catalogue->keys()->search($slug);
+    $others      = $catalogue->keys()
+        ->merge($catalogue->keys())
+        ->slice($position + 1, 4)
+        ->mapWithKeys(fn (string $key): array => [$key => $catalogue[$key]]);
 
     // Share card por procedimento (1200x630) em public/procedures/{slug}-og.jpg.
     // Sem arquivo, o layout cai na imagem genérica.

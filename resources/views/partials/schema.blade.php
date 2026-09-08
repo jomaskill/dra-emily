@@ -34,11 +34,10 @@
       "longitude": "{{ config('clinic.longitude') }}"
     },
     "areaServed": [
-      { "@@type": "City", "name": "Belo Horizonte" },
-      { "@@type": "Neighborhood", "name": "Santa Rosa" },
-      { "@@type": "Neighborhood", "name": "Pampulha" },
-      { "@@type": "Neighborhood", "name": "Venda Nova" },
-      { "@@type": "Neighborhood", "name": "Caiçara" },
+      { "@@type": "City", "name": "{{ config('clinic.city') }}" },
+      @foreach (config('clinic.areas_served') as $area)
+      { "@@type": "Neighborhood", "name": {!! json_encode($area, JSON_UNESCAPED_UNICODE) !!} },
+      @endforeach
       { "@@type": "AdministrativeArea", "name": "Minas Gerais" }
     ],
     "sameAs": [

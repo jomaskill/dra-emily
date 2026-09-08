@@ -7,7 +7,17 @@
     $waText      = rawurlencode('Olá! Gostaria de saber mais sobre o Full Face com a Dra. Emily.');
     $waProc      = $wa . '?text=' . $waText;
     $includes    = collect(config('procedures'))->only($procedure['includes'] ?? []);
-    $others      = collect(config('procedures'))->except(array_merge([$slug], $procedure['includes'] ?? []));
+    // Full Face já detalha o que inclui, então os relacionados são os 4 seguintes
+    // que não fazem parte dessa lista.
+    $catalogue   = collect(config('procedures'));
+    $excluded    = array_merge([$slug], $procedure['includes'] ?? []);
+    $others      = $catalogue->keys()
+        ->merge($catalogue->keys())
+        ->slice($catalogue->keys()->search($slug) + 1)
+        ->reject(fn (string $key): bool => in_array($key, $excluded, true))
+        ->unique()
+        ->take(4)
+        ->mapWithKeys(fn (string $key): array => [$key => $catalogue[$key]]);
 
     // Share card por procedimento (1200x630) em public/procedures/{slug}-og.jpg.
     // Sem arquivo, o layout cai na imagem genérica.
