@@ -109,22 +109,60 @@ Explicit exclusions documented to prevent scope creep and unsafe conversion tact
 
 ## Traceability
 
-Which phases cover which requirements. This table will be populated during roadmap creation.
+Which phases cover which requirements. Every v1 requirement maps to exactly one phase.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| GOV-01 through GOV-06 | Pending roadmap | Pending |
-| CONT-01 through CONT-09 | Pending roadmap | Pending |
-| TRUST-01 through TRUST-06 | Pending roadmap | Pending |
-| WA-01 through WA-05 | Pending roadmap | Pending |
-| MEAS-01 through MEAS-07 | Pending roadmap | Pending |
-| UX-01 through UX-05 | Pending roadmap | Pending |
-| QUAL-01 through QUAL-07 | Pending roadmap | Pending |
+| GOV-01 | Phase 1 | Pending |
+| GOV-02 | Phase 2 | Pending |
+| GOV-03 | Phase 1 | Pending |
+| GOV-04 | Phase 1 | Pending |
+| GOV-05 | Phase 1 | Pending |
+| GOV-06 | Phase 1 | Pending |
+| CONT-01 | Phase 3 | Pending |
+| CONT-02 | Phase 3 | Pending |
+| CONT-03 | Phase 3 | Pending |
+| CONT-04 | Phase 3 | Pending |
+| CONT-05 | Phase 3 | Pending |
+| CONT-06 | Phase 3 | Pending |
+| CONT-07 | Phase 3 | Pending |
+| CONT-08 | Phase 3 | Pending |
+| CONT-09 | Phase 3 | Pending |
+| TRUST-01 | Phase 2 | Pending |
+| TRUST-02 | Phase 3 | Pending |
+| TRUST-03 | Phase 3 | Pending |
+| TRUST-04 | Phase 2 | Pending |
+| TRUST-05 | Phase 2 | Pending |
+| TRUST-06 | Phase 2 | Pending |
+| WA-01 | Phase 3 | Pending |
+| WA-02 | Phase 3 | Pending |
+| WA-03 | Phase 2 | Pending |
+| WA-04 | Phase 3 | Pending |
+| WA-05 | Phase 2 | Pending |
+| MEAS-01 | Phase 4 | Pending |
+| MEAS-02 | Phase 4 | Pending |
+| MEAS-03 | Phase 1 | Pending |
+| MEAS-04 | Phase 4 | Pending |
+| MEAS-05 | Phase 6 | Pending |
+| MEAS-06 | Phase 6 | Pending |
+| MEAS-07 | Phase 6 | Pending |
+| UX-01 | Phase 3 | Pending |
+| UX-02 | Phase 3 | Pending |
+| UX-03 | Phase 3 | Pending |
+| UX-04 | Phase 3 | Pending |
+| UX-05 | Phase 3 | Pending |
+| QUAL-01 | Phase 5 | Pending |
+| QUAL-02 | Phase 5 | Pending |
+| QUAL-03 | Phase 5 | Pending |
+| QUAL-04 | Phase 5 | Pending |
+| QUAL-05 | Phase 5 | Pending |
+| QUAL-06 | Phase 5 | Pending |
+| QUAL-07 | Phase 5 | Pending |
 
 **Coverage:**
 - v1 requirements: 45 total
-- Mapped to phases: 0
-- Unmapped: 45 ⚠️
+- Mapped to phases: 45
+- Unmapped: 0 ✓
 
 ## Definition of Done
 
@@ -138,4 +176,4 @@ Which phases cover which requirements. This table will be populated during roadm
 
 ---
 *Requirements defined: 2026-09-08*
-*Last updated: 2026-09-08 after initial definition*
+*Last updated: 2026-09-08 after roadmap creation*
