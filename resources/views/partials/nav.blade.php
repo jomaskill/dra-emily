@@ -7,7 +7,7 @@
     <div class="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between gap-8">
 
         {{-- Logo --}}
-        <a href="{{ $navBase ?: '#' }}" class="font-display text-2xl italic text-charcoal tracking-tight shrink-0">
+        <a href="{{ $navBase ?: '/' }}" class="font-display text-2xl italic text-charcoal tracking-tight shrink-0">
             Dra. Emily Beatriz
         </a>
 

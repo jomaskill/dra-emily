@@ -5,6 +5,8 @@
     'ogTitle' => null,
     'ogDescription' => null,
     'ogImage' => null,
+    'ogImageWidth' => 1200,
+    'ogImageHeight' => 630,
     'ogType' => 'website',
     'robots' => 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
     'navBase' => '',
@@ -55,8 +57,8 @@
         <meta property="og:title" content="{{ $ogTitle ?: $title }}">
         <meta property="og:description" content="{{ $ogDescription ?: $description }}">
         <meta property="og:image" content="{{ $ogImageUrl }}">
-        <meta property="og:image:width" content="1200">
-        <meta property="og:image:height" content="630">
+        <meta property="og:image:width" content="{{ $ogImageWidth }}">
+        <meta property="og:image:height" content="{{ $ogImageHeight }}">
         <meta property="og:locale" content="pt_BR">
         <meta property="og:site_name" content="Dra. Emily Beatriz — Harmonização Facial">
 
@@ -73,7 +75,7 @@
 
         <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
 
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vite(['resources/css/app.css'])
 
         {{-- ── Schema.org JSON-LD (per-page) ──────────────────────── --}}
         {{ $schema ?? '' }}
