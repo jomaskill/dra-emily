@@ -96,7 +96,7 @@
         {{-- ======================================================
              WHAT IS
         ====================================================== --}}
-        <section class="py-24 lg:py-32 bg-white">
+        <section id="o-que-e" class="py-24 lg:py-32 bg-white">
             <div class="max-w-3xl mx-auto px-6 lg:px-8">
                 <p class="text-xs tracking-[0.25em] uppercase text-rose font-medium mb-4">Entenda o tratamento</p>
                 <h2 class="font-display text-4xl lg:text-5xl italic text-charcoal leading-tight mb-6">
@@ -169,7 +169,7 @@
         {{-- ======================================================
              FAQ
         ====================================================== --}}
-        <section class="py-24 lg:py-32 bg-cream relative overflow-hidden">
+        <section id="faq" class="py-24 lg:py-32 bg-cream relative overflow-hidden">
             <div class="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-blush/10 translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
             <div class="max-w-3xl mx-auto px-6 lg:px-8 relative z-10">
                 <div class="text-center mb-14">
@@ -201,6 +201,8 @@
                 </div>
             </div>
         </section>
+
+        @include('partials.comparison-table')
 
         {{-- ======================================================
              RELATED PROCEDURES
@@ -256,5 +258,7 @@
                 <p class="text-white/40 text-xs mt-6 tracking-widest uppercase">Dra. Emily Beatriz · CRO-{{ $cro }} · Belo Horizonte, MG</p>
             </div>
         </section>
+        @include('partials.medical-disclaimer', ['reviewed' => $procedure['updated'] ?? null])
+
     </main>
 </x-site-layout>

@@ -70,7 +70,7 @@
                     {{-- Trust badges --}}
                     <div class="animate-fade-up delay-600 flex items-center gap-6 mt-12 pt-8 border-t border-blush/40">
                         <div class="text-center">
-                            <p class="font-display text-3xl italic text-rose">+5</p>
+                            <p class="font-display text-3xl italic text-rose">+{{ config('clinic.years_experience') }}</p>
                             <p class="text-xs text-muted tracking-wide mt-0.5">anos cuidando de você</p>
                         </div>
                         <div class="w-px h-10 bg-blush/50"></div>
@@ -156,7 +156,7 @@
                             Dra. Emily acredita que toda mulher merece se sentir bem com o que vê no espelho. Por isso, ela não trata rostos — ela escuta histórias, entende desejos e constrói transformações que fazem sentido para cada pessoa.
                         </p>
                         <p class="text-muted leading-relaxed mb-8 text-[0.97rem]">
-                            Com anos de experiência e um olhar delicado, ela cria resultados que parecem sempre naturais — porque o objetivo nunca é mudar quem você é, mas revelar a melhor versão de você mesma.
+                            Com mais de {{ config('clinic.years_experience') }} anos de experiência e um olhar delicado, ela cria resultados que parecem sempre naturais — porque o objetivo nunca é mudar quem você é, mas revelar a melhor versão de você mesma.
                         </p>
                         {{-- Values --}}
                         <div class="flex flex-wrap gap-2">
@@ -496,5 +496,7 @@
                 <p class="text-white/40 text-xs mt-6 tracking-widest uppercase">Sua jornada começa com uma conversa · Belo Horizonte, MG</p>
             </div>
         </section>
+        @include('partials.medical-disclaimer')
+
     </main>
 </x-site-layout>
