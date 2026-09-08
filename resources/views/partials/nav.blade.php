@@ -17,6 +17,7 @@
             <a href="{{ $navBase }}#procedimentos" class="text-xs font-medium tracking-[0.2em] uppercase text-muted hover:text-rose transition-colors duration-200">Transformações</a>
             <a href="{{ $navBase }}#antes-depois" class="text-xs font-medium tracking-[0.2em] uppercase text-muted hover:text-rose transition-colors duration-200">Resultados</a>
             <a href="{{ $navBase }}#faq" class="text-xs font-medium tracking-[0.2em] uppercase text-muted hover:text-rose transition-colors duration-200">FAQ</a>
+            <a href="{{ route('articles.index') }}" class="text-xs font-medium tracking-[0.2em] uppercase text-muted hover:text-rose transition-colors duration-200">Artigos</a>
             <a href="{{ $navBase }}#contato" class="text-xs font-medium tracking-[0.2em] uppercase text-muted hover:text-rose transition-colors duration-200">Contato</a>
         </div>
 

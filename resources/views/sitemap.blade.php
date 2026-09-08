@@ -31,4 +31,18 @@
         <priority>0.8</priority>
     </url>
 @endforeach
+    <url>
+        <loc>https://{{ config('clinic.domain') }}/artigos</loc>
+        <lastmod>{{ collect(config('articles'))->max('updated') ?? config('clinic.content_updated') }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+@foreach (config('articles') as $slug => $article)
+    <url>
+        <loc>https://{{ config('clinic.domain') }}/artigos/{{ $slug }}</loc>
+        <lastmod>{{ $article['updated'] }}</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+@endforeach
 </urlset>
