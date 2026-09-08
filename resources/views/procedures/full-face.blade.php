@@ -68,9 +68,12 @@
                     <div class="animate-scale-in delay-300 relative">
                         <div class="absolute -top-4 -left-4 w-full h-full rounded-3xl border border-white/15 pointer-events-none hidden lg:block"></div>
                         <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-black/30 aspect-[4/5]">
-                            <img src="{{ asset('procedures/full-face.jpg') }}"
-                                 alt="Full Face em Belo Horizonte — Harmonização Facial Completa com a Dra. Emily Beatriz"
-                                 class="w-full h-full object-cover" loading="lazy" width="1000" height="1250">
+                            <x-picture src="procedures/full-face.jpg"
+                                       alt="Full Face em Belo Horizonte — Harmonização Facial Completa com a Dra. Emily Beatriz"
+                                       width="1000"
+                                       height="1250"
+                                       loading="lazy"
+                                       class="w-full h-full object-cover" />
                         </div>
                     </div>
                 </div>

@@ -18,7 +18,7 @@
     $instagramUrl  = 'https://www.instagram.com/' . $instagram . '/';
     $wa            = 'https://wa.me/' . config('clinic.whatsapp');
     $waConsulta    = $wa . '?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Emily.';
-    $phone         = '+55' . config('clinic.whatsapp');
+    $phone         = '+' . config('clinic.whatsapp');
     $ogImageUrl    = $ogImage ?: $siteUrl . '/og-image.jpg';
 @endphp
 <!DOCTYPE html>

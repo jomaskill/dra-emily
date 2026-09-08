@@ -3,12 +3,20 @@
   {
     "@@context": "https://schema.org",
     "@@type": "Dentist",
+    "@@id": "{{ $siteUrl }}/#clinic",
     "name": "Dra. Emily Beatriz — Harmonização Facial",
     "description": "Especialista em harmonização facial em Belo Horizonte, MG. Realizamos botox, preenchimento labial, bioestimuladores de colágeno, microagulhamento, fios de PDO, bichectomia e harmonização facial completa com resultados naturais e personalizados.",
     "url": "{{ $siteUrl }}/",
     "telephone": "{{ $phone }}",
     "image": "{{ $siteUrl }}/foto-emily.jpg",
-    "logo": "{{ $siteUrl }}/foto-emily.jpg",
+    "logo": {
+      "@@type": "ImageObject",
+      "url": "{{ $siteUrl }}/logo.png",
+      "contentUrl": "{{ $siteUrl }}/logo.png",
+      "width": 1080,
+      "height": 1080,
+      "caption": "Dra. Emily Beatriz — Harmonização Facial"
+    },
     "priceRange": "$$",
     "currenciesAccepted": "BRL",
     "paymentAccepted": "Cartão de crédito, débito, Pix",
@@ -66,6 +74,8 @@
     ],
     "employee": {
       "@@type": "Physician",
+      "@@id": "{{ $siteUrl }}/#emily",
+      "url": "{{ $siteUrl }}/",
       "name": "Emily Beatriz",
       "jobTitle": "Cirurgiã-Dentista — Especialista em Harmonização Orofacial",
       "identifier": "CRO {{ $cro }}"
@@ -102,6 +112,10 @@
   {
     "@@context": "https://schema.org",
     "@@type": "FAQPage",
+    "@@id": "{{ $siteUrl }}/#faq",
+    "isPartOf": { "@@id": "{{ $siteUrl }}/#webpage" },
+    "about": { "@@id": "{{ $siteUrl }}/#clinic" },
+    "inLanguage": "pt-BR",
     "mainEntity": [
       {
         "@@type": "Question",
@@ -172,12 +186,29 @@
   {
     "@@context": "https://schema.org",
     "@@type": "WebSite",
+    "@@id": "{{ $siteUrl }}/#website",
     "name": "Dra. Emily Beatriz — Harmonização Facial",
     "url": "{{ $siteUrl }}/",
+    "publisher": { "@@id": "{{ $siteUrl }}/#clinic" },
     "inLanguage": "pt-BR",
     "potentialAction": {
       "@@type": "ContactAction",
       "target": "https://wa.me/{{ config('clinic.whatsapp') }}"
+    }
+  },
+  {
+    "@@context": "https://schema.org",
+    "@@type": "WebPage",
+    "@@id": "{{ $siteUrl }}/#webpage",
+    "url": "{{ $siteUrl }}/",
+    "name": "Dra. Emily Beatriz | Harmonização Facial, Botox e Preenchimento em BH",
+    "isPartOf": { "@@id": "{{ $siteUrl }}/#website" },
+    "about": { "@@id": "{{ $siteUrl }}/#clinic" },
+    "primaryImageOfPage": { "@@type": "ImageObject", "url": "{{ $siteUrl }}/foto-emily.jpg" },
+    "inLanguage": "pt-BR",
+    "speakable": {
+      "@@type": "SpeakableSpecification",
+      "cssSelector": ["#faq", "#sobre"]
     }
   }
 ]

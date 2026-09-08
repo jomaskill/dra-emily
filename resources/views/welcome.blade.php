@@ -7,7 +7,7 @@
     $instagramUrl = 'https://www.instagram.com/' . $instagram . '/';
     $domain      = config('clinic.domain');
     $siteUrl     = 'https://' . $domain;
-    $phone       = '+55' . config('clinic.whatsapp');
+    $phone       = '+' . config('clinic.whatsapp');
 @endphp
 
 <x-site-layout
@@ -97,9 +97,13 @@
 
                         {{-- Photo --}}
                         <div class="relative w-72 sm:w-80 lg:w-96 xl:w-[420px] aspect-[3/4] rounded-3xl overflow-hidden bg-gradient-to-br from-blush/40 to-rose/10 shadow-2xl shadow-rose/10">
-                            <img src="{{ asset('foto-emily.jpg') }}"
-                                 alt="Dra. Emily Beatriz — Especialista em Harmonização Facial, Botox e Preenchimento em Belo Horizonte MG"
-                                 class="w-full h-full object-cover object-top">
+                            <x-picture src="foto-emily.jpg"
+                                       alt="Dra. Emily Beatriz — Especialista em Harmonização Facial, Botox e Preenchimento em Belo Horizonte MG"
+                                       width="1400"
+                                       height="2100"
+                                       loading="eager"
+                                       fetchpriority="high"
+                                       class="w-full h-full object-cover object-top" />
                         </div>
 
                         {{-- Floating credential badge --}}
@@ -132,9 +136,12 @@
                     <div class="relative order-2 lg:order-1">
                         <div class="absolute inset-0 -translate-x-4 translate-y-4 rounded-3xl bg-blush/20 pointer-events-none"></div>
                         <div class="relative w-full aspect-[4/5] rounded-3xl overflow-hidden bg-gradient-to-br from-blush/30 to-rose/5 shadow-xl shadow-rose/5">
-                            <img src="{{ asset('foto-emily-2.jpg') }}"
-                                 alt="Dra. Emily Beatriz — Harmonização Facial e Estética em Belo Horizonte"
-                                 class="w-full h-full object-cover object-top">
+                            <x-picture src="foto-emily-2.jpg"
+                                       alt="Dra. Emily Beatriz — Harmonização Facial e Estética em Belo Horizonte"
+                                       width="1400"
+                                       height="2100"
+                                       loading="lazy"
+                                       class="w-full h-full object-cover object-top" />
                         </div>
                     </div>
 
@@ -280,9 +287,12 @@
                         <div class="flex h-80 lg:h-[26rem]">
                             {{-- Before --}}
                             <div class="relative w-1/2 overflow-hidden bg-[#3A2A2A]">
-                                <img src="{{ asset('antes-1.jpg') }}"
-                                     alt="Antes botox Belo Horizonte — Dra. Emily Beatriz"
-                                     class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700">
+                                <x-picture src="antes-1.jpg"
+                                           alt="Antes botox Belo Horizonte — Dra. Emily Beatriz"
+                                           width="1200"
+                                           height="1600"
+                                           loading="lazy"
+                                           class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
                                 <div class="absolute top-3 left-3 text-white text-[10px] font-medium tracking-[0.2em] uppercase bg-charcoal/70 backdrop-blur-sm px-2.5 py-1 rounded-full">
                                     Antes
                                 </div>
@@ -301,9 +311,12 @@
 
                             {{-- After --}}
                             <div class="relative w-1/2 overflow-hidden bg-[#2A1820]">
-                                <img src="{{ asset('depois-1.jpg') }}"
-                                     alt="Depois botox BH — resultado natural Dra. Emily Beatriz"
-                                     class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700">
+                                <x-picture src="depois-1.jpg"
+                                           alt="Depois botox BH — resultado natural Dra. Emily Beatriz"
+                                           width="1200"
+                                           height="1600"
+                                           loading="lazy"
+                                           class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
                                 <div class="absolute top-3 right-3 text-white text-[10px] font-medium tracking-[0.2em] uppercase bg-rose/75 backdrop-blur-sm px-2.5 py-1 rounded-full">
                                     Depois
                                 </div>
@@ -321,9 +334,12 @@
                     {{-- Card 2: combined antes-e-depois image --}}
                     <div class="group relative rounded-2xl overflow-hidden border border-white/5 hover:border-gold/25 transition-all duration-500 hover:-translate-y-1.5">
                         <div class="relative h-80 lg:h-[26rem] overflow-hidden bg-[#2A1820]">
-                            <img src="{{ asset('antes-e-depois.jpg') }}"
-                                 alt="Antes e depois harmonização facial Belo Horizonte — Dra. Emily Beatriz"
-                                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                            <x-picture src="antes-e-depois.jpg"
+                                       alt="Antes e depois harmonização facial Belo Horizonte — Dra. Emily Beatriz"
+                                       width="1200"
+                                       height="1200"
+                                       loading="lazy"
+                                       class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" />
                             <div class="absolute top-3 left-3 text-white text-[10px] font-medium tracking-[0.2em] uppercase bg-charcoal/70 backdrop-blur-sm px-2.5 py-1 rounded-full">
                                 Antes
                             </div>
