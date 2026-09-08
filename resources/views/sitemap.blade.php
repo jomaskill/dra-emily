@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         <loc>https://{{ config('clinic.domain') }}/</loc>
-        <lastmod>{{ now()->toDateString() }}</lastmod>
+        <lastmod>{{ config('clinic.content_updated') }}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -26,7 +26,7 @@
 @foreach (config('procedures') as $slug => $proc)
     <url>
         <loc>https://{{ config('clinic.domain') }}/procedimentos/{{ $slug }}</loc>
-        <lastmod>{{ now()->toDateString() }}</lastmod>
+        <lastmod>{{ $proc['updated'] ?? config('clinic.content_updated') }}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>

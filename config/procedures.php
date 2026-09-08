@@ -10,6 +10,7 @@
 |
 | Estrutura de cada item:
 |   num               => número decorativo exibido no card da home
+|   updated           => data da última revisão do conteúdo (usada no sitemap)
 |   name              => nome curto do procedimento
 |   card_desc         => descrição curta (card da home)
 |   title             => <title> da página (com localização)
@@ -30,6 +31,7 @@ return [
 
     'botox' => [
         'num' => '01',
+        'updated' => '2026-09-08',
         'name' => 'Botox',
         'card_desc' => 'Suaviza rugas e linhas de expressão com um resultado leve e natural — o famoso olhar descansado de quem dormiu bem.',
         'title' => 'Botox em Belo Horizonte | Dra. Emily Beatriz',
@@ -69,6 +71,7 @@ return [
 
     'preenchimento-labial' => [
         'num' => '02',
+        'updated' => '2026-09-08',
         'name' => 'Preenchimento Labial',
         'card_desc' => 'Lábios mais definidos, hidratados e harmônicos com ácido hialurônico — volume na medida certa, com resultado natural.',
         'title' => 'Preenchimento Labial em Belo Horizonte | Dra. Emily Beatriz',
@@ -108,6 +111,7 @@ return [
 
     'harmonizacao-facial' => [
         'num' => '03',
+        'updated' => '2026-09-08',
         'name' => 'Harmonização Facial',
         'card_desc' => 'Um conjunto de procedimentos que equilibra as proporções do rosto e valoriza a sua beleza natural, de forma personalizada.',
         'title' => 'Harmonização Facial em Belo Horizonte | Dra. Emily Beatriz',
@@ -147,6 +151,7 @@ return [
 
     'full-face' => [
         'num' => '04',
+        'updated' => '2026-09-08',
         'featured' => true,
         'view' => 'procedures.full-face',
         'name' => 'Full Face',
@@ -195,6 +200,7 @@ return [
 
     'bioestimulador-de-colageno' => [
         'num' => '04',
+        'updated' => '2026-09-08',
         'name' => 'Bioestimulador de Colágeno',
         'card_desc' => 'Estimula o seu corpo a produzir colágeno, devolvendo firmeza, viço e qualidade à pele de forma progressiva e natural.',
         'title' => 'Bioestimulador de Colágeno em Belo Horizonte | Dra. Emily Beatriz',
