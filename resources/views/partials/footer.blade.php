@@ -31,6 +31,7 @@
                     <li><a href="{{ $navBase }}#procedimentos" class="text-muted text-sm hover:text-cream transition-colors">Transformações</a></li>
                     <li><a href="{{ $navBase }}#antes-depois" class="text-muted text-sm hover:text-cream transition-colors">Resultados</a></li>
                     <li><a href="{{ $navBase }}#faq" class="text-muted text-sm hover:text-cream transition-colors">Perguntas Frequentes</a></li>
+                    <li><a href="{{ route('articles.index') }}" class="text-muted text-sm hover:text-cream transition-colors">Artigos</a></li>
                     <li><a href="{{ $navBase }}#contato" class="text-muted text-sm hover:text-cream transition-colors">Contato</a></li>
                 </ul>
             </div>
