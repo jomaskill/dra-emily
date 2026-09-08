@@ -67,6 +67,12 @@
                                 CEP {{ config('clinic.address_zip') }}@endif
                         </span>
                     </address>
+                    @if (config('clinic.areas_served'))
+                        <p class="text-muted text-sm leading-relaxed mt-4">
+                            Atendemos {{ implode(', ', config('clinic.areas_served')) }}
+                            e demais regiões de {{ config('clinic.city') }}.
+                        </p>
+                    @endif
                 </div>
             </div>
         </div>

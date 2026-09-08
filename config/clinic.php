@@ -18,6 +18,10 @@ return [
 
     'address_zip' => env('CLINIC_ADDRESS_ZIP', '31255-750'),
 
+    // Bairros atendidos. Fonte única: alimenta o areaServed do schema e o texto
+    // visível no rodapé, para que a marcação não afirme nada que a página não diga.
+    'areas_served' => ['Santa Rosa', 'Pampulha', 'Venda Nova', 'Caiçara'],
+
     'latitude' => env('CLINIC_LATITUDE', '-19.8611003'),
 
     'longitude' => env('CLINIC_LONGITUDE', '-43.9496221'),
