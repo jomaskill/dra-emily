@@ -35,7 +35,7 @@ This milestone moves the existing Laravel/Blade site from an unverified conversi
 - [x] 01-01-PLAN.md
 - [x] 01-02-PLAN.md
 - [x] 01-03-PLAN.md
-- [ ] 01-04-PLAN.md
+- [x] 01-04-PLAN.md
 - [ ] 01-05-PLAN.md
 
 **UI hint:** yes
@@ -131,7 +131,7 @@ This milestone moves the existing Laravel/Blade site from an unverified conversi
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Baseline, Content Freeze & Approval Gates | 3/5 | In Progress|  |
+| 1. Baseline, Content Freeze & Approval Gates | 4/5 | In Progress|  |
 | 2. Canonical Content & Shared Trust Contracts | 0/TBD | Not started | - |
 | 3. Consultation-First Patient Journey | 0/TBD | Not started | - |
 | 4. Consent-Gated WhatsApp Measurement | 0/TBD | Not started | - |

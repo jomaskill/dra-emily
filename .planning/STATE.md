@@ -3,17 +3,17 @@ gsd_state_version: "1.0"
 current_phase: 01
 current_phase_name: Baseline, Content Freeze & Approval Gates
 status: executing
-stopped_at: Completed 01-03-PLAN.md
-last_updated: "2026-09-09T17:22:09.328Z"
+stopped_at: Completed 01-04-PLAN.md
+last_updated: "2026-09-09T17:52:48.997Z"
 last_activity: 2026-09-09
-last_activity_desc: Completed the full public inventory and dated baseline
-state_head: eb52e92a80bf40cd9a3d7c6f5315c5f64608b7c6
+last_activity_desc: Completed the professional, operations, and privacy evidence gates
+state_head: 55043f178d53f3d58d8b8bf2a7cbc939f4d8d27e
 progress:
   total_phases: 6
   completed_phases: 0
   total_plans: 5
-  completed_plans: 3
-  percent: 60
+  completed_plans: 4
+  percent: 80
 ---
 
 # Project State
@@ -28,30 +28,30 @@ See: .planning/PROJECT.md (updated 2026-09-08)
 ## Current Position
 
 Phase: 01 (Baseline, Content Freeze & Approval Gates) — EXECUTING
-Plan: 4 of 5
+Plan: 5 of 5
 Status: Ready to execute
-Last activity: 2026-09-09 — Completed claim and media evidence gates; human decisions remain pending
+Last activity: 2026-09-09 — Completed professional, operations, and privacy evidence gates; human decisions remain pending
 
-Progress: [██████░░░░] 60%
+Progress: [████████░░] 80%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 2
-- Average duration: 2h29m
-- Total execution time: 5.0 hours
+- Total plans completed: 4
+- Average duration: 1h29m
+- Total execution time: 5h54m
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| Phase 01 | 2 | 4h57m | 2h29m |
+| Phase 01 | 4 | 5h54m | 1h29m |
 
 **Recent Trend:**
 
-- Last 5 plans: 20m, 4h37m
-- Trend: Baseline capture dominated execution time after the short governance tracer
+- Last 5 plans: 20m, 4h37m, 32m, 25m
+- Trend: Governance register plans returned to focused execution after the baseline capture
 
 *Updated after each plan completion*
 **Per-Plan Metrics:**
@@ -61,6 +61,7 @@ Progress: [██████░░░░] 60%
 | Phase 01 P01 | 20min | 2 tasks | 6 files |
 | Phase 01 P02 | 4h37m | 2 tasks | 7 files |
 | Phase 01 P03 | 32min | 2 tasks | 6 files |
+| Phase 01 P04 | 25min | 3 tasks | 9 files |
 
 ## Accumulated Context
 
@@ -82,6 +83,9 @@ Recent decisions affecting current work:
 - [Phase 01]: Automation conservatively seeds every text-bearing surface as pending human classification and never grants clinical approval.
 - [Phase 01]: Testimonials are governed by exact hashes and opaque inventory IDs without duplicating patient-shaped attribution into evidence records.
 - [Phase 01]: Claim and media validators are read-only, exact-context, deterministic, and sanitized.
+- [Phase 01]: Professional wording is catalogued conservatively, while scope and legal outcomes remain exact-revision human decisions.
+- [Phase 01]: Configured clinic assertions never satisfy observed operations, even when values are byte-identical.
+- [Phase 01]: Configured GA4/tag presence remains distinct from production collection, consent, lawful basis, and privacy approval.
 
 ### Pending Todos
 
@@ -104,6 +108,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-09-09T17:22:09.316Z
-Stopped at: Completed 01-03-PLAN.md
+Last session: 2026-09-09T17:52:48.985Z
+Stopped at: Completed 01-04-PLAN.md
 Resume file: None
