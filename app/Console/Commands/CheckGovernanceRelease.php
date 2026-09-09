@@ -2,6 +2,8 @@
 
 namespace App\Console\Commands;
 
+use App\Governance\GovernanceEvidence;
+use App\Governance\GovernanceInventory;
 use Illuminate\Console\Command;
 use JsonException;
 use RuntimeException;
@@ -26,13 +28,20 @@ class CheckGovernanceRelease extends Command
      */
     protected $description = 'Derive a fail-closed release result from inventory observations and separate human evidence';
 
+    public function __construct(
+        private readonly GovernanceEvidence $evidence,
+        private readonly GovernanceInventory $inventory,
+    ) {
+        parent::__construct();
+    }
+
     public function handle(): int
     {
         try {
             $inventoryPath = $this->requiredOption('inventory');
             $evidenceDirectory = $this->requiredOption('evidence-dir');
             $items = $this->inventoryItems($inventoryPath);
-            $records = $this->evidenceRecords($evidenceDirectory, $inventoryPath);
+            $records = $this->evidence->loadDirectory($evidenceDirectory);
             $problems = $this->releaseProblems($items, $records);
         } catch (Throwable $exception) {
             report($exception);
@@ -48,7 +57,14 @@ class CheckGovernanceRelease extends Command
         $this->line('Release status: '.$status);
 
         if (is_string($this->option('report')) && $this->option('report') !== '') {
-            $this->writeReport((string) $this->option('report'), $status, $problems);
+            try {
+                $this->writeReport((string) $this->option('report'), $status, $problems);
+            } catch (Throwable $exception) {
+                report($exception);
+                $this->error('Governance report failed. No successful report was published.');
+
+                return self::FAILURE;
+            }
         }
 
         return $problems === [] ? self::SUCCESS : self::FAILURE;
@@ -78,41 +94,6 @@ class CheckGovernanceRelease extends Command
         }
 
         return array_values($items);
-    }
-
-    /**
-     * @return list<array<string, scalar>>
-     */
-    private function evidenceRecords(string $directory, string $inventoryPath): array
-    {
-        if (! is_dir($directory) || is_link($directory)) {
-            throw new RuntimeException('Evidence directory is unavailable.');
-        }
-
-        $records = [];
-        $inventoryRealPath = realpath($inventoryPath);
-
-        foreach (glob(rtrim($directory, '/').'/*.json') ?: [] as $path) {
-            if (realpath($path) === $inventoryRealPath) {
-                continue;
-            }
-
-            $decoded = $this->decodeJsonFile($path);
-
-            if (! array_is_list($decoded)) {
-                throw new RuntimeException('Evidence JSON must be a list.');
-            }
-
-            foreach ($decoded as $record) {
-                if (! is_array($record)) {
-                    throw new RuntimeException('Evidence record must be an object.');
-                }
-
-                $records[] = $record;
-            }
-        }
-
-        return $records;
     }
 
     /**
@@ -187,17 +168,16 @@ class CheckGovernanceRelease extends Command
      */
     private function identity(array $record): ?string
     {
-        $values = [];
+        /** @var list<string> $keys */
+        $keys = config('governance.identity_keys', []);
 
-        foreach (['id', 'content_hash', 'locale', 'route', 'context'] as $key) {
+        foreach ($keys as $key) {
             if (! isset($record[$key]) || ! is_string($record[$key]) || $record[$key] === '') {
                 return null;
             }
-
-            $values[] = $record[$key];
         }
 
-        return implode("\0", $values);
+        return $this->evidence->identity($record);
     }
 
     /**
@@ -211,8 +191,6 @@ class CheckGovernanceRelease extends Command
             $lines[] = '- `'.$id.'`: '.$reason;
         }
 
-        if (file_put_contents($path, implode(PHP_EOL, $lines).PHP_EOL) === false) {
-            throw new RuntimeException('Unable to write the governance report.');
-        }
+        $this->inventory->writeAtomically($path, implode(PHP_EOL, $lines).PHP_EOL);
     }
 }

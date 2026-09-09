@@ -30,10 +30,7 @@ class GovernanceInventory
      */
     public function snapshot(string $target): array
     {
-        $items = [$this->homepageHeading()];
-
-        $this->sortItems($items);
-        $this->assertUniqueIdentities($items);
+        $items = $this->canonicalizeItems([$this->homepageHeading()]);
 
         return [
             'schema_version' => 1,
@@ -58,18 +55,24 @@ class GovernanceInventory
      */
     public function write(string $target, array $inventory): void
     {
+        $contents = json_encode(
+            $inventory,
+            JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_THROW_ON_ERROR,
+        ).PHP_EOL;
+
+        $this->writeAtomically($target, $contents);
+    }
+
+    public function writeAtomically(string $target, string $contents): void
+    {
         $directory = dirname($target);
 
         if (! is_dir($directory) || is_link($directory) || is_link($target)) {
             throw new RuntimeException('Inventory target must be in an existing non-symlink directory.');
         }
 
-        $json = json_encode(
-            $inventory,
-            JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_THROW_ON_ERROR,
-        ).PHP_EOL;
-
-        $lockPath = sys_get_temp_dir().'/draemily-governance-'.hash('sha256', $target).'.lock';
+        $canonicalTarget = (string) realpath($directory).'/'.basename($target);
+        $lockPath = sys_get_temp_dir().'/draemily-governance-'.hash('sha256', $canonicalTarget).'.lock';
         $lock = fopen($lockPath, 'c');
 
         if ($lock === false) {
@@ -94,8 +97,12 @@ class GovernanceInventory
             }
 
             try {
-                $this->writeAll($temporaryHandle, $json);
+                $this->writeAll($temporaryHandle, $contents);
                 fflush($temporaryHandle);
+
+                if (function_exists('fsync')) {
+                    fsync($temporaryHandle);
+                }
             } finally {
                 fclose($temporaryHandle);
             }
@@ -111,6 +118,52 @@ class GovernanceInventory
             flock($lock, LOCK_UN);
             fclose($lock);
         }
+    }
+
+    /**
+     * @param  list<array{id: string, content: string, content_hash: string, locale: string, route: string, route_name: string, context: string, visibility: string, source: string}>  $items
+     * @return list<array{id: string, content: string, content_hash: string, locale: string, route: string, route_name: string, context: string, visibility: string, source: string}>
+     */
+    public function canonicalizeItems(array $items): array
+    {
+        if ($items === []) {
+            throw new RuntimeException('A required public-surface inventory cannot be empty.');
+        }
+
+        $this->sortItems($items);
+        $this->assertUniqueIdentities($items);
+
+        return $items;
+    }
+
+    /**
+     * @return array{id: string, content: string, content_hash: string, locale: string, route: string, route_name: string, context: string, visibility: string, source: string}
+     */
+    public function publicationItem(
+        string $content,
+        string $route,
+        string $context,
+        string $source,
+        string $visibility = 'visible',
+        string $routeName = 'home',
+        ?string $locale = null,
+    ): array {
+        $this->assertSafeSource($source);
+
+        $publicationLocale = $locale ?? (string) config('governance.locale', 'pt-BR');
+        $stableIdentity = implode("\0", [$publicationLocale, $route, $context, $source]);
+
+        return [
+            'id' => 'publication.'.substr(hash('sha256', $stableIdentity), 0, 24),
+            'content' => $content,
+            'content_hash' => hash('sha256', $content),
+            'locale' => $publicationLocale,
+            'route' => $route,
+            'route_name' => $routeName,
+            'context' => $context,
+            'visibility' => $visibility,
+            'source' => $source,
+        ];
     }
 
     /**
@@ -139,22 +192,10 @@ class GovernanceInventory
             $this->kernel->terminate($request, $response);
         }
 
-        $locale = 'pt-BR';
         $context = 'visible:main:h1';
         $source = 'resources/views/welcome.blade.php';
-        $stableIdentity = implode("\0", [$locale, $route, $context, $source]);
 
-        return [
-            'id' => 'publication.'.substr(hash('sha256', $stableIdentity), 0, 24),
-            'content' => $content,
-            'content_hash' => hash('sha256', $content),
-            'locale' => $locale,
-            'route' => $route,
-            'route_name' => 'home',
-            'context' => $context,
-            'visibility' => 'visible',
-            'source' => $source,
-        ];
+        return $this->publicationItem($content, $route, $context, $source);
     }
 
     private function mainHeadingText(string $html): string
@@ -224,6 +265,53 @@ class GovernanceInventory
             }
 
             $identities[$identity] = true;
+        }
+    }
+
+    private function assertSafeSource(string $source): void
+    {
+        if ($source === '' || str_starts_with($source, '/') || str_contains($source, '\\')) {
+            throw new RuntimeException('Publication source must be a repository-relative POSIX path.');
+        }
+
+        $segments = explode('/', $source);
+
+        if (in_array('..', $segments, true) || in_array('', $segments, true)) {
+            throw new RuntimeException('Publication source cannot escape an allowed scan root.');
+        }
+
+        /** @var list<string> $forbiddenRoots */
+        $forbiddenRoots = config('governance.forbidden_roots', []);
+
+        foreach ($forbiddenRoots as $forbiddenRoot) {
+            if ($source === $forbiddenRoot || str_starts_with($source, $forbiddenRoot.'/')) {
+                throw new RuntimeException('Publication source is inside a forbidden root.');
+            }
+        }
+
+        $absoluteSource = base_path($source);
+        $realSource = realpath($absoluteSource);
+
+        if ($realSource === false || is_link($absoluteSource)) {
+            throw new RuntimeException('Publication source must be an existing non-symlink path.');
+        }
+
+        /** @var list<string> $scanRoots */
+        $scanRoots = config('governance.scan_roots', []);
+        $insideAllowedRoot = false;
+
+        foreach ($scanRoots as $scanRoot) {
+            $realRoot = realpath(base_path($scanRoot));
+
+            if ($realRoot !== false && ($realSource === $realRoot || str_starts_with($realSource, $realRoot.DIRECTORY_SEPARATOR))) {
+                $insideAllowedRoot = true;
+
+                break;
+            }
+        }
+
+        if (! $insideAllowedRoot) {
+            throw new RuntimeException('Publication source is outside the allowed scan roots.');
         }
     }
 
