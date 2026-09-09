@@ -1,18 +1,18 @@
 ---
-gsd_state_version: 1.0
+gsd_state_version: "1.0"
 current_phase: 01
 current_phase_name: Baseline, Content Freeze & Approval Gates
 status: executing
-stopped_at: Phase 1 UI-SPEC approved
-last_updated: "2026-09-09T11:18:26.688Z"
+stopped_at: Completed 01-01-PLAN.md
+last_updated: "2026-09-09T11:43:41.026Z"
 last_activity: 2026-09-09
 last_activity_desc: Phase 01 execution started
-state_head: 94ca58cdf967541a06b73ae35da0faee38b1431e
+state_head: 8f5eeb57ff8ae85241aa89077e6bf2428806fac1
 progress:
   total_phases: 6
   completed_phases: 0
   total_plans: 5
-  completed_plans: 0
+  completed_plans: 1
   percent: 0
 ---
 
@@ -28,8 +28,8 @@ See: .planning/PROJECT.md (updated 2026-09-08)
 ## Current Position
 
 Phase: 01 (Baseline, Content Freeze & Approval Gates) — EXECUTING
-Plan: 1 of 5
-Status: Executing Phase 01
+Plan: 2 of 5
+Status: Ready to execute
 Last activity: 2026-09-09 — Phase 01 execution started
 
 Progress: [░░░░░░░░░░] 0%
@@ -54,6 +54,11 @@ Progress: [░░░░░░░░░░] 0%
 - Trend: -
 
 *Updated after each plan completion*
+**Per-Plan Metrics:**
+
+| Plan | Duration | Tasks | Files |
+|------|----------|-------|-------|
+| Phase 01 P01 | 20min | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -66,6 +71,9 @@ Recent decisions affecting current work:
 - Make individualized WhatsApp consultation the primary conversion; do not select a flagship procedure from current low traffic.
 - Treat `whatsapp_consultation_click` as a literal browser click proxy, distinct from a genuine conversation, scheduled or attended consultation, and clinical eligibility.
 - Unapproved clinical claims, professional wording, patient media, privacy behavior, or operational facts fail closed and remain unpublished.
+- [Phase 01]: The primary release identity remains stable ID plus exact UTF-8 SHA-256, locale, and route/context; generated inventory and human evidence stay separate.
+- [Phase 01]: Run timestamp, revision, dirty-tree state, target, and command version remain outside deterministic item payloads.
+- [Phase 01]: Human evidence uses one tagged JSON list per Markdown register and release readiness is always derived.
 
 ### Pending Todos
 
@@ -88,6 +96,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-09-09T00:48:02.916Z
-Stopped at: Phase 1 UI-SPEC approved
-Resume file: .planning/phases/01-baseline-content-freeze-approval-gates/01-UI-SPEC.md
+Last session: 2026-09-09T11:43:41.016Z
+Stopped at: Completed 01-01-PLAN.md
+Resume file: None

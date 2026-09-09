@@ -9,7 +9,7 @@ Requirements for the complete website review and conversion-improvement mileston
 
 ### Governance & Approval
 
-- [ ] **GOV-01**: The project team can review a complete inventory of every public page, conversion path, clinical claim, professional claim, patient image, testimonial, analytics integration, and structured-data output before changes are released
+- [x] **GOV-01**: The project team can review a complete inventory of every public page, conversion path, clinical claim, professional claim, patient image, testimonial, analytics integration, and structured-data output before changes are released
 - [ ] **GOV-02**: A visitor sees Dra. Emily's verified full name, the designation “cirurgiã-dentista,” her current CRO-MG registration, and only qualifications or specialties confirmed by current registration evidence
 - [ ] **GOV-03**: Every published clinical claim has an identifiable source, content owner, last-reviewed date, and recorded approval from Dra. Emily
 - [ ] **GOV-04**: Every published patient image or testimonial has documented provenance, written authorization, responsible-professional attribution, and a current decision confirming that its use is permitted in this publishing context
@@ -113,7 +113,7 @@ Which phases cover which requirements. Every v1 requirement maps to exactly one 
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| GOV-01 | Phase 1 | Pending |
+| GOV-01 | Phase 1 | Complete |
 | GOV-02 | Phase 2 | Pending |
 | GOV-03 | Phase 1 | Pending |
 | GOV-04 | Phase 1 | Pending |
@@ -160,6 +160,7 @@ Which phases cover which requirements. Every v1 requirement maps to exactly one 
 | QUAL-07 | Phase 5 | Pending |
 
 **Coverage:**
+
 - v1 requirements: 45 total
 - Mapped to phases: 45
 - Unmapped: 0 ✓
