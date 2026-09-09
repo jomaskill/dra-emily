@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Governance\GovernanceEvidence;
 use App\Governance\GovernanceInventory;
+use App\Governance\ReleaseGate;
 use Illuminate\Console\Command;
 use JsonException;
 use RuntimeException;
@@ -19,6 +20,7 @@ class CheckGovernanceRelease extends Command
     protected $signature = 'governance:check-release
         {--inventory= : Generated inventory JSON path.}
         {--evidence-dir= : Directory containing separately maintained human evidence.}
+        {--baseline= : Revision-bound public baseline Markdown path.}
         {--report= : Optional sanitized Markdown report target.}';
 
     /**
@@ -31,6 +33,7 @@ class CheckGovernanceRelease extends Command
     public function __construct(
         private readonly GovernanceEvidence $evidence,
         private readonly GovernanceInventory $inventory,
+        private readonly ReleaseGate $releaseGate,
     ) {
         parent::__construct();
     }
@@ -40,6 +43,12 @@ class CheckGovernanceRelease extends Command
         try {
             $inventoryPath = $this->requiredOption('inventory');
             $evidenceDirectory = $this->requiredOption('evidence-dir');
+            $inventoryEnvelope = $this->decodeJsonFile($inventoryPath);
+
+            if (($inventoryEnvelope['schema_version'] ?? 1) >= 2) {
+                return $this->handleIntegratedRelease($inventoryPath, $evidenceDirectory);
+            }
+
             $items = $this->inventoryItems($inventoryPath);
             $records = $this->evidence->loadDirectory($evidenceDirectory);
             $problems = $this->releaseProblems($items, $records);
@@ -68,6 +77,47 @@ class CheckGovernanceRelease extends Command
         }
 
         return $problems === [] ? self::SUCCESS : self::FAILURE;
+    }
+
+    private function handleIntegratedRelease(string $inventoryPath, string $evidenceDirectory): int
+    {
+        try {
+            $baselinePath = $this->requiredOption('baseline');
+            $result = $this->releaseGate->evaluate($inventoryPath, $evidenceDirectory, $baselinePath);
+        } catch (Throwable) {
+            report(new RuntimeException('Governance release input rejected.'));
+            $result = $this->releaseGate->blockedInputResult();
+        }
+
+        if ($result['findings'] !== []) {
+            $rows = array_map(static fn (array $finding): array => [
+                $finding['requirement'],
+                $finding['category'],
+                $finding['stable_id'],
+                $finding['owner'],
+                $finding['reason'],
+            ], array_slice($result['findings'], 0, 200));
+            $this->table(['Requirement', 'Category', 'Item', 'Owner', 'Reason'], $rows);
+
+            if (count($result['findings']) > count($rows)) {
+                $this->line(sprintf('%d additional sanitized finding(s) are recorded in the report.', count($result['findings']) - count($rows)));
+            }
+        }
+
+        $this->line('Release status: '.$result['status']);
+
+        if (is_string($this->option('report')) && $this->option('report') !== '') {
+            try {
+                $this->inventory->writeAtomically((string) $this->option('report'), $this->releaseGate->render($result));
+            } catch (Throwable) {
+                report(new RuntimeException('Governance release report publication failed.'));
+                $this->error('Governance report failed. No successful report was published.');
+
+                return self::FAILURE;
+            }
+        }
+
+        return $result['status'] === 'READY' ? self::SUCCESS : self::FAILURE;
     }
 
     private function requiredOption(string $name): string
