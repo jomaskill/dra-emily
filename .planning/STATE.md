@@ -3,17 +3,17 @@ gsd_state_version: "1.0"
 current_phase: 01
 current_phase_name: Baseline, Content Freeze & Approval Gates
 status: executing
-stopped_at: Completed 01-02-PLAN.md
-last_updated: "2026-09-09T16:48:00.000Z"
+stopped_at: Completed 01-03-PLAN.md
+last_updated: "2026-09-09T17:22:09.328Z"
 last_activity: 2026-09-09
 last_activity_desc: Completed the full public inventory and dated baseline
-state_head: 55be224238cbe07e2a79f3234284242315c1daef
+state_head: eb52e92a80bf40cd9a3d7c6f5315c5f64608b7c6
 progress:
   total_phases: 6
   completed_phases: 0
   total_plans: 5
-  completed_plans: 2
-  percent: 40
+  completed_plans: 3
+  percent: 60
 ---
 
 # Project State
@@ -28,11 +28,11 @@ See: .planning/PROJECT.md (updated 2026-09-08)
 ## Current Position
 
 Phase: 01 (Baseline, Content Freeze & Approval Gates) — EXECUTING
-Plan: 3 of 5
+Plan: 4 of 5
 Status: Ready to execute
-Last activity: 2026-09-09 — Completed the full public inventory and dated baseline
+Last activity: 2026-09-09 — Completed claim and media evidence gates; human decisions remain pending
 
-Progress: [████░░░░░░] 40%
+Progress: [██████░░░░] 60%
 
 ## Performance Metrics
 
@@ -60,6 +60,7 @@ Progress: [████░░░░░░] 40%
 |------|----------|-------|-------|
 | Phase 01 P01 | 20min | 2 tasks | 6 files |
 | Phase 01 P02 | 4h37m | 2 tasks | 7 files |
+| Phase 01 P03 | 32min | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -78,6 +79,9 @@ Recent decisions affecting current work:
 - [Phase 01]: Repository-owned named GET routes and current procedure/article configuration keys define the public inventory union; framework/vendor routes are excluded.
 - [Phase 01]: Stable ordered inventory-item data is digestible independently from mutable run metadata and append-only browser evidence.
 - [Phase 01]: Unavailable browser, production, analytics, or downstream WhatsApp evidence remains dated and blocked as `not measured`, never inferred as passing.
+- [Phase 01]: Automation conservatively seeds every text-bearing surface as pending human classification and never grants clinical approval.
+- [Phase 01]: Testimonials are governed by exact hashes and opaque inventory IDs without duplicating patient-shaped attribution into evidence records.
+- [Phase 01]: Claim and media validators are read-only, exact-context, deterministic, and sanitized.
 
 ### Pending Todos
 
@@ -100,6 +104,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-09-09T16:48:00.000Z
-Stopped at: Completed 01-02-PLAN.md
+Last session: 2026-09-09T17:22:09.316Z
+Stopped at: Completed 01-03-PLAN.md
 Resume file: None
