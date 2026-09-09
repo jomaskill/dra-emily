@@ -120,7 +120,7 @@ The planner may combine the machine-readable schema into PHP arrays if that bett
 | Existing verification | `tests/Feature/HomeSchemaTest.php`, `tests/Feature/ExampleTest.php`, `tests/Pest.php`, `phpunit.xml`, `composer.json` | Extend Pest conventions; preserve existing FAQ/schema parity contract and application scripts. |
 | Frontend baseline | `resources/css/app.css`, `resources/js/app.js`, `vite.config.js`, `package.json`, `public/build/manifest.json` | Asset/build inputs and current bundle state; no design or tracking change in Phase 1. |
 
-The current route union is verbatim: `home`, `procedure`, and `sitemap`, with procedure slugs constrained by `array_keys(config('procedures'))`. [VERIFIED: routes/web.php:6-16] The inventory must enumerate the actual configured procedure keys rather than documenting only the route template.
+The current route union includes `home`, `procedure`, `articles.index`, `article`, and `sitemap`; procedure and article detail slugs are constrained by `array_keys(config('procedures'))` and `array_keys(config('articles'))`, respectively. [VERIFIED: routes/web.php:7-23] Live dynamic enumeration of Laravel's route collection remains authoritative, and the inventory must expand the actual configured procedure and article keys rather than documenting only route templates.
 
 ## Fail-Closed Approval Model
 
@@ -294,13 +294,15 @@ Record, do not remediate, representative homepage, generic procedure, Full Face,
 | A2 | Markdown plus JSON/PHP register artifacts are acceptable to all human reviewers. | Reviewers may require a controlled external workflow or export format. |
 | A3 | Existing project tooling can capture sufficient baseline evidence without new dependencies. | Some accessibility/performance observations may need manual or externally provided evidence and must be recorded as unavailable until supplied. |
 
-## Open Questions
+## Open Questions (RESOLVED)
 
-1. Who is the named content owner and privacy approver, and what controlled systems hold CRO/legal and patient-authorization evidence?
-2. What validity/recheck period applies to clinical review, legal/CRO review, operations verification, media authorization, and privacy approval?
-3. Which public images/testimonials depict patients versus Dra. Emily, stock/illustrative subjects, or unknown subjects?
-4. Is analytics currently collected in any deployed environment despite the configured GA4 ID, and what production tag/consent configuration exists outside this repository?
-5. Which exact rendered revision/environment is the baseline and prospective release candidate?
+Here, “resolved” means the workflow routing is decided; it does not mean that external evidence or approval has been supplied. Each gap is routed to the blocking checkpoint at `01-05 Task 2`, and no answer is inferred:
+
+1. Who is the named content owner and privacy approver, and what controlled systems hold CRO/legal and patient-authorization evidence? **Resolved to `01-05 Task 2`:** the named content owner, named privacy owner, CRO-MG or qualified counsel, and authorized media custodian are accountable for their respective identities and controlled-system locators. If any accountable owner or evidence system is unavailable, the affected records remain pending or quarantined and the release report remains `BLOCKED`.
+2. What validity/recheck period applies to clinical review, legal/CRO review, operations verification, media authorization, and privacy approval? **Resolved to `01-05 Task 2`:** Dra. Emily/content owner, CRO-MG or qualified counsel, clinic operations verifier, authorized media custodian, and named privacy owner are accountable for their respective validity or recheck periods. If any period or supporting evidence is unavailable, the affected record remains pending or quarantined and the release report remains `BLOCKED`.
+3. Which public images/testimonials depict patients versus Dra. Emily, stock/illustrative subjects, or unknown subjects? **Resolved to `01-05 Task 2`:** the authorized media custodian is accountable for every classification and publishing context. If classification or provenance/authorization evidence is unavailable, the asset remains quarantined and the release report remains `BLOCKED`.
+4. Is analytics currently collected in any deployed environment despite the configured GA4 ID, and what production tag/consent configuration exists outside this repository? **Resolved to `01-05 Task 2`:** the named privacy owner is accountable for the observed deployed analytics, tag, and consent state and its evidence locator. If that deployed-state evidence is unavailable, the privacy decision remains pending and the release report remains `BLOCKED`.
+5. Which exact rendered revision/environment is the baseline and prospective release candidate? **Resolved to `01-05 Task 2`:** the accountable content, media, professional/legal, operations, and privacy owners jointly identify the exact rendered candidate revision/environment and public-surface digest. If the exact revision, environment, or binding evidence is unavailable, comparison cannot pass and the release report remains `BLOCKED`.
 
 These are evidence gaps, not implementation choices. Until answered and recorded by the authorized humans, the corresponding release gates remain blocked.
 
