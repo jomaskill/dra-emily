@@ -48,7 +48,9 @@
     "security_asvs_level": 1,
     "security_block_on": "high",
     "_auto_chain_active": true,
-    "use_worktrees": false
+    "use_worktrees": false,
+    "build_command": "npm run build",
+    "test_command": "php artisan test --compact"
   },
   "ship": {
     "pr_body_sections": [
