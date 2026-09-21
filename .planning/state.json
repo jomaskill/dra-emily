@@ -1,0 +1,43 @@
+{
+  "contract": "1.0.0",
+  "flavor": "core",
+  "milestone": null,
+  "phases": [
+    {
+      "number": "1",
+      "name": "Baseline, Content Freeze & Approval Gates",
+      "status": "in_progress"
+    },
+    {
+      "number": "2",
+      "name": "Canonical Content & Shared Trust Contracts",
+      "status": "pending"
+    },
+    {
+      "number": "3",
+      "name": "Consultation-First Patient Journey",
+      "status": "pending"
+    },
+    {
+      "number": "4",
+      "name": "Consent-Gated WhatsApp Measurement",
+      "status": "pending"
+    },
+    {
+      "number": "5",
+      "name": "Search, Performance & Release Quality",
+      "status": "pending"
+    },
+    {
+      "number": "6",
+      "name": "Launch Learning & Evidence-Based Optimization",
+      "status": "pending"
+    }
+  ],
+  "next": {
+    "command": "/gsd:progress --next",
+    "label": "Advance to the next step",
+    "reason": "Phase 01 of 6 · 0% · executing"
+  },
+  "updated_at": "2026-09-09T17:52:33.308Z"
+}

@@ -38,6 +38,8 @@ return [
 
     'ga4_id' => env('GOOGLE_ANALYTICS_ID', 'G-FHD94M3R1T'),
 
+    'gtm_id' => env('GOOGLE_TAG_MANAGER_ID', 'GTM-W8RW6RXD'),
+
     // Anos de experiência. Usado no selo da home e no texto da seção "Quem é a
     // Dra. Emily", para que os dois não divirjam.
     'years_experience' => env('CLINIC_YEARS_EXPERIENCE', 5),
