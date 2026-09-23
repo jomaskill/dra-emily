@@ -36,6 +36,16 @@
 
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ config('clinic.ga4_id') }}"></script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-DL0MBWHMSM"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-DL0MBWHMSM');
+        </script>
+
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -89,6 +99,7 @@
         {{ $schema ?? '' }}
     </head>
     <body class="font-sans bg-cream text-charcoal antialiased overflow-x-hidden">
+
 
         <!-- Google Tag Manager (noscript) -->
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ config('clinic.gtm_id') }}"
