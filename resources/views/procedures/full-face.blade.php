@@ -107,6 +107,17 @@
         </section>
 
         {{-- ======================================================
+             RESULTS (antes e depois)
+        ====================================================== --}}
+        @if ($results->isNotEmpty())
+            <x-results-gallery :cases="$results"
+                               :cta-url="$waProc"
+                               heading="Antes e depois: {{ e($procedure['name']) }}"
+                               lead="Casos reais atendidos pela Dra. Emily Beatriz."
+                               :cta-label="'Agendar avaliação de '.$procedure['name']" />
+        @endif
+
+        {{-- ======================================================
              WHAT IS
         ====================================================== --}}
         <section id="o-que-e" class="py-24 lg:py-32 bg-cream">

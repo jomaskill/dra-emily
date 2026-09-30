@@ -2,6 +2,8 @@
     $wa          = 'https://wa.me/' . config('clinic.whatsapp');
     $waConsulta  = $wa . '?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Emily.';
     $waTransformar = $wa . '?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20como%20me%20transformar%20assim.';
+    $featuredResults = collect(config('results'))->where('featured', true)->values();
+    $resultProcedures = collect(config('procedures'))->only(collect(config('results'))->pluck('procedure')->unique());
     $cro         = config('clinic.cro');
     $instagram   = config('clinic.instagram');
     $instagramUrl = 'https://www.instagram.com/' . $instagram . '/';
@@ -61,8 +63,8 @@
                             </svg>
                             Agendar Consulta
                         </a>
-                        <a href="#procedimentos" class="flex items-center gap-2 text-charcoal text-sm font-medium px-2 py-4 hover:text-rose transition-colors group">
-                            Veja o que podemos fazer por você
+                        <a href="#antes-depois" class="flex items-center gap-2 text-charcoal text-sm font-medium px-2 py-4 hover:text-rose transition-colors group">
+                            Veja resultados reais
                             <span class="transition-transform duration-300 group-hover:translate-y-0.5 inline-block">↓</span>
                         </a>
                     </div>
@@ -125,6 +127,23 @@
                 </div>
             </div>
         </section>
+
+        {{-- ======================================================
+             BEFORE & AFTER
+        ====================================================== --}}
+        <x-results-gallery id="antes-depois"
+                           :cases="$featuredResults"
+                           :cta-url="$waTransformar"
+                           eyebrow="Histórias reais de transformação"
+                           heading="Veja o que muda quando<br class='hidden sm:block'> você se coloca em primeiro lugar"
+                           lead="Resultados reais de pacientes reais que decidiram investir em si mesmos.">
+            <nav aria-label="Resultados por procedimento" class="flex gap-2 overflow-x-auto md:flex-wrap md:justify-center px-6 mb-8 lg:mb-12 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                @foreach ($resultProcedures as $resultSlug => $resultProcedure)
+                    <a href="{{ route('procedure', $resultSlug) }}#resultados"
+                       class="shrink-0 text-xs text-cream/80 hover:text-white border border-white/15 hover:border-gold/50 rounded-full px-4 py-2 transition-colors duration-300">{{ $resultProcedure['name'] }}</a>
+                @endforeach
+            </nav>
+        </x-results-gallery>
 
         {{-- ======================================================
              ABOUT
@@ -260,112 +279,6 @@
                     </a>
                 @endforeach
             </div>
-            </div>
-        </section>
-
-        {{-- ======================================================
-             BEFORE & AFTER
-        ====================================================== --}}
-        <section id="antes-depois" class="py-28 lg:py-36 bg-charcoal relative overflow-hidden">
-            <div class="absolute inset-0 pointer-events-none opacity-[0.04]"
-                 style="background-image: radial-gradient(circle, #E8B4B8 1px, transparent 1px); background-size: 32px 32px;"></div>
-
-            <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-                <div class="text-center mb-16 lg:mb-20">
-                    <p class="text-xs tracking-[0.25em] uppercase text-rose font-medium mb-4">Histórias reais de transformação</p>
-                    <h2 class="font-display text-5xl lg:text-6xl italic text-cream leading-tight">
-                        Veja o que muda quando<br>você se coloca em primeiro lugar
-                    </h2>
-                    <div class="w-12 h-px bg-gold mx-auto mt-6"></div>
-                    <p class="text-muted mt-4 text-sm max-w-sm mx-auto leading-relaxed">
-                        Resultados reais de mulheres reais que decidiram investir em si mesmas.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-
-                    {{-- Card 1: split antes / depois --}}
-                    <div class="group relative rounded-2xl overflow-hidden border border-white/5 hover:border-gold/25 transition-all duration-500 hover:-translate-y-1.5">
-                        <div class="flex h-80 lg:h-[26rem]">
-                            {{-- Before --}}
-                            <div class="relative w-1/2 overflow-hidden bg-[#3A2A2A]">
-                                <x-picture src="antes-1.jpg"
-                                           sizes="(min-width: 768px) 336px, 50vw"
-                                           alt="Antes botox Belo Horizonte — Dra. Emily Beatriz"
-                                           width="1200"
-                                           height="1600"
-                                           loading="lazy"
-                                           class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
-                                <div class="absolute top-3 left-3 text-white text-[10px] font-medium tracking-[0.2em] uppercase bg-charcoal/70 backdrop-blur-sm px-2.5 py-1 rounded-full">
-                                    Antes
-                                </div>
-                            </div>
-
-                            {{-- Gold divider --}}
-                            <div class="relative z-10 flex flex-col items-center justify-center" style="width: 2px; flex-shrink: 0;">
-                                <div class="w-full flex-1 bg-gold/40"></div>
-                                <div class="w-7 h-7 rounded-full bg-gold flex items-center justify-center shadow-lg flex-shrink-0 my-1">
-                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 12h8M12 8v8"/>
-                                    </svg>
-                                </div>
-                                <div class="w-full flex-1 bg-gold/40"></div>
-                            </div>
-
-                            {{-- After --}}
-                            <div class="relative w-1/2 overflow-hidden bg-[#2A1820]">
-                                <x-picture src="depois-1.jpg"
-                                           sizes="(min-width: 768px) 336px, 50vw"
-                                           alt="Depois botox BH — resultado natural Dra. Emily Beatriz"
-                                           width="1200"
-                                           height="1600"
-                                           loading="lazy"
-                                           class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
-                                <div class="absolute top-3 right-3 text-white text-[10px] font-medium tracking-[0.2em] uppercase bg-rose/75 backdrop-blur-sm px-2.5 py-1 rounded-full">
-                                    Depois
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-charcoal border-t border-white/5 p-5 flex items-center justify-between">
-                            <p class="font-display text-xl italic text-cream">O olhar que encanta</p>
-                            <a href="{{ $waTransformar }}" target="_blank" rel="noopener noreferrer"
-                               class="text-xs text-rose hover:text-blush transition-colors font-medium tracking-wide">
-                                Quero isso →
-                            </a>
-                        </div>
-                    </div>
-
-                    {{-- Card 2: combined antes-e-depois image --}}
-                    <div class="group relative rounded-2xl overflow-hidden border border-white/5 hover:border-gold/25 transition-all duration-500 hover:-translate-y-1.5">
-                        <div class="relative h-80 lg:h-[26rem] overflow-hidden bg-[#2A1820]">
-                            <x-picture src="antes-e-depois.jpg"
-                                       sizes="(min-width: 768px) 672px, 100vw"
-                                       alt="Antes e depois harmonização facial Belo Horizonte — Dra. Emily Beatriz"
-                                       width="1200"
-                                       height="1200"
-                                       loading="lazy"
-                                       class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" />
-                            <div class="absolute top-3 left-3 text-white text-[10px] font-medium tracking-[0.2em] uppercase bg-charcoal/70 backdrop-blur-sm px-2.5 py-1 rounded-full">
-                                Antes
-                            </div>
-                            <div class="absolute top-3 right-3 text-white text-[10px] font-medium tracking-[0.2em] uppercase bg-rose/75 backdrop-blur-sm px-2.5 py-1 rounded-full">
-                                Depois
-                            </div>
-                        </div>
-                        <div class="bg-charcoal border-t border-white/5 p-5 flex items-center justify-between">
-                            <p class="font-display text-xl italic text-cream">A confiança que você merecia</p>
-                            <a href="{{ $waTransformar }}" target="_blank" rel="noopener noreferrer"
-                               class="text-xs text-rose hover:text-blush transition-colors font-medium tracking-wide">
-                                Quero isso →
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <p class="text-center text-muted text-xs mt-10 tracking-wide leading-relaxed">
-                    * Cada pessoa é única e os resultados variam. Imagens publicadas com autorização das pacientes.
-                </p>
             </div>
         </section>
 

@@ -18,6 +18,7 @@ class ProcedureController extends Controller
         return view($procedure['view'] ?? 'procedure', [
             'slug' => $slug,
             'procedure' => $procedure,
+            'results' => collect(config('results'))->where('procedure', $slug)->values(),
         ]);
     }
 }
