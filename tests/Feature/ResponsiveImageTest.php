@@ -22,7 +22,7 @@ it('offers the hero at several widths with a sizes hint', function () {
 });
 
 it('ships every width variant the markup advertises', function () {
-    foreach (['/', '/procedimentos/botox'] as $path) {
+    foreach (['/', '/procedimentos/toxina-botulinica'] as $path) {
         $html = $this->get($path)->assertOk()->getContent();
 
         preg_match_all('#srcset="([^"]+)"#', $html, $sets);

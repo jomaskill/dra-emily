@@ -24,11 +24,11 @@ return [
     'home' => [
         [
             'q' => 'O que é harmonização facial e o que pode ser feito?',
-            'a' => 'Harmonização facial é um conjunto de procedimentos estéticos minimamente invasivos — como botox, preenchimento labial, bioestimuladores de colágeno, fios de PDO e microagulhamento — que equilibram as proporções do rosto e valorizam a beleza natural de cada pessoa. Em Belo Horizonte, a Dra. Emily Beatriz realiza todos esses tratamentos de forma personalizada e com resultados naturais.',
+            'a' => 'Harmonização facial é um conjunto de procedimentos estéticos minimamente invasivos — como toxina botulínica, preenchimento labial, bioestimuladores de colágeno, fios de PDO e microagulhamento — que equilibram as proporções do rosto e valorizam a beleza natural de cada pessoa. Em Belo Horizonte, a Dra. Emily Beatriz realiza todos esses tratamentos de forma personalizada e com resultados naturais.',
         ],
         [
-            'q' => 'Botox dói? O resultado fica artificial?',
-            'a' => 'O botox é aplicado com agulhas ultrafinas e causa desconforto mínimo. Os resultados surgem em 7 a 15 dias e, quando feito por uma profissional experiente como a Dra. Emily, o aspecto é completamente natural — ninguém percebe que você fez, só notam que você está mais bonita e descansada.',
+            'q' => 'Toxina botulínica dói? O resultado fica artificial?',
+            'a' => 'A toxina botulínica é aplicada com agulhas ultrafinas e causa desconforto mínimo. Os resultados surgem em 7 a 15 dias e, quando feito por uma profissional experiente como a Dra. Emily, o aspecto é completamente natural — ninguém percebe que você fez, só notam que você está mais bonita e descansada.',
         ],
         [
             'q' => 'Quanto tempo dura o preenchimento labial?',

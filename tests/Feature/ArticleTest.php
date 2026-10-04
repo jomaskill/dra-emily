@@ -93,7 +93,7 @@ it('lists every article on the index and in the sitemap', function () use ($arti
 });
 
 it('reaches the article index from every page', function () {
-    foreach (['/', '/procedimentos/botox', '/artigos/como-se-preparar'] as $path) {
+    foreach (['/', '/procedimentos/toxina-botulinica', '/artigos/como-se-preparar'] as $path) {
         expect($this->get($path)->getContent())->toContain('/artigos"');
     }
 });

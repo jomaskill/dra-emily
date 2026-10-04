@@ -12,7 +12,7 @@
         </image:image>
         <image:image>
             <image:loc>https://{{ config('clinic.domain') }}/depois-1.jpg</image:loc>
-            <image:title>Resultado botox Belo Horizonte — Dra. Emily Beatriz</image:title>
+            <image:title>Resultado toxina botulínica Belo Horizonte — Dra. Emily Beatriz</image:title>
         </image:image>
         <image:image>
             <image:loc>https://{{ config('clinic.domain') }}/antes-e-depois.jpg</image:loc>

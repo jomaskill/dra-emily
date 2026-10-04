@@ -32,11 +32,11 @@
 
 return [
 
-    'botox' => [
+    'toxina-botulinica' => [
         'comparison' => [
-            'title' => 'Botox ou preenchimento: qual é a diferença?',
-            'intro' => 'São tratamentos diferentes e complementares. O botox relaxa a musculatura que causa as rugas de expressão; o preenchimento devolve volume e contorno. Muitas pacientes fazem os dois.',
-            'columns' => ['Botox', 'Preenchimento com ácido hialurônico'],
+            'title' => 'Toxina botulínica ou preenchimento: qual é a diferença?',
+            'intro' => 'São tratamentos diferentes e complementares. A toxina botulínica relaxa a musculatura que causa as rugas de expressão; o preenchimento devolve volume e contorno. Muitas pacientes fazem os dois.',
+            'columns' => ['Toxina botulínica', 'Preenchimento com ácido hialurônico'],
             'rows' => [
                 ['label' => 'Como age', 'a' => 'Relaxa temporariamente os músculos responsáveis pelas rugas de expressão.', 'b' => 'Adiciona volume e contorno, sem agir na musculatura.'],
                 ['label' => 'Indicado para', 'a' => 'Linhas da testa, glabela e ao redor dos olhos.', 'b' => 'Lábios, contorno e regiões que perderam volume.'],
@@ -46,13 +46,13 @@ return [
             ],
         ],
         'num' => '01',
-        'updated' => '2026-09-08',
-        'name' => 'Botox',
+        'updated' => '2026-10-04',
+        'name' => 'Toxina Botulínica',
         'card_desc' => 'Suaviza rugas e linhas de expressão com um resultado leve e natural — o famoso olhar descansado de quem dormiu bem.',
-        'title' => 'Botox em Belo Horizonte | Dra. Emily Beatriz',
-        'meta_description' => 'Botox (toxina botulínica) em Belo Horizonte com a Dra. Emily Beatriz. Suaviza rugas da testa, olhos e sobrancelha com resultado natural. Agende pelo WhatsApp.',
-        'eyebrow' => 'Toxina Botulínica',
-        'h1' => 'Botox em Belo Horizonte',
+        'title' => 'Toxina Botulínica em Belo Horizonte | Dra. Emily Beatriz',
+        'meta_description' => 'Toxina botulínica em Belo Horizonte com a Dra. Emily Beatriz. Suaviza rugas da testa, olhos e sobrancelha com resultado natural. Agende pelo WhatsApp.',
+        'eyebrow' => 'Rugas de Expressão',
+        'h1' => 'Toxina Botulínica em Belo Horizonte',
         'hero_lead' => 'O tratamento mais procurado para suavizar rugas e linhas de expressão sem perder a naturalidade. Aplicado pela Dra. Emily Beatriz com técnica refinada, devolve ao rosto um aspecto leve, descansado e absolutamente seu.',
         'facts' => [
             ['label' => 'Resultado', 'value' => '3 a 15 dias'],
@@ -60,10 +60,10 @@ return [
             ['label' => 'Sessão', 'value' => '~30 minutos'],
             ['label' => 'Retorno', 'value' => 'Imediato'],
         ],
-        'what_is_title' => 'O que é o botox?',
+        'what_is_title' => 'O que é a toxina botulínica?',
         'what_is' => [
-            'O botox é o nome popular da toxina botulínica, uma substância que relaxa de forma temporária os músculos responsáveis pelas rugas de expressão. Ao suavizar a contração desses músculos, as linhas da testa, da sobrancelha e ao redor dos olhos (os famosos "pés de galinha") ficam visivelmente mais leves.',
-            'Mais do que um tratamento antienvelhecimento, o botox é uma forma de devolver ao rosto a expressão de tranquilidade. Quando feito com equilíbrio e por mãos experientes, ninguém percebe que você fez — apenas notam que você está mais bonita, descansada e serena.',
+            'A toxina botulínica é uma substância que relaxa de forma temporária os músculos responsáveis pelas rugas de expressão. Ao suavizar a contração desses músculos, as linhas da testa, da sobrancelha e ao redor dos olhos (os famosos "pés de galinha") ficam visivelmente mais leves.',
+            'Mais do que um tratamento antienvelhecimento, a toxina botulínica é uma forma de devolver ao rosto a expressão de tranquilidade. Quando feito com equilíbrio e por mãos experientes, ninguém percebe que você fez — apenas notam que você está mais bonita, descansada e serena.',
         ],
         'benefits' => [
             ['title' => 'Rugas suavizadas', 'desc' => 'Linhas da testa, glabela e olhos atenuadas de forma natural, preservando a sua expressão.'],
@@ -77,9 +77,9 @@ return [
             ['title' => 'Resultado', 'desc' => 'O efeito começa a aparecer em 3 a 15 dias, revelando um rosto mais suave e descansado de forma gradual e natural.'],
         ],
         'faq' => [
-            ['q' => 'Botox dói?', 'a' => 'O desconforto é mínimo. A aplicação é feita com agulhas finíssimas e a maioria das pacientes descreve apenas uma leve picada. Não é necessário anestesia na maioria dos casos.'],
-            ['q' => 'O resultado fica artificial?', 'a' => 'Não. Quando aplicado com técnica e equilíbrio, como faz a Dra. Emily em Belo Horizonte, o botox preserva a sua expressão natural — o objetivo é suavizar, nunca "congelar" o rosto.'],
-            ['q' => 'Quanto tempo dura o efeito do botox?', 'a' => 'Em média de 4 a 6 meses, variando conforme o metabolismo de cada pessoa. Com a manutenção regular, os resultados tendem a durar cada vez mais.'],
+            ['q' => 'A toxina botulínica dói?', 'a' => 'O desconforto é mínimo. A aplicação é feita com agulhas finíssimas e a maioria das pacientes descreve apenas uma leve picada. Não é necessário anestesia na maioria dos casos.'],
+            ['q' => 'O resultado fica artificial?', 'a' => 'Não. Quando aplicada com técnica e equilíbrio, como faz a Dra. Emily em Belo Horizonte, a toxina botulínica preserva a sua expressão natural — o objetivo é suavizar, nunca "congelar" o rosto.'],
+            ['q' => 'Quanto tempo dura o efeito da toxina botulínica?', 'a' => 'Em média de 4 a 6 meses, variando conforme o metabolismo de cada pessoa. Com a manutenção regular, os resultados tendem a durar cada vez mais.'],
             ['q' => 'Quando posso voltar às atividades?', 'a' => 'Imediatamente. Recomenda-se apenas evitar exercícios intensos, calor excessivo e deitar nas primeiras horas após a aplicação.'],
         ],
     ],
@@ -130,7 +130,7 @@ return [
         'name' => 'Harmonização Facial',
         'card_desc' => 'Um conjunto de procedimentos que equilibra as proporções do rosto e valoriza a sua beleza natural, de forma personalizada.',
         'title' => 'Harmonização Facial em Belo Horizonte | Dra. Emily Beatriz',
-        'meta_description' => 'Harmonização facial em Belo Horizonte com a Dra. Emily Beatriz. Equilíbrio das proporções do rosto com botox, preenchimento e bioestimuladores. Agende pelo WhatsApp.',
+        'meta_description' => 'Harmonização facial em Belo Horizonte com a Dra. Emily Beatriz. Equilíbrio das proporções do rosto com toxina botulínica, preenchimento e bioestimuladores. Agende pelo WhatsApp.',
         'eyebrow' => 'Equilíbrio & Proporção',
         'h1' => 'Harmonização Facial em Belo Horizonte',
         'hero_lead' => 'Mais do que um único procedimento, a harmonização facial é um olhar completo sobre o seu rosto. A Dra. Emily Beatriz combina técnicas para equilibrar proporções, suavizar o tempo e revelar a sua beleza — sempre de forma natural.',
@@ -142,7 +142,7 @@ return [
         ],
         'what_is_title' => 'O que é harmonização facial?',
         'what_is' => [
-            'Harmonização facial é o nome dado ao conjunto de procedimentos estéticos minimamente invasivos que trabalham juntos para equilibrar as proporções do rosto. Pode incluir botox, preenchimento labial e facial, bioestimuladores de colágeno, fios de PDO e outros tratamentos — combinados de acordo com a necessidade de cada pessoa.',
+            'Harmonização facial é o nome dado ao conjunto de procedimentos estéticos minimamente invasivos que trabalham juntos para equilibrar as proporções do rosto. Pode incluir toxina botulínica, preenchimento labial e facial, bioestimuladores de colágeno, fios de PDO e outros tratamentos — combinados de acordo com a necessidade de cada pessoa.',
             'O objetivo nunca é transformar você em outra pessoa, mas valorizar o que você já tem de mais bonito. Em Belo Horizonte, a Dra. Emily Beatriz constrói cada plano de harmonização de forma individual, respeitando a sua identidade e os seus desejos.',
         ],
         'benefits' => [
@@ -157,10 +157,10 @@ return [
             ['title' => 'Execução & acompanhamento', 'desc' => 'Os procedimentos são realizados com segurança e acompanhados de perto até o resultado final.'],
         ],
         'faq' => [
-            ['q' => 'Harmonização facial é o mesmo que botox?', 'a' => 'Não exatamente. O botox é um dos procedimentos que pode fazer parte da harmonização facial, mas a harmonização é um conceito mais amplo, que combina diferentes técnicas para equilibrar todo o rosto.'],
+            ['q' => 'Harmonização facial é o mesmo que toxina botulínica?', 'a' => 'Não exatamente. A toxina botulínica é um dos procedimentos que pode fazer parte da harmonização facial, mas a harmonização é um conceito mais amplo, que combina diferentes técnicas para equilibrar todo o rosto.'],
             ['q' => 'O resultado fica artificial?', 'a' => 'Não, quando bem feita. A filosofia da Dra. Emily é a naturalidade: o objetivo é realçar a sua beleza, não mudar quem você é.'],
             ['q' => 'Quantas sessões são necessárias?', 'a' => 'Depende do seu plano personalizado. Alguns procedimentos são feitos em sessão única, outros exigem manutenção. Tudo é definido na avaliação.'],
-            ['q' => 'Quanto tempo dura a harmonização facial?', 'a' => 'Varia conforme as técnicas utilizadas — de alguns meses (botox) a mais de um ano (preenchimentos e bioestimuladores). A manutenção mantém o resultado.'],
+            ['q' => 'Quanto tempo dura a harmonização facial?', 'a' => 'Varia conforme as técnicas utilizadas — de alguns meses (toxina botulínica) a mais de um ano (preenchimentos e bioestimuladores). A manutenção mantém o resultado.'],
         ],
     ],
 
@@ -215,7 +215,7 @@ return [
             ['label' => 'Terço Médio', 'desc' => 'Maçãs do rosto, olheiras e nariz. Restauração de volume e projeção das maçãs, devolvendo sustentação e contorno ao rosto.'],
             ['label' => 'Terço Inferior', 'desc' => 'Lábios, mandíbula e queixo. Definição do contorno facial, projeção do queixo e harmonia dos lábios com o conjunto.'],
         ],
-        'includes' => ['botox', 'preenchimento-labial', 'bioestimulador-de-colageno'],
+        'includes' => ['toxina-botulinica', 'preenchimento-labial', 'bioestimulador-de-colageno'],
         'faq' => [
             ['q' => 'Qual a diferença entre Full Face e harmonização facial?', 'a' => 'O Full Face é a forma mais completa de harmonização facial: trabalha o rosto inteiro de maneira integrada, enquanto uma harmonização pontual pode focar apenas em uma região específica.'],
             ['q' => 'O Full Face é feito em uma única sessão?', 'a' => 'Pode ser realizado em uma sessão mais longa ou dividido em etapas, dependendo do plano definido na avaliação e do conforto da paciente.'],

@@ -58,7 +58,7 @@ it('ships no empty JavaScript bundle', function () {
 });
 
 it('points the brand wordmark at the homepage on every page', function () {
-    foreach (['/', '/procedimentos/botox'] as $path) {
+    foreach (['/', '/procedimentos/toxina-botulinica'] as $path) {
         $html = $this->get($path)->assertOk()->getContent();
 
         expect($html)->not->toContain('href="#"');
@@ -72,3 +72,19 @@ it('keeps the homepage meta description inside the truncation limit', function (
 
     expect(mb_strlen($m[1]))->toBeLessThanOrEqual(160)->toBeGreaterThan(100);
 });
+
+it('redirects the retired botox URL to the toxina botulínica page', function () {
+    $this->get('/procedimentos/botox')
+        ->assertStatus(301)
+        ->assertRedirect('/procedimentos/toxina-botulinica');
+});
+
+it('never mentions botox on a public page', function (string $path) {
+    $html = $this->get($path)->assertOk()->getContent();
+
+    expect(mb_strtolower($html))->not->toContain('botox');
+})->with(fn () => array_merge(
+    ['/', '/artigos', '/sitemap.xml'],
+    array_map(fn ($slug) => "/procedimentos/{$slug}", array_keys(require __DIR__.'/../../config/procedures.php')),
+    array_map(fn ($slug) => "/artigos/{$slug}", array_keys(require __DIR__.'/../../config/articles.php')),
+));

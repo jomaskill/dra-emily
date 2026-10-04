@@ -30,7 +30,7 @@ return [
 
     // Data da última revisão do conteúdo da home. Usada como <lastmod> no
     // sitemap. Atualize ao alterar textos da página inicial.
-    'content_updated' => env('CLINIC_CONTENT_UPDATED', '2026-09-08'),
+    'content_updated' => env('CLINIC_CONTENT_UPDATED', '2026-10-04'),
 
     'google_site_verification' => env('GOOGLE_SITE_VERIFICATION', ''),
 

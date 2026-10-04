@@ -45,14 +45,14 @@ return [
             [
                 'heading' => 'Por que ninguém consegue dizer o preço por telefone',
                 'body' => [
-                    'Harmonização facial não é um procedimento único: é um nome que reúne vários tratamentos diferentes. Duas pacientes que pedem "harmonização" podem sair da avaliação com planos completamente distintos — uma precisando apenas de botox em duas áreas, outra de um protocolo combinando preenchimento, bioestimulador e fios.',
+                    'Harmonização facial não é um procedimento único: é um nome que reúne vários tratamentos diferentes. Duas pacientes que pedem "harmonização" podem sair da avaliação com planos completamente distintos — uma precisando apenas de toxina botulínica em duas áreas, outra de um protocolo combinando preenchimento, bioestimulador e fios.',
                     'Por isso um valor dito antes da avaliação é, na melhor das hipóteses, um chute. Na pior, é uma âncora comercial que não corresponde ao que você realmente precisa.',
                 ],
             ],
             [
                 'heading' => 'O que compõe o investimento',
                 'body' => [
-                    'O primeiro fator é o número de áreas tratadas. Botox apenas na testa custa diferente de botox na testa, glabela e região dos olhos, simplesmente porque a quantidade de produto muda.',
+                    'O primeiro fator é o número de áreas tratadas. Toxina botulínica apenas na testa custa diferente de toxina botulínica na testa, glabela e região dos olhos, simplesmente porque a quantidade de produto muda.',
                     'O segundo é a quantidade de produto. Preenchimentos e bioestimuladores são medidos em seringas ou frascos, e a quantidade necessária depende do seu rosto e do resultado desejado. Aqui vale um alerta: propostas muito abaixo do mercado costumam significar produto diluído, marca sem procedência ou aplicação por quem não tem formação para isso.',
                     'O terceiro é a técnica e a formação de quem aplica. Um resultado natural depende de conhecimento de anatomia facial, e é isso que separa um rosto harmonioso de um rosto que "parece feito".',
                     'O quarto é o acompanhamento. Retorno, ajustes e suporte no pós-procedimento fazem parte do tratamento, não são extras.',
@@ -77,23 +77,23 @@ return [
             ['q' => 'Preciso fazer tudo de uma vez?', 'a' => 'Não. Em muitos casos o plano é dividido em etapas, priorizando o que traz mais resultado primeiro. Isso é definido em conjunto na avaliação.'],
             ['q' => 'A avaliação tem custo?', 'a' => 'A primeira conversa serve para entender o que você deseja e avaliar o seu rosto. Consulte as condições atuais pelo WhatsApp antes de agendar.'],
         ],
-        'related' => ['harmonizacao-facial', 'full-face', 'botox'],
+        'related' => ['harmonizacao-facial', 'full-face', 'toxina-botulinica'],
     ],
 
     'tempo-de-recuperacao' => [
         'title' => 'Quanto tempo dura a recuperação de cada procedimento? | Dra. Emily Beatriz',
         'h1' => 'Quanto tempo dura a recuperação de cada procedimento?',
         'eyebrow' => 'Antes de agendar',
-        'meta_description' => 'Recuperação de botox, preenchimento, bioestimulador, microagulhamento, fios de PDO e bichectomia. Saiba quanto tempo cada procedimento pede antes de agendar.',
+        'meta_description' => 'Recuperação de toxina botulínica, preenchimento, bioestimulador, microagulhamento, fios de PDO e bichectomia. Saiba quanto tempo cada procedimento pede antes de agendar.',
         'excerpt' => 'A pergunta que decide a data do seu agendamento: quantos dias você precisa reservar depois de cada procedimento.',
         'published' => '2026-09-08',
         'updated' => '2026-09-08',
-        'answer' => 'A maioria dos procedimentos estéticos faciais permite retomar a rotina no mesmo dia. Botox e preenchimento têm retorno imediato, com inchaço leve por 24 a 48 horas. Microagulhamento pede de 1 a 3 dias de pele sensível. Fios de PDO e bichectomia, por serem mais invasivos, pedem cerca de uma semana de cuidados.',
+        'answer' => 'A maioria dos procedimentos estéticos faciais permite retomar a rotina no mesmo dia. Toxina botulínica e preenchimento têm retorno imediato, com inchaço leve por 24 a 48 horas. Microagulhamento pede de 1 a 3 dias de pele sensível. Fios de PDO e bichectomia, por serem mais invasivos, pedem cerca de uma semana de cuidados.',
         'sections' => [
             [
                 'heading' => 'Retorno imediato à rotina',
                 'body' => [
-                    'Botox e preenchimento labial são os procedimentos com menor tempo de recuperação. Você sai da clínica e retoma o dia normalmente. É comum haver pequenos pontos avermelhados nos locais de aplicação e algum inchaço nas primeiras 24 a 48 horas, especialmente nos lábios.',
+                    'Toxina botulínica e preenchimento labial são os procedimentos com menor tempo de recuperação. Você sai da clínica e retoma o dia normalmente. É comum haver pequenos pontos avermelhados nos locais de aplicação e algum inchaço nas primeiras 24 a 48 horas, especialmente nos lábios.',
                     'As restrições existem, mas são simples: evitar deitar ou fazer exercício intenso nas primeiras horas, não massagear a região e evitar calor excessivo, como sauna, no mesmo dia.',
                 ],
             ],
@@ -114,23 +114,23 @@ return [
             [
                 'heading' => 'Planejando a data',
                 'body' => [
-                    'Se você tem um evento marcado, a regra prática é simples: quanto mais o procedimento depende de acomodação dos tecidos, mais antecedência ele pede. Botox precisa de pelo menos 15 dias para o efeito completo. Preenchimento pede de 7 a 14 dias para o inchaço ceder. Procedimentos cirúrgicos pedem meses.',
+                    'Se você tem um evento marcado, a regra prática é simples: quanto mais o procedimento depende de acomodação dos tecidos, mais antecedência ele pede. A toxina botulínica precisa de pelo menos 15 dias para o efeito completo. Preenchimento pede de 7 a 14 dias para o inchaço ceder. Procedimentos cirúrgicos pedem meses.',
                     'Na avaliação, diga se há uma data importante à frente. O planejamento muda conforme o prazo disponível.',
                 ],
             ],
         ],
         'takeaways' => [
-            'Botox e preenchimento permitem retomar a rotina no mesmo dia.',
+            'Toxina botulínica e preenchimento permitem retomar a rotina no mesmo dia.',
             'Microagulhamento pede de 1 a 3 dias de pele sensível e proteção solar rigorosa.',
             'Fios de PDO e bichectomia pedem cerca de uma semana de cuidados.',
-            'Para eventos, conte 15 dias para botox e mais tempo para procedimentos invasivos.',
+            'Para eventos, conte 15 dias para toxina botulínica e mais tempo para procedimentos invasivos.',
         ],
         'faq' => [
-            ['q' => 'Posso trabalhar no dia seguinte?', 'a' => 'Na maioria dos procedimentos, sim. Botox, preenchimento e bioestimulador permitem retorno imediato. Microagulhamento pode deixar a pele visivelmente avermelhada por alguns dias, e procedimentos cirúrgicos pedem mais tempo.'],
+            ['q' => 'Posso trabalhar no dia seguinte?', 'a' => 'Na maioria dos procedimentos, sim. Toxina botulínica, preenchimento e bioestimulador permitem retorno imediato. Microagulhamento pode deixar a pele visivelmente avermelhada por alguns dias, e procedimentos cirúrgicos pedem mais tempo.'],
             ['q' => 'Posso fazer exercício depois?', 'a' => 'A orientação habitual é evitar esforço físico intenso nas primeiras 24 a 48 horas na maioria dos procedimentos, e por mais tempo em fios de PDO e bichectomia. As orientações específicas são dadas no seu caso.'],
-            ['q' => 'Quando vejo o resultado final?', 'a' => 'Varia bastante: preenchimento tem resultado imediato, botox leva de 3 a 15 dias, bioestimulador e fios são progressivos ao longo de semanas, e a bichectomia leva de 3 a 6 meses.'],
+            ['q' => 'Quando vejo o resultado final?', 'a' => 'Varia bastante: preenchimento tem resultado imediato, toxina botulínica leva de 3 a 15 dias, bioestimulador e fios são progressivos ao longo de semanas, e a bichectomia leva de 3 a 6 meses.'],
         ],
-        'related' => ['botox', 'preenchimento-labial', 'microagulhamento'],
+        'related' => ['toxina-botulinica', 'preenchimento-labial', 'microagulhamento'],
     ],
 
     'quem-nao-pode-fazer' => [
@@ -175,18 +175,18 @@ return [
             'Expectativa inalcançável é motivo legítimo para não indicar o procedimento.',
         ],
         'faq' => [
-            ['q' => 'Posso fazer botox amamentando?', 'a' => 'A orientação é adiar. Não há estudos que comprovem segurança durante a amamentação, e por isso procedimentos injetáveis não são indicados nesse período.'],
+            ['q' => 'Posso fazer toxina botulínica amamentando?', 'a' => 'A orientação é adiar. Não há estudos que comprovem segurança durante a amamentação, e por isso procedimentos injetáveis não são indicados nesse período.'],
             ['q' => 'Tenho doença autoimune, posso fazer?', 'a' => 'Depende da condição e do momento. Doenças autoimunes em fase ativa contraindicam, mas casos controlados podem ser avaliados em conjunto com o médico que acompanha você. Traga essa informação na avaliação.'],
             ['q' => 'Existe idade mínima ou máxima?', 'a' => 'Não há um número fixo. O que orienta a indicação é a avaliação individual, considerando a estrutura do rosto, o objetivo e o histórico de saúde de cada paciente.'],
         ],
-        'related' => ['harmonizacao-facial', 'bichectomia', 'botox'],
+        'related' => ['harmonizacao-facial', 'bichectomia', 'toxina-botulinica'],
     ],
 
     'como-se-preparar' => [
         'title' => 'Como se preparar para o seu procedimento | Dra. Emily Beatriz',
         'h1' => 'Como se preparar para o seu procedimento',
         'eyebrow' => 'Antes de agendar',
-        'meta_description' => 'O que fazer nos dias que antecedem botox, preenchimento ou bioestimulador em Belo Horizonte. Preparo simples que melhora o resultado e reduz hematomas.',
+        'meta_description' => 'O que fazer nos dias que antecedem toxina botulínica, preenchimento ou bioestimulador em Belo Horizonte. Preparo simples que melhora o resultado e reduz hematomas.',
         'excerpt' => 'Alguns cuidados nos dias anteriores reduzem hematomas e melhoram o resultado. Nenhum deles é complicado.',
         'published' => '2026-09-08',
         'updated' => '2026-09-08',
@@ -234,7 +234,7 @@ return [
             ['q' => 'Posso tomar analgésico antes?', 'a' => 'Evite anti-inflamatórios e ácido acetilsalicílico, que aumentam a chance de hematoma. Se você usa algum medicamento de forma contínua, informe na avaliação em vez de suspendê-lo por conta própria.'],
             ['q' => 'Posso ir maquiada?', 'a' => 'É preferível chegar com o rosto limpo. Se não for possível, reserve alguns minutos para remover a maquiagem antes do procedimento.'],
         ],
-        'related' => ['botox', 'preenchimento-labial', 'bioestimulador-de-colageno'],
+        'related' => ['toxina-botulinica', 'preenchimento-labial', 'bioestimulador-de-colageno'],
     ],
 
 ];

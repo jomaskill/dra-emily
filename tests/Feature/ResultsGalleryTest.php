@@ -14,7 +14,7 @@ it('shows at least five before-and-after cases on the homepage', function () {
 it('renders a placeholder while the photo is missing', function () {
     config(['results' => [[
         'id' => 'missing-photo',
-        'procedure' => 'botox',
+        'procedure' => 'toxina-botulinica',
         'title' => 'Caso de teste',
         'type' => 'combined',
         'image' => 'resultados/nao-existe.jpg',
@@ -31,7 +31,7 @@ it('renders a placeholder while the photo is missing', function () {
 it('renders the real photo once the file exists', function () {
     config(['results' => [[
         'id' => 'existing-photo',
-        'procedure' => 'botox',
+        'procedure' => 'toxina-botulinica',
         'title' => 'Caso de teste',
         'type' => 'split',
         'before' => 'antes-1.jpg',
@@ -48,9 +48,9 @@ it('renders the real photo once the file exists', function () {
 });
 
 it('shows only the cases of the current procedure', function () {
-    $html = $this->get('/procedimentos/botox')->assertOk()->getContent();
+    $html = $this->get('/procedimentos/toxina-botulinica')->assertOk()->getContent();
 
-    $expected = collect(config('results'))->where('procedure', 'botox')->pluck('id');
+    $expected = collect(config('results'))->where('procedure', 'toxina-botulinica')->pluck('id');
     preg_match_all('/data-result-card="([^"]+)"/', $html, $cards);
 
     expect($cards[1])->toEqualCanonicalizing($expected->all());
@@ -84,7 +84,7 @@ it('places the gallery right after the hero on procedure pages', function (strin
     $html = $this->get("/procedimentos/{$slug}")->assertOk()->getContent();
 
     expect(strpos($html, 'id="resultados"'))->toBeLessThan(strpos($html, 'id="o-que-e"'));
-})->with(['botox', 'full-face']);
+})->with(['toxina-botulinica', 'full-face']);
 
 it('signs every case with the professional name and registration', function () {
     $html = $this->get('/')->assertOk()->getContent();

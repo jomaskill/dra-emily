@@ -13,11 +13,11 @@
 @endphp
 
 <x-site-layout
-    title="Dra. Emily Beatriz | Harmonização Facial, Botox e Preenchimento em BH"
-    description="Harmonização facial, botox e preenchimento labial em Belo Horizonte com a Dra. Emily Beatriz. Resultados naturais e personalizados. Agende pelo WhatsApp!"
+    title="Dra. Emily Beatriz | Harmonização Facial, Toxina Botulínica e Preenchimento em BH"
+    description="Harmonização facial, toxina botulínica e preenchimento labial em BH com a Dra. Emily Beatriz. Resultados naturais e personalizados. Agende pelo WhatsApp!"
     canonical="{{ $siteUrl }}/"
-    og-title="Dra. Emily Beatriz | Harmonização Facial, Botox e Preenchimento em BH"
-    og-description="Especialista em harmonização facial, botox e preenchimento labial em Belo Horizonte, MG. Resultados naturais que revelam a melhor versão de você."
+    og-title="Dra. Emily Beatriz | Harmonização Facial, Toxina Botulínica e Preenchimento em BH"
+    og-description="Especialista em harmonização facial, toxina botulínica e preenchimento labial em Belo Horizonte, MG. Resultados naturais que revelam a melhor versão de você."
     :nav-base="''">
 
     <x-slot:schema>
@@ -100,7 +100,7 @@
                         {{-- Photo --}}
                         <div class="relative w-72 sm:w-80 lg:w-96 xl:w-[420px] aspect-[3/4] rounded-3xl overflow-hidden bg-gradient-to-br from-blush/40 to-rose/10 shadow-2xl shadow-rose/10">
                             <x-picture src="foto-emily.jpg"
-                                       alt="Dra. Emily Beatriz — Especialista em Harmonização Facial, Botox e Preenchimento em Belo Horizonte MG"
+                                       alt="Dra. Emily Beatriz — Especialista em Harmonização Facial, Toxina Botulínica e Preenchimento em Belo Horizonte MG"
                                        width="1400"
                                        height="2100"
                                        loading="eager"
@@ -313,11 +313,11 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
                     @foreach ([
                         [
-                            'Fui e sou paciente dela. Excelente profissional, trabalha muito bem. A gente sente quando alguém ama o que faz, e a Dra. Emily é essa pessoa. Fiz bioestimulador de colágeno, preenchimento labial e outros procedimentos com botox! Meu rosto ficou mais harmônico e minha pele melhorou uns 90%. Enfim, amei os resultados.',
+                            'Fui e sou paciente dela. Excelente profissional, trabalha muito bem. A gente sente quando alguém ama o que faz, e a Dra. Emily é essa pessoa. Fiz bioestimulador de colágeno, preenchimento labial e outros procedimentos com toxina botulínica! Meu rosto ficou mais harmônico e minha pele melhorou uns 90%. Enfim, amei os resultados.',
                             'Carine Andrade', 'Avaliação no Google',
                         ],
                         [
-                            'Sem palavras para o resultado! Fiz botox e preenchimento labial e fiquei simplesmente apaixonada. Atendimento impecável, muito cuidado em cada detalhe, super profissional e me deixou segura o tempo todo. O resultado ficou natural, elegante e valorizou muito minha autoestima. Indico de olhos fechados, uma profissional maravilhosa!',
+                            'Sem palavras para o resultado! Fiz toxina botulínica e preenchimento labial e fiquei simplesmente apaixonada. Atendimento impecável, muito cuidado em cada detalhe, super profissional e me deixou segura o tempo todo. O resultado ficou natural, elegante e valorizou muito minha autoestima. Indico de olhos fechados, uma profissional maravilhosa!',
                             'Dabila Araújo', 'Avaliação no Google',
                         ],
                         [
