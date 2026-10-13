@@ -18,6 +18,7 @@
 
     --font-display: var(--font-bodoni-moda, 'Bodoni Moda'), Georgia, serif;
     --font-sans: var(--font-figtree, 'Figtree'), ui-sans-serif, system-ui, sans-serif;
+    --font-serif: var(--font-source-serif, 'Source Serif 4'), Georgia, serif;
 
     --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
 
@@ -115,6 +116,72 @@
 
     .thread-link:hover {
         background-size: 112% 10px;
+    }
+
+    /*
+     * Long-form reading column, in the spirit of an editorial blog: a text
+     * serif at a generous measure, Bodoni headings and an opening drop cap.
+     */
+    .article-prose {
+        font-family: var(--font-serif);
+        font-size: 1.125rem;
+        line-height: 1.75;
+        letter-spacing: -0.003em;
+        color: var(--color-ink);
+        font-optical-sizing: auto;
+    }
+
+    .article-prose p + p {
+        margin-top: 1.55em;
+    }
+
+    .article-prose h2 {
+        font-family: var(--font-display);
+        font-size: clamp(1.65rem, 1.2rem + 1.4vw, 2.05rem);
+        line-height: 1.18;
+        letter-spacing: -0.02em;
+        margin: 2.3em 0 0.65em;
+        scroll-margin-top: 6rem;
+    }
+
+    .article-prose section:first-child h2 {
+        margin-top: 0;
+    }
+
+    .article-prose .drop-cap::first-letter {
+        float: left;
+        font-family: var(--font-display);
+        font-size: 4.6em;
+        line-height: 0.82;
+        padding: 0.06em 0.1em 0 0;
+        color: var(--color-clay);
+        font-variation-settings: 'opsz' 96;
+    }
+
+    @media (min-width: 768px) {
+        .article-prose {
+            font-size: 1.25rem;
+            line-height: 1.7;
+        }
+    }
+
+    /* Hairline across the top of the viewport that fills as the page scrolls. */
+    .reading-progress {
+        transform-origin: 0 50%;
+        transform: scaleX(0);
+    }
+
+    @supports (animation-timeline: scroll()) {
+        .reading-progress {
+            animation: reading-progress linear both;
+            animation-timeline: scroll(root);
+        }
+    }
+
+    @keyframes reading-progress {
+        to {
+            transform: scaleX(1);
+        }
     }
 
     /* Hairline rule used between list rows. */

@@ -29,6 +29,15 @@ export default defineConfig({
                     weights: [400, 500, 600],
                     fallbacks: ['ui-sans-serif', 'system-ui', 'sans-serif'],
                 }),
+                // Text serif for long-form reading on the articles.
+                google('Source Serif 4', {
+                    alias: 'serif',
+                    variable: '--font-source-serif',
+                    weights: [400, 600],
+                    styles: ['normal', 'italic'],
+                    fallbacks: ['Georgia', 'serif'],
+                    preload: false,
+                }),
             ],
         }),
         tailwindcss(),

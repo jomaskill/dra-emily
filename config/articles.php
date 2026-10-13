@@ -38,8 +38,8 @@ return [
         'eyebrow' => 'Antes de agendar',
         'meta_description' => 'O que define o valor de uma harmonização facial em Belo Horizonte: número de áreas, quantidade de produto, técnica e acompanhamento. Entenda antes de agendar.',
         'excerpt' => 'Não existe preço único, e desconfiar de quem promete um é o primeiro cuidado. Entenda o que realmente compõe o investimento.',
-        'published' => '2026-09-08',
-        'updated' => '2026-09-08',
+        'published' => '2026-08-18',
+        'updated' => '2026-08-18',
         'answer' => 'Não existe valor único para harmonização facial. O investimento depende de quantas áreas serão tratadas, da quantidade de produto necessária, da técnica escolhida e do acompanhamento incluído. Por isso o orçamento só é fechado depois da avaliação presencial, quando se sabe exatamente o que o seu rosto precisa.',
         'sections' => [
             [
@@ -86,8 +86,8 @@ return [
         'eyebrow' => 'Antes de agendar',
         'meta_description' => 'Recuperação de toxina botulínica, preenchimento, bioestimulador, microagulhamento, fios de PDO e bichectomia: quanto tempo cada um pede antes de agendar.',
         'excerpt' => 'A pergunta que decide a data do seu agendamento: quantos dias você precisa reservar depois de cada procedimento.',
-        'published' => '2026-09-08',
-        'updated' => '2026-09-08',
+        'published' => '2026-08-29',
+        'updated' => '2026-08-29',
         'answer' => 'A maioria dos procedimentos estéticos faciais permite retomar a rotina no mesmo dia. Toxina botulínica e preenchimento têm retorno imediato, com inchaço leve por 24 a 48 horas. Microagulhamento pede de 1 a 3 dias de pele sensível. Fios de PDO e bichectomia, por serem mais invasivos, pedem cerca de uma semana de cuidados.',
         'sections' => [
             [
@@ -139,8 +139,8 @@ return [
         'eyebrow' => 'Antes de agendar',
         'meta_description' => 'Gestantes, algumas condições de saúde e expectativas irreais são motivos para adiar ou não indicar harmonização facial. Entenda quando a resposta é não.',
         'excerpt' => 'Uma boa avaliação inclui a possibilidade de dizer não. Conheça as situações em que o procedimento é adiado ou desaconselhado.',
-        'published' => '2026-09-08',
-        'updated' => '2026-09-08',
+        'published' => '2026-09-09',
+        'updated' => '2026-09-09',
         'answer' => 'Gestantes e lactantes não devem realizar procedimentos injetáveis. Infecção ativa na região, doenças autoimunes descompensadas, distúrbios de coagulação e alergia a algum componente também contraindicam. Além disso, expectativas irreais são motivo legítimo para não indicar: se o resultado esperado não é alcançável, o procedimento não deve ser feito.',
         'sections' => [
             [
@@ -188,8 +188,8 @@ return [
         'eyebrow' => 'Antes de agendar',
         'meta_description' => 'O que fazer antes de toxina botulínica, preenchimento ou bioestimulador em Belo Horizonte. Preparo simples que melhora o resultado e reduz hematomas.',
         'excerpt' => 'Alguns cuidados nos dias anteriores reduzem hematomas e melhoram o resultado. Nenhum deles é complicado.',
-        'published' => '2026-09-08',
-        'updated' => '2026-09-08',
+        'published' => '2026-09-19',
+        'updated' => '2026-09-19',
         'answer' => 'Nos dias anteriores, evite álcool por 24 a 48 horas e informe todos os medicamentos e suplementos que usa, especialmente anti-inflamatórios e anticoagulantes, que aumentam a chance de hematoma. Vá com o rosto limpo, sem maquiagem, depois de comer e bem hidratado. E leve suas dúvidas anotadas.',
         'sections' => [
             [
@@ -243,8 +243,8 @@ return [
         'eyebrow' => 'Pele madura',
         'meta_description' => 'Harmonização facial aos 40, 50 e na menopausa: flacidez, bigode chinês e perda de volume pedem outro plano. Veja o que faz sentido em cada fase.',
         'excerpt' => 'Depois dos 40, o rosto não pede mais volume: pede sustentação e qualidade de pele. Entenda o que muda em cada fase.',
-        'published' => '2026-10-13',
-        'updated' => '2026-10-13',
+        'published' => '2026-09-30',
+        'updated' => '2026-09-30',
         'answer' => 'Depois dos 40, a harmonização facial muda de foco. Em vez de volume e pequenos ajustes, o plano passa a priorizar sustentação e qualidade da pele, com bioestimulador de colágeno, reposição de volume nas maçãs do rosto e fios de PDO. Depois dos 50 e na menopausa, a flacidez ganha prioridade e o tratamento costuma ser combinado e gradual.',
         'sections' => [
             [
@@ -288,6 +288,66 @@ return [
             ['q' => 'A harmonização facial fica artificial em pele madura?', 'a' => 'Não precisa ficar. O aspecto artificial vem de excesso de produto, principalmente de preenchimento. Com foco em sustentação e quantidades conservadoras, o resultado é um rosto descansado e natural.'],
         ],
         'related' => ['bioestimulador-de-colageno', 'flacidez-facial', 'bigode-chines', 'preenchimento-facial'],
+    ],
+
+    'harmonizacao-facial-em-homens' => [
+        'title' => 'Por que tantos homens fazem harmonização facial | Dra. Emily Beatriz',
+        'h1' => 'Por que tantos homens estão fazendo harmonização facial',
+        'eyebrow' => 'Para homens',
+        'meta_description' => 'Homens famosos mostraram a harmonização facial nas últimas semanas. Veja o que os homens costumam buscar e como tratar o rosto sem perder os traços masculinos.',
+        'excerpt' => 'Em poucos dias, um cantor, um ator e o governador eleito de Minas contaram que fizeram harmonização. Fica a dúvida que todo homem tem: dá para fazer sem parecer que fez?',
+        'published' => '2026-10-08',
+        'updated' => '2026-10-08',
+        'answer' => 'Os homens procuram a harmonização facial por motivos bem práticos: parecer menos cansado, recuperar o contorno da mandíbula e suavizar as rugas da testa. O bom resultado depende de respeitar a anatomia masculina, com doses ajustadas a uma musculatura mais forte, produto em quantidade conservadora e foco na mandíbula e no queixo. Assim o rosto fica descansado e continua com cara de homem.',
+        'sections' => [
+            [
+                'heading' => 'Uma semana de homens falando do assunto',
+                'body' => [
+                    'No começo de outubro, o cantor Fiuk, de 35 anos, mostrou na televisão o resultado de uma harmonização feita para corrigir pequenos detalhes do rosto. Na mesma semana, o ator Henri Castelli, de 48, voltou a uma clínica em São Paulo para repetir o tratamento que tinha feito em 2024. E em Minas o tema chegou à política: um dia depois de eleito governador, Cleitinho Azevedo fez preenchimento, bioestimulador de colágeno, ultrassom microfocado e um peeling. Segundo a clínica que o atendeu, a ideia era tirar do rosto o desgaste da campanha.',
+                    'O que chama atenção é que nenhum deles escondeu. Até pouco tempo atrás, homem que aplicava toxina botulínica não comentava nem com os amigos. Agora o assunto aparece em programa de auditório e em post de clínica, e quem tinha vontade de perguntar se sente mais à vontade para marcar uma avaliação.',
+                ],
+            ],
+            [
+                'heading' => 'O que os homens costumam pedir',
+                'body' => [
+                    'Poucos homens chegam dizendo que querem ficar mais bonitos. O pedido costuma vir de lado: os colegas perguntam se ele está doente, a esposa diz que ele parece bravo o tempo todo, a foto de perfil mostra alguém mais velho do que ele se sente. Por trás dessas frases estão sinais bem conhecidos, como olheira funda, testa e região entre as sobrancelhas muito marcadas, papada e um contorno de mandíbula que foi perdendo definição.',
+                    'Muitos chegam por outro caminho, o bruxismo. Vêm tratar a dor e o desgaste dos dentes com toxina botulínica no masseter e só ali começam a perguntar sobre a testa ou as olheiras.',
+                ],
+            ],
+            [
+                'heading' => 'Rosto de homem pede outro planejamento',
+                'body' => [
+                    'A pele masculina é mais grossa, a musculatura é mais forte e a estrutura óssea é diferente. A mandíbula é mais larga, o queixo mais projetado e a sobrancelha fica mais baixa e reta. Quando uma técnica pensada para o rosto feminino é aplicada sem adaptação, as maçãs do rosto ficam arredondadas, a ponta da sobrancelha sobe e os lábios ganham volume. É daí que vem aquela cara de quem fez alguma coisa.',
+                    'Na toxina botulínica, a dose costuma ser maior e os pontos de aplicação mudam para manter a sobrancelha reta. No preenchimento, o produto vai mais para o ângulo da mandíbula e para o queixo, e bem menos para as maçãs do rosto e os lábios. Em muitos casos, o que mais rejuvenesce um homem é tratar a olheira e devolver nitidez à linha da mandíbula, sem mexer em mais nada.',
+                ],
+            ],
+            [
+                'heading' => 'Vários procedimentos no mesmo dia',
+                'body' => [
+                    'Combinar tratamentos numa sessão é possível e, em alguns planos, faz sentido. Só que o inchaço de cada um se soma, e se aparecer uma reação fica mais difícil saber o que a causou. Além disso, cada técnica tem seu tempo. A toxina leva até duas semanas para fazer efeito e o bioestimulador de colágeno trabalha ao longo de meses.',
+                    'Para quem vai fazer pela primeira vez, começar por uma ou duas áreas costuma ser o caminho mais tranquilo. Dá para ver como o rosto responde, ajustar no retorno e decidir com calma o próximo passo.',
+                ],
+            ],
+            [
+                'heading' => 'Antes de marcar',
+                'body' => [
+                    'A Anvisa classifica os preenchedores como dispositivos médicos de alto risco, e as complicações graves costumam acontecer quando o produto é aplicado fora das áreas ou dos volumes indicados pelo fabricante. Por isso, confirme o registro do profissional no conselho, pergunte qual produto será usado e peça a etiqueta com o lote. Avaliação feita por mensagem, sem examinar o rosto, não serve.',
+                    'Também vale perguntar se o profissional tem casos de homens para mostrar. Antes e depois de mulher diz pouco sobre como ele trabalha um rosto masculino.',
+                ],
+            ],
+        ],
+        'takeaways' => [
+            'Os homens buscam parecer descansados, não mudar de rosto.',
+            'Pele mais grossa e músculo mais forte pedem doses e pontos de aplicação diferentes.',
+            'Técnica feminina sem adaptação é o que deixa o homem com cara de que fez.',
+            'Na primeira vez, uma ou duas áreas bem feitas rendem mais do que um pacote completo.',
+        ],
+        'faq' => [
+            ['q' => 'Homem precisa de mais toxina botulínica do que mulher?', 'a' => 'Em geral, sim. A musculatura masculina é mais forte e costuma pedir doses maiores para o mesmo efeito. A quantidade exata depende da força de cada músculo, avaliada na consulta.'],
+            ['q' => 'O efeito dura menos no rosto masculino?', 'a' => 'A toxina botulínica pode durar um pouco menos em quem tem músculos muito fortes, mas a diferença é pequena. Preenchimento e bioestimulador duram o mesmo tempo que nas mulheres.'],
+            ['q' => 'Preciso me afastar do trabalho?', 'a' => 'Na maioria dos casos, não. Pode haver leve inchaço ou um pequeno hematoma por alguns dias. Se houver um compromisso importante, o ideal é marcar o procedimento com uma ou duas semanas de folga.'],
+        ],
+        'related' => ['harmonizacao-facial-masculina', 'toxina-botulinica', 'toxina-botulinica-bruxismo', 'preenchimento-facial'],
     ],
 
 ];
