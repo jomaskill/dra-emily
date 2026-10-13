@@ -45,7 +45,7 @@ Turn qualified local visitors into WhatsApp consultation conversations by making
 - Selecting a flagship procedure without traffic, lead-quality, or commercial evidence — prominence will follow measurement
 - Guaranteed clinical outcomes, universal candidacy, or absolute safety claims — outcomes and indications are individualized
 - Advertising prices, discounts, promotions, or payment offers — excluded pending explicit business need and compliance review
-- A wholesale rebrand or framework replacement — changes should improve the current brand and Laravel/Blade implementation unless the audit demonstrates a specific need
+- A framework replacement — changes should improve the Laravel/Blade implementation. (The visual identity was rebuilt in October 2026 around the EB monogram: clay, linen and ochre palette, Bodoni Moda + Figtree.)
 
 ## Context
 
