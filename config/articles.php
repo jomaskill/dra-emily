@@ -243,8 +243,8 @@ return [
         'eyebrow' => 'Pele madura',
         'meta_description' => 'Harmonização facial aos 40, 50 e na menopausa: flacidez, bigode chinês e perda de volume pedem outro plano. Veja o que faz sentido em cada fase.',
         'excerpt' => 'Depois dos 40, o rosto não pede mais volume: pede sustentação e qualidade de pele. Entenda o que muda em cada fase.',
-        'published' => '2026-09-30',
-        'updated' => '2026-09-30',
+        'published' => '2026-10-13',
+        'updated' => '2026-10-13',
         'answer' => 'Depois dos 40, a harmonização facial muda de foco. Em vez de volume e pequenos ajustes, o plano passa a priorizar sustentação e qualidade da pele, com bioestimulador de colágeno, reposição de volume nas maçãs do rosto e fios de PDO. Depois dos 50 e na menopausa, a flacidez ganha prioridade e o tratamento costuma ser combinado e gradual.',
         'sections' => [
             [
@@ -296,8 +296,8 @@ return [
         'eyebrow' => 'Para homens',
         'meta_description' => 'Homens famosos mostraram a harmonização facial nas últimas semanas. Veja o que os homens costumam buscar e como tratar o rosto sem perder os traços masculinos.',
         'excerpt' => 'Em poucos dias, um cantor, um ator e o governador eleito de Minas contaram que fizeram harmonização. Fica a dúvida que todo homem tem: dá para fazer sem parecer que fez?',
-        'published' => '2026-10-08',
-        'updated' => '2026-10-08',
+        'published' => '2026-10-13',
+        'updated' => '2026-10-13',
         'answer' => 'Os homens procuram a harmonização facial por motivos bem práticos: parecer menos cansado, recuperar o contorno da mandíbula e suavizar as rugas da testa. O bom resultado depende de respeitar a anatomia masculina, com doses ajustadas a uma musculatura mais forte, produto em quantidade conservadora e foco na mandíbula e no queixo. Assim o rosto fica descansado e continua com cara de homem.',
         'sections' => [
             [
