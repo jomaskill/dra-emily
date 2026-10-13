@@ -42,6 +42,19 @@ return [
         'featured' => true,
     ],
     [
+        // Mesmo caso de harmonizacao-facial-contorno-1, exibido também na
+        // página do procedimento que de fato foi feito (enzima para papada).
+        'id' => 'enzima-para-papada-1',
+        'procedure' => 'enzima-para-papada',
+        'title' => 'Papada reduzida, contorno definido',
+        'type' => 'combined',
+        'image' => 'resultados/harmonizacao-facial-contorno-1.jpg',
+        'layout' => 'horizontal',
+        'alt' => 'redução de papada com enzima em Belo Horizonte — Dra. Emily Beatriz',
+        'detail' => 'Enzima para gordura localizada da papada',
+        'featured' => false,
+    ],
+    [
         'id' => 'preenchimento-labial-1',
         'procedure' => 'preenchimento-labial',
         'title' => 'Lábios com contorno definido',

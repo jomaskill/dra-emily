@@ -29,7 +29,12 @@ function nodeOfType(array $nodes, string $type): ?array
     return collect($nodes)->firstWhere('@type', $type);
 }
 
-$slugs = array_keys(require __DIR__.'/../../config/procedures.php');
+$catalogue = require __DIR__.'/../../config/procedures.php';
+$slugs = array_keys($catalogue);
+
+// Concern pages (bigode chinês, flacidez) describe a condition and point at
+// its treatments, so they carry MedicalCondition instead of MedicalProcedure.
+$procedureSlugs = array_keys(array_filter($catalogue, fn (array $page): bool => ($page['kind'] ?? null) !== 'concern'));
 
 it('describes every procedure page as a reviewed medical page', function (string $slug) {
     $html = $this->get("/procedimentos/{$slug}")->assertOk()->getContent();
@@ -39,7 +44,9 @@ it('describes every procedure page as a reviewed medical page', function (string
     expect($page)->not->toBeNull()
         ->and($page['lastReviewed'])->toBe(config("procedures.{$slug}.updated"))
         ->and($page['reviewedBy']['identifier'])->toContain(config('clinic.cro'))
-        ->and($page['mainEntity']['@id'])->toEndWith('#procedure');
+        ->and($page['mainEntity']['@id'])->toEndWith(
+            config("procedures.{$slug}.kind") === 'concern' ? '#condition' : '#procedure'
+        );
 })->with($slugs);
 
 it('points speakable selectors at anchors that exist on the page', function (string $slug) {
@@ -65,7 +72,7 @@ it('carries the treatment steps in the procedure markup', function (string $slug
     foreach (config("procedures.{$slug}.steps") as $step) {
         expect($procedure['howPerformed'])->toContain($step['title']);
     }
-})->with($slugs);
+})->with($procedureSlugs);
 
 it('shows the disclaimer and review date on every procedure page', function (string $slug) {
     $html = $this->get("/procedimentos/{$slug}")->assertOk()->getContent();

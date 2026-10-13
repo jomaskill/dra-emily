@@ -28,7 +28,7 @@ return [
         ],
         [
             'q' => 'Toxina botulínica dói? O resultado fica artificial?',
-            'a' => 'A toxina botulínica é aplicada com agulhas ultrafinas e causa desconforto mínimo. Os resultados surgem em 7 a 15 dias e, quando feito por uma profissional experiente como a Dra. Emily, o aspecto é completamente natural — ninguém percebe que você fez, só notam que você está mais bonita e descansada.',
+            'a' => 'A toxina botulínica é aplicada com agulhas ultrafinas e causa desconforto mínimo. Os resultados surgem em 7 a 15 dias e, quando feito por uma profissional experiente como a Dra. Emily, o aspecto é completamente natural — ninguém percebe que você fez, só notam que você está com uma aparência mais descansada.',
         ],
         [
             'q' => 'Quanto tempo dura o preenchimento labial?',
@@ -45,6 +45,14 @@ return [
         [
             'q' => 'O que são fios de PDO? É lifting sem cirurgia?',
             'a' => 'Sim! Os fios de PDO são fios bioabsorvíveis inseridos sob a pele para promover sustentação e estímulo de colágeno — funcionando como um lifting sem bisturi. O resultado melhora progressivamente ao longo das semanas e é completamente natural.',
+        ],
+        [
+            'q' => 'Homens também fazem harmonização facial?',
+            'a' => 'Sim, e a procura masculina cresce a cada ano. Os homens costumam buscar contorno da mandíbula, tratamento de olheiras e papada e suavização de rugas de expressão. A Dra. Emily planeja a harmonização facial masculina para preservar os traços do rosto do homem, sem nenhum aspecto feminilizado.',
+        ],
+        [
+            'q' => 'Bigode chinês e flacidez têm tratamento sem cirurgia?',
+            'a' => 'Sim, na maioria dos casos. O bigode chinês melhora com reposição de volume nas maçãs do rosto, bioestimulador de colágeno e, quando necessário, fios de PDO. A flacidez facial responde bem ao estímulo de colágeno, especialmente depois dos 40 e na menopausa. O plano é definido na avaliação.',
         ],
         [
             'q' => 'Posso combinar vários procedimentos na mesma consulta?',

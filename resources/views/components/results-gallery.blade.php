@@ -35,7 +35,7 @@
 
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mt-12 lg:mt-16 pt-10 border-t border-linen/15 mx-5 lg:mx-0">
             <p class="text-linen/60 text-sm leading-relaxed max-w-[52ch]">
-                Cada pessoa é única e os resultados variam. Imagens publicadas com autorização das pacientes.
+                Cada pessoa é única e os resultados variam. Imagens publicadas com autorização dos pacientes.
             </p>
             <a href="{{ $ctaUrl }}" target="_blank" rel="noopener noreferrer" class="btn shrink-0">
                 {{ $ctaLabel }}

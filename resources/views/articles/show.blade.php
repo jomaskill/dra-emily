@@ -140,7 +140,7 @@
 
         <x-closing-cta :url="$waArtigo" label="Agendar avaliação">
             <x-slot:heading>Ficou com alguma <em>dúvida</em>?</x-slot:heading>
-            A avaliação é uma conversa. Traga suas perguntas e vamos entender juntas o que faz sentido para você.
+            A avaliação é uma conversa. Traga suas perguntas e vamos entender, junto com você, o que faz sentido para você.
         </x-closing-cta>
 
         @include('partials.medical-disclaimer', ['reviewed' => $article['updated']])

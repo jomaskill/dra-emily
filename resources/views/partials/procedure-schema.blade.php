@@ -17,13 +17,38 @@
     ];
 
     $json = static fn ($value): string => json_encode($value, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+
+    // Páginas de queixa descrevem uma condição e os tratamentos possíveis, não
+    // um procedimento. Cada tratamento aponta para a página dele.
+    $isConcern = ($procedure['kind'] ?? null) === 'concern';
+    $mainId = $canonical.($isConcern ? '#condition' : '#procedure');
+    $possibleTreatment = collect($procedure['treatments'] ?? [])
+        ->map(fn (string $treatment): array => [
+            '@type' => 'MedicalProcedure',
+            'name' => config("procedures.{$treatment}.name"),
+            'url' => $siteUrl.'/procedimentos/'.$treatment,
+        ])
+        ->values()
+        ->all();
 @endphp
 <script type="application/ld+json">
 [
+  @if ($isConcern)
+  {
+    "@@context": "https://schema.org",
+    "@@type": "MedicalCondition",
+    "@@id": "{{ $mainId }}",
+    "name": {!! $json($procedure['concern']['label'] ?? $procedure['name']) !!},
+    "description": {!! $json($procedure['meta_description']) !!},
+    "url": "{{ $canonical }}",
+    "associatedAnatomy": { "@@type": "AnatomicalStructure", "name": "Face" },
+    "possibleTreatment": {!! $json($possibleTreatment) !!}
+  },
+  @else
   {
     "@@context": "https://schema.org",
     "@@type": "MedicalProcedure",
-    "@@id": "{{ $canonical }}#procedure",
+    "@@id": "{{ $mainId }}",
     "name": {!! $json($procedure['name'].' — '.config('clinic.city')) !!},
     "description": {!! $json($procedure['meta_description']) !!},
     "url": "{{ $canonical }}",
@@ -31,6 +56,7 @@
     "howPerformed": {!! $json($howPerformed) !!},
     "performer": {!! $json($physician) !!}
   },
+  @endif
   {
     "@@context": "https://schema.org",
     "@@type": "BreadcrumbList",
@@ -63,7 +89,7 @@
     "name": {!! $json($procedure['title']) !!},
     "inLanguage": "pt-BR",
     "about": { "@@id": "{{ $siteUrl }}/#clinic" },
-    "mainEntity": { "@@id": "{{ $canonical }}#procedure" },
+    "mainEntity": { "@@id": "{{ $mainId }}" },
     "publisher": { "@@id": "{{ $siteUrl }}/#clinic" }@if (! empty($procedure['updated'])),
     "lastReviewed": "{{ $procedure['updated'] }}",
     "reviewedBy": {!! $json($physician) !!}@endif,

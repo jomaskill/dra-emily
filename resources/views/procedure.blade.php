@@ -8,13 +8,17 @@
     $waFinal     = \App\Support\WhatsApp::url('Olá! Quero agendar uma avaliação de '.$procedure['name'].' com a Dra. Emily.');
     // Cada página aponta para os 4 procedimentos seguintes na ordem do config,
     // com volta ao início. Assim todos recebem o mesmo número de links internos,
-    // em vez de cada página listar todos os irmãos.
+    // em vez de cada página listar todos os irmãos. Páginas de queixa apontam
+    // para os tratamentos indicados (treatments), que é o que o leitor procura.
     $catalogue   = collect(config('procedures'));
+    $isConcern   = ($procedure['kind'] ?? null) === 'concern';
     $position    = $catalogue->keys()->search($slug);
-    $others      = $catalogue->keys()
-        ->merge($catalogue->keys())
-        ->slice($position + 1, 4)
-        ->mapWithKeys(fn (string $key): array => [$key => $catalogue[$key]]);
+    $others      = $isConcern
+        ? $catalogue->only($procedure['treatments'])
+        : $catalogue->keys()
+            ->merge($catalogue->keys())
+            ->slice($position + 1, 4)
+            ->mapWithKeys(fn (string $key): array => [$key => $catalogue[$key]]);
 
     // Share card por procedimento (1200x630) em public/procedures/{slug}-og.jpg.
     // Sem arquivo, o layout cai na imagem genérica.
@@ -170,7 +174,7 @@
         ====================================================== --}}
         <section class="bg-sand/45">
             <div class="max-w-7xl mx-auto px-5 lg:px-8 py-24 lg:py-28">
-                <h2 class="font-display text-[clamp(2rem,3.4vw,2.8rem)] leading-[1.08] text-ink mb-10">Outros tratamentos</h2>
+                <h2 class="font-display text-[clamp(2rem,3.4vw,2.8rem)] leading-[1.08] text-ink mb-10">{{ $isConcern ? 'Tratamentos indicados' : 'Outros tratamentos' }}</h2>
                 <ul class="border-t rule">
                     @foreach ($others as $otherSlug => $other)
                         <li>

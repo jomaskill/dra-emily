@@ -45,7 +45,7 @@ return [
             [
                 'heading' => 'Por que ninguém consegue dizer o preço por telefone',
                 'body' => [
-                    'Harmonização facial não é um procedimento único: é um nome que reúne vários tratamentos diferentes. Duas pacientes que pedem "harmonização" podem sair da avaliação com planos completamente distintos — uma precisando apenas de toxina botulínica em duas áreas, outra de um protocolo combinando preenchimento, bioestimulador e fios.',
+                    'Harmonização facial não é um procedimento único: é um nome que reúne vários tratamentos diferentes. Dois pacientes que pedem "harmonização" podem sair da avaliação com planos completamente distintos — um precisando apenas de toxina botulínica em duas áreas, outro de um protocolo combinando preenchimento, bioestimulador e fios.',
                     'Por isso um valor dito antes da avaliação é, na melhor das hipóteses, um chute. Na pior, é uma âncora comercial que não corresponde ao que você realmente precisa.',
                 ],
             ],
@@ -108,7 +108,7 @@ return [
                 'heading' => 'Cerca de uma semana',
                 'body' => [
                     'Fios de PDO envolvem inserção sob a pele e por isso pedem mais cuidado. Inchaço e sensibilidade nos primeiros dias são esperados, com orientação para evitar esforço físico intenso e movimentos amplos do rosto durante o período indicado.',
-                    'Bichectomia é o procedimento mais invasivo entre os oferecidos, e é cirúrgico. Inchaço e desconforto nos primeiros dias são normais, com alimentação leve e higiene específica. A maioria das pacientes retoma a rotina em cerca de uma semana, mas o resultado final só aparece meses depois, quando os tecidos se acomodam.',
+                    'Bichectomia é o procedimento mais invasivo entre os oferecidos, e é cirúrgico. Inchaço e desconforto nos primeiros dias são normais, com alimentação leve e higiene específica. A maioria dos pacientes retoma a rotina em cerca de uma semana, mas o resultado final só aparece meses depois, quando os tecidos se acomodam.',
                 ],
             ],
             [
@@ -190,7 +190,7 @@ return [
         'excerpt' => 'Alguns cuidados nos dias anteriores reduzem hematomas e melhoram o resultado. Nenhum deles é complicado.',
         'published' => '2026-09-08',
         'updated' => '2026-09-08',
-        'answer' => 'Nos dias anteriores, evite álcool por 24 a 48 horas e informe todos os medicamentos e suplementos que usa, especialmente anti-inflamatórios e anticoagulantes, que aumentam a chance de hematoma. Vá com o rosto limpo, sem maquiagem, alimentada e hidratada. E leve suas dúvidas anotadas.',
+        'answer' => 'Nos dias anteriores, evite álcool por 24 a 48 horas e informe todos os medicamentos e suplementos que usa, especialmente anti-inflamatórios e anticoagulantes, que aumentam a chance de hematoma. Vá com o rosto limpo, sem maquiagem, depois de comer e bem hidratado. E leve suas dúvidas anotadas.',
         'sections' => [
             [
                 'heading' => 'Na semana anterior',
@@ -227,14 +227,67 @@ return [
             'Leve a lista completa de medicamentos e suplementos que usa.',
             'Evite álcool nas 48 horas anteriores para reduzir hematomas.',
             'Nunca suspenda medicamento por conta própria antes de um procedimento estético.',
-            'Vá sem maquiagem, alimentada e com tempo reservado.',
+            'Vá sem maquiagem, depois de comer e com tempo reservado.',
         ],
         'faq' => [
             ['q' => 'Preciso ficar em jejum?', 'a' => 'Não. Ao contrário: alimente-se antes. Chegar em jejum aumenta a chance de mal-estar durante o procedimento.'],
             ['q' => 'Posso tomar analgésico antes?', 'a' => 'Evite anti-inflamatórios e ácido acetilsalicílico, que aumentam a chance de hematoma. Se você usa algum medicamento de forma contínua, informe na avaliação em vez de suspendê-lo por conta própria.'],
-            ['q' => 'Posso ir maquiada?', 'a' => 'É preferível chegar com o rosto limpo. Se não for possível, reserve alguns minutos para remover a maquiagem antes do procedimento.'],
+            ['q' => 'Posso ir de maquiagem?', 'a' => 'É preferível chegar com o rosto limpo. Se não for possível, reserve alguns minutos para remover a maquiagem antes do procedimento.'],
         ],
         'related' => ['toxina-botulinica', 'preenchimento-labial', 'bioestimulador-de-colageno'],
+    ],
+
+    'harmonizacao-facial-depois-dos-40' => [
+        'title' => 'Harmonização facial depois dos 40 e 50 anos | Dra. Emily Beatriz',
+        'h1' => 'Harmonização facial depois dos 40 e 50 anos: o que muda',
+        'eyebrow' => 'Pele madura',
+        'meta_description' => 'Harmonização facial aos 40, 50 e na menopausa: flacidez, bigode chinês e perda de volume pedem outro plano. Veja o que faz sentido em cada fase.',
+        'excerpt' => 'Depois dos 40, o rosto não pede mais volume: pede sustentação e qualidade de pele. Entenda o que muda em cada fase.',
+        'published' => '2026-10-13',
+        'updated' => '2026-10-13',
+        'answer' => 'Depois dos 40, a harmonização facial muda de foco. Em vez de volume e pequenos ajustes, o plano passa a priorizar sustentação e qualidade da pele, com bioestimulador de colágeno, reposição de volume nas maçãs do rosto e fios de PDO. Depois dos 50 e na menopausa, a flacidez ganha prioridade e o tratamento costuma ser combinado e gradual.',
+        'sections' => [
+            [
+                'heading' => 'O que acontece com o rosto a partir dos 40',
+                'body' => [
+                    'O envelhecimento do rosto não é só a pele. Por volta dos 40 anos, três processos se somam: a produção de colágeno continua caindo, as bolsas de gordura do rosto diminuem e mudam de lugar, e até o osso da face perde um pouco de volume. O resultado é um rosto que perde sustentação.',
+                    'Na prática, isso aparece como o bigode chinês mais marcado, as maçãs do rosto mais baixas, o contorno da mandíbula menos nítido, olheiras mais fundas e uma pele mais fina e sem viço.',
+                ],
+            ],
+            [
+                'heading' => 'Por que o plano é diferente do de quem tem 30',
+                'body' => [
+                    'Aos 30, a harmonização costuma ser preventiva: toxina botulínica para as primeiras rugas de expressão e pequenos ajustes de proporção. Depois dos 40, tentar resolver tudo com preenchimento é o caminho mais rápido para um rosto pesado e artificial.',
+                    'O que funciona é tratar a estrutura. Repor volume nos pontos que sustentam o rosto, como as maçãs, suaviza o bigode chinês sem precisar preencher o sulco. O bioestimulador de colágeno melhora a firmeza da pele de dentro para fora. E os fios de PDO reposicionam os tecidos quando há flacidez.',
+                ],
+            ],
+            [
+                'heading' => 'Depois dos 50 e na menopausa',
+                'body' => [
+                    'Na menopausa, a queda dos hormônios acelera a perda de colágeno e a pele fica mais fina e seca em pouco tempo. É comum a sensação de que o rosto mudou de repente.',
+                    'Nessa fase, o estímulo de colágeno é a base do tratamento, quase sempre combinado com sustentação e reposição de volume. Os resultados são construídos aos poucos, ao longo de alguns meses, e o objetivo é um rosto descansado, nunca uma aparência de quem fez muita coisa.',
+                    'Também é a fase em que a honestidade da avaliação mais importa: em flacidez acentuada, os tratamentos não cirúrgicos melhoram a pele, mas não substituem um lifting cirúrgico. Saber disso antes evita frustração e investimento no lugar errado.',
+                ],
+            ],
+            [
+                'heading' => 'E os homens?',
+                'body' => [
+                    'Os mesmos processos acontecem no rosto masculino, com algumas diferenças: a pele é mais espessa e a musculatura mais forte. Os homens costumam buscar o contorno da mandíbula, o tratamento das olheiras e da papada e a suavização das rugas da testa, sempre preservando os traços masculinos.',
+                ],
+            ],
+        ],
+        'takeaways' => [
+            'Depois dos 40, o foco sai do volume e vai para a sustentação e a qualidade da pele.',
+            'Repor volume nas maçãs do rosto suaviza o bigode chinês melhor do que preencher só o sulco.',
+            'Na menopausa, o estímulo de colágeno é a base do tratamento.',
+            'Em flacidez acentuada, os tratamentos sem cirurgia melhoram a pele, mas não substituem um lifting.',
+        ],
+        'faq' => [
+            ['q' => 'Existe idade limite para fazer harmonização facial?', 'a' => 'Não. O que define a indicação é a avaliação do rosto e da saúde, não a idade. Muitos pacientes começam depois dos 50 e têm ótimos resultados com um plano adequado à fase.'],
+            ['q' => 'Qual o melhor tratamento para o rosto depois dos 50?', 'a' => 'Em geral, a combinação de bioestimulador de colágeno, reposição de volume e, quando há flacidez, fios de PDO. O plano exato depende do seu rosto e é definido na avaliação.'],
+            ['q' => 'A harmonização facial fica artificial em pele madura?', 'a' => 'Não precisa ficar. O aspecto artificial vem de excesso de produto, principalmente de preenchimento. Com foco em sustentação e quantidades conservadoras, o resultado é um rosto descansado e natural.'],
+        ],
+        'related' => ['bioestimulador-de-colageno', 'flacidez-facial', 'bigode-chines', 'preenchimento-facial'],
     ],
 
 ];

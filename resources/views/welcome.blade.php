@@ -15,7 +15,8 @@
     $procedures   = collect(config('procedures'));
     $featured     = $procedures->firstWhere('featured', true);
     $featuredSlug = $procedures->search(fn ($p) => ($p['featured'] ?? false) === true);
-    $regular      = $procedures->reject(fn ($p) => ($p['featured'] ?? false) === true);
+    $regular      = $procedures->reject(fn ($p) => ($p['featured'] ?? false) === true || ($p['kind'] ?? null) === 'concern');
+    $concerns     = $procedures->filter(fn ($p) => isset($p['concern']));
 
     $testimonials = [
         [
@@ -155,6 +156,9 @@
                         <p>
                             Com mais de {{ $years }} anos de experiência e um olhar delicado, ela cria resultados que parecem sempre naturais, porque o objetivo nunca é mudar quem você é, mas revelar a melhor versão de você mesma.
                         </p>
+                        <p>
+                            Ela também atende homens, com um planejamento que preserva os traços masculinos. Conheça a <a href="{{ route('procedure', 'harmonizacao-facial-masculina') }}" class="thread-link text-ink hover:text-clay transition-colors">harmonização facial masculina</a>.
+                        </p>
                     </div>
                     <x-thread class="w-40 h-auto my-10" />
                     <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-3 text-ink">
@@ -170,11 +174,44 @@
         </section>
 
         {{-- ======================================================
+             CONCERNS
+             Entrada pela queixa, com as palavras que o público usa na busca.
+             Fonte: entradas de config/procedures.php com a chave "concern".
+        ====================================================== --}}
+        <section id="queixas" class="bg-linen">
+            <div class="max-w-7xl mx-auto px-5 lg:px-8 pt-28 lg:pt-40">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-end mb-12 lg:mb-16">
+                    <h2 class="font-display text-[clamp(2.4rem,4.6vw,4rem)] leading-[1.04] text-ink">
+                        O que mais <em class="text-clay">incomoda</em> você?
+                    </h2>
+                    <p class="text-ink-soft leading-relaxed max-w-[44ch] lg:justify-self-end">
+                        Comece pela sua queixa. Cada página explica a causa e os tratamentos que fazem sentido para ela.
+                    </p>
+                </div>
+
+                <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 border-t rule">
+                    @foreach ($concerns as $concernSlug => $concernPage)
+                        <li>
+                            <a href="{{ route('procedure', $concernSlug) }}"
+                               class="group flex h-full items-baseline justify-between gap-6 py-7 border-b rule">
+                                <span>
+                                    <span class="block font-display text-2xl lg:text-[1.75rem] leading-[1.15] text-ink group-hover:text-clay transition-colors duration-300">{{ $concernPage['concern']['label'] }}</span>
+                                    <span class="block mt-2 text-ink-soft leading-relaxed">{{ $concernPage['concern']['desc'] }}</span>
+                                </span>
+                                <span class="text-clay transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
+                            </a>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        </section>
+
+        {{-- ======================================================
              PROCEDURES
              Índice em linhas: número, nome e descrição.
         ====================================================== --}}
         <section id="procedimentos" class="bg-linen">
-            <div class="max-w-7xl mx-auto px-5 lg:px-8 pt-28 lg:pt-40 pb-24 lg:pb-32">
+            <div class="max-w-7xl mx-auto px-5 lg:px-8 pt-24 lg:pt-32 pb-24 lg:pb-32">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-end mb-14 lg:mb-20">
                     <h2 class="font-display text-[clamp(2.4rem,4.6vw,4rem)] leading-[1.04] text-ink">
                         Cada rosto pede um <em class="text-clay">plano</em> próprio
