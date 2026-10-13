@@ -38,6 +38,10 @@ return [
 
     'ga4_id' => env('GOOGLE_ANALYTICS_ID', 'G-FHD94M3R1T'),
 
+    // Segunda propriedade GA4, configurada pelo mesmo gtag.js. Deixe vazio
+    // quando decidir qual das duas propriedades manter.
+    'ga4_secondary_id' => env('GOOGLE_ANALYTICS_SECONDARY_ID', 'G-DL0MBWHMSM'),
+
     'gtm_id' => env('GOOGLE_TAG_MANAGER_ID', 'GTM-W8RW6RXD'),
 
     // Anos de experiência. Usado no selo da home e no texto da seção "Quem é a

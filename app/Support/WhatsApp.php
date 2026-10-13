@@ -12,6 +12,12 @@ namespace App\Support;
 class WhatsApp
 {
     /**
+     * Acrescentado no navegador ao fim da mensagem quando a visita veio de
+     * anúncio do Google, para separar as conversas do tráfego pago.
+     */
+    public const GOOGLE_ADS_MARKER = '(via anúncio do Google)';
+
+    /**
      * Link wa.me com a mensagem já preenchida.
      */
     public static function url(string $message): string

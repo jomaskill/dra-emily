@@ -38,21 +38,45 @@
 
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ config('clinic.ga4_id') }}"></script>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-DL0MBWHMSM"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-DL0MBWHMSM');
-        </script>
-
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', '{{ config('clinic.ga4_id') }}');
+            @if (config('clinic.ga4_secondary_id'))
+            gtag('config', '{{ config('clinic.ga4_secondary_id') }}');
+            @endif
+        </script>
+
+        {{-- Visita vinda de anúncio do Google (gclid/gbraid/wbraid ou utm de mídia paga):
+             guarda na sessão e acrescenta a origem à mensagem dos botões de WhatsApp,
+             para a equipe saber quais conversas vieram do tráfego pago. --}}
+        <script>
+            (function () {
+                var key = 'fromGoogleAds';
+                var params = new URLSearchParams(window.location.search);
+                var paid = ['gclid', 'gbraid', 'wbraid'].some(function (name) { return params.has(name); })
+                    || (/google/i.test(params.get('utm_source') || '') && /^(cpc|ppc|paid)/i.test(params.get('utm_medium') || ''));
+
+                try {
+                    if (paid) { sessionStorage.setItem(key, '1'); }
+                    paid = paid || sessionStorage.getItem(key) === '1';
+                } catch (e) {}
+
+                if (!paid) { return; }
+
+                var suffix = encodeURIComponent(' {{ \App\Support\WhatsApp::GOOGLE_ADS_MARKER }}');
+
+                document.addEventListener('DOMContentLoaded', function () {
+                    document.querySelectorAll('a[href^="https://wa.me/"][href*="?text="]').forEach(function (link) {
+                        var href = link.getAttribute('href');
+
+                        if (href.slice(-suffix.length) !== suffix) {
+                            link.setAttribute('href', href + suffix);
+                        }
+                    });
+                });
+            })();
         </script>
 
         <meta charset="utf-8">
