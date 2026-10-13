@@ -1,6 +1,5 @@
 @props([
     'case',
-    'ctaUrl',
 ])
 
 @php
@@ -54,7 +53,7 @@
                 <p class="text-muted text-xs mt-1">{{ $case['detail'] }}</p>
             @endif
         </div>
-        <a href="{{ $ctaUrl }}" target="_blank" rel="noopener noreferrer"
+        <a href="{{ \App\Support\WhatsApp::forResult($case) }}" target="_blank" rel="noopener noreferrer"
            class="shrink-0 text-xs text-rose hover:text-blush transition-colors font-medium tracking-wide">Quero isso →</a>
     </div>
 </article>

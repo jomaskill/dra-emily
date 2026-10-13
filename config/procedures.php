@@ -13,6 +13,7 @@
 |   updated           => data da última revisão do conteúdo (usada no sitemap)
 |   name              => nome curto do procedimento
 |   card_desc         => descrição curta (card da home)
+|   includes          => slugs de procedimentos relacionados (chips do card / Full Face)
 |   title             => <title> da página (com localização)
 |   meta_description  => meta description
 |   eyebrow           => sobretítulo do hero
@@ -32,6 +33,47 @@
 
 return [
 
+    'harmonizacao-facial' => [
+        'num' => '01',
+        'updated' => '2026-09-08',
+        'includes' => ['toxina-botulinica', 'preenchimento-labial', 'bioestimulador-de-colageno', 'fios-de-pdo'],
+        'name' => 'Harmonização Facial',
+        'card_desc' => 'Um conjunto de procedimentos que equilibra as proporções do rosto e valoriza a sua beleza natural, de forma personalizada.',
+        'title' => 'Harmonização Facial em Belo Horizonte | Dra. Emily Beatriz',
+        'meta_description' => 'Harmonização facial em Belo Horizonte com a Dra. Emily Beatriz. Equilíbrio das proporções do rosto com toxina botulínica, preenchimento e bioestimuladores. Agende pelo WhatsApp.',
+        'eyebrow' => 'Equilíbrio & Proporção',
+        'h1' => 'Harmonização Facial em Belo Horizonte',
+        'hero_lead' => 'Mais do que um único procedimento, a harmonização facial é um olhar completo sobre o seu rosto. A Dra. Emily Beatriz combina técnicas para equilibrar proporções, suavizar o tempo e revelar a sua beleza — sempre de forma natural.',
+        'facts' => [
+            ['label' => 'Abordagem', 'value' => 'Personalizada'],
+            ['label' => 'Técnicas', 'value' => 'Combinadas'],
+            ['label' => 'Resultado', 'value' => 'Progressivo'],
+            ['label' => 'Foco', 'value' => 'Naturalidade'],
+        ],
+        'what_is_title' => 'O que é harmonização facial?',
+        'what_is' => [
+            'Harmonização facial é o nome dado ao conjunto de procedimentos estéticos minimamente invasivos que trabalham juntos para equilibrar as proporções do rosto. Pode incluir toxina botulínica, preenchimento labial e facial, bioestimuladores de colágeno, fios de PDO e outros tratamentos — combinados de acordo com a necessidade de cada pessoa.',
+            'O objetivo nunca é transformar você em outra pessoa, mas valorizar o que você já tem de mais bonito. Em Belo Horizonte, a Dra. Emily Beatriz constrói cada plano de harmonização de forma individual, respeitando a sua identidade e os seus desejos.',
+        ],
+        'benefits' => [
+            ['title' => 'Proporções equilibradas', 'desc' => 'Contornos, volumes e ângulos do rosto trabalhados em conjunto para um resultado harmônico.'],
+            ['title' => 'Plano personalizado', 'desc' => 'Cada protocolo é desenhado para o seu rosto, nunca uma receita pronta.'],
+            ['title' => 'Resultado natural', 'desc' => 'Mudanças sutis que somam — sem nunca parecer artificial ou exagerado.'],
+            ['title' => 'Mais autoestima', 'desc' => 'O reflexo no espelho volta a combinar com como você se sente por dentro.'],
+        ],
+        'steps' => [
+            ['title' => 'Avaliação completa', 'desc' => 'A Dra. Emily analisa o seu rosto como um todo, ouve seus desejos e identifica o que pode ser valorizado.'],
+            ['title' => 'Plano de tratamento', 'desc' => 'Juntas, definimos quais procedimentos combinam com o seu objetivo, seu tempo e o seu momento.'],
+            ['title' => 'Execução & acompanhamento', 'desc' => 'Os procedimentos são realizados com segurança e acompanhados de perto até o resultado final.'],
+        ],
+        'faq' => [
+            ['q' => 'Harmonização facial é o mesmo que toxina botulínica?', 'a' => 'Não exatamente. A toxina botulínica é um dos procedimentos que pode fazer parte da harmonização facial, mas a harmonização é um conceito mais amplo, que combina diferentes técnicas para equilibrar todo o rosto.'],
+            ['q' => 'O resultado fica artificial?', 'a' => 'Não, quando bem feita. A filosofia da Dra. Emily é a naturalidade: o objetivo é realçar a sua beleza, não mudar quem você é.'],
+            ['q' => 'Quantas sessões são necessárias?', 'a' => 'Depende do seu plano personalizado. Alguns procedimentos são feitos em sessão única, outros exigem manutenção. Tudo é definido na avaliação.'],
+            ['q' => 'Quanto tempo dura a harmonização facial?', 'a' => 'Varia conforme as técnicas utilizadas — de alguns meses (toxina botulínica) a mais de um ano (preenchimentos e bioestimuladores). A manutenção mantém o resultado.'],
+        ],
+    ],
+
     'toxina-botulinica' => [
         'comparison' => [
             'title' => 'Toxina botulínica ou preenchimento: qual é a diferença?',
@@ -45,7 +87,7 @@ return [
                 ['label' => 'Tempo de sessão', 'a' => '~30 minutos', 'b' => '~40 minutos'],
             ],
         ],
-        'num' => '01',
+        'num' => '02',
         'updated' => '2026-10-04',
         'name' => 'Toxina Botulínica',
         'card_desc' => 'Suaviza rugas e linhas de expressão com um resultado leve e natural — o famoso olhar descansado de quem dormiu bem.',
@@ -85,7 +127,7 @@ return [
     ],
 
     'preenchimento-labial' => [
-        'num' => '02',
+        'num' => '03',
         'updated' => '2026-09-08',
         'name' => 'Preenchimento Labial',
         'card_desc' => 'Lábios mais definidos, hidratados e harmônicos com ácido hialurônico — volume na medida certa, com resultado natural.',
@@ -121,46 +163,6 @@ return [
             ['q' => 'Quanto tempo dura o preenchimento labial?', 'a' => 'Em média de 6 a 18 meses, dependendo do seu metabolismo e do volume aplicado. Depois, o produto é absorvido naturalmente pelo corpo.'],
             ['q' => 'Incha muito depois?', 'a' => 'É comum um leve inchaço nas primeiras 24 a 48 horas, que desaparece naturalmente. Em poucos dias os lábios assumem o resultado final.'],
             ['q' => 'Posso escolher o volume?', 'a' => 'Com certeza. O procedimento é totalmente personalizado — desde uma hidratação sutil até mais volume e definição, sempre respeitando a sua anatomia.'],
-        ],
-    ],
-
-    'harmonizacao-facial' => [
-        'num' => '03',
-        'updated' => '2026-09-08',
-        'name' => 'Harmonização Facial',
-        'card_desc' => 'Um conjunto de procedimentos que equilibra as proporções do rosto e valoriza a sua beleza natural, de forma personalizada.',
-        'title' => 'Harmonização Facial em Belo Horizonte | Dra. Emily Beatriz',
-        'meta_description' => 'Harmonização facial em Belo Horizonte com a Dra. Emily Beatriz. Equilíbrio das proporções do rosto com toxina botulínica, preenchimento e bioestimuladores. Agende pelo WhatsApp.',
-        'eyebrow' => 'Equilíbrio & Proporção',
-        'h1' => 'Harmonização Facial em Belo Horizonte',
-        'hero_lead' => 'Mais do que um único procedimento, a harmonização facial é um olhar completo sobre o seu rosto. A Dra. Emily Beatriz combina técnicas para equilibrar proporções, suavizar o tempo e revelar a sua beleza — sempre de forma natural.',
-        'facts' => [
-            ['label' => 'Abordagem', 'value' => 'Personalizada'],
-            ['label' => 'Técnicas', 'value' => 'Combinadas'],
-            ['label' => 'Resultado', 'value' => 'Progressivo'],
-            ['label' => 'Foco', 'value' => 'Naturalidade'],
-        ],
-        'what_is_title' => 'O que é harmonização facial?',
-        'what_is' => [
-            'Harmonização facial é o nome dado ao conjunto de procedimentos estéticos minimamente invasivos que trabalham juntos para equilibrar as proporções do rosto. Pode incluir toxina botulínica, preenchimento labial e facial, bioestimuladores de colágeno, fios de PDO e outros tratamentos — combinados de acordo com a necessidade de cada pessoa.',
-            'O objetivo nunca é transformar você em outra pessoa, mas valorizar o que você já tem de mais bonito. Em Belo Horizonte, a Dra. Emily Beatriz constrói cada plano de harmonização de forma individual, respeitando a sua identidade e os seus desejos.',
-        ],
-        'benefits' => [
-            ['title' => 'Proporções equilibradas', 'desc' => 'Contornos, volumes e ângulos do rosto trabalhados em conjunto para um resultado harmônico.'],
-            ['title' => 'Plano personalizado', 'desc' => 'Cada protocolo é desenhado para o seu rosto, nunca uma receita pronta.'],
-            ['title' => 'Resultado natural', 'desc' => 'Mudanças sutis que somam — sem nunca parecer artificial ou exagerado.'],
-            ['title' => 'Mais autoestima', 'desc' => 'O reflexo no espelho volta a combinar com como você se sente por dentro.'],
-        ],
-        'steps' => [
-            ['title' => 'Avaliação completa', 'desc' => 'A Dra. Emily analisa o seu rosto como um todo, ouve seus desejos e identifica o que pode ser valorizado.'],
-            ['title' => 'Plano de tratamento', 'desc' => 'Juntas, definimos quais procedimentos combinam com o seu objetivo, seu tempo e o seu momento.'],
-            ['title' => 'Execução & acompanhamento', 'desc' => 'Os procedimentos são realizados com segurança e acompanhados de perto até o resultado final.'],
-        ],
-        'faq' => [
-            ['q' => 'Harmonização facial é o mesmo que toxina botulínica?', 'a' => 'Não exatamente. A toxina botulínica é um dos procedimentos que pode fazer parte da harmonização facial, mas a harmonização é um conceito mais amplo, que combina diferentes técnicas para equilibrar todo o rosto.'],
-            ['q' => 'O resultado fica artificial?', 'a' => 'Não, quando bem feita. A filosofia da Dra. Emily é a naturalidade: o objetivo é realçar a sua beleza, não mudar quem você é.'],
-            ['q' => 'Quantas sessões são necessárias?', 'a' => 'Depende do seu plano personalizado. Alguns procedimentos são feitos em sessão única, outros exigem manutenção. Tudo é definido na avaliação.'],
-            ['q' => 'Quanto tempo dura a harmonização facial?', 'a' => 'Varia conforme as técnicas utilizadas — de alguns meses (toxina botulínica) a mais de um ano (preenchimentos e bioestimuladores). A manutenção mantém o resultado.'],
         ],
     ],
 

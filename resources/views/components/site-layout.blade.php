@@ -10,6 +10,7 @@
     'ogType' => 'website',
     'robots' => 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
     'navBase' => '',
+    'whatsappOrigin' => 'pelo site',
 ])
 
 @php
@@ -18,8 +19,9 @@
     $cro           = config('clinic.cro');
     $instagram     = config('clinic.instagram');
     $instagramUrl  = 'https://www.instagram.com/' . $instagram . '/';
-    $wa            = 'https://wa.me/' . config('clinic.whatsapp');
-    $waConsulta    = $wa . '?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Emily.';
+    // Origem da visita ("pela página de X") entra nas mensagens do menu e do rodapé.
+    $waNav         = \App\Support\WhatsApp::url('Olá! Vim '.$whatsappOrigin.' e gostaria de agendar uma consulta com a Dra. Emily.');
+    $waFooter      = \App\Support\WhatsApp::url('Olá! Vim '.$whatsappOrigin.' e gostaria de falar com a clínica.');
     $phone         = '+' . config('clinic.whatsapp');
     $ogImageUrl    = $ogImage ?: $siteUrl . '/og-image.jpg';
 @endphp

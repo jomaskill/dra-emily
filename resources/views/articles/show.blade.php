@@ -3,8 +3,7 @@
     $siteUrl   = 'https://'.$domain;
     $canonical = $siteUrl.'/artigos/'.$slug;
     $cro       = config('clinic.cro');
-    $wa        = 'https://wa.me/'.config('clinic.whatsapp');
-    $waArtigo  = $wa.'?text='.rawurlencode('Olá! Li o artigo sobre '.$article['h1'].' e gostaria de agendar uma avaliação.');
+    $waArtigo  = \App\Support\WhatsApp::url('Olá! Li o artigo “'.$article['h1'].'” e gostaria de agendar uma avaliação.');
     $related   = collect(config('procedures'))->only($article['related'] ?? []);
     $published = \Illuminate\Support\Carbon::parse($article['published']);
     $updated   = \Illuminate\Support\Carbon::parse($article['updated']);
@@ -15,7 +14,8 @@
     :description="$article['meta_description']"
     :canonical="$canonical"
     og-type="article"
-    :nav-base="'/'">
+    :nav-base="'/'"
+    :whatsapp-origin="'pelo artigo “'.$article['h1'].'”'">
 
     <x-slot:schema>
         @include('partials.article-schema')

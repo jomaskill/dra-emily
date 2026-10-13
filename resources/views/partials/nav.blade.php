@@ -22,7 +22,7 @@
         </div>
 
         {{-- WhatsApp CTA --}}
-        <a href="{{ $waConsulta }}"
+        <a href="{{ $waNav }}"
            target="_blank" rel="noopener noreferrer"
            class="flex items-center gap-2 bg-rose text-white text-xs font-medium tracking-wide px-5 py-2.5 rounded-full hover:bg-deep-rose transition-colors duration-300 shrink-0">
             <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">

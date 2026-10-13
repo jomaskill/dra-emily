@@ -9,7 +9,8 @@
     title="Artigos | Dra. Emily Beatriz — Harmonização Facial em BH"
     description="Respostas às perguntas que vêm antes de agendar: investimento, recuperação, contraindicações e preparo. Escrito pela Dra. Emily Beatriz, em Belo Horizonte."
     :canonical="$canonical"
-    :nav-base="'/'">
+    :nav-base="'/'"
+    whatsapp-origin="pela página de artigos do site">
 
     <x-slot:schema>
         <script type="application/ld+json">

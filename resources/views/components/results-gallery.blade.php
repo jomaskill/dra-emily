@@ -30,7 +30,7 @@
 
         <div class="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-px-6 px-6 lg:px-0 pb-4 md:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             @foreach ($cases as $case)
-                <x-result-card :case="$case" :cta-url="$ctaUrl" class="w-[82vw] max-w-sm md:w-auto md:max-w-none shrink-0 snap-start" />
+                <x-result-card :case="$case" class="w-[82vw] max-w-sm md:w-auto md:max-w-none shrink-0 snap-start" />
             @endforeach
         </div>
 

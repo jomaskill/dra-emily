@@ -1,7 +1,7 @@
 @php
-    $wa          = 'https://wa.me/' . config('clinic.whatsapp');
-    $waConsulta  = $wa . '?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Emily.';
-    $waTransformar = $wa . '?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20como%20me%20transformar%20assim.';
+    $waHero      = \App\Support\WhatsApp::url('Olá! Conheci a Dra. Emily pelo site e gostaria de agendar uma consulta.');
+    $waResultados = \App\Support\WhatsApp::url('Olá! Vi os antes e depois no site e quero saber como me transformar assim.');
+    $waContato   = \App\Support\WhatsApp::url('Olá! Decidi me colocar em primeiro lugar e gostaria de agendar uma conversa sem compromisso com a Dra. Emily.');
     $featuredResults = collect(config('results'))->where('featured', true)->values();
     $resultProcedures = collect(config('procedures'))->only(collect(config('results'))->pluck('procedure')->unique());
     $cro         = config('clinic.cro');
@@ -18,7 +18,8 @@
     canonical="{{ $siteUrl }}/"
     og-title="Dra. Emily Beatriz | Harmonização Facial, Toxina Botulínica e Preenchimento em BH"
     og-description="Especialista em harmonização facial, toxina botulínica e preenchimento labial em Belo Horizonte, MG. Resultados naturais que revelam a melhor versão de você."
-    :nav-base="''">
+    :nav-base="''"
+    whatsapp-origin="pela página inicial do site">
 
     <x-slot:schema>
         @include('partials.schema')
@@ -55,7 +56,7 @@
                     </p>
 
                     <div class="animate-fade-up delay-400 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                        <a href="{{ $waConsulta }}"
+                        <a href="{{ $waHero }}"
                            target="_blank" rel="noopener noreferrer"
                            class="flex items-center gap-3 bg-rose text-white px-8 py-4 rounded-full font-medium text-sm tracking-wide hover:bg-deep-rose transition-all duration-300 shadow-lg shadow-rose/25 hover:shadow-rose/35 hover:-translate-y-0.5">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -133,7 +134,7 @@
         ====================================================== --}}
         <x-results-gallery id="antes-depois"
                            :cases="$featuredResults"
-                           :cta-url="$waTransformar"
+                           :cta-url="$waResultados"
                            eyebrow="Histórias reais de transformação"
                            heading="Veja o que muda quando<br class='hidden sm:block'> você se coloca em primeiro lugar"
                            lead="Resultados reais de pacientes reais que decidiram investir em si mesmos.">
@@ -211,16 +212,74 @@
                 </div>
 
                 @php
-                $procedures = collect(config('procedures'));
-                $featured   = $procedures->firstWhere('featured', true);
-                $featuredSlug = $procedures->search(fn ($p) => ($p['featured'] ?? false) === true);
-                $regular    = $procedures->reject(fn ($p) => ($p['featured'] ?? false) === true);
-            @endphp
+                    $procedures   = collect(config('procedures'));
+                    $featured     = $procedures->firstWhere('featured', true);
+                    $featuredSlug = $procedures->search(fn ($p) => ($p['featured'] ?? false) === true);
+                    $regular      = $procedures->reject(fn ($p) => ($p['featured'] ?? false) === true);
+                    $leadSlug     = $regular->keys()->first();
+                    $lead         = $regular->first();
+                    $leadIncludes = $procedures->only($lead['includes'] ?? [])->pluck('name');
+                    $others       = $regular->except($leadSlug);
+                @endphp
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                    {{-- Lead procedure (Harmonização Facial) --}}
+                    <a href="{{ route('procedure', $leadSlug) }}"
+                       class="group relative flex flex-col md:col-span-2 overflow-hidden rounded-2xl border border-rose/20 bg-gradient-to-br from-blush/25 via-white to-white p-8 lg:p-10 hover:border-rose/40 hover:shadow-xl hover:shadow-rose/10 transition-all duration-500 hover:-translate-y-1">
+                        <div class="absolute -right-20 -top-20 w-64 h-64 rounded-full bg-blush/25 blur-2xl pointer-events-none group-hover:bg-blush/40 transition-colors duration-700"></div>
+
+                        <div class="relative flex items-center gap-3 mb-8">
+                            <span class="font-display italic text-xl text-rose leading-none">{{ $lead['num'] }}</span>
+                            <span class="h-px flex-1 bg-gold/50"></span>
+                            <span class="text-[0.65rem] tracking-[0.22em] uppercase text-rose font-semibold">{{ $lead['eyebrow'] }}</span>
+                        </div>
+
+                        <h3 class="relative font-display text-4xl lg:text-5xl italic text-charcoal leading-[1.05] mb-4">
+                            {{ $lead['name'] }}
+                        </h3>
+                        <p class="relative text-muted leading-relaxed max-w-md text-[0.97rem]">{{ $lead['card_desc'] }}</p>
+
+                        @if ($leadIncludes->isNotEmpty())
+                            <div class="relative flex flex-wrap items-center gap-2 mt-6">
+                                <span class="text-xs text-muted mr-1">Pode combinar</span>
+                                @foreach ($leadIncludes as $includedName)
+                                    <span class="text-xs text-charcoal/80 border border-blush/60 bg-white/70 px-3 py-1 rounded-full">{{ $includedName }}</span>
+                                @endforeach
+                            </div>
+                        @endif
+
+                        <div class="relative mt-auto pt-8">
+                            <span class="inline-flex items-center gap-2.5 bg-rose text-white px-6 py-3 rounded-full font-medium text-sm tracking-wide group-hover:bg-deep-rose transition-colors duration-300">
+                                Conhecer a harmonização
+                                <span class="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
+                            </span>
+                        </div>
+                    </a>
+
+                    {{-- Other procedures --}}
+                    @foreach ($others as $slug => $proc)
+                        <a href="{{ route('procedure', $slug) }}"
+                           class="group flex flex-col bg-white border border-blush/30 rounded-2xl p-7 lg:p-8 hover:border-rose/30 hover:shadow-xl hover:shadow-rose/5 transition-all duration-500 hover:-translate-y-1">
+                            <div class="flex items-center gap-3 mb-7">
+                                <span class="font-display italic text-xl text-rose leading-none">{{ $proc['num'] }}</span>
+                                <span class="h-px flex-1 bg-blush/50 group-hover:bg-gold/60 transition-colors duration-500"></span>
+                            </div>
+                            <h3 class="font-display text-[1.7rem] italic text-charcoal leading-tight mb-3">
+                                {{ $proc['name'] }}
+                            </h3>
+                            <p class="text-muted text-sm leading-relaxed">{{ $proc['card_desc'] }}</p>
+                            <div class="mt-auto pt-7 flex items-center justify-between">
+                                <span class="text-sm font-medium text-rose">Saiba mais</span>
+                                <span class="w-9 h-9 rounded-full border border-blush/60 flex items-center justify-center text-rose text-sm group-hover:bg-rose group-hover:border-rose group-hover:text-white transition-colors duration-300" aria-hidden="true">→</span>
+                            </div>
+                        </a>
+                    @endforeach
+                </div>
 
             {{-- Featured procedure (Full Face) --}}
             @if ($featured)
                 <a href="{{ route('procedure', $featuredSlug) }}"
-                   class="group relative block overflow-hidden rounded-3xl bg-charcoal mb-5 hover:-translate-y-1 transition-transform duration-500">
+                   class="group relative block overflow-hidden rounded-3xl bg-charcoal mt-5 hover:-translate-y-1 transition-transform duration-500">
                     {{-- texture + glow --}}
                     <div class="absolute inset-0 pointer-events-none opacity-[0.05]"
                          style="background-image: radial-gradient(circle, #E8B4B8 1px, transparent 1px); background-size: 30px 30px;"></div>
@@ -258,27 +317,6 @@
                     </div>
                 </a>
             @endif
-
-            {{-- Regular procedures grid --}}
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-                @foreach ($regular as $slug => $proc)
-                    <a href="{{ route('procedure', $slug) }}"
-                       class="group relative bg-white border border-blush/30 rounded-2xl p-8 hover:border-rose/30 hover:shadow-xl hover:shadow-rose/5 transition-all duration-500 hover:-translate-y-1.5">
-                        <span class="absolute top-5 right-6 font-display text-7xl italic text-blush/30 leading-none select-none group-hover:text-rose/15 transition-colors duration-500">
-                            {{ $proc['num'] }}
-                        </span>
-                        <div class="w-8 h-px bg-gold mb-6"></div>
-                        <h3 class="font-display text-2xl italic text-charcoal mb-3 leading-tight pr-8">
-                            {{ $proc['name'] }}
-                        </h3>
-                        <p class="text-muted text-sm leading-relaxed">{{ $proc['card_desc'] }}</p>
-                        <div class="mt-6 flex items-center gap-1.5 text-rose text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-x-2 group-hover:translate-x-0">
-                            <span>Saiba mais</span>
-                            <span>→</span>
-                        </div>
-                    </a>
-                @endforeach
-            </div>
             </div>
         </section>
 
@@ -306,7 +344,7 @@
                         </div>
                         <span class="text-sm text-charcoal font-medium">5,0</span>
                         <span class="text-muted text-sm">·</span>
-                        <span class="text-muted text-sm tracking-wide">7 avaliações no Google</span>
+                        <span class="text-muted text-sm tracking-wide">14 avaliações no Google</span>
                     </div>
                 </div>
 
@@ -323,6 +361,18 @@
                         [
                             'Profissional impecável, com cuidado no pré e no pós-procedimento. Estou muito satisfeita com o meu resultado.',
                             'Viviane Fernandes', 'Avaliação no Google',
+                        ],
+                        [
+                            'Trabalho impecável! Valorizou cada detalhe do meu rosto, mantendo a naturalidade. Sem contar a qualidade do atendimento. Dra. Emily muito prestativa e cuidadosa. Super recomendo!',
+                            'Ana Carolina', 'Avaliação no Google',
+                        ],
+                        [
+                            'Trabalho impecável! Dra. Emily é um amor de pessoa, me senti à vontade durante todo o atendimento, sem falar do procedimento, que ficou um arraso. Já estou ansiosa para voltar, indico de olhos fechados!',
+                            'Luana Castilho', 'Avaliação no Google',
+                        ],
+                        [
+                            'Fiz 3 procedimentos com a Dra. Emily, ela foi muito atenciosa, paciente e profissional. Gostei demais da experiência.',
+                            'Jeh Marques', 'Avaliação no Google',
                         ],
                     ] as [$quote, $name, $city])
                         <div class="relative bg-cream border border-blush/40 rounded-2xl p-8 hover:border-rose/30 hover:shadow-lg hover:shadow-rose/5 transition-all duration-300">
@@ -403,7 +453,7 @@
                 <p class="text-white/65 text-lg mb-12 leading-relaxed max-w-xl mx-auto">
                     Uma conversa sem compromisso para entender o que você deseja, o que você sente e o que podemos construir juntas. Estamos aqui para isso.
                 </p>
-                <a href="{{ $waConsulta }}"
+                <a href="{{ $waContato }}"
                    target="_blank" rel="noopener noreferrer"
                    class="inline-flex items-center gap-3 bg-white text-deep-rose px-10 py-5 rounded-full font-semibold text-sm tracking-wide hover:bg-cream transition-all duration-300 shadow-2xl hover:-translate-y-0.5">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
