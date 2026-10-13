@@ -41,50 +41,41 @@
     </x-slot:schema>
 
     <main>
-        <header class="bg-cream pt-32 lg:pt-40 pb-16 lg:pb-20 relative overflow-hidden">
-            <div class="absolute right-0 top-0 w-[45vw] h-[45vw] max-w-xl rounded-full bg-blush/20 translate-x-1/3 -translate-y-1/4 pointer-events-none"></div>
-
-            <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center relative z-10">
-                <p class="text-xs tracking-[0.25em] uppercase text-rose font-medium mb-5">Antes de agendar</p>
-                <h1 class="font-display text-5xl lg:text-6xl italic text-charcoal leading-[1.08] mb-7">
-                    As perguntas que vêm antes
-                </h1>
-                <div class="w-12 h-px bg-gold mx-auto mb-7"></div>
-                <p class="text-muted text-lg leading-relaxed max-w-xl mx-auto">
+        <header class="bg-linen pt-18">
+            <div class="max-w-7xl mx-auto px-5 lg:px-8 pt-16 lg:pt-24 pb-14 lg:pb-20 grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-8 lg:gap-16 items-end">
+                <div>
+                    <p class="text-sm text-ink-soft mb-6">Antes de agendar</p>
+                    <h1 class="font-display text-[clamp(2.8rem,6.4vw,5.4rem)] leading-[1.03] text-ink">
+                        As perguntas que <em class="text-clay">vêm antes</em>
+                    </h1>
+                </div>
+                <p class="text-ink-soft text-lg leading-relaxed max-w-[44ch]">
                     Quanto custa, quanto tempo leva para se recuperar, quem não pode fazer e como se preparar.
                     As dúvidas que aparecem antes de marcar a primeira conversa, respondidas com franqueza.
                 </p>
             </div>
         </header>
 
-        <section class="bg-white py-16 lg:py-24">
-            <div class="max-w-4xl mx-auto px-6 lg:px-8">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <section class="bg-linen">
+            <div class="max-w-7xl mx-auto px-5 lg:px-8 pb-24 lg:pb-32">
+                <ul class="border-t rule">
                     @foreach ($articles as $slug => $article)
-                        <a href="{{ route('article', $slug) }}"
-                           class="group flex flex-col bg-cream border border-blush/30 rounded-2xl p-8 hover:border-rose/30 hover:shadow-xl hover:shadow-rose/5 transition-all duration-500 hover:-translate-y-1.5">
-                            <div class="w-8 h-px bg-gold mb-6"></div>
-
-                            <h2 class="font-display text-2xl italic text-charcoal leading-snug mb-4 group-hover:text-rose transition-colors duration-300">
-                                {{ $article['h1'] }}
-                            </h2>
-
-                            <p class="text-muted text-[0.96rem] leading-relaxed mb-6 grow">
-                                {{ $article['excerpt'] }}
-                            </p>
-
-                            <div class="flex items-center justify-between gap-4 pt-5 border-t border-blush/30">
-                                <time datetime="{{ $article['published'] }}" class="text-xs text-muted tracking-wide">
+                        <li>
+                            <a href="{{ route('article', $slug) }}"
+                               class="group grid grid-cols-1 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)_9rem] gap-x-10 gap-y-3 items-baseline py-9 border-b rule transition-[padding] duration-500 ease-out-quint lg:hover:pl-4">
+                                <h2 class="font-display text-[clamp(1.6rem,2.6vw,2.2rem)] leading-[1.12] text-ink group-hover:text-clay transition-colors duration-300">
+                                    {{ $article['h1'] }}
+                                </h2>
+                                <p class="text-ink-soft leading-relaxed max-w-[56ch]">
+                                    {{ $article['excerpt'] }}
+                                </p>
+                                <time datetime="{{ $article['published'] }}" class="text-sm text-ink-soft lg:text-right">
                                     {{ \Illuminate\Support\Carbon::parse($article['published'])->translatedFormat('d \d\e F \d\e Y') }}
                                 </time>
-                                <span class="flex items-center gap-1.5 text-rose text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-x-2 group-hover:translate-x-0">
-                                    <span>Ler</span>
-                                    <span aria-hidden="true">→</span>
-                                </span>
-                            </div>
-                        </a>
+                            </a>
+                        </li>
                     @endforeach
-                </div>
+                </ul>
             </div>
         </section>
 

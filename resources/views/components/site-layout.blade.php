@@ -93,14 +93,13 @@
         <link rel="icon" href="/favicon.ico" sizes="any">
         <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-        <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
-
+        @fonts
         @vite(['resources/css/app.css'])
 
         {{-- ── Schema.org JSON-LD (per-page) ──────────────────────── --}}
         {{ $schema ?? '' }}
     </head>
-    <body class="font-sans bg-cream text-charcoal antialiased overflow-x-hidden">
+    <body class="font-sans bg-linen text-ink antialiased overflow-x-hidden">
 
 
         <!-- Google Tag Manager (noscript) -->

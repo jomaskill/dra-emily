@@ -1,21 +1,38 @@
-@import url('https://fonts.bunny.net/css?family=cormorant-garamond:300,400,400i,500,500i,600,600i,700,700i&display=swap');
-@import url('https://fonts.bunny.net/css?family=jost:300,400,500,600&display=swap');
 @import 'tailwindcss';
 
 @source '../views';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 
+/*
+ * Ateliê palette, taken from the logo: a warm clay that carries whole
+ * sections, linen paper, a brown ink and the ochre thread of the monogram.
+ */
 @theme {
-    --color-cream: #FAF6F2;
-    --color-blush: #E8B4B8;
-    --color-rose: #C2757F;
-    --color-deep-rose: #8B3D4A;
-    --color-gold: #C4956A;
-    --color-charcoal: #2A1F1F;
-    --color-muted: #7A6565;
+    --color-linen: oklch(0.965 0.014 75);
+    --color-sand: oklch(0.9 0.032 70);
+    --color-clay: oklch(0.52 0.115 41);
+    --color-clay-deep: oklch(0.42 0.09 38);
+    --color-ink: oklch(0.27 0.03 40);
+    --color-ink-soft: oklch(0.48 0.03 45);
+    --color-ochre: oklch(0.77 0.13 78);
 
-    --font-display: 'Cormorant Garamond', Georgia, serif;
-    --font-sans: 'Jost', ui-sans-serif, system-ui, sans-serif;
+    --font-display: var(--font-bodoni-moda, 'Bodoni Moda'), Georgia, serif;
+    --font-sans: var(--font-figtree, 'Figtree'), ui-sans-serif, system-ui, sans-serif;
+
+    --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+
+    --animate-fade-up: fade-up 1s var(--ease-out-quint) both;
+
+    @keyframes fade-up {
+        from {
+            opacity: 0;
+            transform: translateY(24px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 }
 
 @layer base {
@@ -24,65 +41,91 @@
     }
 
     body {
-        background-color: var(--color-cream);
-        color: var(--color-charcoal);
+        background-color: var(--color-linen);
+        color: var(--color-ink);
         -webkit-font-smoothing: antialiased;
     }
+
+    .font-display {
+        font-optical-sizing: auto;
+        letter-spacing: -0.02em;
+    }
+
+    ::selection {
+        background-color: var(--color-clay);
+        color: var(--color-linen);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-delay: 0ms !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
 }
 
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(28px);
+@layer components {
+    /* Solid clay call to action. Square corners, no glow. */
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.625rem;
+        padding: 0.95rem 1.6rem;
+        border-radius: 2px;
+        background-color: var(--color-clay);
+        color: var(--color-linen);
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: background-color 0.3s var(--ease-out-quint);
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes scaleIn {
-    from {
-        opacity: 0;
-        transform: scale(0.97);
+    .btn:hover {
+        background-color: var(--color-clay-deep);
     }
-    to {
-        opacity: 1;
-        transform: scale(1);
+
+    .btn-light {
+        background-color: var(--color-linen);
+        color: var(--color-clay-deep);
+    }
+
+    .btn-light:hover {
+        background-color: var(--color-sand);
+    }
+
+    /* Text link underlined by a hand-drawn ochre stroke. */
+    .thread-link {
+        position: relative;
+        display: inline-block;
+        padding-bottom: 0.6rem;
+        font-weight: 500;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'%3E%3Cpath d='M1 7 C 50 9, 120 3, 192 6' fill='none' stroke='%23e2a93b' stroke-width='1.3' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        background-size: 100% 10px;
+        transition: background-size 0.5s var(--ease-out-quint);
+    }
+
+    .thread-link:hover {
+        background-size: 112% 10px;
+    }
+
+    /* Hairline rule used between list rows. */
+    .rule {
+        border-color: color-mix(in oklch, var(--color-ink) 16%, transparent);
     }
 }
 
 @layer utilities {
-    .animate-fade-up {
-        opacity: 0;
-        animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    }
-
-    .animate-fade-in {
-        opacity: 0;
-        animation: fadeIn 0.8s ease forwards;
-    }
-
-    .animate-scale-in {
-        opacity: 0;
-        animation: scaleIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    }
-
-    .font-display {
-        font-family: var(--font-display);
-    }
-
     .delay-100 { animation-delay: 0.1s; }
     .delay-200 { animation-delay: 0.2s; }
     .delay-300 { animation-delay: 0.3s; }
     .delay-400 { animation-delay: 0.4s; }
-    .delay-500 { animation-delay: 0.5s; }
-    .delay-600 { animation-delay: 0.6s; }
-    .delay-700 { animation-delay: 0.7s; }
-    .delay-900 { animation-delay: 0.9s; }
 }

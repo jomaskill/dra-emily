@@ -11,31 +11,21 @@
         : null;
 @endphp
 
-<section class="bg-cream border-t border-blush/30">
-    <div class="max-w-3xl mx-auto px-6 lg:px-8 py-12">
-        <div class="flex flex-col sm:flex-row gap-5 sm:gap-6">
+<section class="bg-linen border-t rule">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-[14rem_1fr] gap-3 md:gap-12">
+        <p class="font-display text-xl text-ink">Aviso importante</p>
+        <div class="max-w-[68ch]">
+            <p class="text-ink-soft text-sm leading-relaxed">
+                {{ config('clinic.medical_disclaimer') }}
+            </p>
 
-            <svg class="w-5 h-5 shrink-0 text-rose mt-0.5" fill="none" stroke="currentColor" stroke-width="1.5"
-                 viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.852l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"/>
-            </svg>
-
-            <div>
-                <p class="text-xs tracking-[0.2em] uppercase text-rose font-medium mb-3">Aviso importante</p>
-                <p class="text-muted text-sm leading-relaxed">
-                    {{ config('clinic.medical_disclaimer') }}
+            @if ($reviewedLabel)
+                <p class="text-ink-soft text-xs mt-4">
+                    Conteúdo revisado em
+                    <time datetime="{{ $reviewed }}">{{ $reviewedLabel }}</time>
+                    por Dra. Emily Beatriz, cirurgiã-dentista &middot; CRO-{{ config('clinic.cro') }}
                 </p>
-
-                @if ($reviewedLabel)
-                    <p class="text-muted/80 text-xs mt-4">
-                        Conteúdo revisado em
-                        <time datetime="{{ $reviewed }}">{{ $reviewedLabel }}</time>
-                        por Dra. Emily Beatriz, cirurgiã-dentista &middot; CRO-{{ config('clinic.cro') }}
-                    </p>
-                @endif
-            </div>
-
+            @endif
         </div>
     </div>
 </section>

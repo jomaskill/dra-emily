@@ -7,32 +7,30 @@
 @php($comparison = $procedure['comparison'] ?? null)
 
 @if ($comparison)
-    <section class="py-24 lg:py-32 bg-white">
-        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+    <section class="bg-linen border-t rule">
+        <div class="max-w-7xl mx-auto px-5 lg:px-8 py-24 lg:py-32">
 
-            <div class="text-center mb-12">
-                <p class="text-xs tracking-[0.25em] uppercase text-rose font-medium mb-4">Lado a lado</p>
-                <h2 class="font-display text-4xl lg:text-5xl italic text-charcoal leading-tight">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-end mb-12">
+                <h2 class="font-display text-[clamp(2.2rem,4vw,3.4rem)] leading-[1.06] text-ink">
                     {{ $comparison['title'] }}
                 </h2>
-                <div class="w-12 h-px bg-gold mx-auto mt-6"></div>
                 @if (! empty($comparison['intro']))
-                    <p class="text-muted leading-relaxed mt-7 max-w-2xl mx-auto">
+                    <p class="text-ink-soft leading-relaxed max-w-[52ch] lg:justify-self-end">
                         {{ $comparison['intro'] }}
                     </p>
                 @endif
             </div>
 
-            <div class="overflow-x-auto rounded-2xl border border-blush/40">
+            <div class="overflow-x-auto">
                 <table class="w-full border-collapse text-left min-w-[36rem]">
                     <caption class="sr-only">{{ $comparison['title'] }}</caption>
                     <thead>
-                        <tr class="bg-cream">
-                            <th scope="col" class="w-[22%] px-6 py-5 text-xs tracking-[0.18em] uppercase text-muted font-medium">
+                        <tr class="border-b border-ink">
+                            <th scope="col" class="w-[22%] pr-6 py-5">
                                 <span class="sr-only">Critério</span>
                             </th>
                             @foreach ($comparison['columns'] as $column)
-                                <th scope="col" class="px-6 py-5 font-display text-xl italic text-charcoal font-normal">
+                                <th scope="col" class="px-6 py-5 font-display text-2xl text-ink font-normal">
                                     {{ $column }}
                                 </th>
                             @endforeach
@@ -40,12 +38,12 @@
                     </thead>
                     <tbody>
                         @foreach ($comparison['rows'] as $row)
-                            <tr class="border-t border-blush/30 {{ $loop->even ? 'bg-cream/40' : '' }}">
-                                <th scope="row" class="px-6 py-5 align-top text-xs tracking-[0.14em] uppercase text-rose font-medium">
+                            <tr class="border-b rule">
+                                <th scope="row" class="pr-6 py-5 align-top text-sm text-clay font-semibold">
                                     {{ $row['label'] }}
                                 </th>
-                                <td class="px-6 py-5 align-top text-muted text-[0.96rem] leading-relaxed">{{ $row['a'] }}</td>
-                                <td class="px-6 py-5 align-top text-muted text-[0.96rem] leading-relaxed">{{ $row['b'] }}</td>
+                                <td class="px-6 py-5 align-top text-ink-soft text-[0.96rem] leading-relaxed">{{ $row['a'] }}</td>
+                                <td class="px-6 py-5 align-top text-ink-soft text-[0.96rem] leading-relaxed">{{ $row['b'] }}</td>
                             </tr>
                         @endforeach
                     </tbody>
