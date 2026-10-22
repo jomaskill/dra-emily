@@ -80,6 +80,28 @@ it('links each article to procedures that exist', function (string $slug) use ($
     }
 })->with($articleSlugs);
 
+it('cites its sources at the end of the article and in the JSON-LD', function (string $slug) use ($articles) {
+    $sources = $articles[$slug]['sources'] ?? [];
+
+    expect(count($sources))->toBeGreaterThanOrEqual(2);
+
+    foreach ($sources as $source) {
+        expect($source)->toHaveKeys(['publisher', 'title', 'url', 'year'])
+            ->and($source['url'])->toStartWith('https://');
+    }
+
+    $html = $this->get("/artigos/{$slug}")->assertOk()->getContent();
+
+    $page = collect(articleNodes($html))->firstWhere('@type', 'MedicalWebPage');
+
+    expect($html)->toContain('id="fontes"')
+        ->and(array_column($page['citation'], 'url'))->toBe(array_column($sources, 'url'));
+
+    foreach ($sources as $source) {
+        expect($html)->toContain('href="'.e($source['url']).'"');
+    }
+})->with($articleSlugs);
+
 it('lists every article on the index and in the sitemap', function () use ($articleSlugs) {
     $index = $this->get('/artigos')->assertOk()->getContent();
     $sitemap = $this->get('/sitemap.xml')->assertOk()->getContent();

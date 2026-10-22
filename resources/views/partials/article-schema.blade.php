@@ -32,7 +32,13 @@
     "speakable": {
       "@@type": "SpeakableSpecification",
       "cssSelector": ["#resposta", "#faq"]
-    }
+    },
+    "citation": {!! $json(array_map(static fn (array $source): array => [
+        '@type' => 'CreativeWork',
+        'name' => $source['title'],
+        'url' => $source['url'],
+        'publisher' => ['@type' => 'Organization', 'name' => $source['publisher']],
+    ], $article['sources'])) !!}
   },
   {
     "@@context": "https://schema.org",

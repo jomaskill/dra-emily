@@ -85,7 +85,7 @@ it('lists every concern on the homepage, linked to its page', function () use ($
 });
 
 it('never names a commercial product brand on a public page', function (string $path) {
-    $html = mb_strtolower($this->get($path)->assertOk()->getContent());
+    $html = mb_strtolower(withoutCitedSources($this->get($path)->assertOk()->getContent()));
 
     expect(preg_match('/sculptra|radiesse|ellans[eé]|restylane|juv[eé]derm|dysport|xeomin/u', $html))->toBe(0);
 })->with($publicPaths);

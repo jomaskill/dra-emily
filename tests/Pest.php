@@ -48,3 +48,15 @@ function something()
 {
     // ..
 }
+
+/**
+ * Drop the cited sources from an article page: the "Fontes" list and the
+ * JSON-LD citation. Sources keep the original title of the work they cite,
+ * brand names included, so copy rules about brands skip them.
+ */
+function withoutCitedSources(string $html): string
+{
+    $html = preg_replace('#<section id="fontes".*?</section>#s', '', $html);
+
+    return preg_replace('/"citation": [^\n]*/', '', $html);
+}

@@ -80,7 +80,7 @@ it('redirects the retired botox URL to the toxina botulínica page', function ()
 });
 
 it('never mentions botox on a public page', function (string $path) {
-    $html = $this->get($path)->assertOk()->getContent();
+    $html = withoutCitedSources($this->get($path)->assertOk()->getContent());
 
     expect(mb_strtolower($html))->not->toContain('botox');
 })->with(fn () => array_merge(

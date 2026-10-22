@@ -8,6 +8,16 @@
     $updated   = \Illuminate\Support\Carbon::parse($article['updated']);
     // Compartilhar usa api.whatsapp.com para não receber a marcação de anúncio dos links wa.me.
     $shareUrl  = 'https://api.whatsapp.com/send?text='.rawurlencode($article['h1'].' — '.$canonical);
+    $story     = [
+        'slug' => $slug,
+        'title' => $article['h1'],
+        'eyebrow' => $article['eyebrow'],
+        'excerpt' => $article['excerpt'],
+        'number' => $article['number'],
+        'tone' => $article['tone'],
+        'url' => $canonical,
+        'domain' => $domain,
+    ];
 @endphp
 
 <x-site-layout
@@ -60,18 +70,28 @@
                            aria-label="Compartilhar no WhatsApp">
                             <x-whatsapp-icon class="w-[1.1rem] h-[1.1rem]" />
                         </a>
+                        <button type="button" data-story="{{ json_encode($story, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) }}"
+                                class="grid place-items-center w-10 h-10 rounded-full hover:bg-sand/60 hover:text-clay transition-colors cursor-pointer"
+                                aria-label="Compartilhar no story do Instagram">
+                            <svg class="w-[1.1rem] h-[1.1rem]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="3" y="3" width="18" height="18" rx="5"/>
+                                <circle cx="12" cy="12" r="4.2"/>
+                                <circle cx="17.3" cy="6.7" r="0.6" fill="currentColor" stroke="none"/>
+                            </svg>
+                        </button>
                         <button type="button" data-copy-link="{{ $canonical }}"
-                                class="group relative grid place-items-center w-10 h-10 rounded-full hover:bg-sand/60 hover:text-clay transition-colors cursor-pointer"
+                                class="grid place-items-center w-10 h-10 rounded-full hover:bg-sand/60 hover:text-clay transition-colors cursor-pointer"
                                 aria-label="Copiar link do artigo">
                             <svg class="w-[1.1rem] h-[1.1rem]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/>
                             </svg>
-                            <span data-copy-feedback role="status"
-                                  class="pointer-events-none absolute -top-9 right-0 whitespace-nowrap rounded-sm bg-ink px-2.5 py-1 text-xs text-linen opacity-0 transition-opacity duration-300"></span>
                         </button>
                     </div>
                 </div>
             </header>
+
+            <div data-share-toast role="status" aria-live="polite"
+                 class="pointer-events-none fixed bottom-6 left-1/2 z-50 -translate-x-1/2 w-max max-w-[calc(100vw-2.5rem)] rounded-sm bg-ink px-4 py-3 text-center text-sm text-linen opacity-0 shadow-lg transition-opacity duration-300"></div>
 
             {{-- ======================================================
                  BODY
@@ -118,6 +138,21 @@
                         Perguntas <em class="text-clay">frequentes</em>
                     </h2>
                     <x-faq-list :items="$article['faq']" />
+                </section>
+
+                {{-- Sources --}}
+                <section id="fontes" class="mt-16 pt-8 border-t rule" aria-labelledby="fontes-titulo">
+                    <h2 id="fontes-titulo" class="text-xs font-semibold tracking-[0.14em] uppercase text-ink-soft mb-5">Fontes</h2>
+                    <ol class="space-y-3 text-[0.95rem] leading-relaxed text-ink-soft list-decimal marker:text-clay pl-5">
+                        @foreach ($article['sources'] as $source)
+                            <li class="pl-1">
+                                <span class="text-ink">{{ $source['publisher'] }}.</span>
+                                <a href="{{ $source['url'] }}" target="_blank" rel="noopener noreferrer"
+                                   class="underline decoration-ink/25 underline-offset-[3px] hover:text-clay hover:decoration-clay transition-colors">{{ $source['title'] }}</a>.
+                                {{ $source['year'] }}.
+                            </li>
+                        @endforeach
+                    </ol>
                 </section>
 
                 {{-- Related procedures, as topic tags --}}
@@ -194,17 +229,5 @@
         @include('partials.medical-disclaimer', ['reviewed' => $article['updated']])
     </main>
 
-    <script>
-        document.querySelectorAll('[data-copy-link]').forEach(function (button) {
-            var feedback = button.querySelector('[data-copy-feedback]');
-
-            button.addEventListener('click', function () {
-                navigator.clipboard.writeText(button.dataset.copyLink).then(function () {
-                    feedback.textContent = 'Link copiado';
-                    feedback.classList.add('opacity-100');
-                    setTimeout(function () { feedback.classList.remove('opacity-100'); }, 1800);
-                });
-            });
-        });
-    </script>
+    @include('partials.article-share-script')
 </x-site-layout>

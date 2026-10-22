@@ -23,9 +23,16 @@
 |   takeaways         => lista de pontos-chave (opcional)
 |   faq               => [['q' => ..., 'a' => ...], ...]
 |   related           => slugs de config/procedures.php
+|   sources           => [['publisher' => ..., 'title' => ..., 'url' => ...,
+|                        'year' => ...], ...] referências citadas no fim do
+|                        artigo e no JSON-LD (citation). Use só fontes
+|                        verificadas, que sustentem o que o texto afirma.
+|                        O título fica como no original, mesmo com nome de
+|                        marca: a regra de não citar marcas vale para o
+|                        texto do artigo, não para as fontes.
 |
-| Observação sobre valores: as normas de publicidade odontológica no Brasil
-| restringem a divulgação de preços e promoções. Por isso o artigo sobre custo
+| Observação sobre valores: o Código de Ética Odontológica (art. 44, I)
+| proíbe anunciar preços. Por isso o artigo sobre custo
 | explica o que compõe o investimento, sem tabela de preços.
 |
 */
@@ -78,6 +85,11 @@ return [
             ['q' => 'A avaliação tem custo?', 'a' => 'A primeira conversa serve para entender o que você deseja e avaliar o seu rosto. Consulte as condições atuais pelo WhatsApp antes de agendar.'],
         ],
         'related' => ['harmonizacao-facial', 'full-face', 'toxina-botulinica'],
+        'sources' => [
+            ['publisher' => 'Anvisa', 'title' => 'Procedimento seguro — Estética com segurança', 'url' => 'https://www.gov.br/anvisa/pt-br/comunicacao/campanhas/estetica/procedimento-seguro', 'year' => '2024'],
+            ['publisher' => 'Anvisa', 'title' => 'Anvisa recomenda: preenchedores dérmicos somente dentro das indicações aprovadas', 'url' => 'https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2026/anvisa-recomenda-preenchedores-dermicos-somente-dentro-das-indicacoes-aprovadas', 'year' => '2026'],
+            ['publisher' => 'Clinical, Cosmetic and Investigational Dermatology', 'title' => 'A 10-point plan for avoiding hyaluronic acid dermal filler-related complications during facial aesthetic procedures and algorithms for management', 'url' => 'https://pmc.ncbi.nlm.nih.gov/articles/PMC6257077/', 'year' => '2018'],
+        ],
     ],
 
     'tempo-de-recuperacao' => [
@@ -88,26 +100,26 @@ return [
         'excerpt' => 'A pergunta que decide a data do seu agendamento: quantos dias você precisa reservar depois de cada procedimento.',
         'published' => '2026-08-29',
         'updated' => '2026-08-29',
-        'answer' => 'A maioria dos procedimentos estéticos faciais permite retomar a rotina no mesmo dia. Toxina botulínica e preenchimento têm retorno imediato, com inchaço leve por 24 a 48 horas. Microagulhamento pede de 1 a 3 dias de pele sensível. Fios de PDO e bichectomia, por serem mais invasivos, pedem cerca de uma semana de cuidados.',
+        'answer' => 'A maioria dos procedimentos estéticos faciais permite retomar a rotina no mesmo dia. Toxina botulínica e preenchimento têm retorno imediato, com inchaço leve por 24 a 48 horas. Microagulhamento deixa a pele sensível por alguns dias. Fios de PDO e bichectomia, por serem mais invasivos, pedem de uma a duas semanas de cuidados.',
         'sections' => [
             [
                 'heading' => 'Retorno imediato à rotina',
                 'body' => [
                     'Toxina botulínica e preenchimento labial são os procedimentos com menor tempo de recuperação. Você sai da clínica e retoma o dia normalmente. É comum haver pequenos pontos avermelhados nos locais de aplicação e algum inchaço nas primeiras 24 a 48 horas, especialmente nos lábios.',
-                    'As restrições existem, mas são simples: evitar deitar ou fazer exercício intenso nas primeiras horas, não massagear a região e evitar calor excessivo, como sauna, no mesmo dia.',
+                    'As restrições existem, mas são simples: não massagear a região, evitar exercício intenso nas primeiras 24 horas e ficar longe de sauna e calor excessivo por um ou dois dias.',
                 ],
             ],
             [
                 'heading' => 'Alguns dias de cuidado',
                 'body' => [
-                    'Microagulhamento deixa a pele avermelhada e sensível por 1 a 3 dias, com aspecto parecido com uma leve queimadura de sol. Nesse período a proteção solar deixa de ser recomendação e passa a ser condição para o resultado.',
+                    'Microagulhamento deixa a pele avermelhada e sensível por alguns dias, às vezes até uma semana, com aspecto parecido com uma leve queimadura de sol. Nesse período a proteção solar deixa de ser recomendação e passa a ser condição para o resultado.',
                     'Bioestimulador de colágeno costuma permitir retorno imediato, mas pede atenção às orientações de massagem no pós-procedimento, que variam conforme o produto utilizado.',
                 ],
             ],
             [
                 'heading' => 'Cerca de uma semana',
                 'body' => [
-                    'Fios de PDO envolvem inserção sob a pele e por isso pedem mais cuidado. Inchaço e sensibilidade nos primeiros dias são esperados, com orientação para evitar esforço físico intenso e movimentos amplos do rosto durante o período indicado.',
+                    'Fios de PDO envolvem inserção sob a pele e por isso pedem mais cuidado. Inchaço e sensibilidade são esperados, e por uma a duas semanas a orientação é evitar abrir muito a boca, massagear o rosto e frequentar sauna.',
                     'Bichectomia é o procedimento mais invasivo entre os oferecidos, e é cirúrgico. Inchaço e desconforto nos primeiros dias são normais, com alimentação leve e higiene específica. A maioria dos pacientes retoma a rotina em cerca de uma semana, mas o resultado final só aparece meses depois, quando os tecidos se acomodam.',
                 ],
             ],
@@ -121,8 +133,8 @@ return [
         ],
         'takeaways' => [
             'Toxina botulínica e preenchimento permitem retomar a rotina no mesmo dia.',
-            'Microagulhamento pede de 1 a 3 dias de pele sensível e proteção solar rigorosa.',
-            'Fios de PDO e bichectomia pedem cerca de uma semana de cuidados.',
+            'Microagulhamento deixa a pele sensível por alguns dias e pede proteção solar rigorosa.',
+            'Fios de PDO e bichectomia pedem de uma a duas semanas de cuidados.',
             'Para eventos, conte 15 dias para toxina botulínica e mais tempo para procedimentos invasivos.',
         ],
         'faq' => [
@@ -131,6 +143,13 @@ return [
             ['q' => 'Quando vejo o resultado final?', 'a' => 'Varia bastante: preenchimento tem resultado imediato, toxina botulínica leva de 3 a 15 dias, bioestimulador e fios são progressivos ao longo de semanas, e a bichectomia leva de 3 a 6 meses.'],
         ],
         'related' => ['toxina-botulinica', 'preenchimento-labial', 'microagulhamento'],
+        'sources' => [
+            ['publisher' => 'American Academy of Dermatology', 'title' => 'Fillers: FAQs', 'url' => 'https://www.aad.org/cosmetic/wrinkles/fillers-faqs', 'year' => 's.d.'],
+            ['publisher' => 'American Academy of Dermatology', 'title' => 'Botulinum toxin therapy: FAQs', 'url' => 'https://www.aad.org/public/cosmetic/wrinkles/botulinum-toxin-faqs', 'year' => 's.d.'],
+            ['publisher' => 'American Academy of Dermatology', 'title' => 'Microneedling can fade scars, uneven skin tone, and more', 'url' => 'https://www.aad.org/public/cosmetic/scars-stretch-marks/microneedling-fade-scars', 'year' => '2023'],
+            ['publisher' => 'Life (Basel)', 'title' => 'Pre- and Post-Procedural Considerations and Thread Types for Thread Lifting', 'url' => 'https://pmc.ncbi.nlm.nih.gov/articles/PMC11766856/', 'year' => '2025'],
+            ['publisher' => 'American Society of Plastic Surgeons', 'title' => 'Buccal Fat Removal Recovery', 'url' => 'https://www.plasticsurgery.org/cosmetic-procedures/buccal-fat-removal/recovery', 'year' => 's.d.'],
+        ],
     ],
 
     'quem-nao-pode-fazer' => [
@@ -180,6 +199,14 @@ return [
             ['q' => 'Existe idade mínima ou máxima?', 'a' => 'Não há um número fixo. O que orienta a indicação é a avaliação individual, considerando a estrutura do rosto, o objetivo e o histórico de saúde de cada paciente.'],
         ],
         'related' => ['harmonizacao-facial', 'bichectomia', 'toxina-botulinica'],
+        'sources' => [
+            ['publisher' => 'U.S. National Library of Medicine (DailyMed)', 'title' => 'BOTOX COSMETIC (onabotulinumtoxinA) injection, powder, lyophilized, for solution', 'url' => 'https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=485d9b71-6881-42c5-a620-a4360c7192ab', 'year' => '2024'],
+            ['publisher' => 'Allergan Aesthetics', 'title' => 'JUVÉDERM VOLLURE XC injectable gel — Directions for Use', 'url' => 'https://www.rxabbvie.com/pdf/juvederm-vollure-xc_dfu.pdf', 'year' => '2023'],
+            ['publisher' => 'Clinical, Cosmetic and Investigational Dermatology', 'title' => 'Patient factors influencing dermal filler complications: prevention, assessment, and treatment', 'url' => 'https://www.dovepress.com/patient-factors-influencing-dermal-filler-complications-prevention-ass-peer-reviewed-article-CCID', 'year' => '2015'],
+            ['publisher' => 'Clinical, Cosmetic and Investigational Dermatology', 'title' => 'The 10-Point Plan 2021: Updated Concepts for Improved Procedural Safety During Facial Filler Treatments', 'url' => 'https://pmc.ncbi.nlm.nih.gov/articles/PMC8279269/', 'year' => '2021'],
+            ['publisher' => 'International Journal of Women\'s Dermatology', 'title' => 'Cosmetic Surgery and Body Dysmorphic Disorder – An Update', 'url' => 'https://pmc.ncbi.nlm.nih.gov/articles/PMC5986110/', 'year' => '2017'],
+            ['publisher' => 'American Society of Plastic Surgeons', 'title' => 'Facial fat is precious: Why your plastic surgeon shouldn\'t be too aggressive with buccal fat removal', 'url' => 'https://plasticsurgery.org/news/articles/facial-fat-is-precious-why-your-plastic-surgeon-shouldnt-be-too-aggressive-with-buccal-fat-removal', 'year' => '2021'],
+        ],
     ],
 
     'como-se-preparar' => [
@@ -235,6 +262,12 @@ return [
             ['q' => 'Posso ir de maquiagem?', 'a' => 'É preferível chegar com o rosto limpo. Se não for possível, reserve alguns minutos para remover a maquiagem antes do procedimento.'],
         ],
         'related' => ['toxina-botulinica', 'preenchimento-labial', 'bioestimulador-de-colageno'],
+        'sources' => [
+            ['publisher' => 'Journal of Clinical and Aesthetic Dermatology', 'title' => 'The Management of Bruising following Nonsurgical Cosmetic Treatment', 'url' => 'https://jcadonline.com/aesthetic-complications-bruising/', 'year' => '2017'],
+            ['publisher' => 'Clinical, Cosmetic and Investigational Dermatology', 'title' => 'Patient factors influencing dermal filler complications: prevention, assessment, and treatment', 'url' => 'https://www.dovepress.com/patient-factors-influencing-dermal-filler-complications-prevention-ass-peer-reviewed-article-CCID', 'year' => '2015'],
+            ['publisher' => 'Stony Brook Medicine, Dermatology', 'title' => 'Dermal Fillers Instructions', 'url' => 'https://stonybrookmedicine.edu/sites/default/files/Dermal%20Fillers%20Patient%20Instructions.pdf', 'year' => '2024'],
+            ['publisher' => 'The Dermatologist', 'title' => 'Preventing and Managing Vasovagal Syncope', 'url' => 'https://hmpgloballearningnetwork.com/site/thederm/clinical-tips/preventing-and-managing-vasovagal-syncope', 'year' => '2024'],
+        ],
     ],
 
     'harmonizacao-facial-depois-dos-40' => [
@@ -258,13 +291,13 @@ return [
                 'heading' => 'Por que o plano é diferente do de quem tem 30',
                 'body' => [
                     'Aos 30, a harmonização costuma ser preventiva: toxina botulínica para as primeiras rugas de expressão e pequenos ajustes de proporção. Depois dos 40, tentar resolver tudo com preenchimento é o caminho mais rápido para um rosto pesado e artificial.',
-                    'O que funciona é tratar a estrutura. Repor volume nos pontos que sustentam o rosto, como as maçãs, suaviza o bigode chinês sem precisar preencher o sulco. O bioestimulador de colágeno melhora a firmeza da pele de dentro para fora. E os fios de PDO reposicionam os tecidos quando há flacidez.',
+                    'O que funciona é tratar a estrutura. Repor volume nos pontos que sustentam o rosto, como as maçãs, ajuda a suavizar o bigode chinês, e o sulco recebe só um ajuste local quando precisa. O bioestimulador de colágeno melhora a firmeza da pele de dentro para fora. E os fios de PDO reposicionam os tecidos quando há flacidez.',
                 ],
             ],
             [
                 'heading' => 'Depois dos 50 e na menopausa',
                 'body' => [
-                    'Na menopausa, a queda dos hormônios acelera a perda de colágeno e a pele fica mais fina e seca em pouco tempo. É comum a sensação de que o rosto mudou de repente.',
+                    'Na menopausa, a queda dos hormônios acelera a perda de colágeno: a pele perde cerca de 30% dele nos primeiros cinco anos e fica mais fina e seca em pouco tempo. É comum a sensação de que o rosto mudou de repente.',
                     'Nessa fase, o estímulo de colágeno é a base do tratamento, quase sempre combinado com sustentação e reposição de volume. Os resultados são construídos aos poucos, ao longo de alguns meses, e o objetivo é um rosto descansado, nunca uma aparência de quem fez muita coisa.',
                     'Também é a fase em que a honestidade da avaliação mais importa: em flacidez acentuada, os tratamentos não cirúrgicos melhoram a pele, mas não substituem um lifting cirúrgico. Saber disso antes evita frustração e investimento no lugar errado.',
                 ],
@@ -278,7 +311,7 @@ return [
         ],
         'takeaways' => [
             'Depois dos 40, o foco sai do volume e vai para a sustentação e a qualidade da pele.',
-            'Repor volume nas maçãs do rosto suaviza o bigode chinês melhor do que preencher só o sulco.',
+            'Tratar a sustentação do rosto deixa o resultado mais natural do que encher cada sulco.',
             'Na menopausa, o estímulo de colágeno é a base do tratamento.',
             'Em flacidez acentuada, os tratamentos sem cirurgia melhoram a pele, mas não substituem um lifting.',
         ],
@@ -288,6 +321,14 @@ return [
             ['q' => 'A harmonização facial fica artificial em pele madura?', 'a' => 'Não precisa ficar. O aspecto artificial vem de excesso de produto, principalmente de preenchimento. Com foco em sustentação e quantidades conservadoras, o resultado é um rosto descansado e natural.'],
         ],
         'related' => ['bioestimulador-de-colageno', 'flacidez-facial', 'bigode-chines', 'preenchimento-facial'],
+        'sources' => [
+            ['publisher' => 'Aesthetic Surgery Journal', 'title' => 'The Facial Aging Process From the "Inside Out"', 'url' => 'https://academic.oup.com/asj/article/41/10/1107/5873339', 'year' => '2021'],
+            ['publisher' => 'Aesthetic Plastic Surgery', 'title' => 'Changes in the facial skeleton with aging: implications and clinical applications in facial rejuvenation', 'url' => 'https://pmc.ncbi.nlm.nih.gov/articles/PMC3404279/', 'year' => '2012'],
+            ['publisher' => 'Plastic and Reconstructive Surgery Global Open', 'title' => 'Advances in Poly-L-lactic Acid Injections for Facial and Neck Rejuvenation', 'url' => 'https://doi.org/10.1097/GOX.0000000000007029', 'year' => '2025'],
+            ['publisher' => 'American Society of Plastic Surgeons', 'title' => 'What you need to know about thread lifts', 'url' => 'https://www.plasticsurgery.org/news/blog/what-you-need-to-know-about-thread-lifts', 'year' => '2018'],
+            ['publisher' => 'American Academy of Dermatology', 'title' => 'Caring for your skin in menopause', 'url' => 'https://www.aad.org/public/everyday-care/skin-care-secrets/anti-aging/skin-care-during-menopause', 'year' => '2025'],
+            ['publisher' => 'American Society of Plastic Surgeons', 'title' => 'Facelift Surgery', 'url' => 'https://www.plasticsurgery.org/cosmetic-procedures/facelift', 'year' => 's.d.'],
+        ],
     ],
 
     'harmonizacao-facial-em-homens' => [
@@ -348,6 +389,79 @@ return [
             ['q' => 'Preciso me afastar do trabalho?', 'a' => 'Na maioria dos casos, não. Pode haver leve inchaço ou um pequeno hematoma por alguns dias. Se houver um compromisso importante, o ideal é marcar o procedimento com uma ou duas semanas de folga.'],
         ],
         'related' => ['harmonizacao-facial-masculina', 'toxina-botulinica', 'toxina-botulinica-bruxismo', 'preenchimento-facial'],
+        'sources' => [
+            ['publisher' => 'ABC Agora', 'title' => 'Aos 35 anos, Fiuk faz harmonização facial e especialista alerta para prevenção do envelhecimento', 'url' => 'https://abcagora.com.br/2026/10/01/fiuk-harmonizacao-facial-30-anos/', 'year' => '2026'],
+            ['publisher' => 'O Tempo', 'title' => 'Henri Castelli faz nova harmonização facial e reforça rotina de procedimentos estéticos', 'url' => 'https://www.otempo.com.br/entretenimento/2026/10/3/henri-castelli-faz-nova-harmonizacao-facial-e-reforca-rotina-de-procedimentos-esteticos-veja', 'year' => '2026'],
+            ['publisher' => 'TMC', 'title' => 'Cleitinho, governador de MG, faz harmonização facial', 'url' => 'https://tmc.com.br/lifestyle/cleitinho-azevedo-eleito-governador-harmonizacao/', 'year' => '2026'],
+            ['publisher' => 'Anvisa', 'title' => 'Anvisa recomenda: preenchedores dérmicos somente dentro das indicações aprovadas', 'url' => 'https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2026/anvisa-recomenda-preenchedores-dermicos-somente-dentro-das-indicacoes-aprovadas', 'year' => '2026'],
+        ],
+    ],
+
+    'rosto-de-ozempic' => [
+        'title' => 'Rosto de Ozempic: flacidez depois de emagrecer | Dra. Emily Beatriz',
+        'h1' => 'O que acontece com o rosto de quem emagrece com Ozempic ou Mounjaro',
+        'eyebrow' => 'Emagrecimento',
+        'meta_description' => 'Rosto de Ozempic é a flacidez e a perda de volume depois de emagrecer rápido com canetas. Entenda por que acontece e o que dá para fazer, em Belo Horizonte.',
+        'excerpt' => 'A balança desce, as roupas voltam a servir e o rosto parece mais cansado. Entenda por que isso acontece e por que encher o rosto de volta não resolve.',
+        'published' => '2026-10-22',
+        'updated' => '2026-10-22',
+        'answer' => 'O chamado rosto de Ozempic é a flacidez e a perda de volume que aparecem quando se emagrece muito em pouco tempo, com canetas como Ozempic e Mounjaro. A gordura que sustentava o rosto vai embora antes que a pele consiga se adaptar. O tratamento costuma combinar bioestimulador de colágeno, para devolver firmeza, com preenchimento em poucos pontos de sustentação, sem tentar encher o rosto de volta.',
+        'sections' => [
+            [
+                'heading' => 'De onde veio esse nome',
+                'body' => [
+                    'O apelido surgiu nos Estados Unidos, em consultórios de dermatologia que começaram a receber pacientes de meia-idade com o rosto encovado depois de perder muitos quilos em poucos meses. Por aqui o uso das canetas cresceu bastante, e desde março, quando a patente da semaglutida venceu no Brasil, novas versões do remédio começaram a chegar às farmácias.',
+                    'Apesar do nome, o rosto não muda por causa do remédio em si. Muda por causa da velocidade do emagrecimento. A mesma coisa acontece depois de uma cirurgia bariátrica ou de uma dieta muito restritiva. A caneta só tornou esse tipo de perda de peso muito mais comum.',
+                ],
+            ],
+            [
+                'heading' => 'O que muda no rosto',
+                'body' => [
+                    'O rosto tem pequenas bolsas de gordura que funcionam como almofadas. Elas dão o volume das maçãs do rosto, preenchem as têmporas e sustentam a pele ao redor dos olhos e da boca. Quando o corpo emagrece rápido, essas bolsas diminuem junto, e a pele, que levou anos se acomodando sobre elas, não tem tempo de se retrair.',
+                    'O resultado aparece em lugares previsíveis: têmporas fundas, maçãs do rosto achatadas, olheira mais marcada, bigode chinês mais profundo e uma pele que sobra na linha da mandíbula e no pescoço. Num levantamento com 400 profissionais apresentado em um congresso americano de cirurgia dermatológica, em novembro de 2025, a queixa mais citada pelos pacientes que usavam essas canetas foi justamente a perda de volume no meio do rosto, seguida da flacidez na mandíbula.',
+                    'A idade pesa. Aos 30, a pele ainda tem colágeno de sobra e costuma se readaptar melhor. Depois dos 45, a mesma perda de peso tende a deixar o rosto com aspecto mais cansado. A perda de massa muscular, comum quando se emagrece rápido, também contribui.',
+                ],
+            ],
+            [
+                'heading' => 'Por que encher de volta não funciona',
+                'body' => [
+                    'A primeira ideia de muita gente é repor com preenchimento todo o volume que foi embora. Parece lógico, mas costuma dar errado. O rosto perdeu gordura em muitos lugares ao mesmo tempo e a pele ficou mais fina e frouxa. Colocar ácido hialurônico em todos esses pontos deixa o rosto pesado e inchado, com aquela aparência de travesseiro que denuncia o procedimento de longe.',
+                    'O problema principal é de sustentação e de qualidade da pele. O volume entra só onde ele segura o resto, e em quantidade pequena.',
+                ],
+            ],
+            [
+                'heading' => 'O que costuma entrar no plano',
+                'body' => [
+                    'O bioestimulador de colágeno costuma ser a base. Ele faz a própria pele produzir colágeno novo ao longo de alguns meses, e o rosto vai ganhando firmeza aos poucos. Em geral são de uma a três sessões, com intervalo de algumas semanas entre elas.',
+                    'O preenchimento com ácido hialurônico entra de forma pontual, nas têmporas e nas maçãs do rosto, porque são esses pontos que sustentam o terço médio. Devolver volume a esses pontos costuma suavizar também o bigode chinês e a olheira, e muitas vezes evita preencher cada sulco. Se a flacidez for maior, os fios de PDO ajudam a reposicionar os tecidos, e o microagulhamento melhora a textura da pele.',
+                    'Há também um limite que precisa ser dito na avaliação. Quando sobra muita pele, principalmente no pescoço, nenhum tratamento sem cirurgia resolve por completo. Saber disso antes evita gastar com o tratamento errado.',
+                ],
+            ],
+            [
+                'heading' => 'Tratar durante ou depois de emagrecer',
+                'body' => [
+                    'Não é preciso esperar a última consulta com o endocrinologista para começar a cuidar do rosto. O bioestimulador de colágeno e os cuidados com a pele podem começar durante o tratamento, porque preparam a pele para o que vem. Já a reposição de volume rende mais quando o peso está perto de se estabilizar. Antes disso, o rosto continua mudando e o preenchimento pode precisar de ajuste.',
+                    'Quem prescreve e acompanha a caneta é o médico. Vale contar a ele que você pretende tratar o rosto e contar a quem vai aplicar que você usa o remédio, há quanto tempo e quanto já perdeu. Comer proteína suficiente e manter algum treino de força, como o médico costuma orientar, ajuda a perder menos músculo no caminho.',
+                ],
+            ],
+        ],
+        'takeaways' => [
+            'O rosto muda pela velocidade do emagrecimento, não pelo remédio em si.',
+            'As áreas mais afetadas são têmporas, maçãs do rosto, olheiras, bigode chinês e mandíbula.',
+            'Repor todo o volume perdido com preenchimento deixa o rosto pesado e artificial.',
+            'Bioestimulador para firmeza e preenchimento só nos pontos de sustentação costumam funcionar melhor.',
+        ],
+        'faq' => [
+            ['q' => 'Todo mundo que usa Ozempic ou Mounjaro fica com o rosto flácido?', 'a' => 'Não. Depende de quanto peso se perde, da velocidade, da idade e da qualidade da pele de cada um. Quem perde pouco peso ou é mais jovem muitas vezes não nota diferença no rosto.'],
+            ['q' => 'Se eu parar a caneta, o rosto volta ao que era?', 'a' => 'Se o peso voltar, parte da gordura do rosto volta junto. Mas a flacidez que já aconteceu na pele não se desfaz sozinha, por isso o cuidado com a qualidade da pele continua importante.'],
+            ['q' => 'Posso fazer harmonização enquanto uso a caneta?', 'a' => 'Na maioria dos casos, sim. O plano só muda de ordem: primeiro o que melhora a pele, depois a reposição de volume, quando o peso estiver mais estável. Informe na avaliação que você usa o remédio.'],
+        ],
+        'related' => ['bioestimulador-de-colageno', 'preenchimento-facial', 'flacidez-facial', 'fios-de-pdo'],
+        'sources' => [
+            ['publisher' => 'Metrópoles', 'title' => 'Ozempic: STJ mantém fim da patente para março de 2026. Veja o que muda', 'url' => 'https://www.metropoles.com/saude/stj-mantem-fim-patente-ozempic-2026', 'year' => '2025'],
+            ['publisher' => 'Dermatology Times', 'title' => 'New Survey Reveals Rise in GLP-1 Patients Seeking Cosmetic Care', 'url' => 'https://www.dermatologytimes.com/view/new-survey-reveals-rise-in-glp-1-patients-seeking-cosmetic-care', 'year' => '2025'],
+            ['publisher' => 'Anvisa', 'title' => 'Anvisa recomenda: preenchedores dérmicos somente dentro das indicações aprovadas', 'url' => 'https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2026/anvisa-recomenda-preenchedores-dermicos-somente-dentro-das-indicacoes-aprovadas', 'year' => '2026'],
+        ],
     ],
 
 ];
