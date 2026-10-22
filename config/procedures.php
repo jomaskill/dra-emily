@@ -578,46 +578,6 @@ return [
         ],
     ],
 
-    'bichectomia' => [
-        'num' => '08',
-        'updated' => '2026-09-08',
-        'name' => 'Bichectomia',
-        'card_desc' => 'Cirurgia que reduz as bolsas de gordura das bochechas, afinando o terço inferior do rosto.',
-        'title' => 'Bichectomia em Belo Horizonte | Dra. Emily Beatriz',
-        'meta_description' => 'Bichectomia em Belo Horizonte com a Dra. Emily Beatriz, cirurgiã-dentista. Redução das bolsas de Bichat com avaliação criteriosa. Agende pelo WhatsApp.',
-        'eyebrow' => 'Procedimento Cirúrgico',
-        'h1' => 'Bichectomia em Belo Horizonte',
-        'hero_lead' => 'A bichectomia afina o terço inferior do rosto ao reduzir as bolsas de gordura das bochechas. É um procedimento cirúrgico, indicado apenas para alguns casos — e a avaliação criteriosa é a parte mais importante dele.',
-        'facts' => [
-            ['label' => 'Tipo', 'value' => 'Cirúrgico'],
-            ['label' => 'Sessão', 'value' => '~60 minutos'],
-            ['label' => 'Anestesia', 'value' => 'Local'],
-            ['label' => 'Resultado final', 'value' => '3 a 6 meses'],
-        ],
-        'what_is_title' => 'O que é a bichectomia?',
-        'what_is' => [
-            'A bichectomia é a remoção parcial das bolsas de Bichat, estruturas de gordura localizadas na região das bochechas. Ao reduzi-las, o terço inferior do rosto fica mais afinado e o contorno mandibular, mais evidente.',
-            'É um procedimento cirúrgico, realizado por via intraoral e com anestesia local. Não é indicado para todo mundo: em rostos naturalmente finos, a remoção pode acentuar demais o envelhecimento com o passar dos anos. Por isso a avaliação vem antes de qualquer decisão, e em muitos casos a recomendação é não operar.',
-        ],
-        'benefits' => [
-            ['title' => 'Contorno mais definido', 'desc' => 'O ângulo da mandíbula ganha destaque à medida que o volume da bochecha diminui.'],
-            ['title' => 'Sem cicatriz aparente', 'desc' => 'O acesso é feito por dentro da boca, sem incisão na pele do rosto.'],
-            ['title' => 'Anestesia local', 'desc' => 'Procedimento ambulatorial, sem necessidade de internação.'],
-            ['title' => 'Resultado definitivo', 'desc' => 'A gordura removida não retorna, o que torna a indicação correta ainda mais importante.'],
-        ],
-        'steps' => [
-            ['title' => 'Avaliação criteriosa', 'desc' => 'A Dra. Emily analisa proporções, volume e histórico para verificar se a bichectomia é mesmo indicada para você.'],
-            ['title' => 'Cirurgia', 'desc' => 'Com anestesia local, o acesso é feito por dentro da boca e as bolsas são reduzidas de forma controlada.'],
-            ['title' => 'Pós-operatório', 'desc' => 'Você recebe orientações de alimentação, higiene e retorno para acompanhar a cicatrização.'],
-        ],
-        'faq' => [
-            ['q' => 'Bichectomia é indicada para todo mundo?', 'a' => 'Não. Em rostos naturalmente afinados a remoção pode acentuar o aspecto de envelhecimento com o passar dos anos. A indicação depende das proporções do seu rosto e é definida em avaliação individual — e não é raro a recomendação ser não fazer.'],
-            ['q' => 'Como é a recuperação?', 'a' => 'É comum haver inchaço e desconforto nos primeiros dias, com orientação de alimentação leve e higiene específica. A maioria dos pacientes retoma a rotina em cerca de uma semana, seguindo as orientações do pós-operatório.'],
-            ['q' => 'Quando aparece o resultado final?', 'a' => 'O inchaço inicial mascara o resultado. O contorno definitivo costuma se estabelecer entre 3 e 6 meses após a cirurgia, à medida que os tecidos se acomodam.'],
-            ['q' => 'A gordura volta depois?', 'a' => 'Não. As bolsas de Bichat removidas não se regeneram, e por isso o resultado é considerado definitivo. É justamente essa característica que torna a avaliação prévia tão importante.'],
-        ],
-    ],
-
     'bigode-chines' => [
         'num' => '14',
         'updated' => '2026-10-13',

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'welcome')->name('home');
 
 Route::permanentRedirect('/procedimentos/botox', '/procedimentos/toxina-botulinica');
+Route::permanentRedirect('/procedimentos/bichectomia', '/procedimentos/harmonizacao-facial');
 
 Route::get('/procedimentos/{slug}', [ProcedureController::class, 'show'])
     ->where('slug', implode('|', array_keys(config('procedures'))))

@@ -79,6 +79,22 @@ it('redirects the retired botox URL to the toxina botulínica page', function ()
         ->assertRedirect('/procedimentos/toxina-botulinica');
 });
 
+it('redirects the retired bichectomia URL to the harmonização facial page', function () {
+    $this->get('/procedimentos/bichectomia')
+        ->assertStatus(301)
+        ->assertRedirect('/procedimentos/harmonizacao-facial');
+});
+
+it('never mentions bichectomia on a public page', function (string $path) {
+    $html = withoutCitedSources($this->get($path)->assertOk()->getContent());
+
+    expect(mb_strtolower($html))->not->toContain('bichectomia');
+})->with(fn () => array_merge(
+    ['/', '/artigos', '/sitemap.xml'],
+    array_map(fn ($slug) => "/procedimentos/{$slug}", array_keys(require __DIR__.'/../../config/procedures.php')),
+    array_map(fn ($slug) => "/artigos/{$slug}", array_keys(require __DIR__.'/../../config/articles.php')),
+));
+
 it('never mentions botox on a public page', function (string $path) {
     $html = withoutCitedSources($this->get($path)->assertOk()->getContent());
 

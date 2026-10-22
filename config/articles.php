@@ -96,11 +96,11 @@ return [
         'title' => 'Quanto tempo dura a recuperação de cada procedimento? | Dra. Emily Beatriz',
         'h1' => 'Quanto tempo dura a recuperação de cada procedimento?',
         'eyebrow' => 'Antes de agendar',
-        'meta_description' => 'Recuperação de toxina botulínica, preenchimento, bioestimulador, microagulhamento, fios de PDO e bichectomia: quanto tempo cada um pede antes de agendar.',
+        'meta_description' => 'Recuperação de toxina botulínica, preenchimento, bioestimulador, microagulhamento e fios de PDO: quanto tempo cada um pede antes de agendar.',
         'excerpt' => 'A pergunta que decide a data do seu agendamento: quantos dias você precisa reservar depois de cada procedimento.',
         'published' => '2026-08-29',
         'updated' => '2026-08-29',
-        'answer' => 'A maioria dos procedimentos estéticos faciais permite retomar a rotina no mesmo dia. Toxina botulínica e preenchimento têm retorno imediato, com inchaço leve por 24 a 48 horas. Microagulhamento deixa a pele sensível por alguns dias. Fios de PDO e bichectomia, por serem mais invasivos, pedem de uma a duas semanas de cuidados.',
+        'answer' => 'A maioria dos procedimentos estéticos faciais permite retomar a rotina no mesmo dia. Toxina botulínica e preenchimento têm retorno imediato, com inchaço leve por 24 a 48 horas. Microagulhamento deixa a pele sensível por alguns dias. Fios de PDO, por serem mais invasivos, pedem de uma a duas semanas de cuidados.',
         'sections' => [
             [
                 'heading' => 'Retorno imediato à rotina',
@@ -117,16 +117,15 @@ return [
                 ],
             ],
             [
-                'heading' => 'Cerca de uma semana',
+                'heading' => 'Uma a duas semanas',
                 'body' => [
                     'Fios de PDO envolvem inserção sob a pele e por isso pedem mais cuidado. Inchaço e sensibilidade são esperados, e por uma a duas semanas a orientação é evitar abrir muito a boca, massagear o rosto e frequentar sauna.',
-                    'Bichectomia é o procedimento mais invasivo entre os oferecidos, e é cirúrgico. Inchaço e desconforto nos primeiros dias são normais, com alimentação leve e higiene específica. A maioria dos pacientes retoma a rotina em cerca de uma semana, mas o resultado final só aparece meses depois, quando os tecidos se acomodam.',
                 ],
             ],
             [
                 'heading' => 'Planejando a data',
                 'body' => [
-                    'Se você tem um evento marcado, a regra prática é simples: quanto mais o procedimento depende de acomodação dos tecidos, mais antecedência ele pede. A toxina botulínica precisa de pelo menos 15 dias para o efeito completo. Preenchimento pede de 7 a 14 dias para o inchaço ceder. Procedimentos cirúrgicos pedem meses.',
+                    'Se você tem um evento marcado, a regra prática é simples: quanto mais o procedimento depende de acomodação dos tecidos, mais antecedência ele pede. A toxina botulínica precisa de pelo menos 15 dias para o efeito completo. Preenchimento pede de 7 a 14 dias para o inchaço ceder. Fios de PDO pedem pelo menos duas semanas.',
                     'Na avaliação, diga se há uma data importante à frente. O planejamento muda conforme o prazo disponível.',
                 ],
             ],
@@ -134,13 +133,13 @@ return [
         'takeaways' => [
             'Toxina botulínica e preenchimento permitem retomar a rotina no mesmo dia.',
             'Microagulhamento deixa a pele sensível por alguns dias e pede proteção solar rigorosa.',
-            'Fios de PDO e bichectomia pedem de uma a duas semanas de cuidados.',
+            'Fios de PDO pedem de uma a duas semanas de cuidados.',
             'Para eventos, conte 15 dias para toxina botulínica e mais tempo para procedimentos invasivos.',
         ],
         'faq' => [
-            ['q' => 'Posso trabalhar no dia seguinte?', 'a' => 'Na maioria dos procedimentos, sim. Toxina botulínica, preenchimento e bioestimulador permitem retorno imediato. Microagulhamento pode deixar a pele visivelmente avermelhada por alguns dias, e procedimentos cirúrgicos pedem mais tempo.'],
-            ['q' => 'Posso fazer exercício depois?', 'a' => 'A orientação habitual é evitar esforço físico intenso nas primeiras 24 a 48 horas na maioria dos procedimentos, e por mais tempo em fios de PDO e bichectomia. As orientações específicas são dadas no seu caso.'],
-            ['q' => 'Quando vejo o resultado final?', 'a' => 'Varia bastante: preenchimento tem resultado imediato, toxina botulínica leva de 3 a 15 dias, bioestimulador e fios são progressivos ao longo de semanas, e a bichectomia leva de 3 a 6 meses.'],
+            ['q' => 'Posso trabalhar no dia seguinte?', 'a' => 'Na maioria dos procedimentos, sim. Toxina botulínica, preenchimento e bioestimulador permitem retorno imediato. Microagulhamento pode deixar a pele visivelmente avermelhada por alguns dias, e fios de PDO pedem mais cuidado.'],
+            ['q' => 'Posso fazer exercício depois?', 'a' => 'A orientação habitual é evitar esforço físico intenso nas primeiras 24 a 48 horas na maioria dos procedimentos, e por mais tempo em fios de PDO. As orientações específicas são dadas no seu caso.'],
+            ['q' => 'Quando vejo o resultado final?', 'a' => 'Varia bastante: preenchimento tem resultado imediato, toxina botulínica leva de 3 a 15 dias, bioestimulador e fios são progressivos ao longo de semanas.'],
         ],
         'related' => ['toxina-botulinica', 'preenchimento-labial', 'microagulhamento'],
         'sources' => [
@@ -148,7 +147,6 @@ return [
             ['publisher' => 'American Academy of Dermatology', 'title' => 'Botulinum toxin therapy: FAQs', 'url' => 'https://www.aad.org/public/cosmetic/wrinkles/botulinum-toxin-faqs', 'year' => 's.d.'],
             ['publisher' => 'American Academy of Dermatology', 'title' => 'Microneedling can fade scars, uneven skin tone, and more', 'url' => 'https://www.aad.org/public/cosmetic/scars-stretch-marks/microneedling-fade-scars', 'year' => '2023'],
             ['publisher' => 'Life (Basel)', 'title' => 'Pre- and Post-Procedural Considerations and Thread Types for Thread Lifting', 'url' => 'https://pmc.ncbi.nlm.nih.gov/articles/PMC11766856/', 'year' => '2025'],
-            ['publisher' => 'American Society of Plastic Surgeons', 'title' => 'Buccal Fat Removal Recovery', 'url' => 'https://www.plasticsurgery.org/cosmetic-procedures/buccal-fat-removal/recovery', 'year' => 's.d.'],
         ],
     ],
 
@@ -182,7 +180,7 @@ return [
                 'heading' => 'Quando a expectativa é o problema',
                 'body' => [
                     'Existe uma contraindicação que raramente aparece em lista: a expectativa que o procedimento não consegue atender. Trazer a foto de outra pessoa e pedir aquele rosto é o exemplo mais comum. Estruturas ósseas diferentes produzem resultados diferentes com o mesmo procedimento.',
-                    'Bichectomia é o caso em que isso mais aparece. Em rostos naturalmente afinados, remover as bolsas de gordura pode acentuar o aspecto de envelhecimento com o passar dos anos. É por isso que uma avaliação honesta às vezes termina com a recomendação de não fazer.',
+                    'Os lábios são o exemplo mais claro. O volume que fica bonito numa boca pode pesar em outra, e insistir em copiar a referência é o caminho mais curto para um resultado artificial. É por isso que uma avaliação honesta às vezes termina com a recomendação de não fazer.',
                     'Um profissional que aceita qualquer pedido sem avaliar não está sendo prestativo. Está terceirizando para você um risco que era dele avaliar.',
                 ],
             ],
@@ -198,14 +196,13 @@ return [
             ['q' => 'Tenho doença autoimune, posso fazer?', 'a' => 'Depende da condição e do momento. Doenças autoimunes em fase ativa contraindicam, mas casos controlados podem ser avaliados em conjunto com o médico que acompanha você. Traga essa informação na avaliação.'],
             ['q' => 'Existe idade mínima ou máxima?', 'a' => 'Não há um número fixo. O que orienta a indicação é a avaliação individual, considerando a estrutura do rosto, o objetivo e o histórico de saúde de cada paciente.'],
         ],
-        'related' => ['harmonizacao-facial', 'bichectomia', 'toxina-botulinica'],
+        'related' => ['harmonizacao-facial', 'preenchimento-labial', 'toxina-botulinica'],
         'sources' => [
             ['publisher' => 'U.S. National Library of Medicine (DailyMed)', 'title' => 'BOTOX COSMETIC (onabotulinumtoxinA) injection, powder, lyophilized, for solution', 'url' => 'https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=485d9b71-6881-42c5-a620-a4360c7192ab', 'year' => '2024'],
             ['publisher' => 'Allergan Aesthetics', 'title' => 'JUVÉDERM VOLLURE XC injectable gel — Directions for Use', 'url' => 'https://www.rxabbvie.com/pdf/juvederm-vollure-xc_dfu.pdf', 'year' => '2023'],
             ['publisher' => 'Clinical, Cosmetic and Investigational Dermatology', 'title' => 'Patient factors influencing dermal filler complications: prevention, assessment, and treatment', 'url' => 'https://www.dovepress.com/patient-factors-influencing-dermal-filler-complications-prevention-ass-peer-reviewed-article-CCID', 'year' => '2015'],
             ['publisher' => 'Clinical, Cosmetic and Investigational Dermatology', 'title' => 'The 10-Point Plan 2021: Updated Concepts for Improved Procedural Safety During Facial Filler Treatments', 'url' => 'https://pmc.ncbi.nlm.nih.gov/articles/PMC8279269/', 'year' => '2021'],
             ['publisher' => 'International Journal of Women\'s Dermatology', 'title' => 'Cosmetic Surgery and Body Dysmorphic Disorder – An Update', 'url' => 'https://pmc.ncbi.nlm.nih.gov/articles/PMC5986110/', 'year' => '2017'],
-            ['publisher' => 'American Society of Plastic Surgeons', 'title' => 'Facial fat is precious: Why your plastic surgeon shouldn\'t be too aggressive with buccal fat removal', 'url' => 'https://plasticsurgery.org/news/articles/facial-fat-is-precious-why-your-plastic-surgeon-shouldnt-be-too-aggressive-with-buccal-fat-removal', 'year' => '2021'],
         ],
     ],
 
