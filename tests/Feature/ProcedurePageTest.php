@@ -40,11 +40,19 @@ it('publishes sitemap dates from content, not from the clock', function () {
 
     preg_match_all('#<lastmod>([^<]+)</lastmod>#', $xml, $stamps);
 
-    expect($stamps[1])->not->toBeEmpty()
-        ->and($stamps[1])->not->toContain(now()->addDay()->toDateString());
+    // Every date must come from the content itself. An article may be dated
+    // ahead of its release, so a future date is fine when the content says so.
+    $contentDates = array_merge(
+        [config('clinic.content_updated')],
+        array_column(config('procedures'), 'updated'),
+        array_column(config('articles'), 'updated'),
+    );
+
+    expect($stamps[1])->not->toBeEmpty();
 
     foreach ($stamps[1] as $stamp) {
-        expect($stamp)->toMatch('/^\d{4}-\d{2}-\d{2}$/');
+        expect($stamp)->toMatch('/^\d{4}-\d{2}-\d{2}$/')
+            ->and($contentDates)->toContain($stamp);
     }
 
     expect($xml)->toContain(config('clinic.content_updated'));
