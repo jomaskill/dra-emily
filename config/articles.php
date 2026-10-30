@@ -467,14 +467,88 @@ return [
         ],
     ],
 
+    'fios-de-sustentacao-antes-da-plastica' => [
+        'title' => 'Rosto perdeu firmeza? Talvez você não precise de plástica | Dra. Emily Beatriz',
+        'h1' => 'Seu rosto perdeu firmeza? Talvez você ainda não precise de uma plástica',
+        'eyebrow' => 'Flacidez',
+        'meta_description' => 'Sentiu o rosto cair e pensou em plástica? Aos 40 e poucos, os fios de sustentação levantam o contorno sem cirurgia. Veja quando eles bastam.',
+        'excerpt' => 'Sentiu o rosto cair e já está pensando em cirurgia? Antes disso, conheça os fios de sustentação, que levantam o contorno com anestesia local e voltam você à rotina em poucos dias.',
+        'published' => '2026-10-30',
+        'updated' => '2026-10-30',
+        'answer' => 'Para quem tem 40 e poucos anos e sente o rosto caindo, os fios de sustentação costumam ser uma ótima alternativa antes da cirurgia plástica. Eles levantam o contorno da mandíbula e das bochechas com anestesia local, em cerca de uma hora, e estimulam colágeno. Funcionam melhor na flacidez leve a moderada, que é a mais comum nessa idade.',
+        'sections' => [
+            [
+                'heading' => 'Quando o espelho começa a incomodar',
+                'body' => [
+                    'Ouço muito esta frase de mulheres de 40 e poucos anos: "meu rosto caiu, acho que só plástica resolve". E eu entendo. A mandíbula perde a definição, as bochechas descem um pouco, o bigode chinês aparece mais, e a gente começa a se achar cansada mesmo depois de uma boa noite de sono.',
+                    'Só que, nessa idade, o que costuma estar acontecendo é uma flacidez leve a moderada. E para esse grau de flacidez existe um caminho bem menos invasivo do que a cirurgia.',
+                ],
+            ],
+            [
+                'heading' => 'O que os fios de sustentação fazem',
+                'body' => [
+                    'Os fios de PDO são feitos do mesmo material usado há décadas em suturas cirúrgicas, e o corpo absorve com o tempo. Eu coloco os fios sob a pele com agulhas finas, seguindo trajetos que puxam os tecidos para cima. Eles fazem duas coisas: levantam o contorno na hora e estimulam a produção de colágeno ao redor de cada fio nos meses seguintes.',
+                    'O resultado é um contorno de mandíbula mais nítido, as bochechas de volta ao lugar e uma expressão mais descansada. O seu rosto continua sendo o seu, só que com a sustentação de alguns anos atrás.',
+                    'A Sociedade Americana de Cirurgiões Plásticos descreve a candidata ideal aos fios justamente assim: alguém entre o fim dos 30 e o começo dos 50 anos, com flacidez leve a moderada.',
+                ],
+            ],
+            [
+                'heading' => 'Fios ou plástica: a diferença na prática',
+                'body' => [
+                    'O lifting facial, que é a cirurgia plástica do rosto, remove a pele que sobrou e reposiciona os tecidos mais profundos. O resultado é maior e dura mais, mas vem com anestesia mais pesada, cicatriz, curativo e uma recuperação que pede algumas semanas longe da rotina.',
+                    'Com os fios, a aplicação leva cerca de uma hora, com anestesia local, e você volta para casa no mesmo dia. Nas primeiras uma a duas semanas eu peço alguns cuidados, como evitar abrir muito a boca, massagear o rosto e frequentar sauna, mas dá para retomar o trabalho em poucos dias. O levantamento é mais discreto, de poucos milímetros, e é justamente isso que deixa o resultado natural.',
+                    'O efeito dos fios de PDO costuma durar em torno de 8 a 12 meses. Depois que eles são absorvidos, dá para repetir, e o colágeno formado ajuda a manter parte do resultado.',
+                ],
+            ],
+            [
+                'heading' => 'Melhor ainda quando combinado',
+                'body' => [
+                    'Aos 45, a flacidez raramente vem sozinha. O rosto também perdeu um pouco de volume e a pele está mais fina. Por isso eu costumo combinar os fios com bioestimulador de colágeno, que melhora a firmeza da pele ao longo de meses, e, quando precisa, com um pouco de preenchimento nos pontos que sustentam o rosto, como as maçãs. Cada um faz a sua parte, e o conjunto entrega um resultado que só os fios não dariam.',
+                ],
+            ],
+            [
+                'heading' => 'Quando eu indico a plástica',
+                'body' => [
+                    'Faço questão de ser honesta nisso. Se a pele do pescoço e da mandíbula já sobra bastante, os fios não vão dar o resultado que você espera, e eu vou indicar uma conversa com um cirurgião plástico. A própria Sociedade Americana de Cirurgiões Plásticos lembra que os tratamentos sem cirurgia não alcançam o resultado de um lifting, embora ajudem a adiá-lo.',
+                    'Também falo dos riscos. Num estudo com 2.000 aplicações de fios de PDO, publicado em 2026, cerca de 12% tiveram alguma intercorrência, principalmente pequenas retrações na pele e assimetria. O risco aumentou com o número de fios e com a idade. Por isso eu planejo cada trajeto, uso só os fios necessários e trabalho apenas com produto registrado na Anvisa.',
+                ],
+            ],
+            [
+                'heading' => 'Antes de marcar a cirurgia, faça uma avaliação',
+                'body' => [
+                    'Se você está com 40 e poucos anos e sente que o rosto caiu, vale passar por uma avaliação antes de decidir pela plástica. Eu examino a sua pele, o grau de flacidez e o volume do rosto, e explico com clareza se os fios resolvem, se vale combinar com outros tratamentos ou se a cirurgia é mesmo o melhor caminho para você.',
+                ],
+            ],
+        ],
+        'takeaways' => [
+            'Aos 40 e poucos, a maior parte da flacidez é leve a moderada, e os fios costumam resolver bem.',
+            'Os fios levantam o contorno na hora e estimulam colágeno nos meses seguintes.',
+            'A aplicação é feita com anestesia local, e a volta à rotina leva poucos dias.',
+        ],
+        'faq' => [
+            ['q' => 'Fios de sustentação doem?', 'a' => 'A aplicação é feita com anestesia local, então o desconforto é pequeno. Nos primeiros dias a região pode ficar sensível e um pouco inchada, o que é esperado.'],
+            ['q' => 'Quanto tempo dura o resultado dos fios?', 'a' => 'Com os fios de PDO, o resultado costuma durar em torno de 8 a 12 meses, variando com a pele e o estilo de vida. Depois que os fios são absorvidos, dá para repetir.'],
+            ['q' => 'Posso fazer fios e bioestimulador no mesmo plano?', 'a' => 'Pode, e muitas vezes é o que eu indico. Os fios cuidam da sustentação e o bioestimulador melhora a firmeza da pele. A ordem e o intervalo entre eles eu defino na avaliação.'],
+        ],
+        'related' => ['fios-de-pdo', 'flacidez-facial', 'bioestimulador-de-colageno', 'bigode-chines'],
+        'sources' => [
+            ['publisher' => 'American Society of Plastic Surgeons', 'title' => 'What you need to know about thread lifts', 'url' => 'https://www.plasticsurgery.org/news/blog/what-you-need-to-know-about-thread-lifts', 'year' => '2018'],
+            ['publisher' => 'American Society of Plastic Surgeons', 'title' => 'Facelift Surgery', 'url' => 'https://www.plasticsurgery.org/cosmetic-procedures/facelift', 'year' => 's.d.'],
+            ['publisher' => 'Life (Basel)', 'title' => 'Pre- and Post-Procedural Considerations and Thread Types for Thread Lifting', 'url' => 'https://pmc.ncbi.nlm.nih.gov/articles/PMC11766856/', 'year' => '2025'],
+            ['publisher' => 'Aesthetic Plastic Surgery', 'title' => 'Incidence and Predictors of Complications After Polydioxanone Thread Lift: A Multicenter Retrospective Cohort Study', 'url' => 'https://pubmed.ncbi.nlm.nih.gov/42236870', 'year' => '2026'],
+            ['publisher' => 'Plastic and Reconstructive Surgery Global Open', 'title' => 'Advances in Poly-L-lactic Acid Injections for Facial and Neck Rejuvenation', 'url' => 'https://doi.org/10.1097/GOX.0000000000007029', 'year' => '2025'],
+            ['publisher' => 'Anvisa', 'title' => 'Procedimento seguro — Estética com segurança', 'url' => 'https://www.gov.br/anvisa/pt-br/comunicacao/campanhas/estetica/procedimento-seguro', 'year' => '2024'],
+        ],
+    ],
+
     'harmonizacao-facial-aos-20-anos' => [
         'title' => 'Harmonização facial aos 20 anos: o que faz sentido | Dra. Emily Beatriz',
         'h1' => 'Harmonização facial aos 20 e poucos anos: o que faz sentido para você',
         'eyebrow' => 'Pele jovem',
         'meta_description' => 'Harmonização facial aos 20 anos: toxina, bruxismo, lábios e cuidados de pele que fazem sentido na sua idade. Veja como planejar com segurança em BH.',
         'excerpt' => 'Começar a cuidar do rosto cedo pode ser ótimo, desde que seja com a indicação certa. Conto o que faz sentido aos 20 e poucos anos e o que eu evito.',
-        'published' => '2026-10-30',
-        'updated' => '2026-10-30',
+        'published' => '2026-11-02',
+        'updated' => '2026-11-02',
         'answer' => 'Aos 20 e poucos anos, harmonização facial faz sentido quando segue uma indicação, e não a idade. Toxina para uma linha que já começa a marcar, tratamento do bruxismo, um preenchimento labial sutil e cuidados com a pele e as marcas de acne são bem indicados nessa fase. O ponto de partida é uma avaliação que planeje a prevenção para o seu rosto.',
         'sections' => [
             [
