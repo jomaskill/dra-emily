@@ -6,14 +6,14 @@
         ->prepend($procedure['hero_lead'])
         ->implode(' ');
 
-    $physician = [
-        '@type' => 'Physician',
+    $professional = [
+        '@type' => 'Person',
         '@id' => $siteUrl.'/#emily',
         'name' => 'Dra. Emily Beatriz',
         'jobTitle' => 'Cirurgiã-Dentista — Especialista em Harmonização Orofacial',
+        'hasOccupation' => ['@type' => 'Occupation', 'name' => 'Cirurgiã-dentista'],
         'identifier' => 'CRO '.$cro,
         'url' => $siteUrl.'/',
-        'areaServed' => config('clinic.city').', '.config('clinic.state'),
     ];
 
     $json = static fn ($value): string => json_encode($value, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
@@ -58,7 +58,7 @@
     "url": "{{ $canonical }}",
     "bodyLocation": {!! $json($bodyLocation) !!},
     "howPerformed": {!! $json($howPerformed) !!},
-    "performer": {!! $json($physician) !!}
+    "performer": {!! $json($professional) !!}
   },
   @endif
   {
@@ -99,7 +99,7 @@
     "mainEntity": { "@@id": "{{ $mainId }}" },
     "publisher": { "@@id": "{{ $siteUrl }}/#clinic" }@if (! empty($procedure['updated'])),
     "lastReviewed": "{{ $procedure['updated'] }}",
-    "reviewedBy": {!! $json($physician) !!}@endif,
+    "reviewedBy": {!! $json($professional) !!}@endif,
     "speakable": {
       "@@type": "SpeakableSpecification",
       "cssSelector": ["#o-que-e", "#faq"]

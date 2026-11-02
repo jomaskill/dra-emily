@@ -106,10 +106,21 @@
                     </p>
                 </section>
 
+                <nav aria-label="Neste artigo" class="mb-14">
+                    <p class="text-sm text-ink-soft mb-3">Neste artigo</p>
+                    <ul class="space-y-2">
+                        @foreach ($article['sections'] as $section)
+                            <li>
+                                <a href="#{{ \Illuminate\Support\Str::slug($section['heading']) }}" class="text-ink hover:text-clay transition-colors">{{ $section['heading'] }}</a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </nav>
+
                 <div class="article-prose">
                     @foreach ($article['sections'] as $section)
                         <section>
-                            <h2>{{ $section['heading'] }}</h2>
+                            <h2 id="{{ \Illuminate\Support\Str::slug($section['heading']) }}">{{ $section['heading'] }}</h2>
                             @foreach ($section['body'] as $paragraph)
                                 <p @class(['drop-cap' => $loop->parent->first && $loop->first])>{{ $paragraph }}</p>
                             @endforeach

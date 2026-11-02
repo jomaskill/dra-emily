@@ -50,8 +50,8 @@
     <main class="pt-18">
         <header class="max-w-6xl mx-auto px-5 lg:px-8 pt-14 lg:pt-20 pb-10 lg:pb-14">
             <p class="text-sm font-medium text-clay mb-5">Artigos</p>
-            <h1 class="font-display text-[clamp(2.6rem,1.8rem+3.6vw,4.4rem)] leading-[1.04] text-ink max-w-[18ch]">
-                As perguntas que <em class="text-clay">vêm antes</em>
+            <h1 class="font-display text-[clamp(2.6rem,1.8rem+3.6vw,4.4rem)] leading-[1.04] text-ink max-w-[22ch]">
+                Harmonização facial: as perguntas que <em class="text-clay">vêm antes</em>
             </h1>
             <p class="font-serif text-ink-soft text-[1.2rem] md:text-[1.3rem] leading-snug max-w-[52ch] mt-6">
                 Quanto custa, quanto tempo leva para se recuperar, quem não pode fazer e como se preparar.

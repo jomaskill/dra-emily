@@ -35,7 +35,9 @@
 |                        verificadas, que sustentem o que o texto afirma.
 |                        O título fica como no original, mesmo com nome de
 |                        marca: a regra de não citar marcas vale para o
-|                        texto do artigo, não para as fontes.
+|                        texto do artigo, não para as fontes. A exceção é
+|                        "botox": a palavra gera alerta no Google Ads, então
+|                        fonte com ela no título não entra.
 |
 | Observação sobre valores: o Código de Ética Odontológica (art. 44, I)
 | proíbe anunciar preços. Por isso o artigo sobre custo
@@ -99,7 +101,7 @@ return [
     ],
 
     'tempo-de-recuperacao' => [
-        'title' => 'Quanto tempo dura a recuperação de cada procedimento? | Dra. Emily Beatriz',
+        'title' => 'Quanto tempo dura a recuperação de cada procedimento?',
         'h1' => 'Quanto tempo dura a recuperação de cada procedimento?',
         'eyebrow' => 'Antes de agendar',
         'meta_description' => 'Recuperação de toxina botulínica, preenchimento, bioestimulador, microagulhamento e fios de PDO: quanto tempo cada um pede antes de agendar.',
@@ -204,7 +206,7 @@ return [
         ],
         'related' => ['harmonizacao-facial', 'preenchimento-labial', 'toxina-botulinica'],
         'sources' => [
-            ['publisher' => 'U.S. National Library of Medicine (DailyMed)', 'title' => 'BOTOX COSMETIC (onabotulinumtoxinA) injection, powder, lyophilized, for solution', 'url' => 'https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=485d9b71-6881-42c5-a620-a4360c7192ab', 'year' => '2024'],
+            ['publisher' => 'U.S. National Library of Medicine (MedlinePlus)', 'title' => 'PrabotulinumtoxinA-xvfs Injection', 'url' => 'https://medlineplus.gov/druginfo/meds/a619021.html', 'year' => '2020'],
             ['publisher' => 'Allergan Aesthetics', 'title' => 'JUVÉDERM VOLLURE XC injectable gel — Directions for Use', 'url' => 'https://www.rxabbvie.com/pdf/juvederm-vollure-xc_dfu.pdf', 'year' => '2023'],
             ['publisher' => 'Clinical, Cosmetic and Investigational Dermatology', 'title' => 'Patient factors influencing dermal filler complications: prevention, assessment, and treatment', 'url' => 'https://www.dovepress.com/patient-factors-influencing-dermal-filler-complications-prevention-ass-peer-reviewed-article-CCID', 'year' => '2015'],
             ['publisher' => 'Clinical, Cosmetic and Investigational Dermatology', 'title' => 'The 10-Point Plan 2021: Updated Concepts for Improved Procedural Safety During Facial Filler Treatments', 'url' => 'https://pmc.ncbi.nlm.nih.gov/articles/PMC8279269/', 'year' => '2021'],
@@ -274,7 +276,7 @@ return [
     ],
 
     'harmonizacao-facial-depois-dos-40' => [
-        'title' => 'Harmonização facial depois dos 40 e 50 anos | Dra. Emily Beatriz',
+        'title' => 'Harmonização facial depois dos 40 e 50 anos',
         'h1' => 'Harmonização facial depois dos 40 e 50 anos: o que muda',
         'eyebrow' => 'Pele madura',
         'meta_description' => 'Harmonização facial aos 40, 50 e na menopausa: flacidez, bigode chinês e perda de volume pedem outro plano. Veja o que faz sentido em cada fase.',
@@ -335,7 +337,7 @@ return [
     ],
 
     'harmonizacao-facial-em-homens' => [
-        'title' => 'Por que tantos homens fazem harmonização facial | Dra. Emily Beatriz',
+        'title' => 'Por que tantos homens fazem harmonização facial',
         'h1' => 'Por que tantos homens estão fazendo harmonização facial',
         'eyebrow' => 'Para homens',
         'meta_description' => 'Homens famosos mostraram a harmonização facial nas últimas semanas. Veja o que os homens costumam buscar e como tratar o rosto sem perder os traços masculinos.',
@@ -401,7 +403,7 @@ return [
     ],
 
     'rosto-de-ozempic' => [
-        'title' => 'Rosto de Ozempic: flacidez depois de emagrecer | Dra. Emily Beatriz',
+        'title' => 'Rosto de Ozempic: flacidez depois de emagrecer',
         'h1' => 'O que acontece com o rosto de quem emagrece com Ozempic ou Mounjaro',
         'eyebrow' => 'Emagrecimento',
         'meta_description' => 'Rosto de Ozempic é a flacidez e a perda de volume depois de emagrecer rápido com canetas. Entenda por que acontece e o que dá para fazer, em Belo Horizonte.',
@@ -468,7 +470,7 @@ return [
     ],
 
     'fios-de-sustentacao-antes-da-plastica' => [
-        'title' => 'Rosto perdeu firmeza? Talvez você não precise de plástica | Dra. Emily Beatriz',
+        'title' => 'Rosto perdeu firmeza? Talvez você não precise de plástica',
         'h1' => 'Seu rosto perdeu firmeza? Talvez você ainda não precise de uma plástica',
         'eyebrow' => 'Flacidez',
         'meta_description' => 'Sentiu o rosto cair e pensou em plástica? Aos 40 e poucos, os fios de sustentação levantam o contorno sem cirurgia. Veja quando eles bastam.',
@@ -542,7 +544,7 @@ return [
     ],
 
     'harmonizacao-facial-aos-20-anos' => [
-        'title' => 'Harmonização facial aos 20 anos: o que faz sentido | Dra. Emily Beatriz',
+        'title' => 'Harmonização facial aos 20 anos: o que faz sentido',
         'h1' => 'Harmonização facial aos 20 e poucos anos: o que faz sentido para você',
         'eyebrow' => 'Pele jovem',
         'meta_description' => 'Harmonização facial aos 20 anos: toxina, bruxismo, lábios e cuidados de pele que fazem sentido na sua idade. Veja como planejar com segurança em BH.',

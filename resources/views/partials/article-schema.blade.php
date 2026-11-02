@@ -1,9 +1,10 @@
 @php
-    $physician = [
-        '@type' => 'Physician',
+    $professional = [
+        '@type' => 'Person',
         '@id' => $siteUrl.'/#emily',
         'name' => 'Dra. Emily Beatriz',
         'jobTitle' => 'Cirurgiã-Dentista — Especialista em Harmonização Orofacial',
+        'hasOccupation' => ['@type' => 'Occupation', 'name' => 'Cirurgiã-dentista'],
         'identifier' => 'CRO '.$cro,
         'url' => $siteUrl.'/',
     ];
@@ -24,8 +25,8 @@
     "datePublished": "{{ $article['published'] }}",
     "dateModified": "{{ $article['updated'] }}",
     "lastReviewed": "{{ $article['updated'] }}",
-    "author": {!! $json($physician) !!},
-    "reviewedBy": {!! $json($physician) !!},
+    "author": {!! $json($professional) !!},
+    "reviewedBy": {!! $json($professional) !!},
     "publisher": { "@@id": "{{ $siteUrl }}/#clinic" },
     "about": { "@@id": "{{ $siteUrl }}/#clinic" },
     "isPartOf": { "@@id": "{{ $siteUrl }}/#website" },

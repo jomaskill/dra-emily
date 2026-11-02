@@ -5,6 +5,16 @@
     $phoneDisplay = preg_match('/^(\d{2})(\d{2})(\d+)(\d{4})$/', $whatsappDigits, $parts) === 1
         ? sprintf('+%s (%s) %s-%s', $parts[1], $parts[2], $parts[3], $parts[4])
         : '+' . $whatsappDigits;
+
+    // Rotas abrem o app de mapas do celular já com o destino preenchido.
+    $clinicAddress = rawurlencode(implode(', ', array_filter([
+        config('clinic.address_street'),
+        config('clinic.address_neighborhood'),
+        config('clinic.city'),
+        config('clinic.state'),
+    ])));
+    $googleMapsRoute = 'https://www.google.com/maps/dir/?api=1&destination=' . $clinicAddress;
+    $wazeRoute = 'https://waze.com/ul?q=' . $clinicAddress . '&navigate=yes';
 @endphp
 
 {{-- ======================================================
@@ -67,6 +77,11 @@
                                 CEP {{ config('clinic.address_zip') }}@endif
                         </span>
                     </address>
+                    <p class="flex flex-wrap gap-x-4 gap-y-1 pl-7 text-sm text-linen/70">
+                        <span>Como chegar:</span>
+                        <a href="{{ $googleMapsRoute }}" target="_blank" rel="noopener noreferrer" class="underline underline-offset-[3px] hover:text-ochre transition-colors">Google Maps</a>
+                        <a href="{{ $wazeRoute }}" target="_blank" rel="noopener noreferrer" class="underline underline-offset-[3px] hover:text-ochre transition-colors">Waze</a>
+                    </p>
                     @if (config('clinic.areas_served'))
                         <p class="text-linen/70 text-sm leading-relaxed mt-4">
                             Atendemos {{ implode(', ', config('clinic.areas_served')) }}

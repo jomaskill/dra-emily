@@ -41,8 +41,7 @@
       { "@@type": "AdministrativeArea", "name": "Minas Gerais" }
     ],
     "sameAs": [
-      "{{ $instagramUrl }}",
-      "https://wa.me/{{ config('clinic.whatsapp') }}"@if (config('clinic.google_business_url')),
+      "{{ $instagramUrl }}"@if (config('clinic.google_business_url')),
       "{{ config('clinic.google_business_url') }}"@endif
 
     ],
@@ -77,7 +76,7 @@
       "Beleza em BH"
     ],
     "employee": {
-      "@@type": "Physician",
+      "@@type": "Person",
       "@@id": "{{ $siteUrl }}/#emily",
       "url": "{{ $siteUrl }}/",
       "name": "Emily Beatriz",

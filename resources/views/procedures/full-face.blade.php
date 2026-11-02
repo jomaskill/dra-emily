@@ -97,6 +97,13 @@
                                :cta-label="'Agendar avaliação de '.$procedure['name']" />
         @endif
 
+        @include('partials.page-toc', ['sections' => [
+            'o-que-e' => 'O que é',
+            'como-funciona' => 'Como funciona',
+            'faq' => 'Perguntas',
+            'leituras' => 'Para ler',
+        ]])
+
         {{-- ======================================================
              WHAT IS
         ====================================================== --}}
@@ -191,7 +198,7 @@
         {{-- ======================================================
              HOW IT WORKS
         ====================================================== --}}
-        <section class="bg-clay-deep text-linen">
+        <section id="como-funciona" class="bg-clay-deep text-linen">
             <div class="max-w-7xl mx-auto px-5 lg:px-8 py-24 lg:py-32">
                 <h2 class="font-display text-[clamp(2.2rem,4vw,3.4rem)] leading-[1.06] mb-12 lg:mb-16">Como funciona</h2>
                 <ol class="grid grid-cols-1 md:grid-cols-3 gap-x-10 border-t border-linen/30">
@@ -219,6 +226,8 @@
         </section>
 
         @include('partials.comparison-table')
+
+        @include('partials.procedure-articles')
 
         <x-closing-cta :url="$waFinal">
             <x-slot:heading>Pronta para um olhar <em>completo</em> sobre o seu rosto?</x-slot:heading>

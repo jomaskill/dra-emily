@@ -50,10 +50,10 @@
 @endphp
 
 <x-site-layout
-    title="Clínica de Harmonização Facial em BH | Dra. Emily Beatriz"
-    description="Harmonização facial, toxina botulínica e preenchimento labial em BH com a Dra. Emily Beatriz. Resultados naturais e personalizados. Agende pelo WhatsApp!"
+    title="Harmonização Facial em BH, na Pampulha | Dra. Emily Beatriz"
+    description="Harmonização facial, toxina botulínica e preenchimento labial na Pampulha, em BH, com a Dra. Emily Beatriz. Resultados naturais. Agende pelo WhatsApp!"
     canonical="{{ $siteUrl }}/"
-    og-title="Clínica de Harmonização Facial em BH | Dra. Emily Beatriz"
+    og-title="Harmonização Facial em BH, na Pampulha | Dra. Emily Beatriz"
     og-description="Especialista em harmonização facial, toxina botulínica e preenchimento labial em Belo Horizonte, MG. Resultados naturais que revelam a melhor versão de você."
     :nav-base="''"
     whatsapp-origin="pela página inicial do site">
@@ -348,6 +348,11 @@
                 <x-faq-list :items="config('faq.home')" />
             </div>
         </section>
+
+        @include('partials.article-links', [
+            'links' => collect(config('articles'))->sortByDesc('published')->take(3),
+            'heading' => 'Antes de <em class="text-clay">agendar</em>',
+        ])
 
         <x-closing-cta :url="$waContato">
             <x-slot:heading>E se hoje fosse o dia de se colocar em <em>primeiro lugar</em>?</x-slot:heading>

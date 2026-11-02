@@ -28,6 +28,16 @@
     // Sem arquivo, o layout cai na imagem genérica.
     $ogCard      = 'procedures/' . $slug . '-og.jpg';
     $ogImage     = is_file(public_path($ogCard)) ? $siteUrl . '/' . $ogCard : null;
+
+    $tableOfContents = array_filter([
+        'resultados' => $results->isNotEmpty() ? 'Antes e depois' : null,
+        'o-que-e' => 'O que é',
+        'regioes' => $segments->isNotEmpty() || ! empty($procedure['regions']) ? 'Regiões' : null,
+        'beneficios' => 'Benefícios',
+        'como-funciona' => 'Como funciona',
+        'faq' => 'Perguntas',
+        'leituras' => 'Para ler',
+    ]);
 @endphp
 
 <x-site-layout
@@ -96,6 +106,8 @@
             </div>
         </section>
 
+        @include('partials.page-toc', ['sections' => $tableOfContents])
+
         {{-- ======================================================
              RESULTS (antes e depois)
         ====================================================== --}}
@@ -128,7 +140,7 @@
         {{-- ======================================================
              BENEFITS
         ====================================================== --}}
-        <section class="bg-linen">
+        <section id="beneficios" class="bg-linen">
             <div class="max-w-7xl mx-auto px-5 lg:px-8 py-24 lg:py-32">
                 <h2 class="font-display text-[clamp(2.2rem,4vw,3.4rem)] leading-[1.06] text-ink mb-12 lg:mb-16">
                     Os benefícios <em class="text-clay">para você</em>
@@ -150,7 +162,7 @@
         {{-- ======================================================
              HOW IT WORKS
         ====================================================== --}}
-        <section class="bg-clay text-linen">
+        <section id="como-funciona" class="bg-clay text-linen">
             <div class="max-w-7xl mx-auto px-5 lg:px-8 py-24 lg:py-32">
                 <h2 class="font-display text-[clamp(2.2rem,4vw,3.4rem)] leading-[1.06] mb-12 lg:mb-16">Como funciona</h2>
                 <ol class="grid grid-cols-1 md:grid-cols-3 gap-x-10 border-t border-linen/35">
@@ -178,6 +190,8 @@
         </section>
 
         @include('partials.comparison-table')
+
+        @include('partials.procedure-articles')
 
         {{-- ======================================================
              RELATED PROCEDURES
