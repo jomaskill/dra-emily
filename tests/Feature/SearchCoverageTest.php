@@ -30,6 +30,13 @@ it('covers the terms the audience searches for', function (string $term, string 
     ['menopausa', '/procedimentos/flacidez-facial'],
     ['harmonização facial masculina', '/procedimentos/harmonizacao-facial-masculina'],
     ['preenchimento facial', '/procedimentos/preenchimento-facial'],
+    ['preenchimento malar', '/procedimentos/preenchimento-terco-medio'],
+    ['preenchimento de mandíbula', '/procedimentos/preenchimento-mandibula-e-queixo'],
+    ['linhas de marionete', '/procedimentos/preenchimento-terco-inferior'],
+    ['harmonização labial', '/procedimentos/harmonizacao-labial'],
+    ['código de barras', '/procedimentos/harmonizacao-labial'],
+    ['reposição de volume', '/procedimentos/rejuvenescimento-com-preenchimento'],
+    ['rinomodelação', '/procedimentos/rinomodelacao-e-refinamento-facial'],
 ]);
 
 it('gives every concern page up to four treatments that exist', function (string $slug) use ($catalogue) {

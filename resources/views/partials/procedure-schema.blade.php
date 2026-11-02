@@ -30,6 +30,10 @@
         ])
         ->values()
         ->all();
+
+    // Páginas-filhas declaram as regiões tratadas e ganham a mãe no breadcrumb.
+    $bodyLocation = collect($procedure['regions'] ?? [])->pluck('name')->join(', ') ?: 'Face';
+    $parentSlug = $procedure['parent'] ?? null;
 @endphp
 <script type="application/ld+json">
 [
@@ -52,7 +56,7 @@
     "name": {!! $json($procedure['name'].' — '.config('clinic.city')) !!},
     "description": {!! $json($procedure['meta_description']) !!},
     "url": "{{ $canonical }}",
-    "bodyLocation": "Face",
+    "bodyLocation": {!! $json($bodyLocation) !!},
     "howPerformed": {!! $json($howPerformed) !!},
     "performer": {!! $json($physician) !!}
   },
@@ -63,7 +67,10 @@
     "itemListElement": [
       { "@@type": "ListItem", "position": 1, "name": "Início", "item": "{{ $siteUrl }}/" },
       { "@@type": "ListItem", "position": 2, "name": "Procedimentos", "item": "{{ $siteUrl }}/#procedimentos" },
-      { "@@type": "ListItem", "position": 3, "name": {!! $json($procedure['name']) !!}, "item": "{{ $canonical }}" }
+      @if ($parentSlug !== null)
+      { "@@type": "ListItem", "position": 3, "name": {!! $json(config("procedures.{$parentSlug}.name")) !!}, "item": "{{ $siteUrl }}/procedimentos/{{ $parentSlug }}" },
+      @endif
+      { "@@type": "ListItem", "position": {{ $parentSlug !== null ? 4 : 3 }}, "name": {!! $json($procedure['name']) !!}, "item": "{{ $canonical }}" }
     ]
   },
   {

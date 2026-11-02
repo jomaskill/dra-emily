@@ -9,16 +9,20 @@
     // Cada página aponta para os 4 procedimentos seguintes na ordem do config,
     // com volta ao início. Assim todos recebem o mesmo número de links internos,
     // em vez de cada página listar todos os irmãos. Páginas de queixa apontam
-    // para os tratamentos indicados (treatments), que é o que o leitor procura.
+    // para os tratamentos indicados (treatments), que é o que o leitor procura,
+    // e páginas de uma mesma família apontam entre si (related).
     $catalogue   = collect(config('procedures'));
     $isConcern   = ($procedure['kind'] ?? null) === 'concern';
     $position    = $catalogue->keys()->search($slug);
-    $others      = $isConcern
-        ? $catalogue->only($procedure['treatments'])
+    $curated     = $procedure['treatments'] ?? $procedure['related'] ?? null;
+    $others      = $curated !== null
+        ? $catalogue->only($curated)
         : $catalogue->keys()
             ->merge($catalogue->keys())
             ->slice($position + 1, 4)
             ->mapWithKeys(fn (string $key): array => [$key => $catalogue[$key]]);
+    $parentSlug  = $procedure['parent'] ?? null;
+    $segments    = $catalogue->where('parent', $slug);
 
     // Share card por procedimento (1200x630) em public/procedures/{slug}-og.jpg.
     // Sem arquivo, o layout cai na imagem genérica.
@@ -50,6 +54,10 @@
                     <span aria-hidden="true">/</span>
                     <a href="/#procedimentos" class="hover:text-clay transition-colors">Procedimentos</a>
                     <span aria-hidden="true">/</span>
+                    @if ($parentSlug !== null)
+                        <a href="{{ route('procedure', $parentSlug) }}" class="hover:text-clay transition-colors">{{ $catalogue[$parentSlug]['name'] }}</a>
+                        <span aria-hidden="true">/</span>
+                    @endif
                     <span class="text-ink">{{ $procedure['name'] }}</span>
                 </nav>
 
@@ -114,6 +122,8 @@
                 </div>
             </div>
         </section>
+
+        @include('partials.procedure-regions')
 
         {{-- ======================================================
              BENEFITS

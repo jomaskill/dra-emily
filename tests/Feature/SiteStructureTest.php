@@ -34,12 +34,15 @@ it('lists every procedure in the sitemap', function () use ($slugs) {
     expect(substr_count($xml, '<loc>'))->toBe($expected);
 });
 
-it('links a handful of siblings rather than the whole catalogue', function (string $slug) use ($slugs) {
+it('links a handful of siblings rather than the whole catalogue', function (string $slug) use ($slugs, $catalogue) {
     $html = $this->get("/procedimentos/{$slug}")->assertOk()->getContent();
 
+    // A parent page lists its own segments on top of the handful of siblings.
     $linked = array_filter(
         $slugs,
-        fn (string $other): bool => $other !== $slug && str_contains($html, "/procedimentos/{$other}\"")
+        fn (string $other): bool => $other !== $slug
+            && ($catalogue[$other]['parent'] ?? null) !== $slug
+            && str_contains($html, "/procedimentos/{$other}\"")
     );
 
     expect(count($linked))->toBeLessThanOrEqual(4)->toBeGreaterThan(0);

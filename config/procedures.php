@@ -35,6 +35,13 @@
 |                        tratam a queixa. Substituem a rotação de "relacionados"
 |   concern           => opcional; ['label' => ..., 'desc' => ...] coloca a
 |                        página no bloco "O que mais incomoda você?" da home
+|   parent            => opcional; slug da página-mãe. Entra no breadcrumb e faz
+|                        a página aparecer na lista de segmentos da mãe e no
+|                        bloco de preenchimento por objetivo da home
+|   regions_title     => título da seção de regiões tratadas
+|   regions           => [['name' => ..., 'desc' => ...], ...] regiões tratadas
+|   related           => opcional; até 4 slugs que substituem a rotação de
+|                        "relacionados", para ligar páginas da mesma família
 |
 | A ordem do array define a lista da home e a rotação de links internos, por
 | isso cada página fica ao lado da sua família de tratamentos.
@@ -230,6 +237,7 @@ return [
     'preenchimento-labial' => [
         'num' => '03',
         'updated' => '2026-10-13',
+        'related' => ['harmonizacao-labial', 'preenchimento-facial', 'toxina-botulinica', 'full-face'],
         'name' => 'Preenchimento Labial',
         'card_desc' => 'Lábios mais definidos, hidratados e harmônicos com ácido hialurônico — volume na medida certa, com resultado natural.',
         'title' => 'Preenchimento Labial em Belo Horizonte | Dra. Emily Beatriz',
@@ -271,7 +279,8 @@ return [
 
     'preenchimento-facial' => [
         'num' => '11',
-        'updated' => '2026-10-13',
+        'updated' => '2026-11-02',
+        'related' => ['preenchimento-labial', 'preenchimento-de-olheiras', 'bigode-chines', 'bioestimulador-de-colageno'],
         'name' => 'Preenchimento Facial',
         'card_desc' => 'Ácido hialurônico para devolver volume e contorno às maçãs do rosto, mandíbula, queixo e sulcos, com resultado imediato.',
         'title' => 'Preenchimento Facial em Belo Horizonte | Dra. Emily Beatriz',
@@ -313,6 +322,7 @@ return [
     'preenchimento-de-olheiras' => [
         'num' => '12',
         'updated' => '2026-10-13',
+        'related' => ['preenchimento-terco-medio', 'rejuvenescimento-com-preenchimento', 'preenchimento-facial', 'bioestimulador-de-colageno'],
         'name' => 'Preenchimento de Olheiras',
         'card_desc' => 'Ácido hialurônico na olheira funda para suavizar a sombra abaixo dos olhos e tirar o aspecto de cansaço.',
         'concern' => ['label' => 'Olheiras', 'desc' => 'Olheira funda que deixa o olhar cansado mesmo depois de dormir bem.'],
@@ -349,6 +359,310 @@ return [
             ['q' => 'O preenchimento de olheiras incha?', 'a' => 'Pode haver um leve inchaço e pequenos hematomas nos primeiros dias. O inchaço persistente está ligado a excesso de produto ou ao produto errado, e é por isso que a Dra. Emily trabalha com pouca quantidade e ácido hialurônico próprio para a região.'],
             ['q' => 'Quanto tempo dura?', 'a' => 'Em geral 12 meses ou mais, porque a região tem pouco movimento. A duração varia conforme o organismo e o produto utilizado.'],
             ['q' => 'Dói fazer preenchimento de olheiras?', 'a' => 'O desconforto é pequeno. A região é anestesiada e a cânula, por ter ponta arredondada, causa menos dor e menos hematomas que a agulha.'],
+        ],
+    ],
+
+    'preenchimento-terco-medio' => [
+        'num' => '16',
+        'updated' => '2026-11-02',
+        'parent' => 'preenchimento-facial',
+        'related' => ['preenchimento-facial', 'preenchimento-de-olheiras', 'preenchimento-mandibula-e-queixo', 'rejuvenescimento-com-preenchimento'],
+        'name' => 'Terço Médio e Suporte Facial',
+        'card_desc' => 'Preenchimento malar, zigomático, fossa canina, olheiras e têmporas para devolver sustentação à parte central do rosto.',
+        'title' => 'Preenchimento Malar e Terço Médio em BH | Dra. Emily Beatriz',
+        'meta_description' => 'Preenchimento malar e do terço médio em Belo Horizonte com a Dra. Emily Beatriz. Maçãs do rosto, zigomático, olheiras e têmporas com sustentação natural.',
+        'eyebrow' => 'Sustentação Facial',
+        'h1' => 'Preenchimento do Terço Médio e Malar em Belo Horizonte',
+        'hero_lead' => 'O terço médio é a base do rosto: é ali que as maçãs, a região abaixo dos olhos e a lateral da face sustentam tudo o que está abaixo. Quando essa estrutura é bem trabalhada, o rosto ganha projeção, leveza e um contorno mais elegante.',
+        'facts' => [
+            ['label' => 'Foco', 'value' => 'Sustentação'],
+            ['label' => 'Resultado', 'value' => 'Imediato'],
+            ['label' => 'Duração', 'value' => '12 a 18 meses'],
+            ['label' => 'Retorno', 'value' => 'No mesmo dia'],
+        ],
+        'what_is_title' => 'Por que tratar o terço médio primeiro?',
+        'what_is' => [
+            'O terço médio vai da linha dos olhos até a base do nariz. Ele funciona como a estrutura de apoio da face: as maçãs do rosto, o arco zigomático e as têmporas dão forma à lateral, enquanto a região próxima ao nariz sustenta o início do sulco nasogeniano.',
+            'Por isso o planejamento costuma começar aqui. Com ácido hialurônico mais firme nos pontos de apoio, a Dra. Emily Beatriz cria projeção e devolve suporte aos tecidos, o que pode suavizar o aspecto de regiões vizinhas sem que seja preciso aplicar produto diretamente nelas.',
+            'Em Belo Horizonte, cada área é definida depois da análise das proporções do seu rosto. Nem todo mundo precisa tratar as cinco regiões: o objetivo é escolher os pontos que realmente fazem diferença, com quantidades conservadoras.',
+        ],
+        'regions_title' => 'Regiões do terço médio',
+        'regions' => [
+            ['name' => 'Malar (maçãs do rosto)', 'desc' => 'Dá projeção à parte frontal das maçãs do rosto. É o principal ponto de sustentação do terço médio e costuma ser a primeira região planejada.'],
+            ['name' => 'Zigomático', 'desc' => 'Trabalha o arco ósseo na lateral do rosto, que define a largura da face e o ângulo das maçãs. Um contorno lateral bem desenhado deixa o rosto mais estruturado.'],
+            ['name' => 'Fossa canina', 'desc' => 'Pequena depressão ao lado da asa do nariz, de onde parte o bigode chinês. O preenchimento dá apoio à base do nariz e ao início do sulco.'],
+            ['name' => 'Olheiras', 'desc' => 'Suaviza a transição entre a pálpebra inferior e a bochecha. Quando planejada junto com o malar, a região abaixo dos olhos fica mais uniforme e o olhar, mais descansado.'],
+            ['name' => 'Têmporas', 'desc' => 'Completa a lateral do terço superior e médio. Preencher o afundamento das têmporas dá continuidade ao contorno e favorece um formato de rosto mais harmônico.'],
+        ],
+        'benefits' => [
+            ['title' => 'Sustentação', 'desc' => 'Volume nos pontos de apoio certos para dar suporte aos tecidos do rosto.'],
+            ['title' => 'Maçãs do rosto projetadas', 'desc' => 'Mais definição e pontos de luz, respeitando a sua anatomia.'],
+            ['title' => 'Olhar mais descansado', 'desc' => 'A região abaixo dos olhos fica mais uniforme e o rosto perde o aspecto de cansaço.'],
+            ['title' => 'Contorno harmônico', 'desc' => 'Têmporas e arco zigomático dão continuidade à lateral do rosto.'],
+        ],
+        'steps' => [
+            ['title' => 'Análise do terço médio', 'desc' => 'A Dra. Emily avalia projeção, simetria e pontos de apoio para definir quais regiões entram no plano.'],
+            ['title' => 'Escolha do produto', 'desc' => 'Cada região pede um ácido hialurônico com firmeza própria, dos mais densos no osso aos mais suaves perto dos olhos.'],
+            ['title' => 'Aplicação & retorno', 'desc' => 'O preenchimento é feito com agulha ou cânula, com anestesia, e um retorno permite avaliar o resultado.'],
+        ],
+        'faq' => [
+            ['q' => 'O que é preenchimento malar?', 'a' => 'É a aplicação de ácido hialurônico nas maçãs do rosto para dar projeção e sustentação. Além de valorizar essa região, ele ajuda a dar suporte às áreas logo abaixo.'],
+            ['q' => 'Qual a diferença entre malar e zigomático?', 'a' => 'O malar é a parte frontal das maçãs do rosto. O zigomático é o arco ósseo que segue em direção à orelha, na lateral. Tratados em conjunto, definem a projeção e a largura do rosto.'],
+            ['q' => 'Preenchimento malar deixa o rosto redondo?', 'a' => 'Não, quando o planejamento respeita as proporções. A Dra. Emily posiciona o produto nos pontos de apoio e usa quantidades conservadoras, para valorizar a estrutura sem arredondar a face.'],
+            ['q' => 'Preenchimento no malar ajuda no bigode chinês?', 'a' => 'Muitas vezes, sim. Ao devolver sustentação ao terço médio, o sulco tende a suavizar. Em cada caso, a avaliação mostra se isso é suficiente ou se vale combinar com outro tratamento.'],
+        ],
+    ],
+
+    'preenchimento-mandibula-e-queixo' => [
+        'num' => '17',
+        'updated' => '2026-11-02',
+        'parent' => 'preenchimento-facial',
+        'related' => ['preenchimento-facial', 'preenchimento-terco-inferior', 'rinomodelacao-e-refinamento-facial', 'enzima-para-papada'],
+        'name' => 'Contorno e Definição Facial',
+        'card_desc' => 'Preenchimento de mandíbula, ângulo mandibular, mento e região pré-jowl para um contorno mais nítido e proporcional.',
+        'title' => 'Preenchimento de Mandíbula e Queixo em BH | Dra. Emily Beatriz',
+        'meta_description' => 'Preenchimento de mandíbula e queixo em Belo Horizonte com a Dra. Emily Beatriz. Contorno definido no ângulo mandibular, mento e região pré-jowl.',
+        'eyebrow' => 'Contorno & Definição',
+        'h1' => 'Preenchimento de Mandíbula e Queixo em Belo Horizonte',
+        'hero_lead' => 'Uma linha de mandíbula nítida e um queixo bem posicionado mudam a leitura do rosto inteiro. O preenchimento de contorno desenha esses limites com ácido hialurônico, dando definição e proporção ao perfil, sem cirurgia.',
+        'facts' => [
+            ['label' => 'Foco', 'value' => 'Definição'],
+            ['label' => 'Resultado', 'value' => 'Imediato'],
+            ['label' => 'Duração', 'value' => '12 a 18 meses'],
+            ['label' => 'Sessão', 'value' => '~60 minutos'],
+        ],
+        'what_is_title' => 'O que define o contorno do rosto?',
+        'what_is' => [
+            'O contorno facial é desenhado pela mandíbula, pelo ângulo que ela forma abaixo da orelha e pelo queixo, também chamado de mento. Quando esses pontos são pouco marcados, ou quando o queixo fica recuado em relação ao perfil, o rosto perde definição, mesmo em quem está no peso ideal.',
+            'O preenchimento usa ácido hialurônico de maior firmeza, próprio para dar estrutura. Ele projeta o queixo, marca o ângulo mandibular e suaviza a pequena depressão da região pré-jowl, deixando a linha entre o rosto e o pescoço mais contínua.',
+            'Em Belo Horizonte, a Dra. Emily Beatriz planeja o contorno de acordo com a anatomia e o que você deseja: um desenho mais suave ou mais marcado. No rosto masculino, por exemplo, o ângulo e o queixo costumam ser trabalhados de outra forma do que no feminino.',
+        ],
+        'regions_title' => 'Regiões do contorno facial',
+        'regions' => [
+            ['name' => 'Mandíbula', 'desc' => 'Define a linha que vai do queixo até a orelha. O preenchimento deixa essa borda mais nítida e separa melhor o rosto do pescoço.'],
+            ['name' => 'Ângulo mandibular', 'desc' => 'Ponto abaixo da orelha onde a mandíbula faz a curva. Marcar esse ângulo dá estrutura ao terço inferior e mais presença ao contorno.'],
+            ['name' => 'Mento (queixo)', 'desc' => 'Projeta e alonga o queixo, equilibrando o perfil com o nariz e os lábios. Muitas vezes também melhora a percepção da região abaixo do queixo.'],
+            ['name' => 'Região pré-jowl', 'desc' => 'Depressão logo ao lado do queixo, que quebra a linha da mandíbula. O preenchimento devolve a continuidade do contorno.'],
+        ],
+        'benefits' => [
+            ['title' => 'Linha da mandíbula nítida', 'desc' => 'Mais definição entre o rosto e o pescoço.'],
+            ['title' => 'Perfil equilibrado', 'desc' => 'Queixo bem posicionado em relação ao nariz e aos lábios.'],
+            ['title' => 'Planejamento sob medida', 'desc' => 'Desenho mais suave ou mais marcado, conforme o seu rosto e o seu desejo.'],
+            ['title' => 'Sem cirurgia', 'desc' => 'Procedimento feito em consultório, com retorno à rotina no mesmo dia.'],
+        ],
+        'steps' => [
+            ['title' => 'Análise do perfil', 'desc' => 'A Dra. Emily avalia o rosto de frente e de perfil, a proporção do queixo e a linha da mandíbula.'],
+            ['title' => 'Desenho do contorno', 'desc' => 'Define-se com você o quanto de definição faz sentido e quais pontos entram no plano.'],
+            ['title' => 'Aplicação precisa', 'desc' => 'O ácido hialurônico é aplicado com agulha ou cânula, modelando o contorno ponto a ponto.'],
+        ],
+        'faq' => [
+            ['q' => 'Preenchimento de mandíbula afina o rosto?', 'a' => 'Ele não reduz o rosto, mas define a borda e cria sombra na medida certa, o que costuma dar a impressão de um contorno mais fino e estruturado.'],
+            ['q' => 'Preenchimento de queixo ajuda na papada?', 'a' => 'Pode ajudar quando o queixo pouco projetado acentua a papada, porque melhora o ângulo entre o queixo e o pescoço. Se há gordura localizada ou flacidez, a avaliação indica o tratamento complementar.'],
+            ['q' => 'O que é a região pré-jowl?', 'a' => 'É a pequena depressão que surge logo ao lado do queixo, antes do início da bochecha caída. Ela quebra a linha da mandíbula, e preenchê-la devolve um contorno mais contínuo.'],
+            ['q' => 'Quanto tempo dura o preenchimento de mandíbula?', 'a' => 'Em média de 12 a 18 meses, variando conforme o produto, a área tratada e o metabolismo de cada pessoa.'],
+        ],
+    ],
+
+    'preenchimento-terco-inferior' => [
+        'num' => '18',
+        'updated' => '2026-11-02',
+        'parent' => 'preenchimento-facial',
+        'related' => ['preenchimento-facial', 'bigode-chines', 'preenchimento-mandibula-e-queixo', 'harmonizacao-labial'],
+        'name' => 'Terço Inferior e Rejuvenescimento',
+        'card_desc' => 'Sulco nasogeniano, linhas de marionete, região pré-jowl, mento e contorno mandibular tratados para suavizar a parte de baixo do rosto.',
+        'title' => 'Preenchimento do Terço Inferior em BH | Dra. Emily Beatriz',
+        'meta_description' => 'Preenchimento do terço inferior em Belo Horizonte com a Dra. Emily Beatriz. Bigode chinês, linhas de marionete, pré-jowl, queixo e contorno mandibular.',
+        'eyebrow' => 'Rejuvenescimento do Terço Inferior',
+        'h1' => 'Preenchimento do Terço Inferior em Belo Horizonte',
+        'hero_lead' => 'É na parte de baixo do rosto que o tempo costuma aparecer mais: sulcos mais marcados, cantos da boca para baixo e um contorno menos definido. O preenchimento do terço inferior suaviza esses sinais e devolve uma expressão mais leve.',
+        'facts' => [
+            ['label' => 'Foco', 'value' => 'Sulcos & contorno'],
+            ['label' => 'Resultado', 'value' => 'Imediato'],
+            ['label' => 'Duração', 'value' => '12 a 18 meses'],
+            ['label' => 'Retorno', 'value' => 'No mesmo dia'],
+        ],
+        'what_is_title' => 'O que muda no terço inferior com o tempo?',
+        'what_is' => [
+            'Com os anos, o rosto perde sustentação e os tecidos descem. Isso aprofunda o sulco nasogeniano, conhecido como bigode chinês, forma as linhas de marionete abaixo dos cantos da boca e cria pequenas depressões ao lado do queixo, que interrompem o contorno da mandíbula.',
+            'O preenchimento atua nessas regiões de forma pontual, sempre olhando o rosto como um todo. Muitas vezes a Dra. Emily Beatriz começa pela sustentação do terço médio e só então faz ajustes no sulco, para que o resultado não fique pesado.',
+            'Em Belo Horizonte, o plano do terço inferior é combinado conforme a sua avaliação. Quando a flacidez é o principal fator, o preenchimento pode ser associado a bioestimulador de colágeno ou fios de PDO.',
+        ],
+        'regions_title' => 'Regiões do terço inferior',
+        'regions' => [
+            ['name' => 'Sulco nasogeniano (bigode chinês)', 'desc' => 'Linha que vai da asa do nariz ao canto da boca. O preenchimento é feito em pequenas quantidades, como ajuste fino depois de avaliar a sustentação do terço médio.'],
+            ['name' => 'Linhas de marionete', 'desc' => 'Sulcos que descem dos cantos da boca em direção ao queixo e dão aspecto triste ou bravo. O preenchimento suaviza a linha e ajuda a apoiar o canto da boca.'],
+            ['name' => 'Região pré-jowl', 'desc' => 'Depressão ao lado do queixo que se torna mais visível com a descida dos tecidos. Preenchê-la reduz o aspecto de "buldogue" e alinha a mandíbula.'],
+            ['name' => 'Mento', 'desc' => 'Com o tempo, o queixo pode perder projeção e ganhar aspecto enrugado. Repor essa base dá suporte ao terço inferior.'],
+            ['name' => 'Contorno mandibular', 'desc' => 'Redesenha a linha da mandíbula quando ela perde nitidez, separando melhor o rosto do pescoço.'],
+        ],
+        'benefits' => [
+            ['title' => 'Expressão mais leve', 'desc' => 'Sulcos suavizados e menos aspecto de cansaço, tristeza ou irritação.'],
+            ['title' => 'Contorno recuperado', 'desc' => 'A linha da mandíbula volta a ficar mais contínua.'],
+            ['title' => 'Resultado natural', 'desc' => 'Pequenas quantidades em cada ponto, sem aspecto pesado na região da boca.'],
+            ['title' => 'Combinável', 'desc' => 'Pode ser associado a bioestimulador e fios de PDO quando há flacidez.'],
+        ],
+        'steps' => [
+            ['title' => 'Avaliação do rosto', 'desc' => 'A Dra. Emily identifica o que marca o seu terço inferior: perda de volume, flacidez ou os dois.'],
+            ['title' => 'Plano por etapas', 'desc' => 'Define-se a ordem das regiões, normalmente priorizando a sustentação antes do ajuste nos sulcos.'],
+            ['title' => 'Aplicação & retorno', 'desc' => 'Com anestesia, o ácido hialurônico é aplicado ponto a ponto, com retorno para avaliar o resultado.'],
+        ],
+        'faq' => [
+            ['q' => 'O que são linhas de marionete?', 'a' => 'São os sulcos que descem dos cantos da boca em direção ao queixo. Eles podem dar um aspecto triste ou bravo ao rosto, mesmo em repouso.'],
+            ['q' => 'Preenchimento resolve o bigode chinês sozinho?', 'a' => 'Raramente. O mais eficaz costuma ser tratar a sustentação do terço médio e fazer apenas um ajuste fino no sulco. Dependendo do caso, o bioestimulador de colágeno complementa o tratamento.'],
+            ['q' => 'O preenchimento trata a bochecha caída?', 'a' => 'Ele ajuda a disfarçar a transição, principalmente na região pré-jowl, mas não reposiciona a pele. Em flacidez mais evidente, a Dra. Emily indica combinar com bioestimulador ou fios de PDO e explica o que é realista no seu caso.'],
+            ['q' => 'A região da boca fica pesada ou rígida?', 'a' => 'Não deve ficar. Por ser uma área de muito movimento, a Dra. Emily usa produtos adequados e pouca quantidade, para manter a expressão natural.'],
+        ],
+    ],
+
+    'harmonizacao-labial' => [
+        'num' => '19',
+        'updated' => '2026-11-02',
+        'parent' => 'preenchimento-facial',
+        'related' => ['preenchimento-facial', 'preenchimento-labial', 'toxina-botulinica', 'preenchimento-terco-inferior'],
+        'name' => 'Harmonização Labial e Perioral',
+        'card_desc' => 'Lábios, código de barras, filtro labial, arco do cupido e comissuras trabalhados juntos para harmonizar toda a região da boca.',
+        'title' => 'Harmonização Labial em Belo Horizonte | Dra. Emily Beatriz',
+        'meta_description' => 'Harmonização labial em Belo Horizonte com a Dra. Emily Beatriz. Lábios, arco do cupido, filtro labial, código de barras e comissuras com resultado natural.',
+        'eyebrow' => 'Lábios & Região Perioral',
+        'h1' => 'Harmonização Labial e Perioral em Belo Horizonte',
+        'hero_lead' => 'Uma boca bonita vai além do volume dos lábios. A harmonização labial olha para toda a região ao redor: o arco do cupido, o filtro, os cantos da boca e as linhas finas acima do lábio, para um resultado delicado e proporcional ao seu rosto.',
+        'facts' => [
+            ['label' => 'Resultado', 'value' => 'Imediato'],
+            ['label' => 'Duração', 'value' => '6 a 18 meses'],
+            ['label' => 'Sessão', 'value' => '~40 minutos'],
+            ['label' => 'Anestesia', 'value' => 'Tópica'],
+        ],
+        'what_is_title' => 'O que é a harmonização labial e perioral?',
+        'what_is' => [
+            'Enquanto o preenchimento labial foca o volume e a hidratação dos lábios, a harmonização labial e perioral considera também a região ao redor da boca, chamada de perioral. Isso inclui o filtro, as duas colunas entre o nariz e o lábio superior, o desenho do arco do cupido, os cantos da boca e as linhas finas conhecidas como código de barras.',
+            'O ácido hialurônico é escolhido e aplicado de forma diferente em cada ponto: produtos mais macios para hidratar e suavizar linhas finas, com mais estrutura para desenhar contornos. Conforme o caso, a Dra. Emily Beatriz pode associar microdoses de toxina botulínica às linhas acima do lábio.',
+            'Em Belo Horizonte, a harmonização labial é planejada com base nas proporções do seu rosto, com atenção ao sorriso e à fala. A meta é uma boca descansada e bonita, que continue sendo a sua.',
+        ],
+        'regions_title' => 'O que é tratado na região da boca',
+        'regions' => [
+            ['name' => 'Preenchimento labial', 'desc' => 'Devolve volume, hidratação e definição aos lábios, na medida certa para o seu rosto.'],
+            ['name' => 'Código de barras', 'desc' => 'Linhas finas verticais acima do lábio superior, que marcam com o tempo. Pequenas quantidades de ácido hialurônico suavizam a região e melhoram a qualidade da pele.'],
+            ['name' => 'Filtro labial', 'desc' => 'As duas colunas entre o nariz e o lábio superior. Quando bem definidas, deixam o lábio com aspecto mais jovem e proporcional.'],
+            ['name' => 'Projeção e definição do arco do cupido', 'desc' => 'Desenha a curva central do lábio superior, um dos detalhes que mais dão delicadeza e personalidade à boca.'],
+            ['name' => 'Comissuras labiais', 'desc' => 'Os cantos da boca podem cair com o tempo. Dar apoio a essa região deixa a expressão mais leve, mesmo em repouso.'],
+        ],
+        'benefits' => [
+            ['title' => 'Boca em equilíbrio', 'desc' => 'Lábios e região ao redor planejados como um conjunto.'],
+            ['title' => 'Contorno delicado', 'desc' => 'Arco do cupido e filtro mais definidos, sem exageros.'],
+            ['title' => 'Linhas suavizadas', 'desc' => 'O código de barras fica menos aparente e a pele, mais hidratada.'],
+            ['title' => 'Expressão mais leve', 'desc' => 'Cantos da boca com mais apoio, para um semblante mais descansado.'],
+        ],
+        'steps' => [
+            ['title' => 'Conversa & desenho', 'desc' => 'A Dra. Emily entende o que incomoda você e analisa a boca em repouso, ao falar e ao sorrir.'],
+            ['title' => 'Anestesia tópica', 'desc' => 'Um creme anestésico garante conforto durante todo o procedimento.'],
+            ['title' => 'Aplicação delicada', 'desc' => 'O ácido hialurônico é aplicado com precisão, em pequenas quantidades, ponto a ponto.'],
+        ],
+        'faq' => [
+            ['q' => 'Qual a diferença entre preenchimento labial e harmonização labial?', 'a' => 'O preenchimento labial trata os lábios. A harmonização labial e perioral é mais ampla e inclui também o filtro, o arco do cupido, as comissuras e as linhas ao redor da boca.'],
+            ['q' => 'O que é o código de barras?', 'a' => 'São as linhas finas verticais que surgem acima do lábio superior. Elas podem ser suavizadas com ácido hialurônico, microdoses de toxina botulínica ou a combinação dos dois.'],
+            ['q' => 'Dá para levantar os cantos da boca?', 'a' => 'Dá para dar apoio às comissuras e suavizar o aspecto caído. A avaliação mostra se o preenchimento é suficiente ou se vale associar a toxina botulínica ou tratar o terço inferior.'],
+            ['q' => 'Quanto tempo dura a harmonização labial?', 'a' => 'Em média de 6 a 18 meses, dependendo do seu metabolismo, do produto e das regiões tratadas.'],
+        ],
+    ],
+
+    'rejuvenescimento-com-preenchimento' => [
+        'num' => '20',
+        'updated' => '2026-11-02',
+        'parent' => 'preenchimento-facial',
+        'related' => ['preenchimento-facial', 'preenchimento-terco-medio', 'bioestimulador-de-colageno', 'flacidez-facial'],
+        'name' => 'Rejuvenescimento e Reposição de Volume',
+        'card_desc' => 'Reposição do volume perdido com o tempo ou o emagrecimento em têmporas, malar, zigomático, olheiras e fossa canina.',
+        'title' => 'Rejuvenescimento com Preenchimento em BH | Dra. Emily Beatriz',
+        'meta_description' => 'Rejuvenescimento com preenchimento em Belo Horizonte com a Dra. Emily Beatriz. Reposição de volume em têmporas, malar, olheiras e fossa canina.',
+        'eyebrow' => 'Reposição de Volume',
+        'h1' => 'Rejuvenescimento Facial com Preenchimento em Belo Horizonte',
+        'hero_lead' => 'Às vezes o rosto parece mais cansado ou mais magro do que você se sente. Isso costuma ser perda de volume, que vem com o tempo ou com o emagrecimento. Repor esse volume com delicadeza devolve frescor sem mudar os seus traços.',
+        'facts' => [
+            ['label' => 'Foco', 'value' => 'Volume perdido'],
+            ['label' => 'Resultado', 'value' => 'Imediato'],
+            ['label' => 'Duração', 'value' => '12 a 18 meses'],
+            ['label' => 'Planejamento', 'value' => 'Por etapas'],
+        ],
+        'what_is_title' => 'Por que o rosto perde volume?',
+        'what_is' => [
+            'O envelhecimento do rosto não é só uma questão de rugas. Com o passar dos anos, as bolsas de gordura diminuem e mudam de lugar, e o osso da face também sofre remodelação. As têmporas afundam, as maçãs do rosto ficam mais planas e a região abaixo dos olhos ganha sombra.',
+            'O emagrecimento acelera esse processo: quem perde peso rapidamente costuma notar o rosto mais fino e com aspecto abatido. Na menopausa, a perda de colágeno se soma à perda de volume e a mudança pode parecer repentina.',
+            'A reposição não busca encher o rosto, e sim devolver, em pequenas quantidades, apenas o que foi perdido. Em Belo Horizonte, a Dra. Emily Beatriz usa ácido hialurônico nos pontos onde a falta de volume mais aparece e, quando a firmeza da pele também é uma queixa, pode combinar com bioestimulador de colágeno.',
+        ],
+        'regions_title' => 'Onde o volume costuma faltar',
+        'regions' => [
+            ['name' => 'Têmporas', 'desc' => 'Uma das primeiras regiões a afundar com o tempo ou o emagrecimento, deixando o rosto com aspecto magro. Repor o volume suaviza essa concavidade.'],
+            ['name' => 'Malar', 'desc' => 'A gordura das maçãs do rosto diminui e desce, e o rosto fica mais plano. A reposição devolve curva e frescor à face.'],
+            ['name' => 'Zigomático', 'desc' => 'Quando a lateral do rosto perde gordura, o osso fica mais marcado e a área logo abaixo parece cavada. Pequenas quantidades tornam essa transição mais suave.'],
+            ['name' => 'Olheiras', 'desc' => 'Com a perda de volume, o vale abaixo dos olhos se aprofunda e projeta sombra. Em olheiras fundas, o ácido hialurônico suaviza esse aspecto de cansaço.'],
+            ['name' => 'Fossa canina', 'desc' => 'A região ao lado do nariz perde apoio com os anos, o que marca mais o início do bigode chinês. Repor essa base traz um aspecto mais descansado.'],
+        ],
+        'benefits' => [
+            ['title' => 'Aspecto de frescor', 'desc' => 'O rosto volta a parecer descansado e saudável.'],
+            ['title' => 'Traços preservados', 'desc' => 'A reposição devolve o que foi perdido, sem mudar quem você é.'],
+            ['title' => 'Menos aspecto abatido', 'desc' => 'Têmporas e maçãs do rosto com volume, úteis também depois do emagrecimento.'],
+            ['title' => 'Plano gradual', 'desc' => 'O volume pode ser reposto por etapas, com ajustes a cada retorno.'],
+        ],
+        'steps' => [
+            ['title' => 'Avaliação do volume', 'desc' => 'A Dra. Emily compara o seu rosto atual com a sua estrutura, se possível com fotos antigas, para ver o que mudou.'],
+            ['title' => 'Definição das prioridades', 'desc' => 'Define-se quais regiões trazem mais benefício e se a firmeza da pele também precisa de tratamento.'],
+            ['title' => 'Reposição por etapas', 'desc' => 'O ácido hialurônico é aplicado em pequenas quantidades, com retorno para avaliar e ajustar.'],
+        ],
+        'faq' => [
+            ['q' => 'Preenchimento rejuvenesce o rosto?', 'a' => 'Ele trata um dos principais sinais do tempo, que é a perda de volume. Com isso, o rosto tende a parecer mais descansado. Rugas de expressão e flacidez costumam pedir outros tratamentos, que podem ser combinados.'],
+            ['q' => 'Emagreci e meu rosto ficou abatido. O preenchimento ajuda?', 'a' => 'Ajuda de forma pontual, principalmente em têmporas e maçãs do rosto. O ideal é que o peso esteja estável, e nem todo o volume perdido precisa ser reposto: a avaliação define o que traz mais benefício.'],
+            ['q' => 'Qual a diferença entre repor volume e estimular colágeno?', 'a' => 'O preenchimento repõe o volume na hora, com ácido hialurônico. O bioestimulador faz a pele produzir colágeno e melhora a firmeza aos poucos. Os dois se complementam em muitos planos de rejuvenescimento.'],
+            ['q' => 'A partir de que idade posso fazer reposição de volume?', 'a' => 'Não existe idade certa, e sim indicação. Ela depende do que aparece no seu rosto, do seu histórico e do que você deseja, e é definida na avaliação.'],
+        ],
+    ],
+
+    'rinomodelacao-e-refinamento-facial' => [
+        'num' => '21',
+        'updated' => '2026-11-02',
+        'parent' => 'preenchimento-facial',
+        'related' => ['preenchimento-facial', 'preenchimento-mandibula-e-queixo', 'harmonizacao-labial', 'harmonizacao-facial'],
+        'name' => 'Refinamento Facial',
+        'card_desc' => 'Rinomodelação, mento, ângulo mandibular e ajustes de assimetrias e depressões para detalhes que equilibram o rosto.',
+        'title' => 'Rinomodelação em Belo Horizonte | Dra. Emily Beatriz',
+        'meta_description' => 'Rinomodelação em Belo Horizonte com a Dra. Emily Beatriz. Refinamento do nariz, queixo e ângulo mandibular e ajuste de assimetrias, sem cirurgia.',
+        'eyebrow' => 'Detalhes que Equilibram',
+        'h1' => 'Rinomodelação e Refinamento Facial em Belo Horizonte',
+        'hero_lead' => 'Pequenos detalhes podem mudar a harmonia de um rosto: o dorso do nariz, a ponta, o queixo ou uma assimetria que incomoda. O refinamento facial usa ácido hialurônico para fazer esses ajustes de forma precisa, sem cirurgia.',
+        'facts' => [
+            ['label' => 'Foco', 'value' => 'Ajustes finos'],
+            ['label' => 'Resultado', 'value' => 'Imediato'],
+            ['label' => 'Duração', 'value' => '12 a 18 meses'],
+            ['label' => 'Cirurgia', 'value' => 'Não'],
+        ],
+        'what_is_title' => 'O que é o refinamento facial?',
+        'what_is' => [
+            'O refinamento facial reúne ajustes pontuais com ácido hialurônico para equilibrar o rosto. A rinomodelação é o mais conhecido: ela disfarça pequenas irregularidades do dorso do nariz e pode dar mais projeção e apoio à ponta. Queixo, ângulo mandibular e pequenas depressões também podem ser corrigidos, sempre pensando no perfil como um todo.',
+            'É importante alinhar expectativas. A rinomodelação não diminui o nariz nem substitui a rinoplastia, e não trata problemas de respiração. O que ela faz é melhorar a percepção de formato, somando volume em pontos estratégicos, muitas vezes criando um nariz visualmente mais reto.',
+            'O nariz é uma região delicada e com rica circulação, o que exige avaliação cuidadosa e conhecimento da anatomia. Em Belo Horizonte, a Dra. Emily Beatriz explica riscos, limites e cuidados antes de qualquer aplicação, e indica o caminho mais adequado para o seu caso, inclusive quando a resposta é não fazer.',
+        ],
+        'regions_title' => 'O que pode ser refinado',
+        'regions' => [
+            ['name' => 'Rinomodelação', 'desc' => 'Suaviza irregularidades do dorso e pode melhorar a projeção da ponta do nariz, sem cortes. Indicada para ajustes de formato, e não para reduzir tamanho.'],
+            ['name' => 'Mento', 'desc' => 'Ajuste de projeção e formato do queixo, que costuma equilibrar o perfil junto com o nariz.'],
+            ['name' => 'Ângulo mandibular', 'desc' => 'Pequena definição no ponto da curva da mandíbula, para dar estrutura e simetria ao contorno.'],
+            ['name' => 'Ajustes de assimetrias e depressões faciais', 'desc' => 'Correção de diferenças entre os lados do rosto ou de pequenas depressões, com quantidades mínimas de produto, sempre conforme a causa identificada na avaliação.'],
+        ],
+        'benefits' => [
+            ['title' => 'Perfil mais harmônico', 'desc' => 'Nariz, queixo e mandíbula planejados em conjunto.'],
+            ['title' => 'Sem cortes', 'desc' => 'Procedimento em consultório, com retorno rápido à rotina.'],
+            ['title' => 'Ajustes precisos', 'desc' => 'Pequenas quantidades de produto nos pontos que fazem diferença.'],
+            ['title' => 'Reversível', 'desc' => 'O ácido hialurônico é absorvido com o tempo e pode ser dissolvido, se necessário.'],
+        ],
+        'steps' => [
+            ['title' => 'Análise do perfil', 'desc' => 'A Dra. Emily avalia o rosto de frente e de perfil, identifica o que gera o desequilíbrio e verifica a sua indicação.'],
+            ['title' => 'Conversa sobre expectativas', 'desc' => 'Antes de qualquer aplicação, você entende o que é possível, os riscos e os cuidados necessários.'],
+            ['title' => 'Aplicação & retorno', 'desc' => 'O ácido hialurônico é aplicado com técnica e atenção à anatomia, com retorno para avaliar o resultado.'],
+        ],
+        'faq' => [
+            ['q' => 'Rinomodelação afina ou diminui o nariz?', 'a' => 'Não diminui. Como o procedimento adiciona volume, ele não reduz o tamanho do nariz, mas pode criar a impressão de um dorso mais reto e de uma ponta mais projetada.'],
+            ['q' => 'Rinomodelação substitui a rinoplastia?', 'a' => 'Não. São procedimentos diferentes. A rinomodelação é indicada para pequenos ajustes de formato. Mudanças maiores ou problemas respiratórios precisam de avaliação cirúrgica.'],
+            ['q' => 'Rinomodelação tem riscos?', 'a' => 'Sim, como todo procedimento injetável. O nariz tem circulação delicada, e existe o risco de comprometimento vascular, que é raro, mas sério. Por isso a escolha do profissional e a avaliação prévia são essenciais, e a Dra. Emily explica todos os cuidados antes do procedimento.'],
+            ['q' => 'Dá para corrigir assimetrias do rosto com preenchimento?', 'a' => 'Muitas assimetrias leves podem ser suavizadas. A avaliação identifica se a causa é de volume, de musculatura ou de estrutura óssea, porque cada uma pede um caminho diferente.'],
         ],
     ],
 
@@ -582,7 +896,7 @@ return [
         'num' => '14',
         'updated' => '2026-10-13',
         'kind' => 'concern',
-        'treatments' => ['preenchimento-facial', 'bioestimulador-de-colageno', 'fios-de-pdo', 'full-face'],
+        'treatments' => ['preenchimento-terco-inferior', 'preenchimento-facial', 'bioestimulador-de-colageno', 'fios-de-pdo'],
         'name' => 'Tratamento para Bigode Chinês',
         'card_desc' => 'Os sulcos entre o nariz e a boca tratados pela causa: reposição de volume, estímulo de colágeno e sustentação.',
         'concern' => ['label' => 'Bigode chinês', 'desc' => 'Sulcos entre o nariz e a boca que pesam a expressão.'],

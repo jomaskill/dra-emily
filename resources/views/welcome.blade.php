@@ -15,8 +15,9 @@
     $procedures   = collect(config('procedures'));
     $featured     = $procedures->firstWhere('featured', true);
     $featuredSlug = $procedures->search(fn ($p) => ($p['featured'] ?? false) === true);
-    $regular      = $procedures->reject(fn ($p) => ($p['featured'] ?? false) === true || ($p['kind'] ?? null) === 'concern');
+    $regular      = $procedures->reject(fn ($p) => ($p['featured'] ?? false) === true || ($p['kind'] ?? null) === 'concern' || isset($p['parent']));
     $concerns     = $procedures->filter(fn ($p) => isset($p['concern']));
+    $segments     = $procedures->filter(fn ($p) => isset($p['parent']));
 
     $testimonials = [
         [
@@ -236,6 +237,20 @@
                                     @endif
                                 </span>
                                 <span class="hidden md:block justify-self-end text-clay transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
+                            </a>
+                        </li>
+                    @endforeach
+                </ul>
+
+                {{-- Preenchimento por objetivo: páginas com a chave "parent". --}}
+                <h3 class="font-display text-[clamp(1.8rem,3vw,2.6rem)] leading-[1.1] text-ink mt-16 lg:mt-24 mb-8">Preenchimento por objetivo</h3>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 border-t rule">
+                    @foreach ($segments as $segmentSlug => $segment)
+                        <li>
+                            <a href="{{ route('procedure', $segmentSlug) }}"
+                               class="group flex h-full items-baseline justify-between gap-6 py-6 border-b rule">
+                                <span class="font-display text-2xl leading-[1.15] text-ink group-hover:text-clay transition-colors duration-300">{{ $segment['name'] }}</span>
+                                <span class="text-clay transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
                             </a>
                         </li>
                     @endforeach
