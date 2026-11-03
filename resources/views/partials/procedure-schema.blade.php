@@ -6,17 +6,9 @@
         ->prepend($procedure['hero_lead'])
         ->implode(' ');
 
-    $professional = [
-        '@type' => 'Person',
-        '@id' => $siteUrl.'/#emily',
-        'name' => 'Dra. Emily Beatriz',
-        'jobTitle' => 'Cirurgiã-Dentista — Especialista em Harmonização Orofacial',
-        'hasOccupation' => ['@type' => 'Occupation', 'name' => 'Cirurgiã-dentista'],
-        'identifier' => 'CRO '.$cro,
-        'url' => $siteUrl.'/',
-    ];
+    $professional = \App\Support\SiteSchema::person();
 
-    $json = static fn ($value): string => json_encode($value, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    $json = \App\Support\SiteSchema::json(...);
 
     // Páginas de queixa descrevem uma condição e os tratamentos possíveis, não
     // um procedimento. Cada tratamento aponta para a página dele.

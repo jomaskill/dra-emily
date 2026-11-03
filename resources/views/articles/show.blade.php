@@ -5,7 +5,10 @@
     $cro       = config('clinic.cro');
     $waArtigo  = \App\Support\WhatsApp::url('Olá! Li o artigo “'.$article['h1'].'” e gostaria de agendar uma avaliação.');
     $related   = collect(config('procedures'))->only($article['related'] ?? []);
+    $topics    = collect(config('topics'))->only($article['topics']);
     $updated   = \Illuminate\Support\Carbon::parse($article['updated']);
+    // Foto própria do artigo, quando houver. Sem ela, o schema usa o retrato da autora.
+    $imageUrl  = isset($article['image']) ? $siteUrl.'/'.$article['image'] : null;
     // Compartilhar usa api.whatsapp.com para não receber a marcação de anúncio dos links wa.me.
     $shareUrl  = 'https://api.whatsapp.com/send?text='.rawurlencode($article['h1'].' — '.$canonical);
     $story     = [
@@ -25,8 +28,18 @@
     :description="$article['meta_description']"
     :canonical="$canonical"
     og-type="article"
+    :og-image="$imageUrl"
     :nav-base="'/'"
     :whatsapp-origin="'pelo artigo “'.$article['h1'].'”'">
+
+    <x-slot:meta>
+        <meta property="article:published_time" content="{{ $article['published'] }}">
+        <meta property="article:modified_time" content="{{ $article['updated'] }}">
+        <meta property="article:author" content="{{ $siteUrl }}/dra-emily-beatriz">
+        @foreach ($topics as $topic)
+            <meta property="article:tag" content="{{ $topic['name'] }}">
+        @endforeach
+    </x-slot:meta>
 
     <x-slot:schema>
         @include('partials.article-schema')
@@ -58,7 +71,7 @@
                     {{ $article['excerpt'] }}
                 </p>
 
-                <x-article.byline :article="$article" class="mt-9" />
+                <x-article.byline :article="$article" :linked="true" class="mt-9" />
 
                 <div class="flex items-center justify-between gap-4 mt-8 py-3 border-y rule text-sm text-ink-soft">
                     <p>
@@ -89,6 +102,17 @@
                     </div>
                 </div>
             </header>
+
+            @isset($article['image'])
+                <figure class="max-w-4xl mx-auto px-5 mt-12 lg:mt-14">
+                    <x-picture :src="$article['image']"
+                               :alt="$article['image_alt']"
+                               sizes="(min-width: 896px) 856px, 100vw"
+                               loading="eager"
+                               fetchpriority="high"
+                               class="w-full h-auto rounded-sm" />
+                </figure>
+            @endisset
 
             <div data-share-toast role="status" aria-live="polite"
                  class="pointer-events-none fixed bottom-6 left-1/2 z-50 -translate-x-1/2 w-max max-w-[calc(100vw-2.5rem)] rounded-sm bg-ink px-4 py-3 text-center text-sm text-linen opacity-0 shadow-lg transition-opacity duration-300"></div>
@@ -122,7 +146,7 @@
                         <section>
                             <h2 id="{{ \Illuminate\Support\Str::slug($section['heading']) }}">{{ $section['heading'] }}</h2>
                             @foreach ($section['body'] as $paragraph)
-                                <p @class(['drop-cap' => $loop->parent->first && $loop->first])>{{ $paragraph }}</p>
+                                <p @class(['drop-cap' => $loop->parent->first && $loop->first])>{{ \App\Support\ArticleText::render($paragraph) }}</p>
                             @endforeach
                         </section>
                     @endforeach
@@ -166,9 +190,14 @@
                     </ol>
                 </section>
 
+                <div class="mt-14">
+                    <p class="text-sm text-ink-soft mb-4">Temas</p>
+                    <x-article.topics :topics="$topics" />
+                </div>
+
                 {{-- Related procedures, as topic tags --}}
                 @if ($related->isNotEmpty())
-                    <nav aria-label="Tratamentos citados" class="mt-14">
+                    <nav aria-label="Tratamentos citados" class="mt-10">
                         <p class="text-sm text-ink-soft mb-4">Tratamentos citados</p>
                         <ul class="flex flex-wrap gap-2">
                             @foreach ($related as $relatedSlug => $procedure)
@@ -188,7 +217,9 @@
                     <x-article.avatar class="w-18 h-18" alt="Dra. Emily Beatriz" />
                     <div>
                         <p class="text-sm text-ink-soft">Escrito por</p>
-                        <p class="font-display text-[1.6rem] leading-tight text-ink mt-0.5">Dra. Emily Beatriz</p>
+                        <p class="font-display text-[1.6rem] leading-tight text-ink mt-0.5">
+                            <a href="{{ route('author') }}" rel="author" class="hover:text-clay transition-colors">Dra. Emily Beatriz</a>
+                        </p>
                         <p class="text-sm text-ink-soft mt-1">Cirurgiã-dentista, harmonização orofacial · CRO-{{ $cro }}</p>
                         <p class="text-ink-soft leading-relaxed mt-4 max-w-[52ch]">
                             Atende em Belo Horizonte com um princípio simples: o resultado tem que parecer você.

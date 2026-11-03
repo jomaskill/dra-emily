@@ -31,6 +31,7 @@ class GovernanceInventory
         'config/clinic.php',
         'config/procedures.php',
         'config/articles.php',
+        'config/topics.php',
         'config/faq.php',
         'resources/css/app.css',
         'resources/js/app.js',
@@ -390,6 +391,7 @@ class GovernanceInventory
             $values = match ($routeName) {
                 'procedure' => array_keys(config('procedures', [])),
                 'article' => array_keys(config('articles', [])),
+                'articles.topic' => array_keys(config('topics', [])),
                 default => [],
             };
 
@@ -466,7 +468,9 @@ class GovernanceInventory
                 ? 'resources/views/procedures/full-face.blade.php'
                 : 'resources/views/procedure.blade.php',
             'articles.index' => 'resources/views/articles/index.blade.php',
+            'articles.topic' => 'resources/views/articles/topic.blade.php',
             'article' => 'resources/views/articles/show.blade.php',
+            'author' => 'resources/views/author.blade.php',
             'sitemap' => 'resources/views/sitemap.blade.php',
             default => 'routes/web.php',
         };

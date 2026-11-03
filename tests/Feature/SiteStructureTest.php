@@ -28,8 +28,8 @@ it('lists every procedure in the sitemap', function () use ($slugs) {
         expect($xml)->toContain("/procedimentos/{$slug}</loc>");
     }
 
-    // Homepage, every procedure, the article index, and every article.
-    $expected = 1 + count($slugs) + 1 + count(config('articles'));
+    // Homepage, every procedure, the article index, every topic, every article and the author.
+    $expected = 1 + count($slugs) + 1 + count(config('topics')) + count(config('articles')) + 1;
 
     expect(substr_count($xml, '<loc>'))->toBe($expected);
 });

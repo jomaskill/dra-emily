@@ -56,7 +56,9 @@ function expectedPublicSurfacePaths(): array
         '/',
         '/artigos',
         ...array_map(static fn (string $slug): string => '/artigos/'.$slug, array_keys(config('articles'))),
+        ...array_map(static fn (string $slug): string => '/artigos/tema/'.$slug, array_keys(config('topics'))),
         ...array_map(static fn (string $slug): string => '/procedimentos/'.$slug, array_keys(config('procedures'))),
+        '/dra-emily-beatriz',
         '/sitemap.xml',
     ];
 }

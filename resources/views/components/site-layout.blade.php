@@ -106,6 +106,8 @@
         <meta property="og:locale" content="pt_BR">
         <meta property="og:site_name" content="Dra. Emily Beatriz — Harmonização Facial">
 
+        {{ $meta ?? '' }}
+
         {{-- ── Twitter / X Card ───────────────────────────────────── --}}
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="{{ $ogTitle ?: $title }}">

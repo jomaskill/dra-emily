@@ -39,6 +39,7 @@
                 <p class="font-display text-xl text-linen mb-5">Navegação</p>
                 <ul class="space-y-2.5">
                     <li><a href="{{ $navBase }}#sobre" class="text-linen/70 text-sm hover:text-ochre transition-colors">Nossa história</a></li>
+                    <li><a href="{{ route('author') }}" class="text-linen/70 text-sm hover:text-ochre transition-colors">Dra. Emily Beatriz</a></li>
                     <li><a href="{{ $navBase }}#procedimentos" class="text-linen/70 text-sm hover:text-ochre transition-colors">Procedimentos</a></li>
                     <li><a href="{{ $navBase }}#antes-depois" class="text-linen/70 text-sm hover:text-ochre transition-colors">Resultados</a></li>
                     <li><a href="{{ $navBase }}#faq" class="text-linen/70 text-sm hover:text-ochre transition-colors">Perguntas frequentes</a></li>

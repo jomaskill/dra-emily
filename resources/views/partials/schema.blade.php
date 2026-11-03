@@ -78,7 +78,7 @@
     "employee": {
       "@@type": "Person",
       "@@id": "{{ $siteUrl }}/#emily",
-      "url": "{{ $siteUrl }}/",
+      "url": "{{ $siteUrl }}/dra-emily-beatriz",
       "name": "Emily Beatriz",
       "jobTitle": "Cirurgiã-Dentista — Especialista em Harmonização Orofacial",
       "identifier": "CRO {{ $cro }}"

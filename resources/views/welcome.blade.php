@@ -160,6 +160,9 @@
                         <p>
                             Ela também atende homens, com um planejamento que preserva os traços masculinos. Conheça a <a href="{{ route('procedure', 'harmonizacao-facial-masculina') }}" class="thread-link text-ink hover:text-clay transition-colors">harmonização facial masculina</a>.
                         </p>
+                        <p>
+                            <a href="{{ route('author') }}" class="thread-link text-ink hover:text-clay transition-colors">Conheça melhor a Dra. Emily</a>
+                        </p>
                     </div>
                     <x-thread class="w-40 h-auto my-10" />
                     <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-3 text-ink">

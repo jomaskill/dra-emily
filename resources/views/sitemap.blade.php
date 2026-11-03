@@ -37,6 +37,14 @@
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
+@foreach (config('topics') as $slug => $topic)
+    <url>
+        <loc>https://{{ config('clinic.domain') }}/artigos/tema/{{ $slug }}</loc>
+        <lastmod>{{ collect(config('articles'))->filter(fn (array $article): bool => in_array($slug, $article['topics'], true))->max('updated') }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+@endforeach
 @foreach (config('articles') as $slug => $article)
     <url>
         <loc>https://{{ config('clinic.domain') }}/artigos/{{ $slug }}</loc>
@@ -45,4 +53,10 @@
         <priority>0.6</priority>
     </url>
 @endforeach
+    <url>
+        <loc>https://{{ config('clinic.domain') }}/dra-emily-beatriz</loc>
+        <lastmod>{{ collect(config('articles'))->max('updated') }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
 </urlset>

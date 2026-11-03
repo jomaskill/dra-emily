@@ -1,15 +1,14 @@
 @php
-    $professional = [
-        '@type' => 'Person',
-        '@id' => $siteUrl.'/#emily',
-        'name' => 'Dra. Emily Beatriz',
-        'jobTitle' => 'Cirurgiã-Dentista — Especialista em Harmonização Orofacial',
-        'hasOccupation' => ['@type' => 'Occupation', 'name' => 'Cirurgiã-dentista'],
-        'identifier' => 'CRO '.$cro,
-        'url' => $siteUrl.'/',
-    ];
+    $professional = \App\Support\SiteSchema::person();
+    $clinic = \App\Support\SiteSchema::clinic();
+    $website = \App\Support\SiteSchema::website();
+    $procedures = $related->map(fn (array $procedure, string $procedureSlug): array => [
+        '@type' => 'MedicalProcedure',
+        'name' => $procedure['name'],
+        'url' => $siteUrl.'/procedimentos/'.$procedureSlug,
+    ])->values()->all();
 
-    $json = static fn ($value): string => json_encode($value, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    $json = \App\Support\SiteSchema::json(...);
 @endphp
 <script type="application/ld+json">
 [
@@ -27,9 +26,10 @@
     "lastReviewed": "{{ $article['updated'] }}",
     "author": {!! $json($professional) !!},
     "reviewedBy": {!! $json($professional) !!},
-    "publisher": { "@@id": "{{ $siteUrl }}/#clinic" },
-    "about": { "@@id": "{{ $siteUrl }}/#clinic" },
-    "isPartOf": { "@@id": "{{ $siteUrl }}/#website" },
+    "publisher": {!! $json($clinic) !!},
+    "about": {!! $json($procedures) !!},
+    "isPartOf": {!! $json($website) !!},
+    "mainEntity": { "@@id": "{{ $canonical }}#article" },
     "speakable": {
       "@@type": "SpeakableSpecification",
       "cssSelector": ["#resposta", "#faq"]
@@ -40,6 +40,24 @@
         'url' => $source['url'],
         'publisher' => ['@type' => 'Organization', 'name' => $source['publisher']],
     ], $article['sources'])) !!}
+  },
+  {
+    "@@context": "https://schema.org",
+    "@@type": "BlogPosting",
+    "@@id": "{{ $canonical }}#article",
+    "mainEntityOfPage": { "@@id": "{{ $canonical }}#webpage" },
+    "url": "{{ $canonical }}",
+    "headline": {!! $json($article['h1']) !!},
+    "description": {!! $json($article['meta_description']) !!},
+    "image": {!! $json($imageUrl ?? $siteUrl.'/foto-emily.jpg') !!},
+    "inLanguage": "pt-BR",
+    "datePublished": "{{ $article['published'] }}",
+    "dateModified": "{{ $article['updated'] }}",
+    "author": {!! $json($professional) !!},
+    "publisher": {!! $json($clinic) !!},
+    "isPartOf": {!! $json($website) !!},
+    "articleSection": {!! $json($topics->first()['name']) !!},
+    "keywords": {!! $json($topics->pluck('name')->values()->all()) !!}
   },
   {
     "@@context": "https://schema.org",

@@ -19,6 +19,11 @@
 |   title             => <title> da página
 |   h1                => título principal
 |   eyebrow           => sobretítulo
+|   topics            => slugs de config/topics.php (ao menos um). O primeiro
+|                        é o tema principal do artigo.
+|   image, image_alt  => foto do artigo em public/ e seu texto alternativo
+|                        (opcional). Aparece no topo, no compartilhamento e no
+|                        JSON-LD. Sem ela, a capa segue tipográfica.
 |   meta_description  => meta description
 |   excerpt           => resumo curto (card do índice)
 |   published         => data de publicação (Y-m-d)
@@ -26,7 +31,10 @@
 |   answer            => resposta direta em 40-60 palavras, exibida logo abaixo
 |                        do H1. É o trecho que buscadores e assistentes extraem.
 |   sections          => [['heading' => ..., 'body' => [parágrafo, ...]], ...]
-|   takeaways         => lista de pontos-chave (opcional)
+|                        Parágrafo aceita link interno: [texto](procedure:slug)
+|                        ou [texto](article:slug). Slug inexistente quebra a
+|                        página em vez de publicar link morto.
+|   takeaways        => lista de pontos-chave (opcional)
 |   faq               => [['q' => ..., 'a' => ...], ...]
 |   related           => slugs de config/procedures.php
 |   sources           => [['publisher' => ..., 'title' => ..., 'url' => ...,
@@ -51,6 +59,7 @@ return [
         'title' => 'Quanto custa harmonização facial em BH? | Dra. Emily Beatriz',
         'h1' => 'Quanto custa uma harmonização facial em Belo Horizonte?',
         'eyebrow' => 'Antes de agendar',
+        'topics' => ['antes-de-agendar'],
         'meta_description' => 'O que define o valor de uma harmonização facial em Belo Horizonte: número de áreas, quantidade de produto, técnica e acompanhamento. Entenda antes de agendar.',
         'excerpt' => 'Não existe preço único, e desconfiar de quem promete um é o primeiro cuidado. Explico o que realmente entra no valor de uma harmonização.',
         'published' => '2026-08-18',
@@ -60,7 +69,7 @@ return [
             [
                 'heading' => 'Por que eu não passo preço por telefone',
                 'body' => [
-                    'Harmonização facial não é um procedimento só. É o nome de um conjunto de tratamentos. Duas mulheres que chegam pedindo "harmonização" podem sair da avaliação com planos completamente diferentes: uma precisa só de toxina em duas áreas, a outra de preenchimento, bioestimulador e fios.',
+                    'Harmonização facial não é um procedimento só. É o nome de um conjunto de tratamentos. Duas mulheres que chegam pedindo "harmonização" podem sair da avaliação com planos completamente diferentes: uma precisa só de [toxina](procedure:toxina-botulinica) em duas áreas, a outra de [preenchimento](procedure:preenchimento-facial), [bioestimulador](procedure:bioestimulador-de-colageno) e [fios](procedure:fios-de-pdo).',
                     'Então qualquer valor dito antes de eu ver o seu rosto seria um chute. E, em saúde, chute costuma virar argumento de venda em vez de plano de tratamento.',
                 ],
             ],
@@ -77,7 +86,7 @@ return [
                 'heading' => 'O barato que sai caro',
                 'body' => [
                     'Corrigir um procedimento malfeito é mais difícil, mais demorado e mais desconfortável do que fazer certo da primeira vez. O ácido hialurônico ainda pode ser dissolvido com uma enzima. Já os preenchedores permanentes são muito mais complicados de corrigir, e às vezes não há como desfazer.',
-                    'Antes de decidir pelo preço, confira três coisas: o registro de quem vai aplicar no conselho profissional, se o produto tem registro na Anvisa e se a avaliação foi feita olhando para você, e não para uma tabela. Nada disso custa nada e evita boa parte dos problemas.',
+                    'Antes de decidir pelo preço, confira [três coisas](article:quem-nao-pode-fazer): o registro de quem vai aplicar no conselho profissional, se o produto tem registro na Anvisa e se a avaliação foi feita olhando para você, e não para uma tabela. Nada disso custa nada e evita boa parte dos problemas.',
                 ],
             ],
         ],
@@ -104,6 +113,7 @@ return [
         'title' => 'Quanto tempo dura a recuperação de cada procedimento?',
         'h1' => 'Quanto tempo dura a recuperação de cada procedimento?',
         'eyebrow' => 'Antes de agendar',
+        'topics' => ['antes-de-agendar', 'toxina-botulinica'],
         'meta_description' => 'Recuperação de toxina botulínica, preenchimento, bioestimulador, microagulhamento e fios de PDO: quanto tempo cada um pede antes de agendar.',
         'excerpt' => 'A pergunta que decide a data do seu agendamento: quantos dias reservar depois de cada procedimento.',
         'published' => '2026-08-29',
@@ -113,21 +123,21 @@ return [
             [
                 'heading' => 'Sai daqui e segue o dia',
                 'body' => [
-                    'Toxina botulínica e preenchimento labial são os procedimentos com a recuperação mais tranquila. Você sai do consultório e retoma o dia normalmente. É comum ficarem pontinhos vermelhos onde eu apliquei e algum inchaço nas primeiras 24 a 48 horas, principalmente nos lábios.',
+                    '[Toxina botulínica](procedure:toxina-botulinica) e [preenchimento labial](procedure:preenchimento-labial) são os procedimentos com a recuperação mais tranquila. Você sai do consultório e retoma o dia normalmente. É comum ficarem pontinhos vermelhos onde eu apliquei e algum inchaço nas primeiras 24 a 48 horas, principalmente nos lábios.',
                     'Os cuidados são simples: não massagear a região, evitar exercício intenso nas primeiras 24 horas e ficar longe de sauna e calor excessivo por um ou dois dias.',
                 ],
             ],
             [
                 'heading' => 'Alguns dias de cuidado',
                 'body' => [
-                    'O microagulhamento deixa a pele vermelha e sensível por alguns dias, às vezes até uma semana, parecido com uma queimadura de sol leve. Nesse período, protetor solar deixa de ser recomendação e vira condição para o resultado aparecer.',
-                    'O bioestimulador de colágeno costuma permitir que você volte à rotina na hora, mas pede atenção às massagens dos dias seguintes, que variam conforme o produto. Eu explico cada uma antes de você ir embora.',
+                    'O [microagulhamento](procedure:microagulhamento) deixa a pele vermelha e sensível por alguns dias, às vezes até uma semana, parecido com uma queimadura de sol leve. Nesse período, protetor solar deixa de ser recomendação e vira condição para o resultado aparecer.',
+                    'O [bioestimulador de colágeno](procedure:bioestimulador-de-colageno) costuma permitir que você volte à rotina na hora, mas pede atenção às massagens dos dias seguintes, que variam conforme o produto. Eu explico cada uma antes de você ir embora.',
                 ],
             ],
             [
                 'heading' => 'Uma a duas semanas',
                 'body' => [
-                    'Os fios de PDO são colocados sob a pele, por isso pedem mais cuidado. Inchaço e sensibilidade são esperados, e por uma a duas semanas eu peço para você evitar abrir muito a boca, massagear o rosto e frequentar sauna.',
+                    'Os [fios de PDO](procedure:fios-de-pdo) são colocados sob a pele, por isso pedem mais cuidado. Inchaço e sensibilidade são esperados, e por uma a duas semanas eu peço para você evitar abrir muito a boca, massagear o rosto e frequentar sauna.',
                 ],
             ],
             [
@@ -162,6 +172,7 @@ return [
         'title' => 'Quem não pode fazer harmonização facial? | Dra. Emily Beatriz',
         'h1' => 'Quem não pode fazer harmonização facial?',
         'eyebrow' => 'Antes de agendar',
+        'topics' => ['antes-de-agendar'],
         'meta_description' => 'Gestantes, algumas condições de saúde e expectativas irreais são motivos para adiar ou não indicar harmonização facial. Entenda quando a resposta é não.',
         'excerpt' => 'Uma boa avaliação inclui a possibilidade de eu dizer não. Conheça as situações em que o procedimento é adiado ou desaconselhado.',
         'published' => '2026-09-09',
@@ -174,7 +185,7 @@ return [
                     'Gravidez e amamentação são as situações mais frequentes. Não existe prova de que o procedimento faça mal ao bebê, mas também não existem estudos que garantam a segurança nesse período, e as próprias bulas dizem isso. Em saúde, na dúvida, a gente espera. Eu sempre peço para adiar.',
                     'Infecção ativa na área que vamos tratar, incluindo herpes, impede o procedimento até cicatrizar por completo. Aplicar em cima de uma infecção pode espalhá-la.',
                     'Doença autoimune em atividade, distúrbio de coagulação e uso de anticoagulante pedem uma conversa com o médico que acompanha você. Nem sempre a resposta é não, mas sempre é conversar antes.',
-                    'Alergia conhecida a algum componente do produto, como a lidocaína que vem em muitos preenchedores, contraindica aquele produto.',
+                    'Alergia conhecida a algum componente do produto, como a lidocaína que vem em muitos [preenchedores](procedure:preenchimento-facial), contraindica aquele produto.',
                 ],
             ],
             [
@@ -188,7 +199,7 @@ return [
                 'heading' => 'Quando a expectativa é o problema',
                 'body' => [
                     'Tem uma contraindicação que quase nunca aparece em lista: a expectativa que o procedimento não consegue atender. O exemplo mais comum é trazer a foto de outra pessoa e pedir aquele rosto. Estruturas diferentes dão resultados diferentes com o mesmo procedimento.',
-                    'Os lábios são o exemplo mais claro. O volume que fica lindo numa boca pode pesar em outra, e insistir em copiar a referência é o caminho mais curto para um resultado artificial. Por isso, às vezes, a minha avaliação honesta termina com a recomendação de não fazer.',
+                    'Os [lábios](procedure:preenchimento-labial) são o exemplo mais claro. O volume que fica lindo numa boca pode pesar em outra, e insistir em copiar a referência é o caminho mais curto para um resultado artificial. Por isso, às vezes, a minha avaliação honesta termina com a recomendação de não fazer.',
                     'Quem aceita qualquer pedido sem avaliar não está sendo gentil com você. Está passando para você um risco que cabia ao profissional avaliar.',
                 ],
             ],
@@ -218,6 +229,7 @@ return [
         'title' => 'Como se preparar para o seu procedimento | Dra. Emily Beatriz',
         'h1' => 'Como se preparar para o seu procedimento',
         'eyebrow' => 'Antes de agendar',
+        'topics' => ['antes-de-agendar'],
         'meta_description' => 'O que fazer antes de toxina botulínica, preenchimento ou bioestimulador em Belo Horizonte. Preparo simples que melhora o resultado e reduz hematomas.',
         'excerpt' => 'Alguns cuidados nos dias anteriores reduzem hematomas e melhoram o resultado. Nenhum deles é complicado.',
         'published' => '2026-09-19',
@@ -229,7 +241,7 @@ return [
                 'body' => [
                     'O mais importante é a informação. Faça uma lista de tudo o que você toma, incluindo suplementos e fitoterápicos, e traga para a consulta. Anti-inflamatório, ácido acetilsalicílico, anticoagulante, ômega 3, ginkgo biloba e vitamina E em dose alta aumentam a chance de ficar roxo.',
                     'Uma coisa eu peço sempre: nunca suspenda um remédio por conta própria para fazer um procedimento estético. Se algo precisar de ajuste, quem decide é o médico que receitou.',
-                    'Se você tem herpes labial de vez em quando e vai preencher os lábios, me avise. Existe uma prevenção específica para esse caso, e ela faz diferença.',
+                    'Se você tem herpes labial de vez em quando e vai [preencher os lábios](procedure:preenchimento-labial), me avise. Existe uma prevenção específica para esse caso, e ela faz diferença.',
                 ],
             ],
             [
@@ -244,7 +256,7 @@ return [
                 'body' => [
                     'Venha com o rosto limpo e sem maquiagem, ou reserve uns minutos para tirar aqui. A pele precisa estar livre para a antissepsia.',
                     'Coma antes e beba água. Chegar em jejum aumenta a chance de passar mal durante a aplicação, principalmente nos procedimentos mais longos.',
-                    'E reserve um tempo. Sair correndo para outro compromisso transforma um momento de cuidado em mais uma tarefa, e as orientações do pós merecem ser ouvidas com calma.',
+                    'E reserve um tempo. Sair correndo para outro compromisso transforma um momento de cuidado em mais uma tarefa, e as [orientações do pós](article:tempo-de-recuperacao) merecem ser ouvidas com calma.',
                 ],
             ],
             [
@@ -279,6 +291,7 @@ return [
         'title' => 'Harmonização facial depois dos 40 e 50 anos',
         'h1' => 'Harmonização facial depois dos 40 e 50 anos: o que muda',
         'eyebrow' => 'Pele madura',
+        'topics' => ['flacidez-e-firmeza', 'idade-e-perfil'],
         'meta_description' => 'Harmonização facial aos 40, 50 e na menopausa: flacidez, bigode chinês e perda de volume pedem outro plano. Veja o que faz sentido em cada fase.',
         'excerpt' => 'Depois dos 40, o rosto não pede mais volume: pede sustentação e qualidade de pele. Explico o que muda em cada fase.',
         'published' => '2026-10-13',
@@ -289,14 +302,14 @@ return [
                 'heading' => 'O que acontece com o rosto a partir dos 40',
                 'body' => [
                     'O envelhecimento do rosto não acontece só na pele. Por volta dos 40, três coisas se somam: o colágeno continua caindo, as bolsas de gordura do rosto diminuem e mudam de lugar, e até o osso da face perde um pouco de volume. O resultado é um rosto que vai perdendo sustentação.',
-                    'No espelho, isso aparece como bigode chinês mais marcado, maçãs do rosto mais baixas, contorno da mandíbula menos nítido, olheira mais funda e uma pele mais fina e sem viço.',
+                    'No espelho, isso aparece como [bigode chinês](procedure:bigode-chines) mais marcado, maçãs do rosto mais baixas, contorno da mandíbula menos nítido, [olheira](procedure:preenchimento-de-olheiras) mais funda e uma pele mais fina e sem viço.',
                 ],
             ],
             [
                 'heading' => 'Por que o plano é diferente do de quem tem 30',
                 'body' => [
                     'Aos 30, a harmonização costuma ser preventiva, com toxina para as primeiras rugas de expressão e pequenos ajustes de proporção. Depois dos 40, tentar resolver tudo com preenchimento é o caminho mais rápido para um rosto pesado e artificial, e é exatamente o que eu evito.',
-                    'O que funciona é tratar a estrutura. Repor volume nos pontos que sustentam o rosto, como as maçãs, ajuda a suavizar o bigode chinês, e o sulco recebe só um ajuste local quando precisa. O bioestimulador melhora a firmeza da pele aos poucos, ao longo de meses. E os fios de PDO reposicionam os tecidos quando a flacidez é leve ou moderada.',
+                    'O que funciona é tratar a estrutura. Repor volume nos pontos que sustentam o rosto, como as maçãs, ajuda a suavizar o bigode chinês, e o sulco recebe só um ajuste local quando precisa. O [bioestimulador](procedure:bioestimulador-de-colageno) melhora a firmeza da pele aos poucos, ao longo de meses. E os [fios de PDO](article:fios-de-sustentacao-antes-da-plastica) reposicionam os tecidos quando a flacidez é leve ou moderada.',
                 ],
             ],
             [
@@ -310,7 +323,7 @@ return [
             [
                 'heading' => 'E os homens?',
                 'body' => [
-                    'Os mesmos processos acontecem no rosto masculino, com algumas diferenças: a pele é mais espessa e a musculatura, mais forte. Os homens costumam buscar contorno de mandíbula, tratamento de olheira e papada e rugas da testa mais suaves, sempre preservando os traços masculinos.',
+                    'Os mesmos processos acontecem no rosto masculino, com algumas diferenças: a pele é mais espessa e a musculatura, mais forte. Os homens costumam buscar contorno de mandíbula, tratamento de olheira e papada e rugas da testa mais suaves, sempre preservando os [traços masculinos](article:harmonizacao-facial-em-homens).',
                 ],
             ],
         ],
@@ -340,6 +353,7 @@ return [
         'title' => 'Por que tantos homens fazem harmonização facial',
         'h1' => 'Por que tantos homens estão fazendo harmonização facial',
         'eyebrow' => 'Para homens',
+        'topics' => ['idade-e-perfil', 'toxina-botulinica'],
         'meta_description' => 'Homens famosos mostraram a harmonização facial nas últimas semanas. Veja o que os homens costumam buscar e como tratar o rosto sem perder os traços masculinos.',
         'excerpt' => 'Em poucos dias, um cantor, um ator e o governador eleito de Minas contaram que fizeram harmonização. Fica a dúvida que todo homem tem: dá para fazer sem parecer que fez?',
         'published' => '2026-10-13',
@@ -356,8 +370,8 @@ return [
             [
                 'heading' => 'O que os homens costumam me pedir',
                 'body' => [
-                    'Poucos homens chegam dizendo que querem ficar mais bonitos. O pedido vem de lado: os colegas perguntam se ele está doente, a esposa diz que ele parece bravo o tempo todo, a foto de perfil mostra alguém mais velho do que ele se sente. Por trás disso estão sinais bem conhecidos, como olheira funda, testa e região entre as sobrancelhas muito marcadas, papada e um contorno de mandíbula que foi perdendo definição.',
-                    'Muitos chegam por outro caminho, o bruxismo. Vêm tratar a dor e o desgaste dos dentes com toxina no masseter, e é ali, na cadeira de dentista, que começam a perguntar sobre a testa ou as olheiras.',
+                    'Poucos homens chegam dizendo que querem ficar mais bonitos. O pedido vem de lado: os colegas perguntam se ele está doente, a esposa diz que ele parece bravo o tempo todo, a foto de perfil mostra alguém mais velho do que ele se sente. Por trás disso estão sinais bem conhecidos, como [olheira](procedure:preenchimento-de-olheiras) funda, testa e região entre as sobrancelhas muito marcadas, papada e um [contorno de mandíbula](procedure:preenchimento-mandibula-e-queixo) que foi perdendo definição.',
+                    'Muitos chegam por outro caminho, o [bruxismo](procedure:toxina-botulinica-bruxismo). Vêm tratar a dor e o desgaste dos dentes com toxina no masseter, e é ali, na cadeira de dentista, que começam a perguntar sobre a testa ou as olheiras.',
                 ],
             ],
             [
@@ -370,7 +384,7 @@ return [
             [
                 'heading' => 'Vários procedimentos no mesmo dia',
                 'body' => [
-                    'Dá para combinar tratamentos numa sessão, e em alguns planos isso faz sentido. Só que o inchaço de cada um se soma e, se aparecer alguma reação, fica mais difícil saber o que a causou. Cada técnica também tem seu tempo: a toxina leva até duas semanas para fazer efeito, e o bioestimulador trabalha ao longo de meses.',
+                    'Dá para combinar tratamentos numa sessão, e em alguns planos isso faz sentido. Só que o inchaço de cada um se soma e, se aparecer alguma reação, fica mais difícil saber o que a causou. Cada técnica também tem seu tempo: a toxina leva até duas semanas para fazer efeito, e o [bioestimulador](procedure:bioestimulador-de-colageno) trabalha ao longo de meses.',
                     'Para quem vai fazer pela primeira vez, eu prefiro começar por uma ou duas áreas. Assim a gente vê como o rosto responde, ajusta no retorno e decide com calma o próximo passo.',
                 ],
             ],
@@ -406,6 +420,7 @@ return [
         'title' => 'Rosto de Ozempic: flacidez depois de emagrecer',
         'h1' => 'O que acontece com o rosto de quem emagrece com Ozempic ou Mounjaro',
         'eyebrow' => 'Emagrecimento',
+        'topics' => ['flacidez-e-firmeza'],
         'meta_description' => 'Rosto de Ozempic é a flacidez e a perda de volume depois de emagrecer rápido com canetas. Entenda por que acontece e o que dá para fazer, em Belo Horizonte.',
         'excerpt' => 'A balança desce, as roupas voltam a servir e o rosto parece mais cansado. Explico por que isso acontece e por que encher o rosto de volta não resolve.',
         'published' => '2026-10-22',
@@ -423,7 +438,7 @@ return [
                 'heading' => 'O que muda no rosto',
                 'body' => [
                     'O rosto tem pequenas bolsas de gordura que funcionam como almofadas. São elas que dão volume às maçãs do rosto, preenchem as têmporas e sustentam a pele ao redor dos olhos e da boca. Quando o corpo emagrece rápido, essas bolsas diminuem junto, e a pele, que levou anos se acomodando sobre elas, não tem tempo de se retrair.',
-                    'O resultado aparece em lugares previsíveis: têmporas fundas, maçãs do rosto achatadas, olheira mais marcada, bigode chinês mais profundo e pele sobrando na linha da mandíbula e no pescoço. Num levantamento com 400 profissionais, apresentado num congresso americano de cirurgia dermatológica em novembro de 2025, a queixa mais citada por quem usava essas canetas foi justamente a perda de volume no meio do rosto, seguida da flacidez na mandíbula.',
+                    'O resultado aparece em lugares previsíveis: têmporas fundas, maçãs do rosto achatadas, [olheira](procedure:preenchimento-de-olheiras) mais marcada, [bigode chinês](procedure:bigode-chines) mais profundo e pele sobrando na linha da mandíbula e no pescoço. Num levantamento com 400 profissionais, apresentado num congresso americano de cirurgia dermatológica em novembro de 2025, a queixa mais citada por quem usava essas canetas foi justamente a perda de volume no meio do rosto, seguida da flacidez na mandíbula.',
                     'A idade pesa. Aos 30, a pele ainda tem colágeno de sobra e costuma se readaptar melhor. Depois dos 45, a mesma perda de peso tende a deixar o rosto com aspecto mais cansado. A perda de massa muscular, comum quando se emagrece rápido, também contribui.',
                 ],
             ],
@@ -437,8 +452,8 @@ return [
             [
                 'heading' => 'O que eu costumo indicar',
                 'body' => [
-                    'O bioestimulador de colágeno costuma ser a base. Ele faz a própria pele produzir colágeno novo ao longo de alguns meses, e o rosto vai ganhando firmeza aos poucos. Em geral são de uma a três sessões, com algumas semanas de intervalo.',
-                    'O preenchimento com ácido hialurônico entra de forma pontual, nas têmporas e nas maçãs do rosto, que são os pontos que sustentam o terço médio. Devolver volume ali costuma suavizar também o bigode chinês e a olheira, e muitas vezes evita preencher cada sulco. Se a flacidez for maior, os fios de PDO ajudam a reposicionar os tecidos, e o microagulhamento melhora a textura da pele.',
+                    'O [bioestimulador de colágeno](procedure:bioestimulador-de-colageno) costuma ser a base. Ele faz a própria pele produzir colágeno novo ao longo de alguns meses, e o rosto vai ganhando firmeza aos poucos. Em geral são de uma a três sessões, com algumas semanas de intervalo.',
+                    'O [preenchimento com ácido hialurônico](procedure:preenchimento-facial) entra de forma pontual, nas têmporas e nas maçãs do rosto, que são os pontos que sustentam o terço médio. Devolver volume ali costuma suavizar também o bigode chinês e a olheira, e muitas vezes evita preencher cada sulco. Se a flacidez for maior, os [fios de PDO](article:fios-de-sustentacao-antes-da-plastica) ajudam a reposicionar os tecidos, e o [microagulhamento](procedure:microagulhamento) melhora a textura da pele.',
                     'Tem também um limite que eu faço questão de falar na avaliação. Quando sobra muita pele, principalmente no pescoço, nenhum tratamento sem cirurgia resolve por completo. Saber disso antes evita gastar com o tratamento errado.',
                 ],
             ],
@@ -473,6 +488,7 @@ return [
         'title' => 'Rosto perdeu firmeza? Talvez você não precise de plástica',
         'h1' => 'Seu rosto perdeu firmeza? Talvez você ainda não precise de uma plástica',
         'eyebrow' => 'Flacidez',
+        'topics' => ['flacidez-e-firmeza'],
         'meta_description' => 'Sentiu o rosto cair e pensou em plástica? Aos 40 e poucos, os fios de sustentação levantam o contorno sem cirurgia. Veja quando eles bastam.',
         'excerpt' => 'Sentiu o rosto cair e já está pensando em cirurgia? Antes disso, conheça os fios de sustentação, que levantam o contorno com anestesia local e voltam você à rotina em poucos dias.',
         'published' => '2026-10-30',
@@ -482,14 +498,14 @@ return [
             [
                 'heading' => 'Quando o espelho começa a incomodar',
                 'body' => [
-                    'Ouço muito esta frase de mulheres de 40 e poucos anos: "meu rosto caiu, acho que só plástica resolve". E eu entendo. A mandíbula perde a definição, as bochechas descem um pouco, o bigode chinês aparece mais, e a gente começa a se achar cansada mesmo depois de uma boa noite de sono.',
-                    'Só que, nessa idade, o que costuma estar acontecendo é uma flacidez leve a moderada. E para esse grau de flacidez existe um caminho bem menos invasivo do que a cirurgia.',
+                    'Ouço muito esta frase de mulheres de 40 e poucos anos: "meu rosto caiu, acho que só plástica resolve". E eu entendo. A mandíbula perde a definição, as bochechas descem um pouco, o [bigode chinês](procedure:bigode-chines) aparece mais, e a gente começa a se achar cansada mesmo depois de uma boa noite de sono.',
+                    'Só que, nessa idade, o que costuma estar acontecendo é uma [flacidez](procedure:flacidez-facial) leve a moderada. E para esse grau de flacidez existe um caminho bem menos invasivo do que a cirurgia.',
                 ],
             ],
             [
                 'heading' => 'O que os fios de sustentação fazem',
                 'body' => [
-                    'Os fios de PDO são feitos do mesmo material usado há décadas em suturas cirúrgicas, e o corpo absorve com o tempo. Eu coloco os fios sob a pele com agulhas finas, seguindo trajetos que puxam os tecidos para cima. Eles fazem duas coisas: levantam o contorno na hora e estimulam a produção de colágeno ao redor de cada fio nos meses seguintes.',
+                    'Os [fios de PDO](procedure:fios-de-pdo) são feitos do mesmo material usado há décadas em suturas cirúrgicas, e o corpo absorve com o tempo. Eu coloco os fios sob a pele com agulhas finas, seguindo trajetos que puxam os tecidos para cima. Eles fazem duas coisas: levantam o contorno na hora e estimulam a produção de colágeno ao redor de cada fio nos meses seguintes.',
                     'O resultado é um contorno de mandíbula mais nítido, as bochechas de volta ao lugar e uma expressão mais descansada. O seu rosto continua sendo o seu, só que com a sustentação de alguns anos atrás.',
                     'A Sociedade Americana de Cirurgiões Plásticos descreve a candidata ideal aos fios justamente assim: alguém entre o fim dos 30 e o começo dos 50 anos, com flacidez leve a moderada.',
                 ],
@@ -505,7 +521,7 @@ return [
             [
                 'heading' => 'Melhor ainda quando combinado',
                 'body' => [
-                    'Aos 45, a flacidez raramente vem sozinha. O rosto também perdeu um pouco de volume e a pele está mais fina. Por isso eu costumo combinar os fios com bioestimulador de colágeno, que melhora a firmeza da pele ao longo de meses, e, quando precisa, com um pouco de preenchimento nos pontos que sustentam o rosto, como as maçãs. Cada um faz a sua parte, e o conjunto entrega um resultado que só os fios não dariam.',
+                    '[Aos 45](article:harmonizacao-facial-depois-dos-40), a flacidez raramente vem sozinha. O rosto também perdeu um pouco de volume e a pele está mais fina. Por isso eu costumo combinar os fios com [bioestimulador de colágeno](procedure:bioestimulador-de-colageno), que melhora a firmeza da pele ao longo de meses, e, quando precisa, com um pouco de preenchimento nos pontos que sustentam o rosto, como as maçãs. Cada um faz a sua parte, e o conjunto entrega um resultado que só os fios não dariam.',
                 ],
             ],
             [
@@ -547,6 +563,7 @@ return [
         'title' => 'Harmonização facial aos 20 anos: o que faz sentido',
         'h1' => 'Harmonização facial aos 20 e poucos anos: o que faz sentido para você',
         'eyebrow' => 'Pele jovem',
+        'topics' => ['idade-e-perfil', 'toxina-botulinica'],
         'meta_description' => 'Harmonização facial aos 20 anos: toxina, bruxismo, lábios e cuidados de pele que fazem sentido na sua idade. Veja como planejar com segurança em BH.',
         'excerpt' => 'Começar a cuidar do rosto cedo pode ser ótimo, desde que seja com a indicação certa. Conto o que faz sentido aos 20 e poucos anos e o que eu evito.',
         'published' => '2026-11-02',
@@ -556,17 +573,17 @@ return [
             [
                 'heading' => 'Começar cedo pode ser uma ótima ideia',
                 'body' => [
-                    'Tenho recebido no consultório cada vez mais mulheres na faixa dos 20 e poucos anos, e acho isso ótimo. Quem começa a cuidar do rosto cedo, com orientação, chega aos 40 com muito menos para corrigir. E não sou só eu que noto: numa pesquisa feita nos Estados Unidos, mais da metade dos cirurgiões plásticos faciais disse estar atendendo mais gente abaixo dos 30, e boa parte busca resultados sutis e preventivos.',
+                    'Tenho recebido no consultório cada vez mais mulheres na faixa dos 20 e poucos anos, e acho isso ótimo. Quem começa a cuidar do rosto cedo, com orientação, chega [aos 40](article:harmonizacao-facial-depois-dos-40) com muito menos para corrigir. E não sou só eu que noto: numa pesquisa feita nos Estados Unidos, mais da metade dos cirurgiões plásticos faciais disse estar atendendo mais gente abaixo dos 30, e boa parte busca resultados sutis e preventivos.',
                     'O segredo é fazer o que o seu rosto pede agora, e não o que está em alta. Aos 25, a pele ainda produz colágeno com folga e o rosto tem volume de sobra, então o plano é bem diferente do de quem tem 45. É justamente por isso que vale passar por uma avaliação.',
                 ],
             ],
             [
                 'heading' => 'O que costuma fazer sentido nessa fase',
                 'body' => [
-                    'Toxina botulínica para as primeiras linhas. Se você já nota uma ruguinha na testa ou entre as sobrancelhas que continua lá mesmo com o rosto relaxado, a toxina em dose baixa ajuda a evitar que ela se aprofunde. Uma revisão científica de 2025 considerou essa estratégia promissora, e eu indico com critério, olhando a força de cada músculo.',
-                    'Bruxismo. Se você range ou aperta os dentes, principalmente à noite, a toxina no masseter alivia a dor, protege os dentes e ainda deixa o contorno do rosto mais suave. Como dentista, esse é um tratamento de que eu gosto muito, porque cuida da saúde e da estética ao mesmo tempo.',
-                    'Lábios. Um preenchimento labial sutil, que dá viço e define o contorno sem transformar a sua boca, combina muito bem com essa idade.',
-                    'Pele e marcas de acne. O microagulhamento melhora textura, poros e cicatrizes de acne, assim que a acne estiver controlada.',
+                    '[Toxina botulínica](procedure:toxina-botulinica) para as primeiras linhas. Se você já nota uma ruguinha na testa ou entre as sobrancelhas que continua lá mesmo com o rosto relaxado, a toxina em dose baixa ajuda a evitar que ela se aprofunde. Uma revisão científica de 2025 considerou essa estratégia promissora, e eu indico com critério, olhando a força de cada músculo.',
+                    '[Bruxismo](procedure:toxina-botulinica-bruxismo). Se você range ou aperta os dentes, principalmente à noite, a toxina no masseter alivia a dor, protege os dentes e ainda deixa o contorno do rosto mais suave. Como dentista, esse é um tratamento de que eu gosto muito, porque cuida da saúde e da estética ao mesmo tempo.',
+                    'Lábios. Um [preenchimento labial](procedure:preenchimento-labial) sutil, que dá viço e define o contorno sem transformar a sua boca, combina muito bem com essa idade.',
+                    'Pele e marcas de acne. O [microagulhamento](procedure:microagulhamento) melhora textura, poros e cicatrizes de acne, assim que a acne estiver controlada.',
                     'Proporção. Uma assimetria que incomoda ou um queixo pouco projetado podem ser equilibrados com pouco produto, desde que o plano respeite os seus traços.',
                 ],
             ],

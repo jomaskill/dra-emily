@@ -1,10 +1,13 @@
 @props([
     'article',
     'size' => 'md',
+    'linked' => false,
 ])
 
 {{--
     Linha de autoria: retrato, nome e, abaixo, tempo de leitura e data.
+    Com :linked="true", o nome leva à página da autora. Fica desligado nos cards,
+    que já são um link e não podem conter outro.
 --}}
 @php
     $published = \Illuminate\Support\Carbon::parse($article['published']);
@@ -24,7 +27,11 @@
     @else
         <div class="text-[0.95rem] leading-snug">
             <p class="text-ink font-medium">
-                Dra. Emily Beatriz
+                @if ($linked)
+                    <a href="{{ route('author') }}" rel="author" class="hover:text-clay transition-colors">Dra. Emily Beatriz</a>
+                @else
+                    Dra. Emily Beatriz
+                @endif
                 <span class="text-ink-soft font-normal">· CRO-{{ config('clinic.cro') }}</span>
             </p>
             <p class="text-ink-soft">

@@ -15,9 +15,15 @@ Route::get('/procedimentos/{slug}', [ProcedureController::class, 'show'])
 
 Route::get('/artigos', [ArticleController::class, 'index'])->name('articles.index');
 
+Route::get('/artigos/tema/{slug}', [ArticleController::class, 'topic'])
+    ->where('slug', implode('|', array_keys(config('topics'))))
+    ->name('articles.topic');
+
 Route::get('/artigos/{slug}', [ArticleController::class, 'show'])
     ->where('slug', implode('|', array_keys(config('articles'))))
     ->name('article');
+
+Route::get('/dra-emily-beatriz', [ArticleController::class, 'author'])->name('author');
 
 Route::get('/sitemap.xml', function () {
     return response()

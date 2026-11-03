@@ -13,31 +13,7 @@
     whatsapp-origin="pela página de artigos do site">
 
     <x-slot:schema>
-        <script type="application/ld+json">
-        {
-          "@@context": "https://schema.org",
-          "@@type": "CollectionPage",
-          "@@id": "{{ $canonical }}#webpage",
-          "url": "{{ $canonical }}",
-          "name": "Artigos — Dra. Emily Beatriz",
-          "inLanguage": "pt-BR",
-          "isPartOf": { "@@id": "{{ $siteUrl }}/#website" },
-          "about": { "@@id": "{{ $siteUrl }}/#clinic" },
-          "mainEntity": {
-            "@@type": "ItemList",
-            "itemListElement": [
-              @foreach ($articles as $slug => $article)
-              {
-                "@@type": "ListItem",
-                "position": {{ $loop->iteration }},
-                "url": "{{ $siteUrl }}/artigos/{{ $slug }}",
-                "name": {!! json_encode($article['h1'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!}
-              }@if (! $loop->last),@endif
-              @endforeach
-            ]
-          }
-        }
-        </script>
+        @include('partials.article-collection-schema', ['name' => 'Artigos — Dra. Emily Beatriz'])
     </x-slot:schema>
 
     @php
@@ -57,6 +33,7 @@
                 Quanto custa, quanto tempo leva para se recuperar, quem não pode fazer e como se preparar.
                 As dúvidas que aparecem antes da primeira conversa, respondidas com franqueza.
             </p>
+            <x-article.topics :topics="config('topics')" class="mt-9" />
         </header>
 
         {{-- ======================================================
@@ -91,29 +68,16 @@
         <section class="max-w-6xl mx-auto px-5 lg:px-8 pt-4 pb-24 lg:pb-32 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_17rem] gap-x-16 gap-y-14">
             <ul aria-label="Todos os artigos">
                 @foreach ($feed as $slug => $article)
-                    <li>
-                        <a href="{{ route('article', $slug) }}"
-                           class="group grid grid-cols-[minmax(0,1fr)_5.5rem] sm:grid-cols-[minmax(0,1fr)_10rem] gap-5 sm:gap-10 items-center py-9 border-b rule">
-                            <div>
-                                <x-article.byline :article="$article" size="sm" />
-                                <h2 class="font-display text-[clamp(1.35rem,1.1rem+0.9vw,1.75rem)] leading-[1.18] text-ink mt-3 group-hover:text-clay transition-colors duration-300 text-balance">
-                                    {{ $article['h1'] }}
-                                </h2>
-                                <p class="hidden sm:block font-serif text-ink-soft leading-relaxed mt-2 line-clamp-2">{{ $article['excerpt'] }}</p>
-                                <p class="text-sm text-clay mt-3">{{ $article['eyebrow'] }}</p>
-                            </div>
-                            <div class="aspect-square sm:aspect-[4/3] rounded-sm overflow-hidden">
-                                <x-article.cover :article="$article" class="w-full h-full transition-transform duration-700 ease-out-quint group-hover:scale-[1.04]" />
-                            </div>
-                        </a>
-                    </li>
+                    <x-article.row :slug="$slug" :article="$article" />
                 @endforeach
             </ul>
 
             <aside class="lg:pt-9" aria-label="Sobre a autora">
                 <div class="lg:sticky lg:top-28">
                     <x-article.avatar class="w-20 h-20" alt="Dra. Emily Beatriz" />
-                    <p class="font-display text-[1.5rem] leading-tight text-ink mt-5">Dra. Emily Beatriz</p>
+                    <p class="font-display text-[1.5rem] leading-tight text-ink mt-5">
+                        <a href="{{ route('author') }}" rel="author" class="hover:text-clay transition-colors">Dra. Emily Beatriz</a>
+                    </p>
                     <p class="text-sm text-ink-soft mt-1">Harmonização orofacial · CRO-{{ $cro }}</p>
                     <p class="text-ink-soft leading-relaxed mt-4">
                         Atende em Belo Horizonte com um princípio simples: o resultado tem que parecer você.
