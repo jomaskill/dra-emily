@@ -53,10 +53,10 @@
                         </span>
                         {{ $featured['eyebrow'] }}
                     </p>
-                    <h2 class="font-display text-[clamp(1.9rem,1.3rem+2vw,2.8rem)] leading-[1.1] text-ink mt-3 group-hover:text-clay transition-colors duration-300 text-balance">
+                    <h2 class="font-headline font-bold text-[1.75rem] md:text-[2.25rem] leading-[1.18] tracking-[-0.016em] text-ink mt-3 group-hover:text-clay transition-colors duration-300 text-balance">
                         {{ $featured['h1'] }}
                     </h2>
-                    <p class="font-serif text-ink-soft text-[1.1rem] leading-relaxed mt-4 max-w-[46ch]">{{ $featured['excerpt'] }}</p>
+                    <p class="font-headline text-ink-soft text-[1.1rem] leading-[1.45] mt-4 max-w-[46ch]">{{ $featured['excerpt'] }}</p>
                     <x-article.byline :article="$featured" class="mt-7" />
                 </div>
             </a>

@@ -19,6 +19,7 @@
     --font-display: var(--font-bodoni-moda, 'Bodoni Moda'), Georgia, serif;
     --font-sans: var(--font-figtree, 'Figtree'), ui-sans-serif, system-ui, sans-serif;
     --font-serif: var(--font-source-serif, 'Source Serif 4'), Georgia, serif;
+    --font-headline: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
     --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
 
@@ -119,20 +120,26 @@
     }
 
     /*
-     * Long-form reading column, in the spirit of an editorial blog: a text
-     * serif at a generous measure, Bodoni headings and an opening drop cap.
+     * Article typography, modelled on Medium: a neo-grotesque for titles,
+     * section headings and interface text, a text serif for the reading
+     * column. Medium sets Söhne, a licensed face, and falls back to
+     * Helvetica Neue, Helvetica and Arial; this stack is that fallback.
      */
+    .article-type {
+        font-family: var(--font-headline);
+    }
+
     .article-prose {
         font-family: var(--font-serif);
         font-size: 1.125rem;
-        line-height: 1.75;
+        line-height: 1.56;
         letter-spacing: -0.003em;
         color: var(--color-ink);
         font-optical-sizing: auto;
     }
 
     .article-prose p + p {
-        margin-top: 1.55em;
+        margin-top: 2em;
     }
 
     .article-prose a {
@@ -148,32 +155,36 @@
     }
 
     .article-prose h2 {
-        font-family: var(--font-display);
-        font-size: clamp(1.65rem, 1.2rem + 1.4vw, 2.05rem);
-        line-height: 1.18;
-        letter-spacing: -0.02em;
-        margin: 2.3em 0 0.65em;
+        font-family: var(--font-headline);
+        font-size: 1.25rem;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: -0.016em;
+        margin: 1.95em 0 0;
         scroll-margin-top: 6rem;
+    }
+
+    .article-prose h2 + p {
+        margin-top: 0.86em;
     }
 
     .article-prose section:first-child h2 {
         margin-top: 0;
     }
 
-    .article-prose .drop-cap::first-letter {
-        float: left;
-        font-family: var(--font-display);
-        font-size: 4.6em;
-        line-height: 0.82;
-        padding: 0.06em 0.1em 0 0;
-        color: var(--color-clay);
-        font-variation-settings: 'opsz' 96;
-    }
-
     @media (min-width: 768px) {
         .article-prose {
             font-size: 1.25rem;
-            line-height: 1.7;
+            line-height: 1.6;
+        }
+
+        .article-prose p + p {
+            margin-top: 1.9em;
+        }
+
+        .article-prose h2 {
+            font-size: 1.5rem;
+            line-height: 1.25;
         }
     }
 

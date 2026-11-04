@@ -76,17 +76,13 @@ it('points every procedure shortcut at a section on the page', function (string 
     }
 })->with($procedureSlugs);
 
-it('gives every article heading an anchor listed in the summary', function (string $slug) {
+it('gives every article heading an anchor without a summary list', function (string $slug) {
     $html = $this->get("/artigos/{$slug}")->assertOk()->getContent();
 
-    preg_match('#<nav aria-label="Neste artigo".*?</nav>#s', $html, $summary);
-    preg_match_all('#href="\#([a-z0-9-]+)"#', $summary[0], $anchors);
+    preg_match_all('#<h2 id="([a-z0-9-]+)">#', $html, $anchors);
 
-    expect($anchors[1])->toHaveCount(count(config("articles.{$slug}.sections")));
-
-    foreach ($anchors[1] as $anchor) {
-        expect($html)->toContain("<h2 id=\"{$anchor}\">");
-    }
+    expect($anchors[1])->toHaveCount(count(config("articles.{$slug}.sections")))
+        ->and($html)->not->toContain('aria-label="Neste artigo"');
 })->with($articleSlugs);
 
 it('leaves only the first frequently asked question open', function () {

@@ -11,10 +11,10 @@
        class="group grid grid-cols-[minmax(0,1fr)_5.5rem] sm:grid-cols-[minmax(0,1fr)_10rem] gap-5 sm:gap-10 items-center py-9 border-b rule">
         <div>
             <x-article.byline :article="$article" size="sm" />
-            <h2 class="font-display text-[clamp(1.35rem,1.1rem+0.9vw,1.75rem)] leading-[1.18] text-ink mt-3 group-hover:text-clay transition-colors duration-300 text-balance">
+            <h2 class="font-headline font-bold text-[1.25rem] md:text-[1.5rem] leading-[1.2] tracking-[-0.016em] text-ink mt-3 group-hover:text-clay transition-colors duration-300 text-balance">
                 {{ $article['h1'] }}
             </h2>
-            <p class="hidden sm:block font-serif text-ink-soft leading-relaxed mt-2 line-clamp-2">{{ $article['excerpt'] }}</p>
+            <p class="hidden sm:block font-headline text-ink-soft leading-[1.5] mt-2 line-clamp-2">{{ $article['excerpt'] }}</p>
             <p class="text-sm text-clay mt-3">{{ $article['eyebrow'] }}</p>
         </div>
         <div class="aspect-square sm:aspect-[4/3] rounded-sm overflow-hidden">

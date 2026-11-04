@@ -48,7 +48,7 @@
     <div class="reading-progress fixed top-18 inset-x-0 z-40 h-0.5 bg-clay" aria-hidden="true"></div>
 
     <main class="pt-18">
-        <article>
+        <article class="article-type">
             {{-- ======================================================
                  HEADER
             ====================================================== --}}
@@ -63,11 +63,11 @@
 
                 <p class="text-sm font-medium text-clay mb-5">{{ $article['eyebrow'] }}</p>
 
-                <h1 class="font-display text-[clamp(2.3rem,1.6rem+3.2vw,3.5rem)] leading-[1.08] text-ink text-balance">
+                <h1 class="font-headline font-bold text-[2rem] leading-[1.19] md:text-[2.625rem] md:leading-[1.24] tracking-[-0.011em] text-ink text-balance">
                     {{ $article['h1'] }}
                 </h1>
 
-                <p class="font-serif text-[1.25rem] md:text-[1.4rem] leading-snug text-ink-soft mt-5 text-pretty">
+                <p class="font-headline text-[1.25rem] md:text-[1.375rem] leading-[1.27] text-ink-soft mt-4 text-pretty">
                     {{ $article['excerpt'] }}
                 </p>
 
@@ -125,28 +125,17 @@
                 {{-- Direct answer: the passage engines extract --}}
                 <section id="resposta" class="border-l-[3px] border-clay pl-5 md:pl-7 mb-14">
                     <p class="text-xs font-semibold tracking-[0.14em] uppercase text-clay mb-3">Resposta rápida</p>
-                    <p class="font-serif italic text-[1.2rem] md:text-[1.35rem] leading-[1.6] text-ink">
+                    <p class="font-serif italic text-[1.125rem] md:text-[1.25rem] leading-[1.6] text-ink">
                         {{ $article['answer'] }}
                     </p>
                 </section>
-
-                <nav aria-label="Neste artigo" class="mb-14">
-                    <p class="text-sm text-ink-soft mb-3">Neste artigo</p>
-                    <ul class="space-y-2">
-                        @foreach ($article['sections'] as $section)
-                            <li>
-                                <a href="#{{ \Illuminate\Support\Str::slug($section['heading']) }}" class="text-ink hover:text-clay transition-colors">{{ $section['heading'] }}</a>
-                            </li>
-                        @endforeach
-                    </ul>
-                </nav>
 
                 <div class="article-prose">
                     @foreach ($article['sections'] as $section)
                         <section>
                             <h2 id="{{ \Illuminate\Support\Str::slug($section['heading']) }}">{{ $section['heading'] }}</h2>
                             @foreach ($section['body'] as $paragraph)
-                                <p @class(['drop-cap' => $loop->parent->first && $loop->first])>{{ \App\Support\ArticleText::render($paragraph) }}</p>
+                                <p>{{ \App\Support\ArticleText::render($paragraph) }}</p>
                             @endforeach
                         </section>
                     @endforeach
@@ -155,8 +144,8 @@
                 {{-- Takeaways --}}
                 @if (! empty($article['takeaways']))
                     <aside class="mt-16 rounded-sm bg-sand/50 px-6 md:px-9 py-8 md:py-10" aria-labelledby="em-resumo">
-                        <h2 id="em-resumo" class="font-display text-[1.75rem] leading-tight text-ink mb-5">Em resumo</h2>
-                        <ul class="space-y-3.5 font-serif text-[1.075rem] md:text-[1.15rem] leading-relaxed text-ink">
+                        <h2 id="em-resumo" class="font-headline font-semibold text-[1.25rem] md:text-[1.5rem] leading-tight tracking-[-0.016em] text-ink mb-5">Em resumo</h2>
+                        <ul class="space-y-3.5 font-serif text-[1.125rem] md:text-[1.25rem] leading-[1.6] text-ink">
                             @foreach ($article['takeaways'] as $takeaway)
                                 <li class="flex gap-4">
                                     <span class="w-1.5 h-1.5 mt-[0.7em] rounded-full bg-clay shrink-0" aria-hidden="true"></span>
@@ -169,10 +158,10 @@
 
                 {{-- FAQ --}}
                 <section id="faq" class="mt-20">
-                    <h2 class="font-display text-[clamp(1.9rem,1.4rem+1.6vw,2.4rem)] leading-tight text-ink mb-6">
-                        Perguntas <em class="text-clay">frequentes</em>
+                    <h2 class="font-headline font-semibold text-[1.25rem] md:text-[1.5rem] leading-tight tracking-[-0.016em] text-ink mb-6">
+                        Perguntas frequentes
                     </h2>
-                    <x-faq-list :items="$article['faq']" />
+                    <x-faq-list :items="$article['faq']" question-class="font-headline font-semibold text-[1.125rem] md:text-[1.25rem] tracking-[-0.011em]" />
                 </section>
 
                 {{-- Sources --}}
@@ -217,7 +206,7 @@
                     <x-article.avatar class="w-18 h-18" alt="Dra. Emily Beatriz" />
                     <div>
                         <p class="text-sm text-ink-soft">Escrito por</p>
-                        <p class="font-display text-[1.6rem] leading-tight text-ink mt-0.5">
+                        <p class="font-headline font-medium text-[1.5rem] leading-tight tracking-[-0.011em] text-ink mt-0.5">
                             <a href="{{ route('author') }}" rel="author" class="hover:text-clay transition-colors">Dra. Emily Beatriz</a>
                         </p>
                         <p class="text-sm text-ink-soft mt-1">Cirurgiã-dentista, harmonização orofacial · CRO-{{ $cro }}</p>
@@ -238,9 +227,9 @@
         ====================================================== --}}
         @if ($moreArticles->isNotEmpty())
             <section class="bg-sand/45" aria-labelledby="continue-lendo">
-                <div class="max-w-6xl mx-auto px-5 lg:px-8 py-20 lg:py-24">
+                <div class="article-type max-w-6xl mx-auto px-5 lg:px-8 py-20 lg:py-24">
                     <div class="flex items-baseline justify-between gap-6 mb-10">
-                        <h2 id="continue-lendo" class="font-display text-[clamp(1.9rem,1.4rem+1.6vw,2.4rem)] leading-tight text-ink">Continue lendo</h2>
+                        <h2 id="continue-lendo" class="font-headline font-semibold text-[1.25rem] md:text-[1.5rem] leading-tight tracking-[-0.016em] text-ink">Continue lendo</h2>
                         <a href="{{ route('articles.index') }}" class="text-sm text-ink-soft hover:text-clay transition-colors shrink-0">Ver todos →</a>
                     </div>
                     <ul class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12">
@@ -250,10 +239,10 @@
                                     <div class="aspect-[16/10] rounded-sm overflow-hidden">
                                         <x-article.cover :article="$more" class="w-full h-full transition-transform duration-700 ease-out-quint group-hover:scale-[1.03]" />
                                     </div>
-                                    <h3 class="font-display text-[1.45rem] leading-[1.2] text-ink mt-5 group-hover:text-clay transition-colors duration-300 text-balance">
+                                    <h3 class="font-headline font-bold text-[1.25rem] leading-[1.2] tracking-[-0.016em] text-ink mt-5 group-hover:text-clay transition-colors duration-300 text-balance">
                                         {{ $more['h1'] }}
                                     </h3>
-                                    <p class="font-serif text-ink-soft leading-relaxed mt-2 line-clamp-2">{{ $more['excerpt'] }}</p>
+                                    <p class="text-ink-soft leading-[1.5] mt-2 line-clamp-2">{{ $more['excerpt'] }}</p>
                                     <x-article.byline :article="$more" size="sm" class="mt-auto pt-4" />
                                 </a>
                             </li>
