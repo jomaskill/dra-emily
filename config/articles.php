@@ -631,4 +631,75 @@ return [
         ],
     ],
 
+    'harmonizacao-facial-antes-das-festas' => [
+        'title' => 'Harmonização facial antes das festas: o que dá tempo de fazer',
+        'h1' => 'Ainda dá tempo de cuidar do rosto até as festas? Veja o que fazer em novembro e em dezembro',
+        'eyebrow' => 'Fim de ano',
+        'topics' => ['antes-de-agendar'],
+        'meta_description' => 'Natal, Réveillon e verão: o que começar em novembro e o que deixar para dezembro entre toxina, preenchimento, bioestimulador e fios. Planeje em BH.',
+        'excerpt' => 'Bioestimulador e fios pedem semanas, toxina e preenchimento pedem folga antes do evento. Conto como eu organizo o calendário até as festas.',
+        'published' => '2026-11-03',
+        'updated' => '2026-11-03',
+        'answer' => 'Dá tempo, desde que cada procedimento entre no momento certo. O bioestimulador, os fios de PDO e o microagulhamento precisam de semanas para mostrar resultado, então o ideal é começar em novembro. A toxina botulínica e o preenchimento podem ficar para dezembro, com cerca de duas semanas de folga antes do evento. Na avaliação, eu monto esse calendário com as suas datas.',
+        'sections' => [
+            [
+                'heading' => 'Novembro é o mês de começar',
+                'body' => [
+                    'Do começo de novembro até o Natal são pouco mais de sete semanas. Até o Réveillon, umas oito. Parece pouco, mas para a maior parte dos procedimentos faciais é um prazo confortável, desde que cada um entre no momento certo.',
+                    'A lógica que eu uso é simples. Alguns tratamentos trabalham devagar, porque dependem de o seu corpo produzir colágeno, e levam semanas para mostrar o que fazem. Outros dão resultado rápido, mas pedem uns dias de folga antes de uma data importante, para qualquer inchaço sumir. Os primeiros eu coloco agora. Os outros, mais perto da festa.',
+                ],
+            ],
+            [
+                'heading' => 'O que eu gosto de começar agora',
+                'body' => [
+                    'O [bioestimulador de colágeno](procedure:bioestimulador-de-colageno) é o melhor exemplo. Ele não preenche nada na hora: estimula a sua pele a produzir colágeno novo, e isso leva semanas. Um estudo publicado no Canadian Journal of Plastic Surgery lembra que a resposta pode demorar várias semanas para aparecer e recomenda pelo menos quatro semanas entre as duas primeiras sessões. Começando no início de novembro, a segunda sessão cai em dezembro e a pele vai ganhando firmeza ao longo do verão.',
+                    'Os [fios de PDO](procedure:fios-de-pdo) também combinam com novembro. A sustentação melhora com o colágeno que eles estimulam, e o rosto precisa de alguns dias para desinchar. Uma revisão publicada em 2025 na revista Life orienta evitar sauna, piscina e bebida alcoólica por cerca de uma semana depois, o que pesa bastante em dezembro. Por isso eu prefiro colocar os fios com pelo menos duas semanas de folga antes de qualquer festa.',
+                    'O [microagulhamento](procedure:microagulhamento) é feito em sessões a cada 30 dias, mais ou menos. Segundo a Academia Americana de Dermatologia, a melhora começa a aparecer em algumas semanas, e o resultado completo vem em alguns meses. Começar agora dá tempo de fazer duas sessões antes do fim do ano.',
+                ],
+            ],
+            [
+                'heading' => 'O que pode ficar para dezembro',
+                'body' => [
+                    'A [toxina botulínica](procedure:toxina-botulinica) começa a agir entre 3 e 15 dias depois da aplicação. Para o Natal, eu gosto de aplicar até por volta do dia 10 de dezembro. Para o Réveillon, até o meio do mês. E tem uma vantagem: como o efeito dura em média de 4 a 6 meses, a aplicação de dezembro acompanha você pelo verão.',
+                    'O [preenchimento labial](procedure:preenchimento-labial) e o [preenchimento facial](procedure:preenchimento-facial) mostram o resultado na hora, mas a boca e o rosto podem ficar um pouco inchados nos primeiros dias. A Academia Americana de Dermatologia diz que esses efeitos costumam passar em 7 a 14 dias, muitas vezes antes. Então a regra se parece com a da toxina: umas duas semanas antes da data que importa para você.',
+                    'Quem quer combinar tratamentos segue a mesma ordem, com o bioestimulador agora e a toxina em dezembro. Os cuidados de cada procedimento nos dias seguintes estão no [artigo sobre recuperação](article:tempo-de-recuperacao).',
+                ],
+            ],
+            [
+                'heading' => 'Sol, piscina e viagem de fim de ano',
+                'body' => [
+                    'Dezembro em Belo Horizonte é quente, e muita gente viaja para a praia nas festas. Isso entra no planejamento. Numa reportagem do Metrópoles sobre procedimentos no fim do ano, um dermatologista lembra que o preenchimento pede pelo menos três dias longe do sol direto, e que calor, bebida alcoólica, piscina e sauna podem aumentar o inchaço nesse período.',
+                    'Depois do microagulhamento, a pele fica mais sensível e o protetor solar passa a fazer parte do tratamento. Por isso eu organizo as sessões para que nenhuma caia logo antes de uma viagem de praia.',
+                    'E o protetor solar de todo dia, reaplicado na praia, vale para todo mundo, com ou sem procedimento. É ele que ajuda a preservar o colágeno que a gente trabalhou para construir.',
+                ],
+            ],
+            [
+                'heading' => 'Como eu monto o seu calendário',
+                'body' => [
+                    'Na avaliação, me conte as datas que importam para você: a confraternização do trabalho, a formatura, a ceia, a viagem. Com elas em mãos, eu olho o seu rosto e a sua pele e distribuo cada procedimento no tempo certo, para que nenhuma etapa caia em cima de um compromisso.',
+                    'Se der para vir ainda em novembro, melhor, porque sobra espaço para os tratamentos que trabalham devagar. E se você só conseguir em dezembro, ainda dá para planejar a toxina e o preenchimento com calma. Para chegar bem preparada na consulta, veja [como se preparar](article:como-se-preparar).',
+                ],
+            ],
+        ],
+        'takeaways' => [
+            'Bioestimulador, fios de PDO e microagulhamento pedem semanas, então o ideal é começar em novembro.',
+            'Toxina botulínica e preenchimento podem ficar para dezembro, com cerca de duas semanas de folga antes do evento.',
+            'Depois do preenchimento e dos fios, evite sol direto, piscina e sauna nos primeiros dias.',
+            'Leve as datas das suas festas e viagens para a avaliação.',
+        ],
+        'faq' => [
+            ['q' => 'Posso fazer toxina botulínica uma semana antes do Natal?', 'a' => 'Pode, mas o efeito talvez ainda não esteja completo, porque ele leva de 3 a 15 dias para aparecer. Por isso eu prefiro aplicar com cerca de duas semanas de folga antes de uma data importante.'],
+            ['q' => 'O bioestimulador feito em novembro já aparece nas festas?', 'a' => 'O bioestimulador trabalha aos poucos. As primeiras mudanças costumam surgir em algumas semanas, e o melhor resultado vem depois de alguns meses, conforme o colágeno é produzido. Começar em novembro deixa a pele ganhando firmeza ao longo do verão.'],
+            ['q' => 'Posso ir à praia depois de um procedimento?', 'a' => 'Depende do procedimento. Depois do preenchimento, eu oriento alguns dias longe do sol direto. Depois dos fios de PDO, cerca de uma semana sem piscina e sauna. Protetor solar, sempre. Na avaliação eu ajusto as orientações à sua viagem.'],
+        ],
+        'related' => ['bioestimulador-de-colageno', 'fios-de-pdo', 'microagulhamento', 'preenchimento-facial'],
+        'sources' => [
+            ['publisher' => 'Metrópoles', 'title' => '6 procedimentos estéticos para evitar no fim do ano, segundo dermato', 'url' => 'https://www.metropoles.com/colunas/claudia-meireles/6-procedimentos-esteticos-para-evitar-no-fim-do-ano-segundo-dermato', 'year' => '2025'],
+            ['publisher' => 'Canadian Journal of Plastic Surgery', 'title' => 'Optimizing injectable poly-L-lactic acid administration for soft tissue augmentation: The rationale for three treatment sessions', 'url' => 'https://pmc.ncbi.nlm.nih.gov/articles/PMC3269336/', 'year' => '2011'],
+            ['publisher' => 'Life (Basel)', 'title' => 'Pre- and Post-Procedural Considerations and Thread Types for Thread Lifting', 'url' => 'https://pmc.ncbi.nlm.nih.gov/articles/PMC11766856/', 'year' => '2025'],
+            ['publisher' => 'American Academy of Dermatology', 'title' => 'Fillers: FAQs', 'url' => 'https://www.aad.org/cosmetic/wrinkles/fillers-faqs', 'year' => 's.d.'],
+            ['publisher' => 'American Academy of Dermatology', 'title' => 'Microneedling can fade scars, uneven skin tone, and more', 'url' => 'https://www.aad.org/public/cosmetic/scars-stretch-marks/microneedling-fade-scars', 'year' => '2023'],
+        ],
+    ],
+
 ];
