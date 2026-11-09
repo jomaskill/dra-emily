@@ -702,4 +702,75 @@ return [
         ],
     ],
 
+    'pdrn-dna-de-salmao-na-pele' => [
+        'title' => 'PDRN, o DNA de salmão: o que faz na pele | Dra. Emily Beatriz',
+        'h1' => 'PDRN, o DNA de salmão: o que ele faz pela sua pele e quando vale ir além do sérum',
+        'eyebrow' => 'Tendência de pele',
+        'topics' => ['flacidez-e-firmeza'],
+        'meta_description' => 'O PDRN, o DNA de salmão, virou febre no skincare. Veja o que os estudos mostram, o que é permitido no Brasil e quando ir além do sérum, em BH.',
+        'excerpt' => 'O sérum de DNA de salmão tomou conta das prateleiras. Conto o que os estudos mostram, por que no Brasil ele é de uso externo e o que eu indico quando a queixa é viço ou firmeza.',
+        'published' => '2026-11-09',
+        'updated' => '2026-11-09',
+        'answer' => 'O PDRN é um DNA purificado de salmão ou truta, estudado pela capacidade de ajudar a pele a se reparar. Os estudos de rejuvenescimento levaram o ativo até a derme com agulhas e ainda são pequenos. No Brasil, os produtos com PDRN são registrados como cosméticos de uso externo. Em casa, o sérum pode complementar a rotina. Para viço e firmeza, eu avalio microagulhamento ou bioestimulador.',
+        'sections' => [
+            [
+                'heading' => 'O que é esse tal de DNA de salmão',
+                'body' => [
+                    'O nome assusta um pouco, mas a ideia é simples. PDRN é a sigla de polidesoxirribonucleotídeo, um conjunto de fragmentos de DNA extraídos de células reprodutivas de truta ou de salmão e purificados até sobrar mais de 95% da substância pura. Essa purificação existe para diminuir o risco de reação do organismo.',
+                    'Ele chegou ao Brasil pela onda do skincare coreano e hoje aparece em sérum, creme, máscara e até gel de limpeza. Um parecer do Conselho Regional de Medicina do Paraná, de 2025, encontrou 22 produtos com PDRN regularizados na Anvisa, todos como cosméticos.',
+                    'O interesse tem fundamento. Em laboratório e em estudos clínicos, o PDRN estimula os fibroblastos, as células que produzem colágeno, e ajuda na reparação dos tecidos. A pergunta que eu faço quando um ativo vira moda é outra: o quanto disso chega à sua pele do jeito que ele está sendo vendido?',
+                ],
+            ],
+            [
+                'heading' => 'O que os estudos mostram até agora',
+                'body' => [
+                    'Uma revisão publicada em 2026 na revista Cureus reuniu os ensaios clínicos randomizados com PDRN e polinucleotídeos, que são parentes próximos dele. Foram sete estudos, com 183 pessoas no total. Os resultados mais consistentes apareceram na cicatrização de feridas. No rejuvenescimento, houve melhora de rugas e satisfação das participantes, com efeitos menores.',
+                    'Tem um detalhe que pouca gente comenta. Nos quatro estudos de rejuvenescimento, o ativo chegou à pele por agulha, injeção ou microagulhamento. Nenhum deles testou um sérum passado em casa sozinho. Faz sentido, porque os fibroblastos ficam na derme, abaixo da superfície que o creme alcança.',
+                    'Outra revisão, publicada no Journal of Cosmetic Dermatology, analisou nove estudos com 219 pessoas e viu melhora de rugas, textura e elasticidade, com efeitos colaterais leves e passageiros. Os próprios autores classificaram a qualidade das pesquisas como baixa a moderada e pediram estudos maiores. Eu gosto do ativo, e faço questão de ser honesta sobre o tamanho da prova que existe hoje.',
+                ],
+            ],
+            [
+                'heading' => 'O que é permitido aqui no Brasil',
+                'body' => [
+                    'Como todos os produtos com PDRN estão registrados como cosméticos, o uso permitido é o externo, na superfície da pele. O parecer do Conselho Regional de Medicina do Paraná diz com todas as letras que o uso injetável não é permitido e que o PDRN injetável ainda precisa de mais evidência científica.',
+                    'A Anvisa também já publicou uma nota técnica, em 2023, explicando que registrar como cosmético um produto feito para tratamento estético invasivo é irregular. Por isso eu não injeto PDRN no consultório. No rosto, eu trabalho com produtos registrados para o uso que eu faço, e isso faz parte de cuidar de você.',
+                ],
+            ],
+            [
+                'heading' => 'Quando eu indico ir além do sérum',
+                'body' => [
+                    'Se a sua queixa é textura, poros, manchinhas e aquele viço que foi embora, o [microagulhamento](procedure:microagulhamento) é o tratamento que eu costumo indicar. As micropunturas fazem a própria pele produzir colágeno e elastina. São de 3 a 6 sessões, com intervalo de uns 30 dias, e a pele fica avermelhada por 1 a 3 dias. Segundo a Academia Americana de Dermatologia, a melhora começa a aparecer em algumas semanas e o resultado completo vem em alguns meses.',
+                    'Quando o incômodo é a pele perdendo firmeza, o caminho costuma ser o [bioestimulador de colágeno](procedure:bioestimulador-de-colageno). É um injetável registrado para esse fim, que faz o seu corpo produzir colágeno novo aos poucos. Em geral são de 1 a 3 sessões, e o efeito pode durar até 2 anos.',
+                    'Muitas vezes os dois entram no mesmo plano, cada um no seu tempo. Os cuidados dos dias seguintes estão no [artigo sobre recuperação](article:tempo-de-recuperacao).',
+                ],
+            ],
+            [
+                'heading' => 'Traga o seu sérum para a avaliação',
+                'body' => [
+                    'Se você já usa um sérum com PDRN e gosta dele, pode continuar. Ele entra como parte da rotina de casa, junto com o protetor solar, que continua sendo o cuidado que mais protege o colágeno que você tem.',
+                    'Na avaliação, me mostre os produtos que você usa. Eu olho a sua pele, entendo o que te incomoda e monto um plano que junta o cuidado de casa com o que só o consultório consegue fazer. Antes disso, se quiser, dê uma olhada em [como se preparar](article:como-se-preparar).',
+                ],
+            ],
+        ],
+        'takeaways' => [
+            'PDRN é um DNA purificado de salmão ou truta, estudado pela ação na reparação da pele.',
+            'Os estudos de rejuvenescimento levaram o ativo à derme com agulhas e ainda são pequenos.',
+            'No Brasil, os produtos com PDRN são cosméticos de uso externo, e injetar não é permitido.',
+            'Para viço, eu indico microagulhamento. Para firmeza, bioestimulador de colágeno.',
+        ],
+        'faq' => [
+            ['q' => 'O sérum com PDRN funciona?', 'a' => 'Ele pode complementar a sua rotina, mas os estudos de rejuvenescimento que existem levaram o PDRN até a derme com agulhas, e não testaram o sérum sozinho em casa. Por isso eu trato o sérum como cuidado diário, e não como substituto de um tratamento.'],
+            ['q' => 'Posso fazer injeção de PDRN em BH?', 'a' => 'Hoje os produtos com PDRN estão registrados na Anvisa como cosméticos, que são de uso externo. O uso injetável não é permitido, e por isso eu não faço. Para estimular colágeno com agulha, eu uso tratamentos registrados para isso.'],
+            ['q' => 'Microagulhamento e bioestimulador fazem a mesma coisa que o PDRN?', 'a' => 'Os três têm a ver com colágeno, mas agem de jeitos diferentes. O microagulhamento melhora textura, poros e viço. O bioestimulador trabalha a firmeza. Na avaliação eu vejo qual faz sentido para a sua pele.'],
+        ],
+        'related' => ['microagulhamento', 'bioestimulador-de-colageno', 'flacidez-facial'],
+        'sources' => [
+            ['publisher' => 'Cureus', 'title' => 'Polynucleotides and Polydeoxyribonucleotides for Skin Rejuvenation, Postoperative Scar Prevention, and Wound Healing: A Systematic Review of Randomized Clinical Trials', 'url' => 'https://assets.cureus.com/uploads/review_article/pdf/512241/20260710-252748-uc019b.pdf', 'year' => '2026'],
+            ['publisher' => 'Journal of Cosmetic Dermatology', 'title' => 'The Effectiveness of Polynucleotides in Esthetic Medicine: A Systematic Review', 'url' => 'https://pmc.ncbi.nlm.nih.gov/articles/PMC11845969/', 'year' => '2024'],
+            ['publisher' => 'Conselho Regional de Medicina do Paraná', 'title' => 'Parecer n.º 2936/2025: utilização de PDRN (polidesoxirribonucleotídeo)', 'url' => 'https://sistemas.cfm.org.br/normas/arquivos/pareceres/PR/2025/2936_2025.pdf', 'year' => '2025'],
+            ['publisher' => 'Anvisa', 'title' => 'Nota Técnica n.º 33/2023/SEI/GHCOS/DIRE3/ANVISA', 'url' => 'https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/cosmeticos/notas-tecnicas/sei_2537871_nota_tecnica_33.pdf', 'year' => '2023'],
+            ['publisher' => 'American Academy of Dermatology', 'title' => 'Microneedling can fade scars, uneven skin tone, and more', 'url' => 'https://www.aad.org/public/cosmetic/scars-stretch-marks/microneedling-fade-scars', 'year' => '2023'],
+        ],
+    ],
+
 ];
