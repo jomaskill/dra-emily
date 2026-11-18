@@ -773,4 +773,74 @@ return [
         ],
     ],
 
+    'rinomodelacao-nariz-e-queixo' => [
+        'title' => 'Rinomodelação e queixo em BH | Dra. Emily Beatriz',
+        'h1' => 'Seu nariz incomoda de perfil? Às vezes o equilíbrio está no queixo',
+        'eyebrow' => 'Perfil do rosto',
+        'topics' => ['idade-e-perfil'],
+        'meta_description' => 'Por que o nariz parece maior de perfil e como a rinomodelação e o queixo equilibram o rosto com ácido hialurônico. Entenda com a Dra. Emily, em BH.',
+        'excerpt' => 'O nariz que incomoda nas fotos de lado nem sempre é o problema. Explico como nariz e queixo são vistos em conjunto e como eu planejo os dois para equilibrar o seu perfil.',
+        'published' => '2026-11-18',
+        'updated' => '2026-11-18',
+        'answer' => 'Muitas vezes o nariz parece maior de perfil porque o queixo está um pouco recuado. Os dois são lidos em conjunto, e estudos mostram que um nariz com o dorso alinhado e a ponta bem apoiada tende a parecer menor, mesmo ganhando volume. Por isso, na rinomodelação, eu avalio o perfil inteiro e, quando faz sentido, incluo o queixo no mesmo plano com ácido hialurônico.',
+        'sections' => [
+            [
+                'heading' => 'Por que o nariz chama atenção nas fotos de perfil',
+                'body' => [
+                    'Ouço muito esta queixa: de frente, o nariz não incomoda, mas na foto de lado ele parece maior do que deveria. Antes de pensar em mexer no nariz, eu olho o perfil inteiro, da testa até o pescoço, porque quem vê o seu rosto não analisa o nariz sozinho.',
+                    'Um estudo publicado no Korean Journal of Orthodontics pediu a 42 estudantes que avaliassem fotos de perfil de 38 pessoas. O quanto o nariz parecia projetado dependeu muito do que estava em volta dele: a projeção dos lábios, o ângulo entre o nariz e o lábio de cima e a curva entre o lábio de baixo e o queixo. Quando o queixo fica um pouco para trás, essa curva muda, e o nariz tende a ganhar destaque sem ter crescido nada.',
+                ],
+            ],
+            [
+                'heading' => 'Quando somar volume deixa o nariz com cara de menor',
+                'body' => [
+                    'A [rinomodelação](procedure:rinomodelacao-e-refinamento-facial) usa ácido hialurônico para disfarçar pequenas irregularidades do dorso e dar mais apoio à ponta. Ela acrescenta volume, então o nariz não diminui de verdade. Mesmo assim, ele costuma parecer menor.',
+                    'Um trabalho publicado na Revista Brasileira de Cirurgia Plástica analisou 116 casos de rinomodelação com ácido hialurônico feitos em Fortaleza. Observadores que não sabiam o objetivo da pesquisa compararam as fotos de perfil de antes e depois. Em 79% dos casos, eles enxergaram um nariz menor.',
+                    'A explicação está na linha do perfil. Quando o dorso fica mais reto e a ponta ganha sustentação, a giba deixa de roubar a atenção. Um estudo anterior da mesma revista viu o mesmo efeito: a área do nariz aumentou um pouco, e quem olhava percebia o nariz menor.',
+                ],
+            ],
+            [
+                'heading' => 'O queixo também desenha o seu perfil',
+                'body' => [
+                    'O queixo, que a gente chama de mento, é o outro lado dessa balança. Quando ele está bem posicionado, o rosto ganha estrutura e o nariz deixa de ser o ponto mais saliente do perfil. Os autores daquele estudo brasileiro sobre o dorso nasal lembram que um queixo pequeno pode acentuar a impressão de um nariz projetado.',
+                    'O [preenchimento de queixo](procedure:preenchimento-mandibula-e-queixo) usa um ácido hialurônico mais firme, próprio para dar projeção. Em um estudo randomizado publicado na revista Plastic and Reconstructive Surgery, com 140 adultos de queixo um pouco recuado, 81% tiveram melhora avaliada às cegas depois de 12 semanas, contra 6% de quem não recebeu tratamento. Quase um ano depois, a melhora se mantinha em 74%, e os efeitos colaterais foram leves, como dor no local, roxinho e inchaço.',
+                ],
+            ],
+            [
+                'heading' => 'Como eu planejo nariz e queixo no mesmo plano',
+                'body' => [
+                    'Na avaliação, eu analiso o seu rosto de frente e de perfil e procuro onde está o desequilíbrio. Às vezes ele está no dorso. Às vezes o nariz está ótimo e o que falta é projeção no queixo. Em muitos casos, pequenas quantidades nos dois pontos rendem um perfil mais harmônico do que muito produto em um lugar só.',
+                    'Faço questão de ser honesta sobre os limites. A rinomodelação não diminui o nariz, não substitui a rinoplastia e não trata problema de respiração. Uma revisão publicada na revista Cureus reuniu 652 pessoas tratadas e encontrou cerca de 93% de resultados satisfatórios em ajustes pequenos de formato. A mesma revisão reforça que mudanças maiores continuam sendo caso de cirurgia, e quando esse for o seu caso, eu vou te dizer.',
+                    'O nariz tem uma circulação delicada, e por isso eu uso só ácido hialurônico nessa região. Ele é absorvido com o tempo e pode ser dissolvido com uma enzima, se for preciso. A revisão da Cureus aponta que a necrose de pele ligada ao preenchimento nasal costuma vir de produtos que o corpo não absorve. Antes de qualquer aplicação, eu também confiro se você pode fazer o procedimento, com os critérios que explico no artigo sobre [quem não pode fazer harmonização](article:quem-nao-pode-fazer).',
+                ],
+            ],
+            [
+                'heading' => 'Traga as suas fotos de perfil para a avaliação',
+                'body' => [
+                    'Se o seu nariz te incomoda nas fotos de lado, traga essas fotos para a nossa conversa. Elas me mostram o que você enxerga e o que gostaria de mudar. A partir daí, eu monto um plano que pode incluir o nariz, o queixo ou os dois, sempre mantendo os seus traços.',
+                    'O resultado do ácido hialurônico aparece na hora e dura, em média, de 12 a 18 meses. Para chegar tranquila no dia, dê uma olhada em [como se preparar](article:como-se-preparar) e nos cuidados do [artigo sobre recuperação](article:tempo-de-recuperacao).',
+                ],
+            ],
+        ],
+        'takeaways' => [
+            'De perfil, o nariz é visto em conjunto com os lábios e o queixo.',
+            'A rinomodelação acrescenta volume, mas um dorso mais reto costuma deixar o nariz com aparência menor.',
+            'Um queixo bem projetado equilibra o perfil e tira o destaque do nariz.',
+            'No nariz eu uso só ácido hialurônico, que é absorvido e pode ser dissolvido.',
+        ],
+        'faq' => [
+            ['q' => 'Preenchimento no queixo faz o nariz parecer menor?', 'a' => 'Pode ajudar, porque o nariz é avaliado em relação ao queixo e aos lábios. Quando o queixo está recuado, o nariz costuma ganhar destaque no perfil. Na avaliação eu vejo se o equilíbrio vem do queixo, do nariz ou dos dois.'],
+            ['q' => 'Dá para fazer rinomodelação e queixo no mesmo dia?', 'a' => 'Em muitos casos, sim. Eu decido na avaliação, conforme o seu rosto e a quantidade de produto que cada área pede, e explico antes como fica cada etapa.'],
+            ['q' => 'A rinomodelação deixa o nariz menor?', 'a' => 'Ela não diminui o tamanho, porque acrescenta volume. Mas, ao alinhar o dorso e dar apoio à ponta, costuma fazer o nariz parecer menor de perfil. Para reduzir de verdade, o caminho é a cirurgia.'],
+        ],
+        'related' => ['rinomodelacao-e-refinamento-facial', 'preenchimento-mandibula-e-queixo', 'preenchimento-facial', 'harmonizacao-facial'],
+        'sources' => [
+            ['publisher' => 'Revista Brasileira de Cirurgia Plástica', 'title' => 'Percepção da redução do tamanho após rinoplastia de aumento não cirúrgica: Análise retrospectiva de 116 casos', 'url' => 'https://www.rbcp.org.br/details/3338/en-US/perception-of-size-reduction-after-non-surgical-augmentation-rhinoplasty--retrospective-analysis-of-116-cases', 'year' => '2023'],
+            ['publisher' => 'Revista Brasileira de Cirurgia Plástica', 'title' => 'Percepção da redução nasal pela rinoplastia de aumento do radix e da ponta', 'url' => 'https://www.rbcp.org.br/details/1914/perception-of-nasal-reduction-by-radix-and-tip-augmentation-rhinoplasty', 'year' => '2018'],
+            ['publisher' => 'Korean Journal of Orthodontics', 'title' => 'Facial profile parameters and their relative influence on bilabial prominence and the perceptions of facial profile attractiveness: A novel approach', 'url' => 'https://pmc.ncbi.nlm.nih.gov/articles/PMC4130914/', 'year' => '2014'],
+            ['publisher' => 'Plastic and Reconstructive Surgery', 'title' => 'A Randomized Trial to Assess Effectiveness and Safety of a Hyaluronic Acid Filler for Chin Augmentation and Correction of Chin Retrusion', 'url' => 'https://pmc.ncbi.nlm.nih.gov/articles/PMC9698183/', 'year' => '2022'],
+            ['publisher' => 'Cureus', 'title' => 'Non-surgical Rhinoplasty (NSR): A Systematic Review of Its Techniques, Outcomes, and Patient Satisfaction', 'url' => 'https://pmc.ncbi.nlm.nih.gov/articles/PMC10792339/', 'year' => '2023'],
+        ],
+    ],
+
 ];
