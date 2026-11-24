@@ -61,6 +61,16 @@ return [
         'featured' => true,
     ],
     [
+        'id' => 'rinomodelacao-3',
+        'procedure' => 'rinomodelacao-e-refinamento-facial',
+        'title' => 'Giba disfarçada, dorso reto',
+        'type' => 'combined',
+        'image' => 'resultados/rinomodelacao-3.jpg',
+        'layout' => 'horizontal',
+        'alt' => 'rinomodelação com ácido hialurônico para disfarçar a giba nasal em Belo Horizonte — Dra. Emily Beatriz',
+        'featured' => true,
+    ],
+    [
         'id' => 'harmonizacao-facial-contorno-1',
         'procedure' => 'harmonizacao-facial',
         'title' => 'Papada reduzida, contorno definido',
