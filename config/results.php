@@ -31,6 +31,36 @@
 
 return [
     [
+        'id' => 'preenchimento-mandibula-e-queixo-1',
+        'procedure' => 'preenchimento-mandibula-e-queixo',
+        'title' => 'Queixo projetado, mandíbula definida',
+        'type' => 'combined',
+        'image' => 'resultados/preenchimento-mandibula-e-queixo-1.jpg',
+        'layout' => 'horizontal',
+        'alt' => 'preenchimento de mandíbula e queixo de perfil em Belo Horizonte — Dra. Emily Beatriz',
+        'featured' => true,
+    ],
+    [
+        'id' => 'rinomodelacao-1',
+        'procedure' => 'rinomodelacao-e-refinamento-facial',
+        'title' => 'Dorso do nariz alinhado',
+        'type' => 'combined',
+        'image' => 'resultados/rinomodelacao-1.jpg',
+        'layout' => 'horizontal',
+        'alt' => 'rinomodelação com ácido hialurônico de perfil em Belo Horizonte — Dra. Emily Beatriz',
+        'featured' => true,
+    ],
+    [
+        'id' => 'rinomodelacao-2',
+        'procedure' => 'rinomodelacao-e-refinamento-facial',
+        'title' => 'Perfil do nariz suavizado',
+        'type' => 'combined',
+        'image' => 'resultados/rinomodelacao-2.jpg',
+        'layout' => 'horizontal',
+        'alt' => 'rinomodelação para suavizar a giba nasal em Belo Horizonte — Dra. Emily Beatriz',
+        'featured' => true,
+    ],
+    [
         'id' => 'harmonizacao-facial-contorno-1',
         'procedure' => 'harmonizacao-facial',
         'title' => 'Papada reduzida, contorno definido',
