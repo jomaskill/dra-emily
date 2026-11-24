@@ -78,7 +78,7 @@ it('links each article to procedures that exist', function (string $slug) use ($
 it('cites its sources at the end of the article and in the JSON-LD', function (string $slug) use ($articles) {
     $sources = $articles[$slug]['sources'] ?? [];
 
-    expect(count($sources))->toBeGreaterThanOrEqual(2);
+    expect(count($sources))->toBeGreaterThanOrEqual(2)->toBeLessThanOrEqual(3);
 
     foreach ($sources as $source) {
         expect($source)->toHaveKeys(['publisher', 'title', 'url', 'year'])
