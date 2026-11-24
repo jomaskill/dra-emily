@@ -106,7 +106,7 @@ it('shows the images placed inside article sections, with their text', function 
     $html = $this->get("/artigos/{$slug}")->assertOk()->getContent();
 
     foreach ($figures as $figure) {
-        expect($html)->toContain('src="'.asset($figure['src']).'"')
+        expect($html)->toContain('src="'.asset($figure['src']).'?v=')
             ->and($html)->toContain('alt="'.e($figure['alt']).'"');
 
         if (isset($figure['caption'])) {
