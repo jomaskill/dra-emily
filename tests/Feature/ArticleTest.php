@@ -2,8 +2,8 @@
 
 /**
  * Guards the phase-four content layer from the 2026-09-07 SEO/GEO/AEO audit:
- * articles that carry an attributed author and real dates, a direct answer
- * positioned for extraction, and an index that stays in step with the config.
+ * articles that carry an attributed author and real dates, structured data
+ * that parses, and an index that stays in step with the config.
  */
 $articles = require __DIR__.'/../../config/articles.php';
 $articleSlugs = array_keys($articles);
@@ -41,16 +41,11 @@ it('shows the author and publication date to readers, not only to crawlers', fun
         ->and($html)->toContain('datetime="'.config("articles.{$slug}.published").'"');
 })->with($articleSlugs);
 
-it('opens each article with a direct answer of snippet length', function (string $slug) use ($articles) {
-    $answer = $articles[$slug]['answer'];
-    $words = str_word_count(strip_tags($answer), 0, 'áàâãéêíóôõúçÁÀÂÃÉÊÍÓÔÕÚÇ');
-
-    expect($words)->toBeGreaterThanOrEqual(35)->toBeLessThanOrEqual(75);
-
+it('opens each article straight into its sections, without a quick answer box', function (string $slug) {
     $html = $this->get("/artigos/{$slug}")->assertOk()->getContent();
 
-    expect($html)->toContain($answer)
-        ->and($html)->toContain('id="resposta"');
+    expect($html)->not->toContain('Resposta rápida')
+        ->and($html)->not->toContain('id="resposta"');
 })->with($articleSlugs);
 
 it('points article speakable selectors at anchors that exist', function (string $slug) {

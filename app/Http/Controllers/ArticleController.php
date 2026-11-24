@@ -123,11 +123,10 @@ class ArticleController extends Controller
      */
     private function readingMinutes(array $article): int
     {
-        $text = collect([$article['answer']])
-            ->merge(collect($article['sections'])->flatMap(fn (array $section): array => [
-                $section['heading'],
-                ...array_map(ArticleText::plain(...), $section['body']),
-            ]))
+        $text = collect($article['sections'])->flatMap(fn (array $section): array => [
+            $section['heading'],
+            ...array_map(ArticleText::plain(...), $section['body']),
+        ])
             ->merge($article['takeaways'] ?? [])
             ->merge(collect($article['faq'])->flatMap(fn (array $item): array => [$item['q'], $item['a']]))
             ->implode(' ');

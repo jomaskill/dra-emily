@@ -122,14 +122,6 @@
             ====================================================== --}}
             <div class="max-w-[42rem] mx-auto px-5 pt-12 lg:pt-14 pb-20 lg:pb-24">
 
-                {{-- Direct answer: the passage engines extract --}}
-                <section id="resposta" class="border-l-[3px] border-clay pl-5 md:pl-7 mb-14">
-                    <p class="text-xs font-semibold tracking-[0.14em] uppercase text-clay mb-3">Resposta rápida</p>
-                    <p class="font-serif italic text-[1.125rem] md:text-[1.25rem] leading-[1.6] text-ink">
-                        {{ $article['answer'] }}
-                    </p>
-                </section>
-
                 <div class="article-prose">
                     @foreach ($article['sections'] as $section)
                         <section>

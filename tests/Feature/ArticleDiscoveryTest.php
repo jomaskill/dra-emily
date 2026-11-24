@@ -216,7 +216,7 @@ it('links the body of every article to the rest of the site', function (string $
 it('never lets the link syntax reach text outside the article body', function (string $slug) {
     $article = config("articles.{$slug}");
 
-    expect(json_encode([$article['answer'], $article['faq'], $article['takeaways'] ?? [], $article['excerpt']]))
+    expect(json_encode([$article['faq'], $article['takeaways'] ?? [], $article['excerpt']]))
         ->not->toContain('](procedure:')
         ->not->toContain('](article:');
 })->with($articleSlugs);

@@ -32,7 +32,7 @@
     "mainEntity": { "@@id": "{{ $canonical }}#article" },
     "speakable": {
       "@@type": "SpeakableSpecification",
-      "cssSelector": ["#resposta", "#faq"]
+      "cssSelector": ["#faq"]
     },
     "citation": {!! $json(array_map(static fn (array $source): array => [
         '@type' => 'CreativeWork',

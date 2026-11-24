@@ -28,8 +28,6 @@
 |   excerpt           => resumo curto (card do índice)
 |   published         => data de publicação (Y-m-d)
 |   updated           => data da última revisão (Y-m-d)
-|   answer            => resposta direta em 40-60 palavras, exibida logo abaixo
-|                        do H1. É o trecho que buscadores e assistentes extraem.
 |   sections          => [['heading' => ..., 'body' => [parágrafo, ...]], ...]
 |                        Parágrafo aceita link interno: [texto](procedure:slug)
 |                        ou [texto](article:slug). Slug inexistente quebra a
@@ -68,7 +66,6 @@ return [
         'excerpt' => 'Não existe preço único, e desconfiar de quem promete um é o primeiro cuidado. Explico o que realmente entra no valor de uma harmonização.',
         'published' => '2026-08-18',
         'updated' => '2026-08-18',
-        'answer' => 'Não existe um valor único para harmonização facial. O investimento depende de quantas áreas vamos tratar, da quantidade de produto, da técnica e do acompanhamento depois. Por isso eu só fecho o orçamento depois da avaliação presencial, quando sei exatamente o que o seu rosto precisa.',
         'sections' => [
             [
                 'heading' => 'Por que eu não passo preço por telefone',
@@ -122,7 +119,6 @@ return [
         'excerpt' => 'A pergunta que decide a data do seu agendamento: quantos dias reservar depois de cada procedimento.',
         'published' => '2026-08-29',
         'updated' => '2026-08-29',
-        'answer' => 'Na maioria dos procedimentos faciais você volta à rotina no mesmo dia. Toxina botulínica e preenchimento têm retorno imediato, com um inchaço leve nas primeiras 24 a 48 horas. O microagulhamento deixa a pele sensível por alguns dias. Já os fios de PDO, por serem mais invasivos, pedem de uma a duas semanas de cuidados.',
         'sections' => [
             [
                 'heading' => 'Sai daqui e segue o dia',
@@ -181,7 +177,6 @@ return [
         'excerpt' => 'Uma boa avaliação inclui a possibilidade de eu dizer não. Conheça as situações em que o procedimento é adiado ou desaconselhado.',
         'published' => '2026-09-09',
         'updated' => '2026-09-09',
-        'answer' => 'Gestantes e lactantes não devem fazer procedimentos injetáveis. Infecção ativa na região, doença autoimune em atividade, distúrbio de coagulação e alergia a algum componente do produto também contraindicam ou pedem avaliação médica antes. E expectativa irreal é motivo legítimo para eu não indicar: se o resultado esperado não é possível, o procedimento não deve ser feito.',
         'sections' => [
             [
                 'heading' => 'As contraindicações mais comuns',
@@ -238,7 +233,6 @@ return [
         'excerpt' => 'Alguns cuidados nos dias anteriores reduzem hematomas e melhoram o resultado. Nenhum deles é complicado.',
         'published' => '2026-09-19',
         'updated' => '2026-09-19',
-        'answer' => 'Nos dias anteriores, evite bebida alcoólica por 24 a 48 horas e me conte todos os medicamentos e suplementos que você usa, principalmente anti-inflamatórios e anticoagulantes, que aumentam a chance de hematoma. Venha com o rosto limpo, sem maquiagem, depois de comer e bem hidratada. E traga suas dúvidas anotadas.',
         'sections' => [
             [
                 'heading' => 'Na semana anterior',
@@ -300,7 +294,6 @@ return [
         'excerpt' => 'Depois dos 40, o rosto não pede mais volume: pede sustentação e qualidade de pele. Explico o que muda em cada fase.',
         'published' => '2026-10-13',
         'updated' => '2026-10-13',
-        'answer' => 'Depois dos 40, a harmonização muda de foco. Em vez de volume e pequenos ajustes, eu priorizo sustentação e qualidade da pele, com bioestimulador de colágeno, reposição de volume nas maçãs do rosto e, quando há flacidez, fios de PDO. Depois dos 50 e na menopausa, a flacidez ganha prioridade e o tratamento costuma ser combinado e gradual.',
         'sections' => [
             [
                 'heading' => 'O que acontece com o rosto a partir dos 40',
@@ -362,7 +355,6 @@ return [
         'excerpt' => 'Em poucos dias, um cantor, um ator e o governador eleito de Minas contaram que fizeram harmonização. Fica a dúvida que todo homem tem: dá para fazer sem parecer que fez?',
         'published' => '2026-10-13',
         'updated' => '2026-10-13',
-        'answer' => 'Os homens procuram a harmonização por motivos bem práticos: parecer menos cansados, recuperar o contorno da mandíbula e suavizar as rugas da testa. O bom resultado depende de respeitar a anatomia masculina, com doses ajustadas a uma musculatura mais forte, pouco produto e foco na mandíbula e no queixo. Assim o rosto fica descansado e continua com cara de homem.',
         'sections' => [
             [
                 'heading' => 'Uma semana de homens falando do assunto',
@@ -429,7 +421,6 @@ return [
         'excerpt' => 'A balança desce, as roupas voltam a servir e o rosto parece mais cansado. Explico por que isso acontece e por que encher o rosto de volta não resolve.',
         'published' => '2026-10-22',
         'updated' => '2026-10-22',
-        'answer' => 'O chamado rosto de Ozempic é a flacidez e a perda de volume que aparecem quando se emagrece muito em pouco tempo, com canetas como Ozempic e Mounjaro. A gordura que sustentava o rosto vai embora antes que a pele consiga se adaptar. No tratamento, eu combino bioestimulador de colágeno, para devolver firmeza, com preenchimento em poucos pontos de sustentação, sem tentar encher o rosto de volta.',
         'sections' => [
             [
                 'heading' => 'De onde veio esse nome',
@@ -497,7 +488,6 @@ return [
         'excerpt' => 'Sentiu o rosto cair e já está pensando em cirurgia? Antes disso, conheça os fios de sustentação, que levantam o contorno com anestesia local e voltam você à rotina em poucos dias.',
         'published' => '2026-10-30',
         'updated' => '2026-10-30',
-        'answer' => 'Para quem tem 40 e poucos anos e sente o rosto caindo, os fios de sustentação costumam ser uma ótima alternativa antes da cirurgia plástica. Eles levantam o contorno da mandíbula e das bochechas com anestesia local, em cerca de uma hora, e estimulam colágeno. Funcionam melhor na flacidez leve a moderada, que é a mais comum nessa idade.',
         'sections' => [
             [
                 'heading' => 'Quando o espelho começa a incomodar',
@@ -572,7 +562,6 @@ return [
         'excerpt' => 'Começar a cuidar do rosto cedo pode ser ótimo, desde que seja com a indicação certa. Conto o que faz sentido aos 20 e poucos anos e o que eu evito.',
         'published' => '2026-11-02',
         'updated' => '2026-11-02',
-        'answer' => 'Aos 20 e poucos anos, harmonização facial faz sentido quando segue uma indicação, e não a idade. Toxina para uma linha que já começa a marcar, tratamento do bruxismo, um preenchimento labial sutil e cuidados com a pele e as marcas de acne são bem indicados nessa fase. O ponto de partida é uma avaliação que planeje a prevenção para o seu rosto.',
         'sections' => [
             [
                 'heading' => 'Começar cedo pode ser uma ótima ideia',
@@ -644,7 +633,6 @@ return [
         'excerpt' => 'Bioestimulador e fios pedem semanas, toxina e preenchimento pedem folga antes do evento. Conto como eu organizo o calendário até as festas.',
         'published' => '2026-11-03',
         'updated' => '2026-11-03',
-        'answer' => 'Dá tempo, desde que cada procedimento entre no momento certo. O bioestimulador, os fios de PDO e o microagulhamento precisam de semanas para mostrar resultado, então o ideal é começar em novembro. A toxina botulínica e o preenchimento podem ficar para dezembro, com cerca de duas semanas de folga antes do evento. Na avaliação, eu monto esse calendário com as suas datas.',
         'sections' => [
             [
                 'heading' => 'Novembro é o mês de começar',
@@ -715,7 +703,6 @@ return [
         'excerpt' => 'O sérum de DNA de salmão tomou conta das prateleiras. Conto o que os estudos mostram, por que no Brasil ele é de uso externo e o que eu indico quando a queixa é viço ou firmeza.',
         'published' => '2026-11-09',
         'updated' => '2026-11-09',
-        'answer' => 'O PDRN é um DNA purificado de salmão ou truta, estudado pela capacidade de ajudar a pele a se reparar. Os estudos de rejuvenescimento levaram o ativo até a derme com agulhas e ainda são pequenos. No Brasil, os produtos com PDRN são registrados como cosméticos de uso externo. Em casa, o sérum pode complementar a rotina. Para viço e firmeza, eu avalio microagulhamento ou bioestimulador.',
         'sections' => [
             [
                 'heading' => 'O que é esse tal de DNA de salmão',
@@ -786,7 +773,6 @@ return [
         'excerpt' => 'O nariz que incomoda nas fotos de lado nem sempre é o problema. Explico como nariz e queixo são vistos em conjunto e como eu planejo os dois para equilibrar o seu perfil.',
         'published' => '2026-11-18',
         'updated' => '2026-11-18',
-        'answer' => 'Muitas vezes o nariz parece maior de perfil porque o queixo está um pouco recuado. Os dois são lidos em conjunto, e estudos mostram que um nariz com o dorso alinhado e a ponta bem apoiada tende a parecer menor, mesmo ganhando volume. Por isso, na rinomodelação, eu avalio o perfil inteiro e, quando faz sentido, incluo o queixo no mesmo plano com ácido hialurônico.',
         'sections' => [
             [
                 'heading' => 'Por que o nariz chama atenção nas fotos de perfil',
@@ -860,7 +846,6 @@ return [
         'excerpt' => 'O levantamento mundial mais recente mostra um cansaço dos preenchedores. Explico por que o rosto envelhece em camadas e como eu planejo o rosto inteiro para você sair descansada, com os seus traços.',
         'published' => '2026-11-24',
         'updated' => '2026-11-24',
-        'answer' => 'Uma harmonização parece natural quando o plano olha para o rosto inteiro, e não só para o ponto que incomoda. O rosto envelhece em camadas, da pele ao osso, e cada uma pede um cuidado diferente. Por isso eu distribuo pequenos ajustes entre as regiões, respeito o tempo de cada produto e evito somar volume no mesmo lugar sessão após sessão.',
         'sections' => [
             [
                 'heading' => 'O que os números dizem sobre o cansaço dos preenchedores',
