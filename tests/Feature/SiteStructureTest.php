@@ -84,3 +84,14 @@ it('shows every procedure on the homepage', function (string $slug) {
 
     expect($html)->toContain("/procedimentos/{$slug}");
 })->with($slugs);
+
+it('keeps public folders from shadowing a route, which nginx answers with a 403', function () {
+    $routePrefixes = collect(app('router')->getRoutes()->getRoutes())
+        ->map(fn ($route): string => explode('/', $route->uri())[0])
+        ->filter(fn (string $prefix): bool => $prefix !== '' && ! str_contains($prefix, '{'))
+        ->unique();
+
+    $shadowed = $routePrefixes->filter(fn (string $prefix): bool => is_dir(public_path($prefix)));
+
+    expect($shadowed->values()->all())->toBe([]);
+});

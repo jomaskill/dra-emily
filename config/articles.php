@@ -21,9 +21,11 @@
 |   eyebrow           => sobretítulo
 |   topics            => slugs de config/topics.php (ao menos um). O primeiro
 |                        é o tema principal do artigo.
-|   image, image_alt  => foto do artigo em public/ e seu texto alternativo
-|                        (opcional). Aparece no topo, no compartilhamento e no
-|                        JSON-LD. Sem ela, a capa segue tipográfica.
+|   image, image_alt  => foto do artigo em public/blog/{slug}/ e seu texto
+|                        alternativo (opcional). Aparece no topo, no
+|                        compartilhamento e no JSON-LD. Sem ela, a capa segue
+|                        tipográfica. Nunca use public/artigos/: uma pasta com
+|                        o nome de uma rota faz o nginx responder 403.
 |   meta_description  => meta description
 |   excerpt           => resumo curto (card do índice)
 |   published         => data de publicação (Y-m-d)
@@ -840,7 +842,7 @@ return [
         'topics' => [
             'flacidez-e-firmeza',
         ],
-        'image' => 'artigos/harmonizacao-facial-natural/capa.jpg',
+        'image' => 'blog/harmonizacao-facial-natural/capa.jpg',
         'image_alt' => 'Ilustração de um rosto feminino com pequenos pontos de aplicação distribuídos pelas três regiões do rosto',
         'meta_description' => 'O rosto envelhece em camadas e pede um plano global. Entenda o que faz uma harmonização facial parecer natural e como a Dra. Emily planeja, em BH.',
         'excerpt' => 'O levantamento mundial mais recente mostra um cansaço dos preenchedores. Explico por que o rosto envelhece em camadas e como eu planejo o rosto inteiro para você sair descansada, com os seus traços.',
@@ -861,7 +863,7 @@ return [
                     'Por isso preencher só o sulco que incomoda raramente resolve. O [bigode chinês](procedure:bigode-chines), por exemplo, muitas vezes é reflexo da perda de sustentação nas maçãs do rosto. Quando eu devolvo apoio no lugar certo, o sulco suaviza sem que eu precise colocar produto direto nele.',
                 ],
                 'figure' => [
-                    'src' => 'artigos/harmonizacao-facial-natural/camadas-do-rosto.jpg',
+                    'src' => 'blog/harmonizacao-facial-natural/camadas-do-rosto.jpg',
                     'alt' => 'Ilustração das quatro camadas do rosto, pele, gordura, músculos e ligamentos e osso, com o que muda em cada uma e o tratamento que atua nela',
                     'caption' => 'Cada camada muda de um jeito com o tempo, e cada tratamento atua em uma delas.',
                 ],
@@ -874,7 +876,7 @@ return [
                     'Eu levo isso em conta em cada manutenção. Antes de repor, avalio o que ainda está presente e muitas vezes escolho outro caminho, como o [bioestimulador de colágeno](procedure:bioestimulador-de-colageno), que melhora a firmeza com o colágeno que o seu próprio corpo produz.',
                 ],
                 'figure' => [
-                    'src' => 'artigos/harmonizacao-facial-natural/acumulo-ou-planejamento.jpg',
+                    'src' => 'blog/harmonizacao-facial-natural/acumulo-ou-planejamento.jpg',
                     'alt' => 'Dois rostos lado a lado: à esquerda, grandes manchas de volume nas maçãs do rosto e nos lábios; à direita, pequenos pontos distribuídos pelo rosto inteiro',
                     'caption' => 'À esquerda, volume concentrado em poucos pontos. À direita, pequenas doses distribuídas pelo rosto, a lógica do planejamento global.',
                 ],
@@ -887,7 +889,7 @@ return [
                     'Com esse mapa em mãos, eu combino o que cada região precisa: [toxina botulínica](procedure:toxina-botulinica) para suavizar a expressão, ácido hialurônico para devolver apoio e bioestimulador para a qualidade da pele. Esse plano completo é o [Full Face](procedure:full-face), e ele pode ser feito em etapas, no seu ritmo.',
                 ],
                 'figure' => [
-                    'src' => 'artigos/harmonizacao-facial-natural/tercos-do-rosto.jpg',
+                    'src' => 'blog/harmonizacao-facial-natural/tercos-do-rosto.jpg',
                     'alt' => 'Ilustração de um rosto feminino dividido em terço superior, com testa, sobrancelhas e olhar, terço médio, com maçãs do rosto, olheiras e nariz, e terço inferior, com lábios, queixo e mandíbula',
                     'caption' => 'Os três terços do rosto, que eu avalio em conjunto antes de qualquer aplicação.',
                 ],
@@ -900,7 +902,7 @@ return [
                     'Antes de agendar, dê uma olhada em [como se preparar](article:como-se-preparar) e entenda [o que compõe o valor de uma harmonização](article:quanto-custa-harmonizacao-facial). Na avaliação eu te mostro o plano completo e a gente decide por onde começar.',
                 ],
                 'figure' => [
-                    'src' => 'artigos/harmonizacao-facial-natural/mandibula-e-queixo-antes-e-depois.jpg',
+                    'src' => 'blog/harmonizacao-facial-natural/mandibula-e-queixo-antes-e-depois.jpg',
                     'alt' => 'Perfil de uma mulher antes e depois do preenchimento de mandíbula e queixo, com o contorno do rosto mais definido depois do tratamento',
                     'caption' => 'Antes e depois de preenchimento de mandíbula e queixo feito por mim, publicado com autorização. O resultado varia de pessoa para pessoa.',
                 ],
