@@ -172,6 +172,18 @@
         margin-top: 0;
     }
 
+    .article-prose .article-figure {
+        margin-top: 2.25em;
+    }
+
+    .article-prose .article-figure figcaption {
+        margin-top: 0.75rem;
+        font-family: var(--font-headline);
+        font-size: 0.875rem;
+        line-height: 1.45;
+        color: var(--color-ink-soft);
+    }
+
     @media (min-width: 768px) {
         .article-prose {
             font-size: 1.25rem;

@@ -91,6 +91,30 @@ it('uses the photo of an article once it has one', function () {
         ->and($html)->toContain('<meta property="og:image" content="'.$siteUrl.'/foto-emily.jpg">');
 });
 
+it('shows the images placed inside article sections, with their text', function (string $slug) {
+    $figures = collect(config("articles.{$slug}.sections"))->pluck('figure')->filter();
+    $cover = config("articles.{$slug}.image");
+
+    foreach (array_filter([$cover, ...$figures->pluck('src')]) as $src) {
+        expect(file_exists(public_path($src)))->toBeTrue("Missing image: {$src}");
+    }
+
+    if ($figures->isEmpty()) {
+        return;
+    }
+
+    $html = $this->get("/artigos/{$slug}")->assertOk()->getContent();
+
+    foreach ($figures as $figure) {
+        expect($html)->toContain('src="'.asset($figure['src']).'"')
+            ->and($html)->toContain('alt="'.e($figure['alt']).'"');
+
+        if (isset($figure['caption'])) {
+            expect($html)->toContain(e($figure['caption']));
+        }
+    }
+})->with($articleSlugs);
+
 it('keeps the typographic cover while an article has no photo', function () {
     $html = $this->get('/artigos/como-se-preparar')->assertOk()->getContent();
 

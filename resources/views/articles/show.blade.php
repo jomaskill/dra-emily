@@ -137,6 +137,17 @@
                             @foreach ($section['body'] as $paragraph)
                                 <p>{{ \App\Support\ArticleText::render($paragraph) }}</p>
                             @endforeach
+                            @isset($section['figure'])
+                                <figure class="article-figure">
+                                    <x-picture :src="$section['figure']['src']"
+                                               :alt="$section['figure']['alt']"
+                                               sizes="(min-width: 672px) 632px, 100vw"
+                                               class="w-full h-auto rounded-sm" />
+                                    @isset($section['figure']['caption'])
+                                        <figcaption>{{ $section['figure']['caption'] }}</figcaption>
+                                    @endisset
+                                </figure>
+                            @endisset
                         </section>
                     @endforeach
                 </div>

@@ -34,6 +34,10 @@
 |                        Parágrafo aceita link interno: [texto](procedure:slug)
 |                        ou [texto](article:slug). Slug inexistente quebra a
 |                        página em vez de publicar link morto.
+|                        Seção aceita 'figure' => ['src' => ..., 'alt' => ...,
+|                        'caption' => ...] (caption opcional): imagem em
+|                        public/ exibida depois dos parágrafos. Gere as
+|                        variantes {base}.webp e {base}-480w/768w/1120w.webp.
 |   takeaways        => lista de pontos-chave (opcional)
 |   faq               => [['q' => ..., 'a' => ...], ...]
 |   related           => slugs de config/procedures.php
